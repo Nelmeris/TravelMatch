@@ -1,0 +1,15 @@
+included:
+  - Travel Match
+excluded:
+  - Travel MatchTests
+  - Travel MatchUITests
+identifier_name:
+  excluded:
+    - id
+number_separator:
+  minimum_length: 5
+disabled_rules:
+  - trailing_whitespace
+function_parameter_count:
+    warning: 8
+    error: 10
