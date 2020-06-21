@@ -50,6 +50,8 @@
 		E1BB310C24953E4B00A4DA88 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BB310B24953E4B00A4DA88 /* Button.swift */; };
 		E1BB310E2495551000A4DA88 /* OnBoardingSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BB310D2495551000A4DA88 /* OnBoardingSlide.swift */; };
 		E1BB31102495568C00A4DA88 /* OnBoardingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BB310F2495568C00A4DA88 /* OnBoardingService.swift */; };
+		E1CE9772249F69CC007630E9 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CE9771249F69CC007630E9 /* SignInViewController.swift */; };
+		E1CE9774249F69D5007630E9 /* SignIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1CE9773249F69D5007630E9 /* SignIn.storyboard */; };
 		E1CEAA6824992B5F0028DFA4 /* PhoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CEAA6724992B5F0028DFA4 /* PhoneViewController.swift */; };
 		E1CEAA6A24992B6F0028DFA4 /* Phone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1CEAA6924992B6F0028DFA4 /* Phone.storyboard */; };
 		E1FCC6392498DBCF00C97A96 /* UIColor+hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1FCC6382498DBCF00C97A96 /* UIColor+hex.swift */; };
@@ -130,6 +132,9 @@
 		E1BB310B24953E4B00A4DA88 /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		E1BB310D2495551000A4DA88 /* OnBoardingSlide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingSlide.swift; sourceTree = "<group>"; };
 		E1BB310F2495568C00A4DA88 /* OnBoardingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingService.swift; sourceTree = "<group>"; };
+		E1CE976D249E23B2007630E9 /* Travel Match.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Travel Match.entitlements"; sourceTree = "<group>"; };
+		E1CE9771249F69CC007630E9 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		E1CE9773249F69D5007630E9 /* SignIn.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignIn.storyboard; sourceTree = "<group>"; };
 		E1CEAA6724992B5F0028DFA4 /* PhoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneViewController.swift; sourceTree = "<group>"; };
 		E1CEAA6924992B6F0028DFA4 /* Phone.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Phone.storyboard; sourceTree = "<group>"; };
 		E1FCC6382498DBCF00C97A96 /* UIColor+hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+hex.swift"; sourceTree = "<group>"; };
@@ -248,6 +253,7 @@
 				E14659F82494D48B00BBC9F5 /* Environment */,
 				E14659F92494D4BB00BBC9F5 /* Resources */,
 				E14659D02494B0C300BBC9F5 /* LaunchScreen.storyboard */,
+				E1CE976D249E23B2007630E9 /* Travel Match.entitlements */,
 			);
 			path = "Travel Match";
 			sourceTree = "<group>";
@@ -398,10 +404,8 @@
 		E190631B249612DF00A3CB2E /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				E130AF19249A8BCF009C7A47 /* SignUpController */,
+				E1C28B5D249C04F90038753E /* AuthStory */,
 				E130AF14249A864E009C7A47 /* NavigationController */,
-				E1CEAA66249915E30028DFA4 /* PhoneController */,
-				E190631E2496170400A3CB2E /* EmailController */,
 				E1465A032494E53800BBC9F5 /* OnBoardingController */,
 				E190631C249613D200A3CB2E /* ViewControllerFactory.swift */,
 			);
@@ -427,6 +431,26 @@
 				E1059CF52496BCE700CA8A89 /* TextField.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		E1C28B5D249C04F90038753E /* AuthStory */ = {
+			isa = PBXGroup;
+			children = (
+				E1CE9770249F69B8007630E9 /* SignInController */,
+				E130AF19249A8BCF009C7A47 /* SignUpController */,
+				E1CEAA66249915E30028DFA4 /* PhoneController */,
+				E190631E2496170400A3CB2E /* EmailController */,
+			);
+			path = AuthStory;
+			sourceTree = "<group>";
+		};
+		E1CE9770249F69B8007630E9 /* SignInController */ = {
+			isa = PBXGroup;
+			children = (
+				E1CE9771249F69CC007630E9 /* SignInViewController.swift */,
+				E1CE9773249F69D5007630E9 /* SignIn.storyboard */,
+			);
+			path = SignInController;
 			sourceTree = "<group>";
 		};
 		E1CEAA66249915E30028DFA4 /* PhoneController */ = {
@@ -557,6 +581,7 @@
 				E1465A2224950C5200BBC9F5 /* Montserrat-Regular.ttf in Resources */,
 				E1465A2324950C5200BBC9F5 /* Montserrat-SemiBold.ttf in Resources */,
 				E19063222496173E00A3CB2E /* Email.storyboard in Resources */,
+				E1CE9774249F69D5007630E9 /* SignIn.storyboard in Resources */,
 				E14659D22494B0C300BBC9F5 /* LaunchScreen.storyboard in Resources */,
 				E14659CF2494B0C300BBC9F5 /* Assets.xcassets in Resources */,
 				E1465A272495134E00BBC9F5 /* OnBoarding.storyboard in Resources */,
@@ -714,6 +739,7 @@
 				E1465A2A249514AE00BBC9F5 /* UIStoryboard+instantiateViewController.swift in Sources */,
 				E1BB310E2495551000A4DA88 /* OnBoardingSlide.swift in Sources */,
 				E1FCC6392498DBCF00C97A96 /* UIColor+hex.swift in Sources */,
+				E1CE9772249F69CC007630E9 /* SignInViewController.swift in Sources */,
 				E19063202496171900A3CB2E /* EmailViewController.swift in Sources */,
 				E1BB310A24952B2600A4DA88 /* UILabel+setLineHeight.swift in Sources */,
 				E130AF13249A74E3009C7A47 /* PhoneNumberField.swift in Sources */,

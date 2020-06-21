@@ -32,6 +32,8 @@ final class AuthCoordinator: BaseCoordinator {
     private func showEmailLogin() {
         let controller = viewControllerFactory.makeEmailController()
         
+        controller.email = email
+        
         controller.onPhoneModeClicked = { [weak self] in
             self?.showPhoneLogin()
         }
@@ -46,6 +48,8 @@ final class AuthCoordinator: BaseCoordinator {
     
     private func showPhoneLogin() {
         let controller = viewControllerFactory.makePhoneController()
+
+        controller.phone = phone
         
         controller.onEmailModeClicked = { [weak self] in
             self?.showEmailLogin()
@@ -53,7 +57,7 @@ final class AuthCoordinator: BaseCoordinator {
         
         controller.onContinueButtonClicked = { [weak self] phone in
             self?.phone = phone
-            self?.showSignUp()
+            self?.showSignIn()
         }
         
         rootController.viewControllers = [controller]
@@ -61,6 +65,11 @@ final class AuthCoordinator: BaseCoordinator {
     
     private func showSignUp() {
         let controller = viewControllerFactory.makeSignUpController()
+        rootController.pushViewController(controller, animated: true)
+    }
+
+    private func showSignIn() {
+        let controller = viewControllerFactory.makeSignInController()
         rootController.pushViewController(controller, animated: true)
     }
     

@@ -33,5 +33,10 @@ class ViewControllerFactory {
         return UIStoryboard(name: "SignUp", bundle: nil)
         .instantiateViewController(SignUpViewController.self)
     }
-    
+
+    func makeSignInController() -> SignInViewController {
+        return UIStoryboard(name: "SignIn", bundle: nil)
+        .instantiateViewController(SignInViewController.self)
+    }
+
 }

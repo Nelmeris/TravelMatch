@@ -8,7 +8,11 @@
 
 import UIKit
 
-class EmailViewController: UIViewController {
+class EmailViewController: BaseViewController {
+    
+    // MARK: - Input
+    
+    var email: String?
     
     // MARK: - Output
     
@@ -20,13 +24,18 @@ class EmailViewController: UIViewController {
     // MARK: - Outlets
     
     @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var nextButton: Button!
+    @IBOutlet weak var emailField: TextField! {
+        didSet {
+            emailField.text = email
+        }
+    }
     @IBOutlet weak var guestButton: Button!
     @IBOutlet weak var facebookButton: Button!
-    @IBOutlet weak var emailField: TextField!
+    @IBOutlet weak var nextButton: Button!
     
-    @IBOutlet var buttonsHeightConstraint: NSLayoutConstraint!
-    @IBOutlet var formHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var buttonsBottomConstraint: NSLayoutConstraint!
+    
+    // MARK: - Validation
     
     private let emailPredicate = NSPredicate(
         format: "SELF MATCHES %@",
@@ -35,28 +44,32 @@ class EmailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        nextButton.isEnabled = false
+        nextButton.isEnabled = isInputValid()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        NotificationCenter.default.addObserver(self, selector:
+    // MARK: - Notifications
+    
+    override func addNotifications() {
+        super.addNotifications()
+        notificationCenter.addObserver(self, selector:
             #selector(self.keyboardWillShown), name:
             UIResponder.keyboardWillShowNotification, object: nil)
         
-        NotificationCenter.default.addObserver(self, selector:
-            #selector(self.keyboardWillBeHidden(notification:)), name:
+        notificationCenter.addObserver(self, selector:
+            #selector(self.keyboardWillHide(notification:)), name:
             UIResponder.keyboardWillHideNotification, object: nil)
         
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        NotificationCenter.default.removeObserver(self, name:
+    override func removeNotifications() {
+        super.removeNotifications()
+        notificationCenter.removeObserver(self, name:
             UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.removeObserver(self, name:
+        notificationCenter.removeObserver(self, name:
             UIResponder.keyboardWillHideNotification, object: nil)
     }
+    
+    // MARK: - Validation
     
     func isInputValid() -> Bool {
         guard let emailValue = emailField.text,
@@ -73,58 +86,31 @@ class EmailViewController: UIViewController {
     }
     
     @objc func keyboardWillShown(notification: Notification) {
-        
         let info = notification.userInfo! as NSDictionary
         
         guard
             let kbSize = (
                 info.value(
                     forKey: UIResponder.keyboardFrameEndUserInfoKey
-                    ) as? NSValue)?.cgRectValue.size
+                    ) as? NSValue)?.cgRectValue.size,
+            kbSize.height > buttonsBottomConstraint.constant
             else { return }
         
-        let contentInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom:
-            kbSize.height, right: 0.0)
-        
-        scrollView.contentInset = contentInsets
-        scrollView.scrollIndicatorInsets = contentInsets
-        
-        NSLayoutConstraint.deactivate([
-            buttonsHeightConstraint
-        ])
-        
-        let buttonSpaceHeight: CGFloat = 128
-        formHeightConstraint.constant =
-            (view.frame.height - kbSize.height - buttonSpaceHeight)
-            - view.frame.height * formHeightConstraint.multiplier
+        buttonsBottomConstraint.constant = kbSize.height
         
         guestButton.alpha = 0
         guestButton.isHidden = true
         
         facebookButton.alpha = 0
         facebookButton.isHidden = true
-        
-        view.setNeedsLayout()
     }
     
-    @objc func keyboardWillBeHidden(notification: Notification) {
-        
-        let contentInsets = UIEdgeInsets.zero
-        scrollView.contentInset = contentInsets
-        scrollView.scrollIndicatorInsets = contentInsets
-        
+    @objc func keyboardWillHide(notification: Notification) {
+        buttonsBottomConstraint.constant = 0
         guestButton.alpha = 1
         guestButton.isHidden = false
         facebookButton.alpha = 1
         facebookButton.isHidden = false
-        
-        NSLayoutConstraint.activate([
-            buttonsHeightConstraint
-        ])
-        
-        formHeightConstraint.constant = 0
-        
-        view.setNeedsLayout()
     }
     
     @IBAction func phoneModeClicked(_ sender: Any) {
