@@ -7,31 +7,12 @@
 //
 
 import UIKit
+import UI
 
 class ViewControllerFactory {
     
     func makeNavigationController() -> NavigationController {
         return NavigationController()
-    }
-
-    func makeOnBoardingController() -> OnBoardingViewController {
-        return UIStoryboard(name: "OnBoarding", bundle: nil)
-        .instantiateViewController(OnBoardingViewController.self)
-    }
- 
-    func makeEmailController() -> EmailViewController {
-        return UIStoryboard(name: "Email", bundle: nil)
-        .instantiateViewController(EmailViewController.self)
-    }
-    
-    func makePhoneController() -> PhoneViewController {
-        return UIStoryboard(name: "Phone", bundle: nil)
-        .instantiateViewController(PhoneViewController.self)
-    }
-    
-    func makeSignUpController() -> SignUpViewController {
-        return UIStoryboard(name: "SignUp", bundle: nil)
-        .instantiateViewController(SignUpViewController.self)
     }
     
 }

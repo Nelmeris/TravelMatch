@@ -7,27 +7,30 @@
 //
 
 import Foundation
+import Auth
 
-typealias AuthCompletion = (AuthResult) -> Void
-
-protocol AuthService {
+class UserDefaultsAuthService: AuthService {
     
-    func isAuthorized() -> Bool
-
-    func signIn(
-        withPhone phone: String,
-        password: String,
-        remember: Bool,
-        completion: @escaping AuthCompletion
-    )
+    private let userDefaults: UserDefaults
     
-    func signIn(
-        withEmail email: String,
-        password: String,
-        remember: Bool,
-        completion: @escaping AuthCompletion
-    )
+    init(userDefaults: UserDefaults) {
+        self.userDefaults = userDefaults
+    }
     
-    func logout()
+    func isAuthorized() -> Bool {
+        return false
+    }
+    
+    func signIn(withPhone phone: String, password: String, remember: Bool, completion: @escaping AuthCompletion) {
+        completion(AuthResult(token: "demo_token", error: nil))
+    }
+    
+    func signIn(withEmail email: String, password: String, remember: Bool, completion: @escaping AuthCompletion) {
+        completion(AuthResult(token: "demo_token", error: nil))
+    }
+    
+    func logout() {
+        
+    }
 
 }

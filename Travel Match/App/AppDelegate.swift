@@ -24,7 +24,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         coordinator = AppCoordinator(
             viewControllerFactory: ViewControllerFactory(),
-            onBoardingService: OnBoardingServiceImpl(
+            onBoardingService: UserDefaultsOnBoardingService(
+                userDefaults: UserDefaults.standard
+            ),
+            authService: UserDefaultsAuthService(
                 userDefaults: UserDefaults.standard
             )
         )
