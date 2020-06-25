@@ -7,14 +7,9 @@
 //
 
 import UIKit
+import OnBoarding
 
-protocol OnBoardingService {
-    func shouldShow() -> Bool
-    func wasShown()
-    func getSlides() -> [OnBoardingSlide]
-}
-
-class OnBoardingServiceImpl: OnBoardingService {
+class UserDefaultsOnBoardingService: OnBoardingService {
         
     private let userDefaults: UserDefaults
     

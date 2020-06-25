@@ -5,6 +5,18 @@
       location = "group:Travel Match.xcodeproj">
    </FileRef>
    <FileRef
+      location = "group:UI/UI.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Core/Core.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:OnBoarding/OnBoarding.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Auth/Auth.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:Pods/Pods.xcodeproj">
    </FileRef>
 </Workspace>
