@@ -24,6 +24,8 @@
 		E1465A2124950C5200BBC9F5 /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E1465A1524950A8500BBC9F5 /* Montserrat-Medium.ttf */; };
 		E1465A2224950C5200BBC9F5 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E1465A1624950A8500BBC9F5 /* Montserrat-Regular.ttf */; };
 		E1465A2324950C5200BBC9F5 /* Montserrat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E1465A1224950A8500BBC9F5 /* Montserrat-SemiBold.ttf */; };
+		E152D36824A79E370009972F /* UI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E152D36724A79E370009972F /* UI.framework */; };
+		E152D36924A79E370009972F /* UI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E152D36724A79E370009972F /* UI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E19063132496086500A3CB2E /* UserDefaults+Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19063122496086500A3CB2E /* UserDefaults+Keys.swift */; };
 		E1906318249610AC00A3CB2E /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1906317249610AC00A3CB2E /* AuthService.swift */; };
 		E190E90A24A4A74500E95698 /* OnBoarding.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E190E90924A4A74500E95698 /* OnBoarding.framework */; };
@@ -101,6 +103,7 @@
 			files = (
 				E12150DA24A4980B00C691E4 /* Auth.framework in Embed Frameworks */,
 				E12150D124A4961100C691E4 /* Core.framework in Embed Frameworks */,
+				E152D36924A79E370009972F /* UI.framework in Embed Frameworks */,
 				E190E90B24A4A74500E95698 /* OnBoarding.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -130,6 +133,7 @@
 		E1465A1424950A8500BBC9F5 /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Regular.ttf"; sourceTree = "<group>"; };
 		E1465A1524950A8500BBC9F5 /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.ttf"; sourceTree = "<group>"; };
 		E1465A1624950A8500BBC9F5 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
+		E152D36724A79E370009972F /* UI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = UI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E171371024A77725009E152D /* Core.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Core.xcodeproj; path = Core/Core.xcodeproj; sourceTree = "<group>"; };
 		E171371924A77756009E152D /* Auth.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Auth.xcodeproj; path = Auth/Auth.xcodeproj; sourceTree = "<group>"; };
 		E171372224A77763009E152D /* OnBoarding.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = OnBoarding.xcodeproj; path = OnBoarding/OnBoarding.xcodeproj; sourceTree = "<group>"; };
@@ -147,6 +151,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E152D36824A79E370009972F /* UI.framework in Frameworks */,
 				E12150D024A4961100C691E4 /* Core.framework in Frameworks */,
 				E12150D924A4980B00C691E4 /* Auth.framework in Frameworks */,
 				E190E90A24A4A74500E95698 /* OnBoarding.framework in Frameworks */,
@@ -175,6 +180,7 @@
 		D94AE2D6B9F91AED3D8518BA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E152D36724A79E370009972F /* UI.framework */,
 				E190E90924A4A74500E95698 /* OnBoarding.framework */,
 				E12150D824A4980B00C691E4 /* Auth.framework */,
 				E12150CF24A4961100C691E4 /* Core.framework */,
