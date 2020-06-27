@@ -16,4 +16,7 @@
    <FileRef
       location = "group:Auth/Auth.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:Questions/Questions.xcodeproj">
+   </FileRef>
 </Workspace>

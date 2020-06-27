@@ -10,6 +10,7 @@ import UIKit
 import Core
 import Auth
 import OnBoarding
+// import Questions
 
 final class AppCoordinator: BaseCoordinator {
         
@@ -36,7 +37,12 @@ final class AppCoordinator: BaseCoordinator {
             return
         }
         
-        showAuth()
+        if !authService.isAuthorized() {
+            showAuth()
+            return
+        }
+        
+        // showQuestions()
     }
     
     private func showOnBoarding() {
@@ -66,4 +72,16 @@ final class AppCoordinator: BaseCoordinator {
         coordinator.start()
     }
     
+//    private func showQuestions() {
+//        let coordinator = QuestionsCoordinator(
+//            rootController: rootController
+//        )
+//        coordinator.onFinishFlow = { [weak self, weak coordinator] in
+//            self?.removeDependency(coordinator)
+//            self?.start()
+//        }
+//        addDependency(coordinator)
+//        coordinator.start()
+//    }
+//
 }

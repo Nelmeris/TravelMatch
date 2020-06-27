@@ -13,20 +13,28 @@ class UserDefaultsAuthService: AuthService {
     
     private let userDefaults: UserDefaults
     
+    private var authorized = false
+    
     init(userDefaults: UserDefaults) {
         self.userDefaults = userDefaults
     }
     
     func isAuthorized() -> Bool {
-        return false
+        return authorized
     }
     
     func signIn(withPhone phone: String, password: String, remember: Bool, completion: @escaping AuthCompletion) {
-        completion(AuthResult(token: "demo_token", error: nil))
+        authorized = true
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+            completion(AuthResult(token: "demo_token", error: nil))
+        }
     }
     
     func signIn(withEmail email: String, password: String, remember: Bool, completion: @escaping AuthCompletion) {
-        completion(AuthResult(token: "demo_token", error: nil))
+        authorized = true
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+            completion(AuthResult(token: "demo_token", error: nil))
+        }
     }
     
     func logout() {

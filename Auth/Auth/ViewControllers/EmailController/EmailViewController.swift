@@ -26,7 +26,7 @@ class EmailViewController: BaseViewController {
     
     // MARK: - Output
     
-    var onPhoneModeClicked: ((String?) -> Void)?
+    var onPhoneModeClicked: (() -> Void)?
     var onGuestButtonClicked: (() -> Void)?
     var onFacebookButtonClicked: (() -> Void)?
     var onContinueButtonClicked: ((String) -> Void)?
@@ -141,7 +141,7 @@ class EmailViewController: BaseViewController {
     }
     
     @IBAction func phoneModeClicked(_ sender: Any) {
-        onPhoneModeClicked?(emailField?.text)
+        onPhoneModeClicked?()
     }
     
     @IBAction func guestButtonClicked(_ sender: Any) {

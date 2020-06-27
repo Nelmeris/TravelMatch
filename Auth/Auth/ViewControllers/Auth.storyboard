@@ -207,7 +207,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-184" y="106"/>
+            <point key="canvasLocation" x="-2226" y="889"/>
         </scene>
         <!--Recover By Phone View Controller-->
         <scene sceneID="WU8-ul-zwP">
@@ -394,7 +394,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="635" y="106"/>
+            <point key="canvasLocation" x="-1407" y="889"/>
         </scene>
         <!--Sign In View Controller-->
         <scene sceneID="E5u-q2-G0f">
@@ -1048,7 +1048,95 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-3457" y="106"/>
+            <point key="canvasLocation" x="-1429" y="-698"/>
+        </scene>
+        <!--Password Sent View Controller-->
+        <scene sceneID="tf3-qk-bbU">
+            <objects>
+                <viewController storyboardIdentifier="PasswordSentViewController" id="65e-WL-Y8Y" customClass="PasswordSentViewController" customModule="Auth" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4z0-OQ-B9D">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vBr-GG-JqK" customClass="PrimaryButton" customModule="UI">
+                                <rect key="frame" x="20" y="794" width="374" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="Wrb-Kb-4Mk"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="16"/>
+                                <state key="normal" title="Войти"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="loginButtonClicked:" destination="65e-WL-Y8Y" eventType="touchUpInside" id="SHU-AK-Mci"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Мы отправили тебе новый пароль. Проверь почту koronov.konstantin@test.com" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WTt-Hk-9Ue" customClass="Label" customModule="UI">
+                                <rect key="frame" x="20" y="664.5" width="374" height="49.5"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="lineHeight">
+                                        <real key="value" value="1.4199999999999999"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Пароль отправлен" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tyy-an-fYf" customClass="Label" customModule="UI">
+                                <rect key="frame" x="20" y="610" width="374" height="34.5"/>
+                                <fontDescription key="fontDescription" name="Montserrat-ExtraBold" family="Montserrat" pointSize="28"/>
+                                <color key="textColor" red="0.18823529410000001" green="0.30588235289999999" blue="0.4941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="lineHeight">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="25K-sv-L25" userLabel="ImageWrapView">
+                                <rect key="frame" x="20" y="64" width="374" height="526"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="success" translatesAutoresizingMaskIntoConstraints="NO" id="oNv-eg-8ls">
+                                        <rect key="frame" x="94.5" y="163" width="185" height="200"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstItem="oNv-eg-8ls" firstAttribute="centerX" secondItem="25K-sv-L25" secondAttribute="centerX" id="IMZ-3R-Xgj"/>
+                                    <constraint firstItem="oNv-eg-8ls" firstAttribute="centerY" secondItem="25K-sv-L25" secondAttribute="centerY" id="O5O-9v-7ZR"/>
+                                    <constraint firstItem="oNv-eg-8ls" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="25K-sv-L25" secondAttribute="leading" constant="20" id="Pom-E8-0Z7"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="oNv-eg-8ls" secondAttribute="trailing" constant="20" id="xbs-Cr-FAM"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Tyy-an-fYf" firstAttribute="leading" secondItem="Kdd-fE-8Im" secondAttribute="leading" constant="20" id="Fbc-DK-B5k"/>
+                            <constraint firstItem="Kdd-fE-8Im" firstAttribute="trailing" secondItem="vBr-GG-JqK" secondAttribute="trailing" constant="20" id="FfK-CK-7rq"/>
+                            <constraint firstItem="25K-sv-L25" firstAttribute="top" secondItem="Kdd-fE-8Im" secondAttribute="top" constant="20" id="K6n-Z2-Sdh"/>
+                            <constraint firstItem="vBr-GG-JqK" firstAttribute="leading" secondItem="Kdd-fE-8Im" secondAttribute="leading" constant="20" id="R3L-EV-KRt"/>
+                            <constraint firstItem="Kdd-fE-8Im" firstAttribute="trailing" secondItem="25K-sv-L25" secondAttribute="trailing" constant="20" id="TDQ-LZ-Ax5"/>
+                            <constraint firstItem="25K-sv-L25" firstAttribute="leading" secondItem="Kdd-fE-8Im" secondAttribute="leading" constant="20" id="UYh-zf-L4g"/>
+                            <constraint firstItem="vBr-GG-JqK" firstAttribute="top" secondItem="WTt-Hk-9Ue" secondAttribute="bottom" constant="80" id="WCF-kJ-UgD"/>
+                            <constraint firstItem="Kdd-fE-8Im" firstAttribute="bottom" secondItem="vBr-GG-JqK" secondAttribute="bottom" constant="20" id="Xwh-SD-dw0"/>
+                            <constraint firstAttribute="trailing" secondItem="WTt-Hk-9Ue" secondAttribute="trailing" constant="20" id="YvQ-oI-dfz"/>
+                            <constraint firstItem="Tyy-an-fYf" firstAttribute="top" secondItem="25K-sv-L25" secondAttribute="bottom" constant="20" id="ham-hz-ep5"/>
+                            <constraint firstItem="WTt-Hk-9Ue" firstAttribute="top" secondItem="Tyy-an-fYf" secondAttribute="bottom" constant="20" id="lKf-UQ-Q0j"/>
+                            <constraint firstItem="WTt-Hk-9Ue" firstAttribute="leading" secondItem="Kdd-fE-8Im" secondAttribute="leading" constant="20" id="oL8-Go-ZZm"/>
+                            <constraint firstAttribute="trailing" secondItem="Tyy-an-fYf" secondAttribute="trailing" constant="20" id="qLe-x0-yef"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Kdd-fE-8Im"/>
+                    </view>
+                    <connections>
+                        <outlet property="messageLabel" destination="WTt-Hk-9Ue" id="vYe-9a-Aek"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="spM-bn-hkf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-368.11594202898556" y="-698.4375"/>
         </scene>
         <!--Email View Controller-->
         <scene sceneID="HPG-SU-Doy">
@@ -1275,7 +1363,10 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-4254" y="106"/>
+            <point key="canvasLocation" x="-2226" y="-698"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="success" width="185" height="200"/>
+    </resources>
 </document>

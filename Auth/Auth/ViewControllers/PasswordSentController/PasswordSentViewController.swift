@@ -11,9 +11,38 @@ import UI
 
 class PasswordSentViewController: BaseViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
+    // MARK: - Input
+    
+    var message: String? {
+        didSet {
+            updateView()
+        }
     }
     
+    // MARK: - Output
+    
+    var onLoginButtonClicked: (() -> Void)?
+    
+    // MARK: - Outlets
+    
+    @IBOutlet private weak var messageLabel: Label?
+    
+    // MARK: - Actions
+
+    @IBAction func loginButtonClicked(_ sender: Any) {
+        onLoginButtonClicked?()
+    }
+        
+    // MARK: - Update view
+    
+    private func updateView() {
+        messageLabel?.text = message
+        view.setNeedsLayout()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.topItem?.title = ""
+        updateView()
+    }
 }

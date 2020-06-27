@@ -22,6 +22,7 @@
 		E12150A624A4949B00C691E4 /* PhoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E121509924A4933200C691E4 /* PhoneViewController.swift */; };
 		E12150A724A4949F00C691E4 /* EmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E121509B24A4933200C691E4 /* EmailViewController.swift */; };
 		E12150A824A494A300C691E4 /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E121509D24A4933200C691E4 /* Auth.storyboard */; };
+		E1A1596624A793E100E7C313 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1A1596124A793E100E7C313 /* Assets.xcassets */; };
 		E1B9B62424A7813A0031C0AD /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E171374524A777A4009E152D /* Core.framework */; };
 		E1B9B62524A7813A0031C0AD /* Core.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E171374524A777A4009E152D /* Core.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E1B9B62624A7813A0031C0AD /* UI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E171374E24A777A8009E152D /* UI.framework */; };
@@ -104,6 +105,7 @@
 		E171373F24A777A4009E152D /* Core.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Core.xcodeproj; path = ../Core/Core.xcodeproj; sourceTree = "<group>"; };
 		E171374824A777A8009E152D /* UI.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = UI.xcodeproj; path = ../UI/UI.xcodeproj; sourceTree = "<group>"; };
 		E190E90C24A4A9BE00E95698 /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E1A1596124A793E100E7C313 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +153,7 @@
 			isa = PBXGroup;
 			children = (
 				E121509E24A4933200C691E4 /* ViewControllers */,
+				E1A1596124A793E100E7C313 /* Assets.xcassets */,
 				E121506D24A4919100C691E4 /* Auth.h */,
 				E121506E24A4919100C691E4 /* Info.plist */,
 				E121508924A4924800C691E4 /* AuthService.swift */,
@@ -412,6 +415,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1A1596624A793E100E7C313 /* Assets.xcassets in Resources */,
 				E12150A824A494A300C691E4 /* Auth.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -514,7 +518,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -571,7 +575,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

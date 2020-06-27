@@ -38,8 +38,7 @@ public final class AuthCoordinator: BaseCoordinator {
         
         controller.state = .initial(email)
         
-        controller.onPhoneModeClicked = { [weak self] email in
-            self?.email = email
+        controller.onPhoneModeClicked = { [weak self] in
             self?.showPhoneLogin()
         }
         
@@ -56,8 +55,7 @@ public final class AuthCoordinator: BaseCoordinator {
 
         controller.state = .initial(phone)
         
-        controller.onEmailModeClicked = { [weak self] phone in
-            self?.phone = phone
+        controller.onEmailModeClicked = { [weak self] in
             self?.showEmailLogin()
         }
         
@@ -113,6 +111,7 @@ public final class AuthCoordinator: BaseCoordinator {
         
         controller.onContinueButtonClicked = { [weak self] email in
             self?.email = email
+            self?.showPasswordSent()
         }
         
         if nil != rootController?.viewControllers.last as? RecoverByPhoneViewController {
@@ -134,6 +133,7 @@ public final class AuthCoordinator: BaseCoordinator {
         
         controller.onContinueButtonClicked = { [weak self] phone in
             self?.phone = phone
+            self?.showPasswordSent()
         }
         
         if nil != rootController?.viewControllers.last as? RecoverByEmailViewController {
@@ -145,6 +145,22 @@ public final class AuthCoordinator: BaseCoordinator {
     }
     
     private func showPasswordSent() {
+        let controller = viewControllerFactory.makePasswordSentController()
         
+        if let email = email {
+            controller.message = "Мы отправили тебе новый пароль. Проверь почту \(email)"
+        } else if let phone = phone {
+            controller.message = "Мы отправили тебе новый пароль \nна телефон \(phone)"
+        }
+        
+        controller.onLoginButtonClicked = { [weak self] in
+            if self?.phone != nil {
+                self?.showPhoneLogin()
+            } else {
+                self?.showEmailLogin()
+            }
+        }
+        
+        rootController?.pushViewController(controller, animated: true)
     }
 }
