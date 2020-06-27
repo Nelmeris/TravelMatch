@@ -6,7 +6,7 @@
 //  Copyright © 2020 Maxim Timokhin. All rights reserved.
 //
 
-import Foundation
+import UIKit
 import Core
 import UI
 
@@ -15,10 +15,10 @@ public final class OnBoardingCoordinator: BaseCoordinator {
     private let viewControllerFactory: ViewControllerFactory
     private let onBoardingService: OnBoardingService
     
-    private weak var rootController: NavigationController?
+    private weak var rootController: UINavigationController?
     
     public init(
-        rootController: NavigationController,
+        rootController: UINavigationController,
         onBoardingService: OnBoardingService
     ) {
         self.rootController = rootController

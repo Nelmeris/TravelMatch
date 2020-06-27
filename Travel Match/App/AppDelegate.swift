@@ -23,7 +23,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
         
         coordinator = AppCoordinator(
-            viewControllerFactory: ViewControllerFactory(),
             onBoardingService: UserDefaultsOnBoardingService(
                 userDefaults: UserDefaults.standard
             ),

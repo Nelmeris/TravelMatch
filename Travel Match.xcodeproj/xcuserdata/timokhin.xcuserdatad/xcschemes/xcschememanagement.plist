@@ -7,7 +7,25 @@
 		<key>Travel Match.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>10</integer>
+			<integer>4</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>E14659C12494B0C100BBC9F5</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E14659D72494B0C300BBC9F5</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E14659E22494B0C300BBC9F5</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>

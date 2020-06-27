@@ -7,12 +7,12 @@
 //
 
 import Foundation
-import UI
+import UIKit
 import Core
 
 public final class AuthCoordinator: BaseCoordinator {
     
-    private weak var rootController: NavigationController?
+    private weak var rootController: UINavigationController?
     private let viewControllerFactory: ViewControllerFactory
     private let authService: AuthService
     
@@ -20,7 +20,7 @@ public final class AuthCoordinator: BaseCoordinator {
     private var phone: String?
     
     public init(
-        rootController: NavigationController,
+        rootController: UINavigationController,
         authService: AuthService
     ) {
         self.rootController = rootController

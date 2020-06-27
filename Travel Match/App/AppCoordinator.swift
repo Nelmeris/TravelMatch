@@ -6,32 +6,29 @@
 //  Copyright © 2020 Maxim Timokhin. All rights reserved.
 //
 
-import Foundation
+import UIKit
 import Core
-import UI
 import Auth
 import OnBoarding
 
 final class AppCoordinator: BaseCoordinator {
         
-    private let viewControllerFactory: ViewControllerFactory
     private let onBoardingService: OnBoardingService
     private let authService: AuthService
     
-    private var rootController: NavigationController!
+    private var rootController: UINavigationController!
     
     init(
-        viewControllerFactory: ViewControllerFactory,
         onBoardingService: OnBoardingService,
         authService: AuthService
     ) {
-        self.viewControllerFactory = viewControllerFactory
         self.onBoardingService = onBoardingService
         self.authService = authService
     }
     
     override func start() {
-        rootController = viewControllerFactory.makeNavigationController()
+        rootController = UINavigationController()
+        rootController.setNavigationBarHidden(true, animated: false)
         setAsRoot(rootController)
         
         if onBoardingService.shouldShow() {
