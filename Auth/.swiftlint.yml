@@ -1,0 +1,12 @@
+included:
+  - Auth
+excluded:
+  - AuthTests
+identifier_name:
+  excluded:
+    - id
+disabled_rules:
+  - trailing_whitespace
+function_parameter_count:
+    warning: 8
+    error: 10

@@ -10,14 +10,14 @@ import UIKit
 import Core
 import Auth
 import OnBoarding
-// import Questions
+import Questions
 
 final class AppCoordinator: BaseCoordinator {
         
     private let onBoardingService: OnBoardingService
     private let authService: AuthService
     
-    private var rootController: UINavigationController!
+    private var rootController: NavigationController!
     
     init(
         onBoardingService: OnBoardingService,
@@ -28,7 +28,7 @@ final class AppCoordinator: BaseCoordinator {
     }
     
     override func start() {
-        rootController = UINavigationController()
+        rootController = NavigationController()
         rootController.setNavigationBarHidden(true, animated: false)
         setAsRoot(rootController)
         
@@ -37,12 +37,12 @@ final class AppCoordinator: BaseCoordinator {
             return
         }
         
-        if !authService.isAuthorized() {
+        if !authService.isAuthorized {
             showAuth()
             return
         }
         
-        // showQuestions()
+        showQuestions()
     }
     
     private func showOnBoarding() {
@@ -72,16 +72,16 @@ final class AppCoordinator: BaseCoordinator {
         coordinator.start()
     }
     
-//    private func showQuestions() {
-//        let coordinator = QuestionsCoordinator(
-//            rootController: rootController
-//        )
-//        coordinator.onFinishFlow = { [weak self, weak coordinator] in
-//            self?.removeDependency(coordinator)
-//            self?.start()
-//        }
-//        addDependency(coordinator)
-//        coordinator.start()
-//    }
-//
+    private func showQuestions() {
+        let coordinator = QuestionsCoordinator(
+            rootController: rootController
+        )
+        coordinator.onFinishFlow = { [weak self, weak coordinator] in
+            self?.removeDependency(coordinator)
+            self?.start()
+        }
+        addDependency(coordinator)
+        coordinator.start()
+    }
+
 }

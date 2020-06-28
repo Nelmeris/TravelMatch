@@ -11,6 +11,8 @@
 		E12150C424A495EE00C691E4 /* CoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12150C324A495EE00C691E4 /* CoreTests.swift */; };
 		E12150C624A495EE00C691E4 /* Core.h in Headers */ = {isa = PBXBuildFile; fileRef = E12150B824A495EE00C691E4 /* Core.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E12150D524A4962A00C691E4 /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12150D324A4962A00C691E4 /* BaseCoordinator.swift */; };
+		E152D3CF24A88E2D0009972F /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = E152D3CE24A88E2D0009972F /* Result.swift */; };
+		E18E999824A8CA330072ADD4 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18E999724A8CA330072ADD4 /* NavigationController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +33,8 @@
 		E12150C324A495EE00C691E4 /* CoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreTests.swift; sourceTree = "<group>"; };
 		E12150C524A495EE00C691E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E12150D324A4962A00C691E4 /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
+		E152D3CE24A88E2D0009972F /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		E18E999724A8CA330072ADD4 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,8 +78,10 @@
 			isa = PBXGroup;
 			children = (
 				E12150D324A4962A00C691E4 /* BaseCoordinator.swift */,
+				E18E999724A8CA330072ADD4 /* NavigationController.swift */,
 				E12150B824A495EE00C691E4 /* Core.h */,
 				E12150B924A495EE00C691E4 /* Info.plist */,
+				E152D3CE24A88E2D0009972F /* Result.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -198,6 +204,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E152D3CF24A88E2D0009972F /* Result.swift in Sources */,
+				E18E999824A8CA330072ADD4 /* NavigationController.swift in Sources */,
 				E12150D524A4962A00C691E4 /* BaseCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

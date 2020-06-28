@@ -12,6 +12,7 @@ import UI
 enum EmailViewControllerState {
     case initial(String?)
     case loading
+    case error(String)
 }
 
 class EmailViewController: BaseViewController {
@@ -62,14 +63,22 @@ class EmailViewController: BaseViewController {
         case .initial(let email):
             emailField?.text = email
             emailField?.isEnabled = true
+            emailField?.isInvalid = false
             guestButton?.isEnabled = true
             facebookButton?.isEnabled = true
             nextButton?.isEnabled = isInputValid()
+            hideActivityIndicator()
         case .loading:
             emailField?.isEnabled = false
+            emailField?.isInvalid = false
             guestButton?.isEnabled = false
             facebookButton?.isEnabled = false
             nextButton?.isEnabled = false
+            showActivityIndicator()
+        case .error(let error):
+            hideActivityIndicator()
+            emailField?.isInvalid = true
+            print(error)
         }
         
     }

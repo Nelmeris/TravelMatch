@@ -12,6 +12,7 @@ import UI
 enum SignInViewControllerState {
     case initial(userName: String)
     case loading
+    case error(error: String)
 }
 
 class SignInViewController: BaseViewController {
@@ -51,9 +52,20 @@ class SignInViewController: BaseViewController {
         switch state {
         case .initial(userName: let userName):
             titleLabel?.text = "Добро пожаловать, \(userName)!"
+            passwordField?.isEnabled = true
+            passwordField?.isInvalid = false
             nextButton?.isEnabled = isInputValid()
         case .loading:
+            passwordField?.isEnabled = false
+            passwordField?.isInvalid = false
             nextButton?.isEnabled = false
+            showActivityIndicator()
+        case .error(error: let error):
+            passwordField?.isEnabled = true
+            passwordField?.isInvalid = true
+            nextButton?.isEnabled = isInputValid()
+            print("error \(error)")
+            hideActivityIndicator()
         }
     }
     

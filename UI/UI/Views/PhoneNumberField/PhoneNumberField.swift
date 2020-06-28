@@ -26,7 +26,7 @@ public class PhoneNumberField: PhoneNumberTextField {
     }
     
     @IBInspectable
-    var borderColor: UIColor = .darkGray {
+    var borderColor: UIColor = UIColor.TextFields.defaultBorderColor {
         didSet {
             setUpView()
         }
@@ -34,6 +34,13 @@ public class PhoneNumberField: PhoneNumberTextField {
     
     @IBInspectable
     var borderWidth: CGFloat = 1 {
+        didSet {
+            setUpView()
+        }
+    }
+    
+    @IBInspectable
+    public var isInvalid: Bool = false {
         didSet {
             setUpView()
         }
@@ -77,9 +84,16 @@ public class PhoneNumberField: PhoneNumberTextField {
     
     func setUpView() {
         self.layer.cornerRadius = self.cornerRadius
-        self.layer.borderColor = borderColor.cgColor
         self.layer.borderWidth = borderWidth
         self.clipsToBounds = true
+        
+        if isInvalid {
+            self.textColor = UIColor.TextFields.invalidTextColor
+            self.layer.borderColor = UIColor.TextFields.invalidBorderColor.cgColor
+        } else {
+            self.textColor = UIColor.TextFields.defaultTextColor
+            self.layer.borderColor = borderColor.cgColor
+        }
         
         withFlag = true
         withPrefix = true

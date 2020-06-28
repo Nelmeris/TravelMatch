@@ -9,8 +9,21 @@
 import UIKit
 import UI
 
-class SignUpViewController: BaseViewController {
+enum SignUpViewControllerState {
+    case initial
+    case loading
+    case error(String)
+}
 
+class SignUpViewController: BaseViewController {
+    
+    // MARK: - Input
+    var state: SignUpViewControllerState? {
+        didSet {
+            updateView()
+        }
+    }
+    
     // MARK: - Output
     
     var onFacebookButtonClicked: (() -> Void)?
@@ -23,8 +36,34 @@ class SignUpViewController: BaseViewController {
     @IBOutlet private weak var passwordField: TextField?
     @IBOutlet private weak var facebookButton: Button?
     @IBOutlet private weak var nextButton: Button?
-
+    @IBOutlet private weak var titleLabel: Label?
+    
     @IBOutlet private weak var buttonsBottomConstraint: NSLayoutConstraint?
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        updateView()
+    }
+    
+    // MARK: - Update view
+    private func updateView() {
+        guard let state = state else { return }
+        switch state {
+        case .initial:
+            hideActivityIndicator()
+            facebookButton?.isEnabled = true
+            nextButton?.isEnabled = isInputValid()
+        case .loading:
+            facebookButton?.isEnabled = false
+            nextButton?.isEnabled = false
+            showActivityIndicator()
+        case .error(let error):
+            facebookButton?.isEnabled = false
+            nextButton?.isEnabled = false
+            hideActivityIndicator()
+            showCommonError(error)
+        }
+    }
     
     // MARK: - Validation
     
@@ -37,7 +76,7 @@ class SignUpViewController: BaseViewController {
         format: "SELF MATCHES %@",
         ".{6,}"
     )
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.topItem?.title = ""
@@ -56,7 +95,7 @@ class SignUpViewController: BaseViewController {
         notificationCenter.addObserver(self, selector:
             #selector(self.keyboardWillHide(notification:)), name:
             UIResponder.keyboardWillHideNotification, object: nil)
-
+        
     }
     
     override func removeNotifications() {
@@ -82,7 +121,7 @@ class SignUpViewController: BaseViewController {
     @IBAction func scrollViewTapAction(_ sender: Any) {
         scrollView?.endEditing(true)
     }
-        
+    
     @IBAction func facebookButtonClicked(_ sender: Any) {
         onFacebookButtonClicked?()
     }
@@ -98,7 +137,7 @@ class SignUpViewController: BaseViewController {
     @IBAction func nameFieldChanged(_ sender: Any) {
         nextButton?.isEnabled = isInputValid()
     }
-
+    
     @IBAction func nameFieldDidEndOnExit(_ sender: Any) {
         passwordField?.becomeFirstResponder()
     }
@@ -132,5 +171,5 @@ class SignUpViewController: BaseViewController {
         facebookButton?.alpha = 1
         facebookButton?.isHidden = false
     }
-
+    
 }

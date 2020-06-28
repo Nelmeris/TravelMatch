@@ -12,6 +12,7 @@ extension UserDefaults {
     
     enum DefaultKeys: String {
         case onBoardingShown = "onboarding.shown"
+        case questionsShown = "questions.shown"
     }
     
     func object(forKey key: DefaultKeys) -> Any? {

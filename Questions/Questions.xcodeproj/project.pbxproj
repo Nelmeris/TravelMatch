@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E152D3C524A7A58C0009972F /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E152D3C324A7A58C0009972F /* Core.framework */; };
+		E152D3C624A7A58C0009972F /* Core.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E152D3C324A7A58C0009972F /* Core.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E152D3C724A7A58C0009972F /* UI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E152D3C424A7A58C0009972F /* UI.framework */; };
+		E152D3C824A7A58C0009972F /* UI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E152D3C424A7A58C0009972F /* UI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E187689524A4F63C001EB69E /* Questions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E187688B24A4F63C001EB69E /* Questions.framework */; };
 		E187689A24A4F63C001EB69E /* QuestionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E187689924A4F63C001EB69E /* QuestionsTests.swift */; };
 		E187689C24A4F63C001EB69E /* Questions.h in Headers */ = {isa = PBXBuildFile; fileRef = E187688E24A4F63C001EB69E /* Questions.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -33,6 +37,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				E152D3C824A7A58C0009972F /* UI.framework in Embed Frameworks */,
+				E152D3C624A7A58C0009972F /* Core.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -41,6 +47,8 @@
 
 /* Begin PBXFileReference section */
 		E139BEA024A74680004A7EA2 /* PhoneNumberKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = PhoneNumberKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E152D3C324A7A58C0009972F /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E152D3C424A7A58C0009972F /* UI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = UI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E187688B24A4F63C001EB69E /* Questions.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Questions.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E187688E24A4F63C001EB69E /* Questions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Questions.h; sourceTree = "<group>"; };
 		E187688F24A4F63C001EB69E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -60,6 +68,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E152D3C724A7A58C0009972F /* UI.framework in Frameworks */,
+				E152D3C524A7A58C0009972F /* Core.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -116,6 +126,8 @@
 		E18768A824A4F6DA001EB69E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E152D3C324A7A58C0009972F /* Core.framework */,
+				E152D3C424A7A58C0009972F /* UI.framework */,
 				E139BEA024A74680004A7EA2 /* PhoneNumberKit.framework */,
 				E18768AD24A4F6DE001EB69E /* UI.framework */,
 				E18768A924A4F6DA001EB69E /* Core.framework */,
