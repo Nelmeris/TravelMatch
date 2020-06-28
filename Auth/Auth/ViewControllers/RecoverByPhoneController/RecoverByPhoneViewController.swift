@@ -12,6 +12,7 @@ import UI
 enum RecoverByPhoneViewControllerState {
     case initial(String?)
     case loading
+    case error(String)
 }
 
 class RecoverByPhoneViewController: BaseViewController {
@@ -51,11 +52,17 @@ class RecoverByPhoneViewController: BaseViewController {
         switch state {
         case .initial(let phone):
             phoneField?.text = phone
+            phoneField?.isInvalid = false
             nextButton?.isEnabled = isInputValid()
+            hideActivityIndicator()
         case .loading:
             nextButton?.isEnabled = false
-        }
-        
+            showActivityIndicator()
+        case .error(let error):
+            hideActivityIndicator()
+            phoneField?.isInvalid = true
+            print(error)
+        }        
     }
     
     // MARK: - Notifications

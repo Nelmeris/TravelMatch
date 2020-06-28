@@ -18,8 +18,7 @@ public class NavigationController: UINavigationController {
     
     private func setupBackButton() {
         navigationBar.backIndicatorImage = UIImage(named: "backButton")
-        navigationBar.backIndicatorTransitionMaskImage = UIImage(named: "backButton")
-        // navigationBar.tintColor = UIColor.ThemeColors.textColor
+        navigationBar.backIndicatorTransitionMaskImage = UIImage(named: "backButton")        
     }
     
     private func setupNavigationBar() {

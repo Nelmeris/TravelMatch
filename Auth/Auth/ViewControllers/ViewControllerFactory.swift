@@ -40,4 +40,10 @@ class ViewControllerFactory {
         return UIStoryboard(name: "Auth", bundle: Bundle(for: RecoverByPhoneViewController.self))
         .instantiateViewController(RecoverByPhoneViewController.self)
     }
+    
+    func makePasswordSentController() -> PasswordSentViewController {
+        return UIStoryboard(name: "Auth", bundle: Bundle(for: PasswordSentViewController.self))
+        .instantiateViewController(PasswordSentViewController.self)
+    }
+
 }

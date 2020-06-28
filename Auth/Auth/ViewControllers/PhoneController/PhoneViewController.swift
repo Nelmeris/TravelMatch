@@ -12,6 +12,7 @@ import UI
 enum PhoneViewControllerState {
     case initial(String?)
     case loading
+    case error(String)
 }
 
 class PhoneViewController: BaseViewController {
@@ -26,7 +27,7 @@ class PhoneViewController: BaseViewController {
     
     // MARK: - Output
     
-    var onEmailModeClicked: ((String?) -> Void)?
+    var onEmailModeClicked: (() -> Void)?
     var onGuestButtonClicked: (() -> Void)?
     var onFacebookButtonClicked: (() -> Void)?
     var onContinueButtonClicked: ((String) -> Void)?
@@ -55,14 +56,22 @@ class PhoneViewController: BaseViewController {
         case .initial(let phone):
             phoneField?.text = phone
             phoneField?.isEnabled = true
+            phoneField?.isInvalid = false
             guestButton?.isEnabled = true
             facebookButton?.isEnabled = true
             nextButton?.isEnabled = isInputValid()
+            hideActivityIndicator()
         case .loading:
             phoneField?.isEnabled = false
+            phoneField?.isInvalid = false
             guestButton?.isEnabled = false
             facebookButton?.isEnabled = false
             nextButton?.isEnabled = false
+            showActivityIndicator()
+        case .error(let error):
+            hideActivityIndicator()
+            phoneField?.isInvalid = true
+            print(error)
         }
         
     }
@@ -131,7 +140,7 @@ class PhoneViewController: BaseViewController {
     }
     
     @IBAction func emailModeClicked(_ sender: Any) {
-        onEmailModeClicked?(phoneField?.text)
+        onEmailModeClicked?()
     }
     
     @IBAction func guestButtonClicked(_ sender: Any) {

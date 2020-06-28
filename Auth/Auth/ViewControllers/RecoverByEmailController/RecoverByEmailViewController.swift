@@ -12,6 +12,7 @@ import UI
 enum RecoverByEmailViewControllerState {
     case initial(String?)
     case loading
+    case error(String)
 }
 
 class RecoverByEmailViewController: BaseViewController {
@@ -58,9 +59,16 @@ class RecoverByEmailViewController: BaseViewController {
         switch state {
         case .initial(let email):
             emailField?.text = email
+            emailField?.isInvalid = false
             nextButton?.isEnabled = isInputValid()
+            hideActivityIndicator()
         case .loading:
             nextButton?.isEnabled = false
+            showActivityIndicator()
+        case .error(let error):
+            hideActivityIndicator()
+            emailField?.isInvalid = true
+            print(error)
         }
         
     }

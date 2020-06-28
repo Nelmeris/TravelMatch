@@ -21,7 +21,6 @@
 		E121511F24A49C2F00C691E4 /* UIColor+ThemeColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = E121511A24A49C2600C691E4 /* UIColor+ThemeColors.swift */; };
 		E121512024A49C3200C691E4 /* UIColor+hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = E121511B24A49C2600C691E4 /* UIColor+hex.swift */; };
 		E121512324A49C6D00C691E4 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E121512124A49C6D00C691E4 /* BaseViewController.swift */; };
-		E121512424A49C6D00C691E4 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E121512224A49C6D00C691E4 /* NavigationController.swift */; };
 		E1B9B61B24A77EF90031C0AD /* PhoneNumberKit in Frameworks */ = {isa = PBXBuildFile; productRef = E1B9B61A24A77EF90031C0AD /* PhoneNumberKit */; };
 		E1B9B63224A785020031C0AD /* PhoneNumberMetadata.json in Resources */ = {isa = PBXBuildFile; fileRef = E1B9B63124A785020031C0AD /* PhoneNumberMetadata.json */; };
 /* End PBXBuildFile section */
@@ -68,7 +67,6 @@
 		E121511A24A49C2600C691E4 /* UIColor+ThemeColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+ThemeColors.swift"; sourceTree = "<group>"; };
 		E121511B24A49C2600C691E4 /* UIColor+hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+hex.swift"; sourceTree = "<group>"; };
 		E121512124A49C6D00C691E4 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
-		E121512224A49C6D00C691E4 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		E1B9B63124A785020031C0AD /* PhoneNumberMetadata.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = PhoneNumberMetadata.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -116,7 +114,6 @@
 				E121511C24A49C2600C691E4 /* Extensions */,
 				E121510824A49B8000C691E4 /* Views */,
 				E1B9B63024A784F10031C0AD /* Resources */,
-				E121512224A49C6D00C691E4 /* NavigationController.swift */,
 				E121512124A49C6D00C691E4 /* BaseViewController.swift */,
 				E12150E824A49B6100C691E4 /* UI.h */,
 				E12150E924A49B6100C691E4 /* Info.plist */,
@@ -296,7 +293,6 @@
 				E121512324A49C6D00C691E4 /* BaseViewController.swift in Sources */,
 				E121511D24A49C2A00C691E4 /* UIStoryboard+instantiateViewController.swift in Sources */,
 				E121510D24A49BBA00C691E4 /* PrimaryButton.swift in Sources */,
-				E121512424A49C6D00C691E4 /* NavigationController.swift in Sources */,
 				E121512024A49C3200C691E4 /* UIColor+hex.swift in Sources */,
 				E121510A24A49B8700C691E4 /* Button.swift in Sources */,
 				E121510B24A49BA900C691E4 /* Label.swift in Sources */,
