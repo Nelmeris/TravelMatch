@@ -28,6 +28,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             ),
             authService: UserDefaultsAuthService(
                 userDefaults: UserDefaults.standard
+            ),
+            questionsService: TravelQuestionService(
+                userDefaults: UserDefaults.standard
             )
         )
         

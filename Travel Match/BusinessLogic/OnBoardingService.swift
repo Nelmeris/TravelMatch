@@ -9,7 +9,7 @@
 import UIKit
 import OnBoarding
 
-class UserDefaultsOnBoardingService: OnBoardingService {
+final class UserDefaultsOnBoardingService: OnBoardingService {
         
     private let userDefaults: UserDefaults
     

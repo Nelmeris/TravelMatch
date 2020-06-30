@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,11 +13,16 @@
 		E152D3C824A7A58C0009972F /* UI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E152D3C424A7A58C0009972F /* UI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E187689524A4F63C001EB69E /* Questions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E187688B24A4F63C001EB69E /* Questions.framework */; };
 		E187689A24A4F63C001EB69E /* QuestionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E187689924A4F63C001EB69E /* QuestionsTests.swift */; };
-		E187689C24A4F63C001EB69E /* Questions.h in Headers */ = {isa = PBXBuildFile; fileRef = E187688E24A4F63C001EB69E /* Questions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E18768B224A4F6FC001EB69E /* Questions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E18768B124A4F6FC001EB69E /* Questions.storyboard */; };
 		E18768B524A4F715001EB69E /* QuestionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18768B424A4F715001EB69E /* QuestionsViewController.swift */; };
 		E18768B724A4F8FC001EB69E /* QuestionsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18768B624A4F8FC001EB69E /* QuestionsCoordinator.swift */; };
 		E18768B924A4F913001EB69E /* ViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18768B824A4F913001EB69E /* ViewControllerFactory.swift */; };
+		E1E4509C24AA7B2800BDDAFF /* QuestionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E4509B24AA7B2800BDDAFF /* QuestionCollectionViewCell.swift */; };
+		E1E4509E24AA7B5D00BDDAFF /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E4509D24AA7B5D00BDDAFF /* Question.swift */; };
+		E1E450A224AA7E9200BDDAFF /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = E1E450A124AA7E9200BDDAFF /* SDWebImage */; };
+		E1E450A624AA7F8A00BDDAFF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1E450A524AA7F8A00BDDAFF /* Assets.xcassets */; };
+		E1E450AB24AA855000BDDAFF /* QuestionsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E450AA24AA855000BDDAFF /* QuestionsService.swift */; };
+		E1E450AD24AA86CE00BDDAFF /* Answer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E450AC24AA86CE00BDDAFF /* Answer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,7 +55,6 @@
 		E152D3C324A7A58C0009972F /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E152D3C424A7A58C0009972F /* UI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = UI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E187688B24A4F63C001EB69E /* Questions.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Questions.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E187688E24A4F63C001EB69E /* Questions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Questions.h; sourceTree = "<group>"; };
 		E187688F24A4F63C001EB69E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E187689424A4F63C001EB69E /* QuestionsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QuestionsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E187689924A4F63C001EB69E /* QuestionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsTests.swift; sourceTree = "<group>"; };
@@ -61,6 +65,11 @@
 		E18768B424A4F715001EB69E /* QuestionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsViewController.swift; sourceTree = "<group>"; };
 		E18768B624A4F8FC001EB69E /* QuestionsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsCoordinator.swift; sourceTree = "<group>"; };
 		E18768B824A4F913001EB69E /* ViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerFactory.swift; sourceTree = "<group>"; };
+		E1E4509B24AA7B2800BDDAFF /* QuestionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionCollectionViewCell.swift; sourceTree = "<group>"; };
+		E1E4509D24AA7B5D00BDDAFF /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
+		E1E450A524AA7F8A00BDDAFF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E1E450AA24AA855000BDDAFF /* QuestionsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsService.swift; sourceTree = "<group>"; };
+		E1E450AC24AA86CE00BDDAFF /* Answer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Answer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1E450A224AA7E9200BDDAFF /* SDWebImage in Frameworks */,
 				E152D3C724A7A58C0009972F /* UI.framework in Frameworks */,
 				E152D3C524A7A58C0009972F /* Core.framework in Frameworks */,
 			);
@@ -107,8 +117,9 @@
 			isa = PBXGroup;
 			children = (
 				E18768B024A4F6E8001EB69E /* ViewControllers */,
-				E18768B624A4F8FC001EB69E /* QuestionsCoordinator.swift */,
-				E187688E24A4F63C001EB69E /* Questions.h */,
+				E1E4509A24AA7AA300BDDAFF /* QuestionsService */,
+				E1E450A724AA7F9700BDDAFF /* Resources */,
+				E1E450AE24AA8A3900BDDAFF /* Coordinator */,
 				E187688F24A4F63C001EB69E /* Info.plist */,
 			);
 			path = Questions;
@@ -149,39 +160,59 @@
 			isa = PBXGroup;
 			children = (
 				E18768B424A4F715001EB69E /* QuestionsViewController.swift */,
+				E1E4509B24AA7B2800BDDAFF /* QuestionCollectionViewCell.swift */,
 			);
 			path = QuestionsViewController;
 			sourceTree = "<group>";
 		};
-/* End PBXGroup section */
-
-/* Begin PBXHeadersBuildPhase section */
-		E187688624A4F63C001EB69E /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E187689C24A4F63C001EB69E /* Questions.h in Headers */,
+		E1E4509A24AA7AA300BDDAFF /* QuestionsService */ = {
+			isa = PBXGroup;
+			children = (
+				E1E450AA24AA855000BDDAFF /* QuestionsService.swift */,
+				E1E4509D24AA7B5D00BDDAFF /* Question.swift */,
+				E1E450AC24AA86CE00BDDAFF /* Answer.swift */,
 			);
-			runOnlyForDeploymentPostprocessing = 0;
+			path = QuestionsService;
+			sourceTree = "<group>";
 		};
-/* End PBXHeadersBuildPhase section */
+		E1E450A724AA7F9700BDDAFF /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E1E450A524AA7F8A00BDDAFF /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		E1E450AE24AA8A3900BDDAFF /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				E18768B624A4F8FC001EB69E /* QuestionsCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
 		E187688A24A4F63C001EB69E /* Questions */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = E187689F24A4F63C001EB69E /* Build configuration list for PBXNativeTarget "Questions" */;
 			buildPhases = (
-				E187688624A4F63C001EB69E /* Headers */,
 				E187688724A4F63C001EB69E /* Sources */,
 				E187688824A4F63C001EB69E /* Frameworks */,
 				E187688924A4F63C001EB69E /* Resources */,
+				E1E4509F24AA7DC900BDDAFF /* ShellScript */,
 				E1B267E724A7992500A4144E /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				E1E450A424AA7EA000BDDAFF /* PBXTargetDependency */,
 			);
 			name = Questions;
+			packageProductDependencies = (
+				E1E450A124AA7E9200BDDAFF /* SDWebImage */,
+			);
 			productName = Questions;
 			productReference = E187688B24A4F63C001EB69E /* Questions.framework */;
 			productType = "com.apple.product-type.framework";
@@ -232,6 +263,9 @@
 				Base,
 			);
 			mainGroup = E187688124A4F63C001EB69E;
+			packageReferences = (
+				E1E450A024AA7E9200BDDAFF /* XCRemoteSwiftPackageReference "SDWebImage" */,
+			);
 			productRefGroup = E187688C24A4F63C001EB69E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -247,6 +281,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1E450A624AA7F8A00BDDAFF /* Assets.xcassets in Resources */,
 				E18768B224A4F6FC001EB69E /* Questions.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -260,12 +295,36 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		E1E4509F24AA7DC900BDDAFF /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nswiftlint\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E187688724A4F63C001EB69E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1E4509E24AA7B5D00BDDAFF /* Question.swift in Sources */,
+				E1E4509C24AA7B2800BDDAFF /* QuestionCollectionViewCell.swift in Sources */,
 				E18768B924A4F913001EB69E /* ViewControllerFactory.swift in Sources */,
+				E1E450AD24AA86CE00BDDAFF /* Answer.swift in Sources */,
+				E1E450AB24AA855000BDDAFF /* QuestionsService.swift in Sources */,
 				E18768B724A4F8FC001EB69E /* QuestionsCoordinator.swift in Sources */,
 				E18768B524A4F715001EB69E /* QuestionsViewController.swift in Sources */,
 			);
@@ -286,6 +345,10 @@
 			isa = PBXTargetDependency;
 			target = E187688A24A4F63C001EB69E /* Questions */;
 			targetProxy = E187689624A4F63C001EB69E /* PBXContainerItemProxy */;
+		};
+		E1E450A424AA7EA000BDDAFF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = E1E450A324AA7EA000BDDAFF /* SDWebImage */;
 		};
 /* End PBXTargetDependency section */
 
@@ -414,7 +477,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -430,6 +493,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = ru.getproger.Questions;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = NO;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -442,7 +506,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -458,6 +522,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = ru.getproger.Questions;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
@@ -534,6 +599,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E1E450A024AA7E9200BDDAFF /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.8.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E1E450A124AA7E9200BDDAFF /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E1E450A024AA7E9200BDDAFF /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
+		E1E450A324AA7EA000BDDAFF /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E1E450A024AA7E9200BDDAFF /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E187688224A4F63C001EB69E /* Project object */;
 }
