@@ -16,15 +16,18 @@ final class AppCoordinator: BaseCoordinator {
         
     private let onBoardingService: OnBoardingService
     private let authService: AuthService
+    private let questionsService: QuestionsService
     
     private var rootController: NavigationController!
     
     init(
         onBoardingService: OnBoardingService,
-        authService: AuthService
+        authService: AuthService,
+        questionsService: QuestionsService
     ) {
         self.onBoardingService = onBoardingService
         self.authService = authService
+        self.questionsService = questionsService
     }
     
     override func start() {
@@ -42,7 +45,10 @@ final class AppCoordinator: BaseCoordinator {
             return
         }
         
-        showQuestions()
+        if questionsService.shouldShowQuestion {
+            showQuestions()
+            return
+        }
     }
     
     private func showOnBoarding() {
@@ -74,7 +80,8 @@ final class AppCoordinator: BaseCoordinator {
     
     private func showQuestions() {
         let coordinator = QuestionsCoordinator(
-            rootController: rootController
+            rootController: rootController,
+            questionsService: questionsService
         )
         coordinator.onFinishFlow = { [weak self, weak coordinator] in
             self?.removeDependency(coordinator)

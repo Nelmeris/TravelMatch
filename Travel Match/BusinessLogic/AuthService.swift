@@ -16,7 +16,7 @@ struct UserDefaultsUser: Codable, Identifiable, Authentificatable {
     let password: String
 }
 
-class UserDefaultsAuthService: AuthService {
+final class UserDefaultsAuthService: AuthService {
 
     private let userDefaults: UserDefaults
     
@@ -80,6 +80,7 @@ class UserDefaultsAuthService: AuthService {
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             self.currentUser = user
+            self.isAuthorized = true
             completion(.success(user))
         }
     }
@@ -142,6 +143,7 @@ class UserDefaultsAuthService: AuthService {
         try? userDefaults.set(object: user, forKey: user.id)
         currentUser = user
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            self.isAuthorized = true
             completion(.success(user))
         }
     }
