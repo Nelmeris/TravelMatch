@@ -28,6 +28,7 @@
 		E152D36924A79E370009972F /* UI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E152D36724A79E370009972F /* UI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E152D37B24A7A0460009972F /* Questions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1A1598324A7949600E7C313 /* Questions.framework */; };
 		E152D37C24A7A0460009972F /* Questions.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E1A1598324A7949600E7C313 /* Questions.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E17396E624AC720B0010D117 /* TabCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17396E524AC720B0010D117 /* TabCoordinator.swift */; };
 		E18E998A24A8A7D70072ADD4 /* UserDefaults+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18E998924A8A7D70072ADD4 /* UserDefaults+Codable.swift */; };
 		E19063132496086500A3CB2E /* UserDefaults+Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19063122496086500A3CB2E /* UserDefaults+Keys.swift */; };
 		E1906318249610AC00A3CB2E /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1906317249610AC00A3CB2E /* AuthService.swift */; };
@@ -107,6 +108,7 @@
 		E1465A1524950A8500BBC9F5 /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.ttf"; sourceTree = "<group>"; };
 		E1465A1624950A8500BBC9F5 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
 		E152D36724A79E370009972F /* UI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = UI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E17396E524AC720B0010D117 /* TabCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabCoordinator.swift; sourceTree = "<group>"; };
 		E18E998924A8A7D70072ADD4 /* UserDefaults+Codable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Codable.swift"; sourceTree = "<group>"; };
 		E19063122496086500A3CB2E /* UserDefaults+Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Keys.swift"; sourceTree = "<group>"; };
 		E1906317249610AC00A3CB2E /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
@@ -235,6 +237,7 @@
 			children = (
 				E14659C52494B0C100BBC9F5 /* AppDelegate.swift */,
 				E14659FF2494DD0900BBC9F5 /* AppCoordinator.swift */,
+				E17396E524AC720B0010D117 /* TabCoordinator.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -490,6 +493,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E19063132496086500A3CB2E /* UserDefaults+Keys.swift in Sources */,
+				E17396E624AC720B0010D117 /* TabCoordinator.swift in Sources */,
 				E1465A002494DD0900BBC9F5 /* AppCoordinator.swift in Sources */,
 				E18E998A24A8A7D70072ADD4 /* UserDefaults+Codable.swift in Sources */,
 				E1AB54EF24A1ED60008F5436 /* User.swift in Sources */,
