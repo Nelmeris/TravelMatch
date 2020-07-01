@@ -49,7 +49,11 @@ final class AppCoordinator: BaseCoordinator {
             showQuestions()
             return
         }
+        
+        showMain()
     }
+    
+    // MARK: - Onboarding
     
     private func showOnBoarding() {
         let coordinator = OnBoardingCoordinator(
@@ -65,6 +69,8 @@ final class AppCoordinator: BaseCoordinator {
         coordinator.start()
     }
     
+    // MARK: - Authorization
+    
     private func showAuth() {
         let coordinator = AuthCoordinator(
             rootController: rootController,
@@ -78,6 +84,8 @@ final class AppCoordinator: BaseCoordinator {
         coordinator.start()
     }
     
+    // MARK: - Questions
+    
     private func showQuestions() {
         let coordinator = QuestionsCoordinator(
             rootController: rootController,
@@ -87,6 +95,18 @@ final class AppCoordinator: BaseCoordinator {
             self?.removeDependency(coordinator)
             self?.start()
         }
+        addDependency(coordinator)
+        coordinator.start()
+    }
+    
+    // MARK: - Main tabbar
+    
+    private func showMain() {
+        
+        let coordinator = TabCoordinator(
+            rootController: rootController
+        )
+        
         addDependency(coordinator)
         coordinator.start()
     }

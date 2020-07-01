@@ -26,9 +26,24 @@ final class UserDefaultsAuthService: AuthService {
     
     // MARK: - AuthService
     
-    var isAuthorized = false
+    var isAuthorized: Bool {
+        return currentUser != nil
+    }
     
-    var currentUser: Authentificatable?
+    var currentUser: Authentificatable? {
+        get {
+            try? userDefaults.get(
+                objectType: UserDefaultsUser.self,
+                forKey: "currentUser"
+            )
+        }
+        set {
+            try? userDefaults.set(
+                object: newValue as? UserDefaultsUser,
+                forKey: "currentUser"
+            )
+        }
+    }
     
     func searchUser(
         byEmail email: String,
@@ -80,7 +95,6 @@ final class UserDefaultsAuthService: AuthService {
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             self.currentUser = user
-            self.isAuthorized = true
             completion(.success(user))
         }
     }
@@ -97,7 +111,7 @@ final class UserDefaultsAuthService: AuthService {
                 forKey: userId),
                 user.password == password {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                    self.isAuthorized = true
+                    self.currentUser = user
                     completion(.success(user))
                 }
             } else {
@@ -122,9 +136,8 @@ final class UserDefaultsAuthService: AuthService {
             password: password
         )
         try? userDefaults.set(object: user, forKey: user.id)
-        currentUser = user
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            self.isAuthorized = true
+            self.currentUser = user
             completion(.success(user))
         }
     }
@@ -141,9 +154,8 @@ final class UserDefaultsAuthService: AuthService {
             password: password
         )
         try? userDefaults.set(object: user, forKey: user.id)
-        currentUser = user
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            self.isAuthorized = true
+            self.currentUser = user
             completion(.success(user))
         }
     }
