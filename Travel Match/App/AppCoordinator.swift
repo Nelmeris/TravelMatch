@@ -11,6 +11,7 @@ import Core
 import Auth
 import OnBoarding
 import Questions
+import Offers
 
 final class AppCoordinator: BaseCoordinator {
         
@@ -31,7 +32,7 @@ final class AppCoordinator: BaseCoordinator {
         rootController = NavigationController()
         rootController.setNavigationBarHidden(true, animated: false)
         setAsRoot(rootController)
-        
+        /*
         if onBoardingService.shouldShow() {
             showOnBoarding()
             return
@@ -42,7 +43,8 @@ final class AppCoordinator: BaseCoordinator {
             return
         }
         
-        showQuestions()
+        showQuestions() */
+        showOffers()
     }
     
     private func showOnBoarding() {
@@ -74,6 +76,18 @@ final class AppCoordinator: BaseCoordinator {
     
     private func showQuestions() {
         let coordinator = QuestionsCoordinator(
+            rootController: rootController
+        )
+        coordinator.onFinishFlow = { [weak self, weak coordinator] in
+            self?.removeDependency(coordinator)
+            self?.start()
+        }
+        addDependency(coordinator)
+        coordinator.start()
+    }
+    
+    private func showOffers() {
+        let coordinator = OffersCoordinator(
             rootController: rootController
         )
         coordinator.onFinishFlow = { [weak self, weak coordinator] in
