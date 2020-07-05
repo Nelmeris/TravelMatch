@@ -19,4 +19,7 @@
    <FileRef
       location = "group:Questions/Questions.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:Offers/Offers.xcodeproj">
+   </FileRef>
 </Workspace>

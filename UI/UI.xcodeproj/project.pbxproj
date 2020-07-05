@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE2806AA24A931980066FE7A /* CVCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = CE2806A924A931980066FE7A /* CVCalendar */; };
 		E12150EF24A49B6100C691E4 /* UI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E12150E524A49B6100C691E4 /* UI.framework */; };
 		E12150F424A49B6100C691E4 /* UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12150F324A49B6100C691E4 /* UITests.swift */; };
 		E121510924A49B8400C691E4 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E121510724A49B8000C691E4 /* TextField.swift */; };
@@ -82,6 +83,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E1B9B61B24A77EF90031C0AD /* PhoneNumberKit in Frameworks */,
+				CE2806AA24A931980066FE7A /* CVCalendar in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -224,6 +226,7 @@
 			name = UI;
 			packageProductDependencies = (
 				E1B9B61A24A77EF90031C0AD /* PhoneNumberKit */,
+				CE2806A924A931980066FE7A /* CVCalendar */,
 			);
 			productName = UI;
 			productReference = E12150E524A49B6100C691E4 /* UI.framework */;
@@ -276,6 +279,7 @@
 			mainGroup = E12150DB24A49B6100C691E4;
 			packageReferences = (
 				E1B9B61924A77EF90031C0AD /* XCRemoteSwiftPackageReference "PhoneNumberKit" */,
+				CE2806A824A931980066FE7A /* XCRemoteSwiftPackageReference "CVCalendar" */,
 			);
 			productRefGroup = E12150E624A49B6100C691E4 /* Products */;
 			projectDirPath = "";
@@ -604,6 +608,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		CE2806A824A931980066FE7A /* XCRemoteSwiftPackageReference "CVCalendar" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/CVCalendar/CVCalendar";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.7.0;
+			};
+		};
 		E1B9B61924A77EF90031C0AD /* XCRemoteSwiftPackageReference "PhoneNumberKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/marmelroy/PhoneNumberKit.git";
@@ -615,6 +627,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		CE2806A924A931980066FE7A /* CVCalendar */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CE2806A824A931980066FE7A /* XCRemoteSwiftPackageReference "CVCalendar" */;
+			productName = CVCalendar;
+		};
 		E1B9B61A24A77EF90031C0AD /* PhoneNumberKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = E1B9B61924A77EF90031C0AD /* XCRemoteSwiftPackageReference "PhoneNumberKit" */;
