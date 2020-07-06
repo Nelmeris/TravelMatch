@@ -11,23 +11,27 @@ import Core
 import Auth
 import OnBoarding
 import Questions
+import Locals
 
 final class AppCoordinator: BaseCoordinator {
         
     private let onBoardingService: OnBoardingService
     private let authService: AuthService
     private let questionsService: QuestionsService
+    private let localsService: LocalsService
     
     private var rootController: NavigationController!
     
     init(
         onBoardingService: OnBoardingService,
         authService: AuthService,
-        questionsService: QuestionsService
+        questionsService: QuestionsService,
+        localsService: LocalsService
     ) {
         self.onBoardingService = onBoardingService
         self.authService = authService
         self.questionsService = questionsService
+        self.localsService = localsService
     }
     
     override func start() {
@@ -104,7 +108,8 @@ final class AppCoordinator: BaseCoordinator {
     private func showMain() {
         
         let coordinator = TabCoordinator(
-            rootController: rootController
+            rootController: rootController,
+            localsService: localsService
         )
         
         addDependency(coordinator)

@@ -8,15 +8,20 @@
 
 import UIKit
 import Core
+import Locals
 
 class TabCoordinator: BaseCoordinator {
     
     private weak var rootController: NavigationController?
-        
+    
+    private let localsService: LocalsService
+    
     init(
-        rootController: NavigationController
+        rootController: NavigationController,
+        localsService: LocalsService
     ) {
         self.rootController = rootController
+        self.localsService = localsService
     }
     
     override func start() {
@@ -64,6 +69,16 @@ class TabCoordinator: BaseCoordinator {
             localsNavContrller,
             profileNavContrller
         ]
+        
+        let localsCoordinator = LocalsCoordinator(
+            rootController: localsNavContrller,
+            localsService: localsService
+        )
+        addDependency(localsCoordinator)
+        localsCoordinator.start()
+        
+        tabController.selectedIndex = 3
+        
         tabController.modalPresentationStyle = .fullScreen
         rootController?.present(tabController, animated: false, completion: nil)
     }

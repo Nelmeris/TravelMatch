@@ -19,7 +19,6 @@
 		E18768B924A4F913001EB69E /* ViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18768B824A4F913001EB69E /* ViewControllerFactory.swift */; };
 		E1E4509C24AA7B2800BDDAFF /* QuestionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E4509B24AA7B2800BDDAFF /* QuestionCollectionViewCell.swift */; };
 		E1E4509E24AA7B5D00BDDAFF /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E4509D24AA7B5D00BDDAFF /* Question.swift */; };
-		E1E450A224AA7E9200BDDAFF /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = E1E450A124AA7E9200BDDAFF /* SDWebImage */; };
 		E1E450A624AA7F8A00BDDAFF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1E450A524AA7F8A00BDDAFF /* Assets.xcassets */; };
 		E1E450AB24AA855000BDDAFF /* QuestionsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E450AA24AA855000BDDAFF /* QuestionsService.swift */; };
 		E1E450AD24AA86CE00BDDAFF /* Answer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E450AC24AA86CE00BDDAFF /* Answer.swift */; };
@@ -77,7 +76,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E1E450A224AA7E9200BDDAFF /* SDWebImage in Frameworks */,
 				E152D3C724A7A58C0009972F /* UI.framework in Frameworks */,
 				E152D3C524A7A58C0009972F /* Core.framework in Frameworks */,
 			);
@@ -211,7 +209,6 @@
 			);
 			name = Questions;
 			packageProductDependencies = (
-				E1E450A124AA7E9200BDDAFF /* SDWebImage */,
 			);
 			productName = Questions;
 			productReference = E187688B24A4F63C001EB69E /* Questions.framework */;
@@ -606,17 +603,12 @@
 			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 5.8.2;
+				minimumVersion = 5.8.3;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		E1E450A124AA7E9200BDDAFF /* SDWebImage */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = E1E450A024AA7E9200BDDAFF /* XCRemoteSwiftPackageReference "SDWebImage" */;
-			productName = SDWebImage;
-		};
 		E1E450A324AA7EA000BDDAFF /* SDWebImage */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = E1E450A024AA7E9200BDDAFF /* XCRemoteSwiftPackageReference "SDWebImage" */;

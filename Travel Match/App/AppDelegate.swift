@@ -31,7 +31,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             ),
             questionsService: TravelQuestionService(
                 userDefaults: UserDefaults.standard
-            )
+            ),
+            localsService: FakeLocalsService()
         )
         
         coordinator?.start()
