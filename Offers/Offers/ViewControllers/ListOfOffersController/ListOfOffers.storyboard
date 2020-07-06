@@ -29,11 +29,18 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="RhF-BS-KoK">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="140"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="160"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JaM-FQ-tLd">
+                                            <rect key="frame" x="0.0" y="159" width="414" height="1"/>
+                                            <color key="backgroundColor" red="0.83529411760000005" green="0.83137254900000002" blue="0.83529411760000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="1" id="dFy-Sn-o3U"/>
+                                            </constraints>
+                                        </view>
                                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="xSR-m1-f6B">
-                                            <rect key="frame" x="0.0" y="90" width="414" height="49"/>
+                                            <rect key="frame" x="0.0" y="110" width="414" height="49"/>
                                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="49" id="oHs-5r-V2R"/>
@@ -147,39 +154,67 @@
                                             </cells>
                                         </collectionView>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3AA-VT-G6v" customClass="CVCalendarView" customModule="CVCalendar">
-                                            <rect key="frame" x="0.0" y="30" width="414" height="60"/>
-                                            <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <rect key="frame" x="0.0" y="75" width="414" height="35"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="60" id="zqT-Pb-1Kd"/>
+                                                <constraint firstAttribute="height" constant="35" id="zqT-Pb-1Kd"/>
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Eqn-XK-gJP" customClass="CVCalendarMenuView" customModule="CVCalendar">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="30"/>
-                                            <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <rect key="frame" x="0.0" y="40" width="414" height="35"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="30" id="dsW-1K-nsy"/>
+                                                <constraint firstAttribute="height" constant="35" id="dsW-1K-nsy"/>
                                             </constraints>
                                         </view>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JaM-FQ-tLd">
-                                            <rect key="frame" x="0.0" y="139" width="414" height="1"/>
-                                            <color key="backgroundColor" red="0.83529411760000005" green="0.83137254900000002" blue="0.83529411760000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bl0-Pe-t59">
+                                            <rect key="frame" x="23" y="11" width="18" height="18"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="1" id="dFy-Sn-o3U"/>
+                                                <constraint firstAttribute="width" constant="18" id="QOn-Xj-qmi"/>
+                                                <constraint firstAttribute="height" constant="18" id="iMA-7K-wwi"/>
                                             </constraints>
-                                        </view>
+                                            <state key="normal" image="leftButton"/>
+                                            <connections>
+                                                <action selector="loadPreviousWeekButton" destination="4uQ-1Q-lUx" eventType="touchUpInside" id="y8A-O6-0c7"/>
+                                            </connections>
+                                        </button>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Сентябрь 2020" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JY4-sU-DcM">
+                                            <rect key="frame" x="61" y="10" width="292" height="20"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="20" id="gbD-pM-JRA"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="16"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qLe-B3-cKk">
+                                            <rect key="frame" x="373" y="11" width="18" height="18"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="18" id="CWN-KO-lJa"/>
+                                                <constraint firstAttribute="width" constant="18" id="Ker-tv-c0v"/>
+                                            </constraints>
+                                            <state key="normal" image="rightButton"/>
+                                            <connections>
+                                                <action selector="loadNextWeekButton" destination="4uQ-1Q-lUx" eventType="touchUpInside" id="jt8-X4-IOV"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
-                                    <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="trailing" secondItem="3AA-VT-G6v" secondAttribute="trailing" id="0za-pG-Rtd"/>
                                         <constraint firstItem="3AA-VT-G6v" firstAttribute="leading" secondItem="RhF-BS-KoK" secondAttribute="leading" id="3WU-ME-nb8"/>
+                                        <constraint firstItem="qLe-B3-cKk" firstAttribute="centerY" secondItem="JY4-sU-DcM" secondAttribute="centerY" id="4by-98-Dvr"/>
+                                        <constraint firstItem="JY4-sU-DcM" firstAttribute="leading" secondItem="bl0-Pe-t59" secondAttribute="trailing" constant="20" id="7NU-JQ-A79"/>
                                         <constraint firstItem="xSR-m1-f6B" firstAttribute="top" secondItem="3AA-VT-G6v" secondAttribute="bottom" id="9SV-Xd-Bh6"/>
                                         <constraint firstItem="Eqn-XK-gJP" firstAttribute="leading" secondItem="RhF-BS-KoK" secondAttribute="leading" id="Bc2-nD-yt3"/>
+                                        <constraint firstAttribute="trailing" secondItem="qLe-B3-cKk" secondAttribute="trailing" constant="23" id="FCE-D4-yLs"/>
                                         <constraint firstAttribute="trailing" secondItem="JaM-FQ-tLd" secondAttribute="trailing" id="FIH-0z-92c"/>
+                                        <constraint firstItem="Eqn-XK-gJP" firstAttribute="top" secondItem="JY4-sU-DcM" secondAttribute="bottom" constant="10" id="XP3-B1-PbC"/>
                                         <constraint firstAttribute="trailing" secondItem="xSR-m1-f6B" secondAttribute="trailing" id="Xf5-2m-uX3"/>
-                                        <constraint firstItem="Eqn-XK-gJP" firstAttribute="top" secondItem="RhF-BS-KoK" secondAttribute="top" id="aFH-DF-XxV"/>
+                                        <constraint firstItem="JY4-sU-DcM" firstAttribute="top" secondItem="RhF-BS-KoK" secondAttribute="top" constant="10" id="YKM-lP-SSM"/>
+                                        <constraint firstItem="qLe-B3-cKk" firstAttribute="leading" secondItem="JY4-sU-DcM" secondAttribute="trailing" constant="20" id="ZZA-p1-OTf"/>
                                         <constraint firstAttribute="trailing" secondItem="Eqn-XK-gJP" secondAttribute="trailing" id="aXS-rc-U9S"/>
+                                        <constraint firstItem="bl0-Pe-t59" firstAttribute="leading" secondItem="RhF-BS-KoK" secondAttribute="leading" constant="23" id="cOf-XC-wrq"/>
+                                        <constraint firstItem="bl0-Pe-t59" firstAttribute="centerY" secondItem="JY4-sU-DcM" secondAttribute="centerY" id="dmX-2S-nHQ"/>
                                         <constraint firstItem="JaM-FQ-tLd" firstAttribute="top" secondItem="xSR-m1-f6B" secondAttribute="bottom" id="hEu-Ez-clA"/>
-                                        <constraint firstAttribute="height" constant="140" id="iLx-hZ-ghc"/>
+                                        <constraint firstAttribute="height" constant="160" id="iLx-hZ-ghc"/>
                                         <constraint firstItem="xSR-m1-f6B" firstAttribute="leading" secondItem="RhF-BS-KoK" secondAttribute="leading" id="ouQ-Rw-51c"/>
                                         <constraint firstItem="JaM-FQ-tLd" firstAttribute="leading" secondItem="RhF-BS-KoK" secondAttribute="leading" id="pw6-BZ-YDW"/>
                                         <constraint firstItem="3AA-VT-G6v" firstAttribute="top" secondItem="Eqn-XK-gJP" secondAttribute="bottom" id="qXh-4p-Kbs"/>
@@ -188,7 +223,7 @@
                                 </view>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ListOfOffersImageCell" id="xQ2-tO-WS5" customClass="ListOfOffersImageCell" customModule="Offers" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="168" width="414" height="190.5"/>
+                                        <rect key="frame" x="0.0" y="188" width="414" height="190.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xQ2-tO-WS5" id="Kuq-Nx-d36">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="190.5"/>
@@ -223,7 +258,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ListOfOffersNameCell" id="QQH-xX-K0b" customClass="ListOfOffersNameCell" customModule="Offers" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="358.5" width="414" height="38.5"/>
+                                        <rect key="frame" x="0.0" y="378.5" width="414" height="38.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="QQH-xX-K0b" id="KDJ-lm-fgG">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="38.5"/>
@@ -269,7 +304,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ListOfOffersDescriptionCell" id="zau-AL-MNk" customClass="ListOfOffersDescriptionCell" customModule="Offers" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="397" width="414" height="60.5"/>
+                                        <rect key="frame" x="0.0" y="417" width="414" height="60.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zau-AL-MNk" id="UeA-cz-8vs">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="60.5"/>
@@ -307,9 +342,10 @@
                         <viewLayoutGuide key="safeArea" id="QsR-ug-2Ys"/>
                     </view>
                     <connections>
-                        <outlet property="calendarMenuView" destination="Eqn-XK-gJP" id="zVS-tP-Kwf"/>
-                        <outlet property="calendarView" destination="3AA-VT-G6v" id="Y8o-We-qVS"/>
+                        <outlet property="calendarMenuView" destination="Eqn-XK-gJP" id="cSp-b9-trD"/>
+                        <outlet property="calendarView" destination="3AA-VT-G6v" id="hKU-9X-VU3"/>
                         <outlet property="collectionView" destination="xSR-m1-f6B" id="Qma-lF-zFN"/>
+                        <outlet property="currentMonthOnCalendarLabel" destination="JY4-sU-DcM" id="FIT-Wd-AIm"/>
                         <outlet property="tableView" destination="nDc-w4-DhZ" id="7aO-XK-U81"/>
                     </connections>
                 </viewController>
@@ -321,6 +357,8 @@
     <resources>
         <image name="checkMark" width="12" height="12"/>
         <image name="favoriteHeartFilled" width="19" height="17"/>
+        <image name="leftButton" width="18" height="18"/>
+        <image name="rightButton" width="18" height="18"/>
         <image name="roman" width="446.66665649414062" height="213.33332824707031"/>
     </resources>
 </document>

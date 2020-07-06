@@ -13,12 +13,15 @@ import CVCalendar
 
 class ListOfOffersController: BaseViewController {
     //MARK: - Constants
-    
-    let refreshControler = UIRefreshControl()
+    private var currentCalendar: Calendar?
+    private var animationFinished = true
+    private var selectedDay: DayView!
+    private let refreshControler = UIRefreshControl()
     var offers: [FakeOffer] = MockFakeData.data.getOffers(count: 7)
     
     //MARK: - IBOutlet
     
+    @IBOutlet weak var currentMonthOnCalendarLabel: UILabel!
     @IBOutlet weak var calendarMenuView: CVCalendarMenuView!
     @IBOutlet weak var calendarView: CVCalendarView!
     @IBOutlet weak var collectionView: UICollectionView!
@@ -32,7 +35,7 @@ class ListOfOffersController: BaseViewController {
     
     func configure() {
         configureRefreshControl()
-        configureCalendarView()
+        configureCalendar()
         configureCollectionView()
         configureTableView()
     }
@@ -50,8 +53,28 @@ class ListOfOffersController: BaseViewController {
         }
     }
     //MARK: - Calendar
-    func configureCalendarView() {
+    func configureCalendar() {
+//        let timeZoneBias = 180 // (UTC+03:00)
+//        if let timeZone = TimeZone(secondsFromGMT: -timeZoneBias * 60) {
+//            currentCalendar?.timeZone = timeZone
+//        }
         
+        currentCalendar = Calendar(identifier: .gregorian)
+        currentCalendar?.locale = Locale.current
+        currentCalendar?.timeZone = TimeZone.current
+                
+        if let currentCalendar = currentCalendar {
+            currentMonthOnCalendarLabel.text = CVDate(date: Date(), calendar: currentCalendar).globalDescription
+        }
+        configureCalendarView()
+    }
+    
+    func configureCalendarView() {
+        calendarView.calendarAppearanceDelegate = self
+        calendarView.animatorDelegate = self
+        calendarMenuView.menuViewDelegate = self
+        calendarView.calendarDelegate = self
+        self.view.layoutIfNeeded()
     }
     
     override func viewDidLayoutSubviews() {
@@ -60,6 +83,7 @@ class ListOfOffersController: BaseViewController {
         calendarMenuView.commitMenuViewUpdate()
         calendarView.commitCalendarViewUpdate()
     }
+    
     //MARK: - Collection View
     func configureCollectionView() {
         collectionView.dataSource = self
@@ -72,8 +96,78 @@ class ListOfOffersController: BaseViewController {
         tableView.delegate = self
         tableView.separatorStyle = .none
     }
+    
+    //MARK: - IBActions
+
+    @IBAction func loadPreviousWeekButton() {
+       calendarView.loadPreviousView()
+    }
+    
+    @IBAction func loadNextWeekButton() {
+        calendarView.loadNextView()
+    }
 }
 
+//MARK: - CVCalendar Delegate
+
+extension ListOfOffersController: CVCalendarViewDelegate, CVCalendarMenuViewDelegate {
+    
+    func shouldShowWeekdaysOut() -> Bool { return true }
+    func calendar() -> Calendar? { return currentCalendar }
+
+    
+    func presentationMode() -> CalendarMode {
+        return .weekView
+    }
+    
+    func firstWeekday() -> Weekday {
+        return CVCalendar.Weekday.monday
+    }
+    
+    func didSelectDayView(_ dayView: DayView, animationDidFinish: Bool) {
+        print("\(String(describing: dayView.date.convertedDate()))")
+        selectedDay = dayView
+        print("\(String(describing: selectedDay.date.commonDescription))")
+        print("\(String(describing: selectedDay.date.globalDescription))")
+    }
+    
+    func presentedDateUpdated(_ date: CVDate) {
+        if currentMonthOnCalendarLabel.text != date.globalDescription && self.animationFinished {
+            let updatedMonthLabel = UILabel()
+            updatedMonthLabel.textColor = currentMonthOnCalendarLabel.textColor
+            updatedMonthLabel.font = currentMonthOnCalendarLabel.font
+            updatedMonthLabel.textAlignment = .center
+            updatedMonthLabel.text = date.globalDescription
+            updatedMonthLabel.sizeToFit()
+            updatedMonthLabel.alpha = 0
+            updatedMonthLabel.center = self.currentMonthOnCalendarLabel.center
+            
+            updatedMonthLabel.transform = CGAffineTransform(scaleX: 0.1, y: 0.5)
+            
+            UIView.animate(withDuration: 0.35, delay: 0, options: .curveLinear, animations: {
+                self.animationFinished = false
+                self.currentMonthOnCalendarLabel.transform = CGAffineTransform(scaleX: 0.1, y: 0.5)
+                self.currentMonthOnCalendarLabel.alpha = 0
+                
+                updatedMonthLabel.alpha = 1
+                updatedMonthLabel.transform = CGAffineTransform.identity
+                
+            }) { _ in
+                
+                self.animationFinished = true
+                self.currentMonthOnCalendarLabel.frame = updatedMonthLabel.frame
+                self.currentMonthOnCalendarLabel.text = updatedMonthLabel.text
+                self.currentMonthOnCalendarLabel.transform = CGAffineTransform.identity
+                self.currentMonthOnCalendarLabel.alpha = 1
+                updatedMonthLabel.removeFromSuperview()
+            }
+            
+            self.view.insertSubview(updatedMonthLabel, aboveSubview: self.currentMonthOnCalendarLabel)
+        }
+    }
+}
+
+//MARK: - Collection View Delegate & DataSource
 extension ListOfOffersController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return MockFakeData.data.filterCollection.count
@@ -96,6 +190,7 @@ extension ListOfOffersController: UICollectionViewDelegate, UICollectionViewData
     
 }
 
+//MARK: - Table View Delegate & DataSource
 extension ListOfOffersController: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
