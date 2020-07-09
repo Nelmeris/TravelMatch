@@ -61,7 +61,7 @@ struct FakeOffer {
     let image: String
     let price: Int
     let description: String
-    let inFavorite: Bool
+    var inFavorite: Bool
     
     init (id: Int, name: String, image: String, price: Int, description: String, inFavorite: Bool) {
         self.id = id
