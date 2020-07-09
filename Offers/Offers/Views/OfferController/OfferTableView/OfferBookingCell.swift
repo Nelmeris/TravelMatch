@@ -14,7 +14,8 @@ class OfferBookingCell: CustomTableViewCell {
     
     static let reuseID = "OfferBookingCell"
 
-    @IBOutlet weak var calendarDayView: CVCalendarDayView!
+    @IBOutlet weak var offerDayLabel: UILabel!
+    
     @IBOutlet weak var bookingNowButtonOutlet: Button!
     
     override func awakeFromNib() {
@@ -32,6 +33,14 @@ class OfferBookingCell: CustomTableViewCell {
         
     }
 
+    @IBAction func previousDayButton() {
+        print("previousDayButton")
+    }
+    
+    @IBAction func nextDayButton() {
+        print("nextDayButton")
+    }
+    
     @IBAction func bookingNowButtonAction() {
         print("bookingNowButtonAction")
     }

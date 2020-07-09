@@ -36,10 +36,10 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="OfferImageNameDescriptionCell" id="j3c-Y8-V8d" customClass="OfferImageNameDescriptionCell" customModule="Offers" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="539.5"/>
+                                        <rect key="frame" x="0.0" y="28" width="414" height="565.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="j3c-Y8-V8d" id="bYB-wl-Rdd">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="539.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="565.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="roman" translatesAutoresizingMaskIntoConstraints="NO" id="421-yY-Nyw">
@@ -54,12 +54,17 @@
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IE4-Oq-6vd">
-                                                    <rect key="frame" x="20" y="460" width="374" height="59.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IE4-Oq-6vd" customClass="Label" customModule="UI">
+                                                    <rect key="frame" x="20" y="460" width="374" height="85.5"/>
                                                     <string key="text">Откройте для себя прекрасную столицу Венгрии и исследуйте достопримечательности Будапешта с местным гидом! Общий обзор венгерской истории, культуры, искусства, традиций, гастрономии.</string>
                                                     <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="12"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="lineHeight">
+                                                            <real key="value" value="1.3999999999999999"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                 </label>
                                             </subviews>
                                             <constraints>
@@ -81,10 +86,10 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="OfferRatingInfoCell" id="nTD-AK-jB2" customClass="OfferRatingInfoCell" customModule="Offers" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="567.5" width="414" height="353"/>
+                                        <rect key="frame" x="0.0" y="593.5" width="414" height="396"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="nTD-AK-jB2" id="VSB-67-Hui">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="353"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="396"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="starFilled" translatesAutoresizingMaskIntoConstraints="NO" id="pgH-pi-SzQ">
@@ -268,12 +273,17 @@
                                                         <constraint firstAttribute="trailing" secondItem="q8C-0h-eK4" secondAttribute="trailing" id="ppn-dS-mil"/>
                                                     </constraints>
                                                 </view>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pQV-Lb-ZKe">
-                                                    <rect key="frame" x="20" y="240" width="374" height="93"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pQV-Lb-ZKe" customClass="Label" customModule="UI">
+                                                    <rect key="frame" x="20" y="240" width="374" height="136"/>
                                                     <string key="text">Цель этого тура - предоставить вам увлекательное, познавательное путешествие, которое даст вам общий обзор венгерской истории, культуры, искусства, традиций, гастрономии и поможет взглянуть на повседневную жизнь. Давайте исследовать Будапешт вместе! Исторический и культурный тур охватывает самые красивые и самые важные достопримечательности Будапешта, которые символизируют и возрождают историю Венгрии.</string>
                                                     <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="11"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="lineHeight">
+                                                            <real key="value" value="1.3999999999999999"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="90 мин" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iFj-No-7U0">
                                                     <rect key="frame" x="272.5" y="20" width="45" height="20"/>
@@ -329,7 +339,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="OfferSocialCell" id="x4I-h5-a7E" customClass="OfferSocialCell" customModule="Offers" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="920.5" width="414" height="112.5"/>
+                                        <rect key="frame" x="0.0" y="989.5" width="414" height="112.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="x4I-h5-a7E" id="PtJ-6J-PXR">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="112.5"/>
@@ -420,7 +430,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="OfferReviewWatchAllCell" id="gEF-ew-xON" customClass="OfferReviewWatchAllCell" customModule="Offers" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="1033" width="414" height="52.5"/>
+                                        <rect key="frame" x="0.0" y="1102" width="414" height="52.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gEF-ew-xON" id="UgL-Gb-AyM">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="52.5"/>
@@ -454,10 +464,10 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="OfferLastThreeReviewsCell" id="RfB-Bn-K8Y" customClass="OfferLastThreeReviewsCell" customModule="Offers" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="1085.5" width="414" height="443"/>
+                                        <rect key="frame" x="0.0" y="1154.5" width="414" height="502.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="RfB-Bn-K8Y" id="bwz-Ob-Q5P">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="443"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="502.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="janko" translatesAutoresizingMaskIntoConstraints="NO" id="XE1-zS-UOQ">
@@ -485,22 +495,27 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8T9-ej-Wfy">
-                                                    <rect key="frame" x="20" y="90" width="374" height="66"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8T9-ej-Wfy" customClass="Label" customModule="UI">
+                                                    <rect key="frame" x="20" y="90" width="374" height="96.5"/>
                                                     <string key="text">Очень хорошо продуманный тур. Залан профессионален, преподает венгерскую историю с очень большим количеством шуток, имея некоторые ссылки или связи с каждой историей, которую он рассказывает, что, безусловно, значительно облегчает понимание истории в целом. Настоятельно рекомендуется, никто не пожалеет!</string>
                                                     <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="11"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="lineHeight">
+                                                            <real key="value" value="1.3999999999999999"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                 </label>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="courtney" translatesAutoresizingMaskIntoConstraints="NO" id="6uQ-eH-9UA">
-                                                    <rect key="frame" x="20" y="176" width="60" height="60"/>
+                                                    <rect key="frame" x="20" y="206.5" width="60" height="60"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="60" id="F8k-nc-JQX"/>
                                                         <constraint firstAttribute="height" constant="60" id="I31-cn-QPe"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Иванни Гранке" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FcX-2D-1IH">
-                                                    <rect key="frame" x="90" y="186" width="304" height="20"/>
+                                                    <rect key="frame" x="90" y="216.5" width="304" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="20" id="em0-mu-zgr"/>
                                                     </constraints>
@@ -509,7 +524,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Февраль 2020" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rgc-yO-UkM">
-                                                    <rect key="frame" x="90" y="206" width="304" height="20"/>
+                                                    <rect key="frame" x="90" y="236.5" width="304" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="20" id="Uc6-QJ-gKi"/>
                                                     </constraints>
@@ -517,21 +532,26 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Абсолютно фантастический тур по Будапешту. У Залана было фантастическое знание города и культуры." textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nfa-I8-v9w">
-                                                    <rect key="frame" x="20" y="256" width="374" height="26.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Абсолютно фантастический тур по Будапешту. У Залана было фантастическое знание города и культуры." textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nfa-I8-v9w" customClass="Label" customModule="UI">
+                                                    <rect key="frame" x="20" y="286.5" width="374" height="38"/>
                                                     <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="11"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="lineHeight">
+                                                            <real key="value" value="1.3999999999999999"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                 </label>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="alexandru" translatesAutoresizingMaskIntoConstraints="NO" id="tgB-Hc-kXd">
-                                                    <rect key="frame" x="20" y="302.5" width="60" height="60"/>
+                                                    <rect key="frame" x="20" y="344.5" width="60" height="60"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="60" id="2t3-28-nbK"/>
                                                         <constraint firstAttribute="width" constant="60" id="u2F-Hb-5PY"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Иванни Гранке" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HD2-tA-wcg">
-                                                    <rect key="frame" x="90" y="312.5" width="304" height="20"/>
+                                                    <rect key="frame" x="90" y="354.5" width="304" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="20" id="TMD-pq-KFB"/>
                                                     </constraints>
@@ -540,7 +560,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Февраль 2020" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TYz-Ok-IHi">
-                                                    <rect key="frame" x="90" y="332.5" width="304" height="20"/>
+                                                    <rect key="frame" x="90" y="374.5" width="304" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="20" id="HXk-rM-ZuW"/>
                                                     </constraints>
@@ -548,12 +568,17 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="07f-1k-eHo">
-                                                    <rect key="frame" x="20" y="382.5" width="374" height="40.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="07f-1k-eHo" customClass="Label" customModule="UI">
+                                                    <rect key="frame" x="20" y="424.5" width="374" height="58"/>
                                                     <string key="text">Этот опыт стоил того! Мы увидели так много, и было здорово услышать так много об истории города и достопри- мечательностях, осматривая город. Я рекомендую!</string>
                                                     <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="11"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="lineHeight">
+                                                            <real key="value" value="1.3999999999999999"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                 </label>
                                             </subviews>
                                             <constraints>
@@ -609,10 +634,10 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="OfferGuideInfoCell" id="rEf-mq-34D" customClass="OfferGuideInfoCell" customModule="Offers" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="1528.5" width="414" height="282"/>
+                                        <rect key="frame" x="0.0" y="1657" width="414" height="318.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rEf-mq-34D" id="hoy-T7-fUm">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="282"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="318.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Местный житель" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AOq-oU-4ob">
@@ -646,12 +671,17 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3rZ-bJ-Wm9">
-                                                    <rect key="frame" x="20" y="162" width="374" height="80"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3rZ-bJ-Wm9" customClass="Label" customModule="UI">
+                                                    <rect key="frame" x="20" y="162" width="374" height="116.5"/>
                                                     <string key="text">Меня зовут Залан, и я профессиональный гид-историк в Венгрии. Как гид, моя главная цель состоит в том, чтобы максимально эффективно использовать совместное время. За короткое время я покажу и расскажу больше, чем шаблонные экскурсии для групп. Поэтому мои туры персонализированы с гибким временем отправления и маршрутами.</string>
                                                     <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="11"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="lineHeight">
+                                                            <real key="value" value="1.3999999999999999"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r6S-f8-8i7" customClass="Button" customModule="UI">
                                                     <rect key="frame" x="354" y="82" width="40" height="40"/>
@@ -701,16 +731,55 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="OfferBookingCell" id="sxH-2q-Rho" customClass="OfferBookingCell" customModule="Offers" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="1810.5" width="414" height="166.5"/>
+                                        <rect key="frame" x="0.0" y="1975.5" width="414" height="166.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="sxH-2q-Rho" id="zMY-Lh-yOe">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="166.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cDa-Sv-vve" customClass="CVCalendarDayView" customModule="Offers" customModuleProvider="target">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cDa-Sv-vve">
                                                     <rect key="frame" x="0.0" y="10" width="414" height="40"/>
-                                                    <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <subviews>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lcl-e0-r78">
+                                                            <rect key="frame" x="20" y="11" width="18" height="18"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="18" id="76L-C4-UvI"/>
+                                                                <constraint firstAttribute="width" constant="18" id="RVj-Js-gvK"/>
+                                                            </constraints>
+                                                            <state key="normal" image="leftButton"/>
+                                                            <connections>
+                                                                <action selector="previousDayButton" destination="sxH-2q-Rho" eventType="touchUpInside" id="yVh-8V-540"/>
+                                                            </connections>
+                                                        </button>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="13 Сентябрь 2020" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qQW-Fb-fmF">
+                                                            <rect key="frame" x="58" y="10" width="298" height="20"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="20" id="R6v-ON-oMU"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="16"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a9Q-oM-ncD">
+                                                            <rect key="frame" x="376" y="11" width="18" height="18"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="18" id="A0r-sK-hHX"/>
+                                                                <constraint firstAttribute="width" constant="18" id="XsC-9l-ZYV"/>
+                                                            </constraints>
+                                                            <state key="normal" image="rightButton"/>
+                                                            <connections>
+                                                                <action selector="nextDayButton" destination="sxH-2q-Rho" eventType="touchUpInside" id="Qju-IU-eMd"/>
+                                                            </connections>
+                                                        </button>
+                                                    </subviews>
                                                     <constraints>
+                                                        <constraint firstItem="qQW-Fb-fmF" firstAttribute="centerY" secondItem="cDa-Sv-vve" secondAttribute="centerY" id="6oV-ZF-nQZ"/>
+                                                        <constraint firstItem="lcl-e0-r78" firstAttribute="leading" secondItem="cDa-Sv-vve" secondAttribute="leading" constant="20" id="De2-Dq-a4k"/>
+                                                        <constraint firstItem="lcl-e0-r78" firstAttribute="centerY" secondItem="qQW-Fb-fmF" secondAttribute="centerY" id="Kbf-Qj-2u9"/>
+                                                        <constraint firstAttribute="trailing" secondItem="a9Q-oM-ncD" secondAttribute="trailing" constant="20" id="Klw-kl-8aR"/>
+                                                        <constraint firstItem="qQW-Fb-fmF" firstAttribute="leading" secondItem="lcl-e0-r78" secondAttribute="trailing" constant="20" id="eij-dJ-gTS"/>
+                                                        <constraint firstItem="a9Q-oM-ncD" firstAttribute="centerY" secondItem="qQW-Fb-fmF" secondAttribute="centerY" id="jCx-uN-Sht"/>
+                                                        <constraint firstItem="a9Q-oM-ncD" firstAttribute="leading" secondItem="qQW-Fb-fmF" secondAttribute="trailing" constant="20" id="tyb-4P-g5e"/>
                                                         <constraint firstAttribute="height" constant="40" id="xCA-C7-I57"/>
                                                     </constraints>
                                                 </view>
@@ -746,7 +815,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="bookingNowButtonOutlet" destination="Byg-1v-xJi" id="BNb-wv-fCt"/>
-                                            <outlet property="calendarDayView" destination="cDa-Sv-vve" id="AT1-1f-lnh"/>
+                                            <outlet property="offerDayLabel" destination="qQW-Fb-fmF" id="smn-8j-oEK"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -783,7 +852,9 @@
         <image name="guide" width="106.66666412353516" height="106.66666412353516"/>
         <image name="instagram" width="30" height="30"/>
         <image name="janko" width="80" height="80"/>
+        <image name="leftButton" width="18" height="18"/>
         <image name="mail" width="18" height="14"/>
+        <image name="rightButton" width="18" height="18"/>
         <image name="roman" width="446.66665649414062" height="213.33332824707031"/>
         <image name="starFilled" width="19" height="18"/>
         <image name="starNotFill" width="19" height="18"/>
