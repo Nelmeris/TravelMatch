@@ -23,6 +23,7 @@
 		E121512324A49C6D00C691E4 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E121512124A49C6D00C691E4 /* BaseViewController.swift */; };
 		E152E2BB24B2FE98002453D7 /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E152E2BA24B2FE98002453D7 /* ImageView.swift */; };
 		E152E2BE24B2FEB6002453D7 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = E152E2BD24B2FEB6002453D7 /* SDWebImage */; };
+		E17CAAD324B44C7E009C5318 /* BarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17CAAD224B44C7E009C5318 /* BarButtonItem.swift */; };
 		E1B9B61B24A77EF90031C0AD /* PhoneNumberKit in Frameworks */ = {isa = PBXBuildFile; productRef = E1B9B61A24A77EF90031C0AD /* PhoneNumberKit */; };
 		E1B9B63224A785020031C0AD /* PhoneNumberMetadata.json in Resources */ = {isa = PBXBuildFile; fileRef = E1B9B63124A785020031C0AD /* PhoneNumberMetadata.json */; };
 		E1E450A924AA846500BDDAFF /* UICollectionView+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E450A824AA846500BDDAFF /* UICollectionView+Helpers.swift */; };
@@ -73,6 +74,7 @@
 		E121511B24A49C2600C691E4 /* UIColor+hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+hex.swift"; sourceTree = "<group>"; };
 		E121512124A49C6D00C691E4 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		E152E2BA24B2FE98002453D7 /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
+		E17CAAD224B44C7E009C5318 /* BarButtonItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarButtonItem.swift; sourceTree = "<group>"; };
 		E1B9B63124A785020031C0AD /* PhoneNumberMetadata.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = PhoneNumberMetadata.json; sourceTree = "<group>"; };
 		E1E450A824AA846500BDDAFF /* UICollectionView+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Helpers.swift"; sourceTree = "<group>"; };
 		E1E450C824AA93DD00BDDAFF /* ShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
@@ -169,6 +171,7 @@
 				E121510524A49B8000C691E4 /* Label.swift */,
 				E121510624A49B8000C691E4 /* Button.swift */,
 				E121510724A49B8000C691E4 /* TextField.swift */,
+				E17CAAD224B44C7E009C5318 /* BarButtonItem.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -327,6 +330,7 @@
 			files = (
 				E121510E24A49BC100C691E4 /* SecondaryButton.swift in Sources */,
 				E121511F24A49C2F00C691E4 /* UIColor+ThemeColors.swift in Sources */,
+				E17CAAD324B44C7E009C5318 /* BarButtonItem.swift in Sources */,
 				E121510924A49B8400C691E4 /* TextField.swift in Sources */,
 				E121510F24A49BD100C691E4 /* PhoneNumberField.swift in Sources */,
 				E1E450C924AA93DD00BDDAFF /* ShadowView.swift in Sources */,

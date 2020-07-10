@@ -26,6 +26,7 @@ class LocalsViewController: BaseViewController {
     
     // MARK: - Output
     var onLocalSelected: ((Local) -> Void)?
+    var onFilterButtonClicked: (() -> Void)?
     
     // MARK: - Outlets
     @IBOutlet private weak var collectionView: UICollectionView?
@@ -38,11 +39,15 @@ class LocalsViewController: BaseViewController {
         }
     }
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         updateView()
     }
-
+    
     // MARK: - Update view
     private func updateView() {
         guard let state = state else { return }
@@ -59,7 +64,12 @@ class LocalsViewController: BaseViewController {
         }
     }
     
-
+    // MARK: - Actions
+    
+    @IBAction func filterButtonClicked(_ sender: Any) {
+        onFilterButtonClicked?()
+    }
+    
 }
 
 // MARK: - UICollectionViewDataSource
@@ -101,6 +111,16 @@ extension LocalsViewController: UICollectionViewDelegateFlowLayout {
             width: collectionViewSize/2,
             height: collectionViewSize/2 + textLabelsHeight
         )
+    }
+    
+}
+
+// MARK: -  UICollectionViewDelegate
+extension LocalsViewController: UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let selectedLocal = locals?[indexPath.row] else { return }
+        onLocalSelected?(selectedLocal)
     }
     
 }

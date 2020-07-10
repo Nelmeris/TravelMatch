@@ -12,9 +12,25 @@ import Locals
 struct LocalEntity: Local {
     let imageURL: URL
     let name: String
-    let interests: [String]
+    let interests: [Interest]
+    let languages: [Language]
+    let activities: [Activity]
     let price: Double
     let priceDescriptor: String
+}
+
+struct LocalInterest: Interest {
+    let iconURL: URL
+    let title: String
+}
+
+struct LocalLanguage: Language {
+    let title: String
+    let level: Int
+}
+
+struct LocalActivity: Activity {
+    let title: String
 }
 
 final class FakeLocalsService: LocalsService {
@@ -23,56 +39,208 @@ final class FakeLocalsService: LocalsService {
         LocalEntity(
             imageURL: Bundle.main.url(forResource: "l1", withExtension: "png")!,
             name: "Залан Шекей",
-            interests: ["Музыка", "Спорт", "История"],
+            interests: [
+                LocalInterest(
+                    iconURL: Bundle.main.url(forResource: "music", withExtension: "png")!,
+                    title: "Музыка"
+                ),
+                LocalInterest(
+                    iconURL: Bundle.main.url(forResource: "sport", withExtension: "png")!,
+                    title: "Спорт"
+                ),
+                LocalInterest(
+                    iconURL: Bundle.main.url(forResource: "travel", withExtension: "png")!,
+                    title: "История"
+                )
+            ],
+            languages: [
+                LocalLanguage(title: "Русский", level: 80)
+            ],
+            activities: [
+                LocalActivity(title: "Помощь в переводе")
+            ],
             price: 600,
             priceDescriptor: "руб/час"
         ),
         LocalEntity(
             imageURL: Bundle.main.url(forResource: "l2", withExtension: "png")!,
             name: "Эмилия Рацне",
-            interests: ["Музыка", "Ночная жизнь"],
+            interests: [
+                LocalInterest(
+                    iconURL: Bundle.main.url(forResource: "music", withExtension: "png")!,
+                    title: "Музыка"
+                ),
+                LocalInterest(
+                    iconURL: Bundle.main.url(forResource: "sport", withExtension: "png")!,
+                    title: "Спорт"
+                ),
+                LocalInterest(
+                    iconURL: Bundle.main.url(forResource: "travel", withExtension: "png")!,
+                    title: "История"
+                )
+            ],
+            languages: [
+                LocalLanguage(title: "Русский", level: 80)
+            ],
+            activities: [
+                LocalActivity(title: "Помощь в переводе")
+            ],
             price: 400,
             priceDescriptor: "руб/час"
         ),
         LocalEntity(
             imageURL: Bundle.main.url(forResource: "l3", withExtension: "png")!,
             name: "Габор Богнар",
-            interests: ["Музыка", "Спорт"],
+            interests: [
+                LocalInterest(
+                    iconURL: Bundle.main.url(forResource: "music", withExtension: "png")!,
+                    title: "Музыка"
+                ),
+                LocalInterest(
+                    iconURL: Bundle.main.url(forResource: "sport", withExtension: "png")!,
+                    title: "Спорт"
+                ),
+                LocalInterest(
+                    iconURL: Bundle.main.url(forResource: "travel", withExtension: "png")!,
+                    title: "История"
+                )
+            ],
+            languages: [
+                LocalLanguage(title: "Русский", level: 80)
+            ],
+            activities: [
+                LocalActivity(title: "Помощь в переводе")
+            ],
             price: 400,
             priceDescriptor: "руб/час"
         ),
         LocalEntity(
             imageURL: Bundle.main.url(forResource: "l4", withExtension: "png")!,
             name: "Ласло Силадь",
-            interests: ["Музыка", "Спорт"],
+            interests: [
+                LocalInterest(
+                    iconURL: Bundle.main.url(forResource: "music", withExtension: "png")!,
+                    title: "Музыка"
+                ),
+                LocalInterest(
+                    iconURL: Bundle.main.url(forResource: "sport", withExtension: "png")!,
+                    title: "Спорт"
+                ),
+                LocalInterest(
+                    iconURL: Bundle.main.url(forResource: "travel", withExtension: "png")!,
+                    title: "История"
+                )
+            ],
+            languages: [
+                LocalLanguage(title: "Русский", level: 80)
+            ],
+            activities: [
+                LocalActivity(title: "Помощь в переводе")
+            ],
             price: 0,
             priceDescriptor: ""
         ),
         LocalEntity(
             imageURL: Bundle.main.url(forResource: "l5", withExtension: "png")!,
             name: "Ханна Секерешне",
-            interests: ["Музыка", "Спорт", "История"],
+            interests: [
+                LocalInterest(
+                    iconURL: Bundle.main.url(forResource: "music", withExtension: "png")!,
+                    title: "Музыка"
+                ),
+                LocalInterest(
+                    iconURL: Bundle.main.url(forResource: "sport", withExtension: "png")!,
+                    title: "Спорт"
+                ),
+                LocalInterest(
+                    iconURL: Bundle.main.url(forResource: "travel", withExtension: "png")!,
+                    title: "История"
+                )
+            ],
+            languages: [
+                LocalLanguage(title: "Русский", level: 80)
+            ],
+            activities: [
+                LocalActivity(title: "Помощь в переводе")
+            ],
             price: 600,
             priceDescriptor: "руб/час"
         ),
         LocalEntity(
             imageURL: Bundle.main.url(forResource: "l6", withExtension: "png")!,
             name: "Нора Добошне",
-            interests: ["Музыка", "Ночная жизнь"],
+            interests: [
+                LocalInterest(
+                    iconURL: Bundle.main.url(forResource: "music", withExtension: "png")!,
+                    title: "Музыка"
+                ),
+                LocalInterest(
+                    iconURL: Bundle.main.url(forResource: "sport", withExtension: "png")!,
+                    title: "Спорт"
+                ),
+                LocalInterest(
+                    iconURL: Bundle.main.url(forResource: "travel", withExtension: "png")!,
+                    title: "История"
+                )
+            ],
+            languages: [
+                LocalLanguage(title: "Русский", level: 80)
+            ],
+            activities: [
+                LocalActivity(title: "Помощь в переводе")
+            ],
             price: 400,
             priceDescriptor: "руб/час"
         ),
         LocalEntity(
             imageURL: Bundle.main.url(forResource: "l7", withExtension: "png")!,
             name: "Фридьеш Хегедюш",
-            interests: ["Музыка", "Спорт"],
+            interests: [
+                LocalInterest(
+                    iconURL: Bundle.main.url(forResource: "music", withExtension: "png")!,
+                    title: "Музыка"
+                ),
+                LocalInterest(
+                    iconURL: Bundle.main.url(forResource: "sport", withExtension: "png")!,
+                    title: "Спорт"
+                ),
+                LocalInterest(
+                    iconURL: Bundle.main.url(forResource: "travel", withExtension: "png")!,
+                    title: "История"
+                )
+            ],
+            languages: [
+                LocalLanguage(title: "Русский", level: 80)
+            ],
+            activities: [
+                LocalActivity(title: "Помощь в переводе")
+            ],
             price: 0,
             priceDescriptor: ""
         ),
         LocalEntity(
             imageURL: Bundle.main.url(forResource: "l8", withExtension: "png")!,
             name: "Андор Барна",
-            interests: ["Музыка", "Спорт"],
+            interests: [
+                LocalInterest(
+                    iconURL: Bundle.main.url(forResource: "music", withExtension: "png")!,
+                    title: "Музыка"
+                ),
+                LocalInterest(
+                    iconURL: Bundle.main.url(forResource: "sport", withExtension: "png")!,
+                    title: "Спорт"
+                ),
+                LocalInterest(
+                    iconURL: Bundle.main.url(forResource: "travel", withExtension: "png")!,
+                    title: "История"
+                )
+            ],
+            languages: [
+                LocalLanguage(title: "Русский", level: 80)
+            ],
+            activities: [
+                LocalActivity(title: "Помощь в переводе")
+            ],
             price: 0,
             priceDescriptor: ""
         )
@@ -82,7 +250,7 @@ final class FakeLocalsService: LocalsService {
         request: SearchRequest?,
         completion: @escaping LocalsSearchCompletion
     ) {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             completion(.success(self.data))
         }
     }

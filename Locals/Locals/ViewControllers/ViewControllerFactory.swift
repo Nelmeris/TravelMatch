@@ -17,5 +17,10 @@ class ViewControllerFactory {
             .instantiateViewController(LocalsViewController.self)
     }
     
+    func makeLocalController() -> LocalViewController {
+        return UIStoryboard(name: "Locals", bundle: Bundle(for: LocalViewController.self))
+            .instantiateViewController(LocalViewController.self)
+    }
+    
 }
 

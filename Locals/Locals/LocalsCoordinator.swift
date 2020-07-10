@@ -28,6 +28,14 @@ public final class LocalsCoordinator: BaseCoordinator {
     public override func start() {
         let controller = viewControllerFactory.makeLocalsController()
         
+        controller.onFilterButtonClicked = { [weak self] in
+            self?.showFilter()
+        }
+        
+        controller.onLocalSelected = { [weak self] local in
+            self?.showLocal(local)
+        }
+        
         controller.state = .loading
         
         localsService.search(request: nil) { [weak controller] result in
@@ -40,6 +48,15 @@ public final class LocalsCoordinator: BaseCoordinator {
         }
         
         rootController?.viewControllers = [controller]        
+    }
+    
+    private func showLocal(_ local: Local) {
+        let controller = viewControllerFactory.makeLocalController()
+        rootController?.pushViewController(controller, animated: true)
+    }
+    
+    private func showFilter() {
+        print("Show filter")
     }
     
 }

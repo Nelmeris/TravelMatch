@@ -16,4 +16,6 @@ public struct SearchRequest {
     let activity: [String]?
     let gender: [String]?
     let interests: [String]?
+    let count: Int?
+    let offset: Int?
 }

@@ -21,7 +21,11 @@ class LocalsCollectionViewCell: UICollectionViewCell {
     func configure(with local: Local) {
         imageView?.imageURL = local.imageURL
         nameLabel?.text = local.name
-        tagsLabel?.text = local.interests.joined(separator: " • ")
+        tagsLabel?.text = local
+            .interests
+            .map{$0.title}
+            .joined(separator: " • ")
+        
         if local.price > 0 {
             priceLabel?.text = "\(local.price) \(local.priceDescriptor)"
         } else {
