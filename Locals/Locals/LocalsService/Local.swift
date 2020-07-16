@@ -11,6 +11,7 @@ import Foundation
 public protocol Local {
     var imageURL: URL { get }
     var name: String { get }
+    var aboutText: String { get }
     var interests: [Interest] { get }
     var languages: [Language] { get }
     var activities: [Activity] { get }

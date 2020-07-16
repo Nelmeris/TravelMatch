@@ -52,6 +52,12 @@ public final class LocalsCoordinator: BaseCoordinator {
     
     private func showLocal(_ local: Local) {
         let controller = viewControllerFactory.makeLocalController()
+        controller.local = local
+        
+        controller.onInterestClicked = { interest in
+            print("Interest clicked \(interest.title)")
+        }
+        
         rootController?.pushViewController(controller, animated: true)
     }
     

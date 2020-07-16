@@ -15,17 +15,15 @@ class TitleTableViewCell: UITableViewCell {
     @IBOutlet private weak var avatarImageView: ImageView?
     @IBOutlet private weak var nameLabel: Label?
     
-    
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    func configure(imageURL: URL, name: String) {
+        avatarImageView?.imageURL = imageURL
+        nameLabel?.text = name
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        avatarImageView?.imageURL = nil
+        nameLabel?.text = nil
     }
 
 }

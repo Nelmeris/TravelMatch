@@ -7,18 +7,23 @@
 //
 
 import UIKit
+import UI
 
 class AboutTableViewCell: UITableViewCell {
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    
+    // MARK: - Outlets
+    @IBOutlet private weak var titleLabel: Label?
+    @IBOutlet weak var aboutLabel: Label?
+    
+    func configure(title: String, aboutText: String) {
+        titleLabel?.text = title
+        aboutLabel?.text = aboutText
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        titleLabel?.text = nil
+        aboutLabel?.text = nil
     }
-
+    
 }

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		E11DA26E24B7069B002687A0 /* LocalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11DA26D24B7069B002687A0 /* LocalViewController.swift */; };
+		E13229FB24BED05E00ADB01A /* InterestCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13229FA24BED05E00ADB01A /* InterestCollectionViewCell.swift */; };
 		E16034C524B065F8000E8303 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E16034C424B065F8000E8303 /* Assets.xcassets */; };
 		E16034C824B1BA6E000E8303 /* LocalsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16034C724B1BA6E000E8303 /* LocalsCollectionViewCell.swift */; };
 		E16034CB24B1BE99000E8303 /* Local.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16034CA24B1BE99000E8303 /* Local.swift */; };
@@ -18,6 +19,8 @@
 		E17472EB24B85427009974BD /* Interest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17472EA24B85427009974BD /* Interest.swift */; };
 		E17472ED24B85596009974BD /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17472EC24B85596009974BD /* Language.swift */; };
 		E17472EF24B8566D009974BD /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17472EE24B8566D009974BD /* Activity.swift */; };
+		E1BD8E3224BD8B4100783F2A /* InterestsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BD8E3124BD8B4100783F2A /* InterestsTableViewCell.swift */; };
+		E1E860B324C033E7009706D9 /* InterestsViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E860B224C033E7009706D9 /* InterestsViewFlowLayout.swift */; };
 		E1EE7E9A24AC842300715B02 /* Locals.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1EE7E9024AC842300715B02 /* Locals.framework */; };
 		E1EE7E9F24AC842300715B02 /* LocalsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1EE7E9E24AC842300715B02 /* LocalsTests.swift */; };
 		E1EE7EAD24AC844E00715B02 /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1EE7EAB24AC844E00715B02 /* Core.framework */; };
@@ -57,6 +60,7 @@
 
 /* Begin PBXFileReference section */
 		E11DA26D24B7069B002687A0 /* LocalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalViewController.swift; sourceTree = "<group>"; };
+		E13229FA24BED05E00ADB01A /* InterestCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestCollectionViewCell.swift; sourceTree = "<group>"; };
 		E16034C424B065F8000E8303 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E16034C724B1BA6E000E8303 /* LocalsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalsCollectionViewCell.swift; sourceTree = "<group>"; };
 		E16034CA24B1BE99000E8303 /* Local.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Local.swift; sourceTree = "<group>"; };
@@ -67,6 +71,8 @@
 		E17472EA24B85427009974BD /* Interest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interest.swift; sourceTree = "<group>"; };
 		E17472EC24B85596009974BD /* Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
 		E17472EE24B8566D009974BD /* Activity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
+		E1BD8E3124BD8B4100783F2A /* InterestsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestsTableViewCell.swift; sourceTree = "<group>"; };
+		E1E860B224C033E7009706D9 /* InterestsViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestsViewFlowLayout.swift; sourceTree = "<group>"; };
 		E1EE7E9024AC842300715B02 /* Locals.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Locals.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1EE7E9424AC842300715B02 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E1EE7E9924AC842300715B02 /* LocalsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LocalsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -136,8 +142,18 @@
 			children = (
 				E17472E624B84736009974BD /* TitleTableViewCell.swift */,
 				E17472E824B84B23009974BD /* AboutTableViewCell.swift */,
+				E1BD8E3124BD8B4100783F2A /* InterestsTableViewCell.swift */,
+				E13229FA24BED05E00ADB01A /* InterestCollectionViewCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		E1E860B124C033D5009706D9 /* Layout */ = {
+			isa = PBXGroup;
+			children = (
+				E1E860B224C033E7009706D9 /* InterestsViewFlowLayout.swift */,
+			);
+			path = Layout;
 			sourceTree = "<group>";
 		};
 		E1EE7E8624AC842200715B02 = {
@@ -162,6 +178,7 @@
 		E1EE7E9224AC842300715B02 /* Locals */ = {
 			isa = PBXGroup;
 			children = (
+				E1E860B124C033D5009706D9 /* Layout */,
 				E1EE7EB724ACA50E00715B02 /* ViewControllers */,
 				E16034C924B1BE8A000E8303 /* LocalsService */,
 				E1EE7E9424AC842300715B02 /* Info.plist */,
@@ -314,6 +331,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E13229FB24BED05E00ADB01A /* InterestCollectionViewCell.swift in Sources */,
 				E1EE7EBE24ACA7C400715B02 /* ViewControllerFactory.swift in Sources */,
 				E17472EB24B85427009974BD /* Interest.swift in Sources */,
 				E17472E924B84B23009974BD /* AboutTableViewCell.swift in Sources */,
@@ -321,12 +339,14 @@
 				E16034CB24B1BE99000E8303 /* Local.swift in Sources */,
 				E1EE7EBC24ACA69700715B02 /* LocalsViewController.swift in Sources */,
 				E16034D424B2EE92000E8303 /* SearchRequest.swift in Sources */,
+				E1BD8E3224BD8B4100783F2A /* InterestsTableViewCell.swift in Sources */,
 				E16034C824B1BA6E000E8303 /* LocalsCollectionViewCell.swift in Sources */,
 				E11DA26E24B7069B002687A0 /* LocalViewController.swift in Sources */,
 				E17472ED24B85596009974BD /* Language.swift in Sources */,
 				E17472E724B84736009974BD /* TitleTableViewCell.swift in Sources */,
 				E17472EF24B8566D009974BD /* Activity.swift in Sources */,
 				E1EE7EB624AC9C4F00715B02 /* LocalsCoordinator.swift in Sources */,
+				E1E860B324C033E7009706D9 /* InterestsViewFlowLayout.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
