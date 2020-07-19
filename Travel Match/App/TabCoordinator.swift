@@ -8,6 +8,7 @@
 
 import UIKit
 import Core
+import Offers
 
 class TabCoordinator: BaseCoordinator {
     
@@ -66,6 +67,11 @@ class TabCoordinator: BaseCoordinator {
         ]
         tabController.modalPresentationStyle = .fullScreen
         rootController?.present(tabController, animated: false, completion: nil)
+        
+        let offersCoordinator = OffersCoordinator(rootController: offersNavContrller)
+        addDependency(offersCoordinator)
+        offersCoordinator.start()
+
     }
 
 }

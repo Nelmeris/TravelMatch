@@ -15,9 +15,13 @@ class ListOfOffersController: BaseViewController {
     //MARK: - Constants
     private var currentCalendar: Calendar?
     private var animationFinished = true
-    private var selectedDay: DayView!
+    private var selectedDay: DayView?
     private let refreshControler = UIRefreshControl()
     var offers: [FakeOffer] = MockFakeData.data.getOffers(count: 7)
+    
+    // MARK: - Output
+    
+    var onOfferController: ((FakeOffer) -> Void)?
     
     //MARK: - IBOutlet
     
@@ -28,9 +32,13 @@ class ListOfOffersController: BaseViewController {
     @IBOutlet weak var tableView: UITableView!
     
     //MARK: - Controller Livecycle
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        configure()
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-        configure()
     }
     
     func configure() {
@@ -127,8 +135,8 @@ extension ListOfOffersController: CVCalendarViewDelegate, CVCalendarMenuViewDele
     func didSelectDayView(_ dayView: DayView, animationDidFinish: Bool) {
         print("\(String(describing: dayView.date.convertedDate()))")
         selectedDay = dayView
-        print("\(String(describing: selectedDay.date.commonDescription))")
-        print("\(String(describing: selectedDay.date.globalDescription))")
+        print("\(String(describing: selectedDay?.date.commonDescription))")
+        print("\(String(describing: selectedDay?.date.globalDescription))")
     }
     
     func presentedDateUpdated(_ date: CVDate) {
@@ -222,9 +230,6 @@ extension ListOfOffersController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let storyBoard: UIStoryboard = UIStoryboard(name: "Offer", bundle: Bundle(for: OfferController.self))
-        let offerController = storyBoard.instantiateViewController(withIdentifier: "OfferController") as! OfferController
-        offerController.offer = offers[indexPath.section]
-        navigationController?.pushViewController(offerController, animated: true)
+        onOfferController?(offers[indexPath.section])
     }
 }
