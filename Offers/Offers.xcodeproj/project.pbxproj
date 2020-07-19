@@ -37,6 +37,7 @@
 		CE686BAA24AFC7F000952E43 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE686BA924AFC7F000952E43 /* Assets.xcassets */; };
 		CE686BAC24AFCE3600952E43 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE686BAB24AFCE3600952E43 /* CustomTableViewCell.swift */; };
 		CE686BAE24AFCFA900952E43 /* CustomeCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE686BAD24AFCFA900952E43 /* CustomeCollectionCell.swift */; };
+		CE90C79324C4634D00731135 /* OfferAddToFavoriteButtton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE90C79224C4634D00731135 /* OfferAddToFavoriteButtton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,6 +97,7 @@
 		CE686BA924AFC7F000952E43 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE686BAB24AFCE3600952E43 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		CE686BAD24AFCFA900952E43 /* CustomeCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomeCollectionCell.swift; sourceTree = "<group>"; };
+		CE90C79224C4634D00731135 /* OfferAddToFavoriteButtton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferAddToFavoriteButtton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -271,6 +273,7 @@
 			children = (
 				CE686BAD24AFCFA900952E43 /* CustomeCollectionCell.swift */,
 				CE686BAB24AFCE3600952E43 /* CustomTableViewCell.swift */,
+				CE90C79224C4634D00731135 /* OfferAddToFavoriteButtton.swift */,
 			);
 			path = Custom;
 			sourceTree = "<group>";
@@ -405,6 +408,7 @@
 				CE2806C224A94DF10066FE7A /* ListOfOffersDescriptionCell.swift in Sources */,
 				CE2E6D7324B0E1A90025023E /* OfferSocialCell.swift in Sources */,
 				CE196A6B24AA8543001D7157 /* mock_fake_data.swift in Sources */,
+				CE90C79324C4634D00731135 /* OfferAddToFavoriteButtton.swift in Sources */,
 				CE2E6D7B24B1112C0025023E /* OfferGuideInfoCell.swift in Sources */,
 				CE2806A324A92C3B0066FE7A /* ListOfOffersController.swift in Sources */,
 				CE2806C424A94E170066FE7A /* ListOfOffersNameCell.swift in Sources */,

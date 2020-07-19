@@ -11,10 +11,25 @@ import Core
 import UI
 
 class OfferController: BaseViewController {
+    //MARK: - Constants
+    
     public var offer: FakeOffer!
+    private let addToFavoriteButtton = OfferAddToFavoriteButtton()
+    
+    // MARK: - Output
+    
+    var onPicController: ((FakeOffer) -> Void)?
+    var onReviews: ((FakeOffer) -> Void)?
+    var onSocialButtonClicked: ((FakeOffer) -> Void)?
+    var onSendMessageButtonClicked: ((FakeOffer) -> Void)?
+    var onBookingDetail: ((FakeOffer) -> Void)?
+    
+    //MARK: - IBOutlet
     
     @IBOutlet weak var tableView: UITableView!
     
+    //MARK: - Controller Livecycle
+
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
@@ -35,54 +50,22 @@ class OfferController: BaseViewController {
     // MARK: NavigationBar configurate
     func configureNavigationBar() {
         //show nav bar
-        navigationController?.setNavigationBarHidden(false, animated: true)
+//        self.navigationController?.setNavigationBarHidden(false, animated: true)
         // hite title for back button
         self.navigationController?.navigationBar.backItem?.title = ""
         // add addInFavorite button
-        var inFavoriteImage = "favoriteHeartNotFill"
-        if offer.inFavorite {
-            inFavoriteImage = "favoriteHeartFilled"
-        }
-        
-        let image = UIImage(named: inFavoriteImage)
-        image?.accessibilityFrame = CGRect(x: 0, y: 0, width: 18, height: 16)
-        let addInFavoriteButton = UIBarButtonItem(image: image,
-                                                  style: .done,
-                                                  target: self,
-                                                  action: #selector(addToFavorite))
-//        addInFavoriteButton.imageInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-//        addInFavoriteButton.accessibilityFrame = CGRect(x: 0, y: 0, width: 36, height: 32)
-//        addInFavoriteButton.customView?.contentMode = .scaleAspectFit
-//        self.navigationItem.rightBarButtonItem?.imageInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-        self.navigationItem.rightBarButtonItem = addInFavoriteButton
-//        self.navigationItem.rightBarButtonItem?.image?.accessibilityFrame = CGRect(x: 0, y: 0, width: 18, height: 16)
-//        self.navigationItem.rightBarButtonItem?.image?.resizableImage(withCapInsets: .zero, resizingMode: .tile)
-//
-//        let but = UIButton(type: .system)
-//        but.setImage(image?.withRenderingMode(.automatic), for: .normal)
-//        but.frame = CGRect(x: 0, y: 0, width: 18, height: 16)
-//        but.target(forAction: #selector(addToFavorite), withSender: nil)
-//        self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: but)
-//
-        
+        let inFavoriteButton = addToFavoriteButtton.returnButton(offer: offer)
+        inFavoriteButton.addTarget(self, action: #selector(addToFavorite), for: .touchUpInside)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: inFavoriteButton)
     }
     
     @objc fileprivate func addToFavorite() {
-        var inFavoriteImage = "favoriteHeartNotFill"
         if offer.inFavorite {
-            inFavoriteImage = "favoriteHeartNotFill"
             offer.inFavorite = false
         } else {
-            inFavoriteImage = "favoriteHeartFilled"
             offer.inFavorite = true
         }
-        
-        self.navigationItem.rightBarButtonItem?.image = UIImage(named: inFavoriteImage)
-        print("addToFavorite \(navigationController?.navigationBar.backItem?.accessibilityFrame.size)")
-        print("addToFavorite \(navigationController?.navigationBar.backIndicatorImage?.size)")
-        print("addToFavorite \(navigationItem.rightBarButtonItem?.accessibilityFrame.size)")
-        print("addToFavorite \(navigationItem.rightBarButtonItem?.image?.accessibilityFrame.size)")
-        print("addToFavorite \(navigationController?.navigationBar.items?.description)")
+        addToFavoriteButtton.changeImageOnButton(offer: offer)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
