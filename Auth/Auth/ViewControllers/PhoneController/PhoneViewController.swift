@@ -31,7 +31,7 @@ class PhoneViewController: BaseViewController {
     var onGuestButtonClicked: (() -> Void)?
     var onFacebookButtonClicked: (() -> Void)?
     var onContinueButtonClicked: ((String) -> Void)?
-    
+
     // MARK: - Outlets
     
     @IBOutlet private weak var scrollView: UIScrollView?

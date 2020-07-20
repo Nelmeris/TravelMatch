@@ -9,13 +9,14 @@
 import UIKit
 import Core
 import Locals
+import Offers
 
 class TabCoordinator: BaseCoordinator {
     
     private weak var rootController: NavigationController?
-    
+
     private let localsService: LocalsService
-    
+
     init(
         rootController: NavigationController,
         localsService: LocalsService
@@ -69,18 +70,23 @@ class TabCoordinator: BaseCoordinator {
             localsNavContrller,
             profileNavContrller
         ]
-        
+
         let localsCoordinator = LocalsCoordinator(
             rootController: localsNavContrller,
             localsService: localsService
         )
         addDependency(localsCoordinator)
         localsCoordinator.start()
-        
+
         tabController.selectedIndex = 3
-        
+
         tabController.modalPresentationStyle = .fullScreen
         rootController?.present(tabController, animated: false, completion: nil)
+
+        let offersCoordinator = OffersCoordinator(rootController: offersNavContrller)
+        addDependency(offersCoordinator)
+        offersCoordinator.start()
+
     }
 
 }

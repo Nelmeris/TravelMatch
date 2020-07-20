@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE17F77524A9223D0097B224 /* Offers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE17F77424A9223D0097B224 /* Offers.framework */; };
+		CE17F77624A9223D0097B224 /* Offers.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CE17F77424A9223D0097B224 /* Offers.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E12150D024A4961100C691E4 /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E12150CF24A4961100C691E4 /* Core.framework */; };
 		E12150D124A4961100C691E4 /* Core.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E12150CF24A4961100C691E4 /* Core.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E12150D924A4980B00C691E4 /* Auth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E12150D824A4980B00C691E4 /* Auth.framework */; };
@@ -104,6 +106,7 @@
 				E12150DA24A4980B00C691E4 /* Auth.framework in Embed Frameworks */,
 				E12150D124A4961100C691E4 /* Core.framework in Embed Frameworks */,
 				E152D36924A79E370009972F /* UI.framework in Embed Frameworks */,
+				CE17F77624A9223D0097B224 /* Offers.framework in Embed Frameworks */,
 				E190E90B24A4A74500E95698 /* OnBoarding.framework in Embed Frameworks */,
 				E152D37C24A7A0460009972F /* Questions.framework in Embed Frameworks */,
 			);
@@ -113,6 +116,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		CE17F77424A9223D0097B224 /* Offers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Offers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E12150CF24A4961100C691E4 /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E12150D824A4980B00C691E4 /* Auth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Auth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E130AF21249B43E6009C7A47 /* AuthenticationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AuthenticationServices.framework; path = System/Library/Frameworks/AuthenticationServices.framework; sourceTree = SDKROOT; };
@@ -189,6 +193,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E152D36824A79E370009972F /* UI.framework in Frameworks */,
+				CE17F77524A9223D0097B224 /* Offers.framework in Frameworks */,
 				E12150D024A4961100C691E4 /* Core.framework in Frameworks */,
 				E1EE7EB324AC845D00715B02 /* Locals.framework in Frameworks */,
 				E12150D924A4980B00C691E4 /* Auth.framework in Frameworks */,
@@ -220,6 +225,7 @@
 			isa = PBXGroup;
 			children = (
 				E1EE7EB224AC845D00715B02 /* Locals.framework */,
+				CE17F77424A9223D0097B224 /* Offers.framework */,
 				E1A1598324A7949600E7C313 /* Questions.framework */,
 				E152D36724A79E370009972F /* UI.framework */,
 				E190E90924A4A74500E95698 /* OnBoarding.framework */,
