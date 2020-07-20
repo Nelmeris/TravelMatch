@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		CE17F77524A9223D0097B224 /* Offers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE17F77424A9223D0097B224 /* Offers.framework */; };
 		CE17F77624A9223D0097B224 /* Offers.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CE17F77424A9223D0097B224 /* Offers.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CE27404A24C6485800BAD20B /* Pic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE27404824C6485800BAD20B /* Pic.framework */; };
+		CE27404B24C6485800BAD20B /* Pic.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CE27404824C6485800BAD20B /* Pic.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CE27404C24C6485800BAD20B /* Reviews.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE27404924C6485800BAD20B /* Reviews.framework */; };
+		CE27404D24C6485800BAD20B /* Reviews.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CE27404924C6485800BAD20B /* Reviews.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E12150D024A4961100C691E4 /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E12150CF24A4961100C691E4 /* Core.framework */; };
 		E12150D124A4961100C691E4 /* Core.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E12150CF24A4961100C691E4 /* Core.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E12150D924A4980B00C691E4 /* Auth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E12150D824A4980B00C691E4 /* Auth.framework */; };
@@ -76,7 +80,9 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				CE27404B24C6485800BAD20B /* Pic.framework in Embed Frameworks */,
 				E12150DA24A4980B00C691E4 /* Auth.framework in Embed Frameworks */,
+				CE27404D24C6485800BAD20B /* Reviews.framework in Embed Frameworks */,
 				E12150D124A4961100C691E4 /* Core.framework in Embed Frameworks */,
 				E152D36924A79E370009972F /* UI.framework in Embed Frameworks */,
 				CE17F77624A9223D0097B224 /* Offers.framework in Embed Frameworks */,
@@ -90,6 +96,8 @@
 
 /* Begin PBXFileReference section */
 		CE17F77424A9223D0097B224 /* Offers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Offers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE27404824C6485800BAD20B /* Pic.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pic.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE27404924C6485800BAD20B /* Reviews.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Reviews.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E12150CF24A4961100C691E4 /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E12150D824A4980B00C691E4 /* Auth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Auth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E130AF21249B43E6009C7A47 /* AuthenticationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AuthenticationServices.framework; path = System/Library/Frameworks/AuthenticationServices.framework; sourceTree = SDKROOT; };
@@ -140,12 +148,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE27404C24C6485800BAD20B /* Reviews.framework in Frameworks */,
 				E152D36824A79E370009972F /* UI.framework in Frameworks */,
 				CE17F77524A9223D0097B224 /* Offers.framework in Frameworks */,
 				E12150D024A4961100C691E4 /* Core.framework in Frameworks */,
 				E12150D924A4980B00C691E4 /* Auth.framework in Frameworks */,
 				E190E90A24A4A74500E95698 /* OnBoarding.framework in Frameworks */,
 				E1A4CEC1249B47B200DF254F /* CloudKit.framework in Frameworks */,
+				CE27404A24C6485800BAD20B /* Pic.framework in Frameworks */,
 				E152D37B24A7A0460009972F /* Questions.framework in Frameworks */,
 				E130AF22249B43E6009C7A47 /* AuthenticationServices.framework in Frameworks */,
 			);
@@ -171,6 +181,8 @@
 		D94AE2D6B9F91AED3D8518BA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CE27404824C6485800BAD20B /* Pic.framework */,
+				CE27404924C6485800BAD20B /* Reviews.framework */,
 				CE17F77424A9223D0097B224 /* Offers.framework */,
 				E1A1598324A7949600E7C313 /* Questions.framework */,
 				E152D36724A79E370009972F /* UI.framework */,

@@ -22,4 +22,10 @@
    <FileRef
       location = "group:Offers/Offers.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:Pic/Pic.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Reviews/Reviews.xcodeproj">
+   </FileRef>
 </Workspace>
