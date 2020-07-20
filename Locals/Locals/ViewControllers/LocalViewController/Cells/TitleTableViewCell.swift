@@ -12,8 +12,8 @@ import UI
 class TitleTableViewCell: UITableViewCell {
 
     // MARK: - Outlets
-    @IBOutlet private weak var avatarImageView: ImageView?
-    @IBOutlet private weak var nameLabel: Label?
+    @IBOutlet private var avatarImageView: ImageView!
+    @IBOutlet private var nameLabel: Label!
     
     func configure(imageURL: URL, name: String) {
         avatarImageView?.imageURL = imageURL

@@ -10,6 +10,7 @@ import Foundation
 
 public protocol Local {
     var imageURL: URL { get }
+    var imageLargeURL: URL { get }
     var name: String { get }
     var aboutText: String { get }
     var interests: [Interest] { get }

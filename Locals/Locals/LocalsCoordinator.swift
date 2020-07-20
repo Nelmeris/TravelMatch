@@ -58,11 +58,20 @@ public final class LocalsCoordinator: BaseCoordinator {
             print("Interest clicked \(interest.title)")
         }
         
+        controller.onBookingClicked = {
+            print("Go to booking")
+        }
+        
+        controller.onMessageClicked = {
+            print("Go to chat")
+        }
+        
         rootController?.pushViewController(controller, animated: true)
     }
     
     private func showFilter() {
-        print("Show filter")
+        let controller = viewControllerFactory.makeFilterViewController()
+        rootController?.present(controller, animated: true, completion: nil)        
     }
     
 }

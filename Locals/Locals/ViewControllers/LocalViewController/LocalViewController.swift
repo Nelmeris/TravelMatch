@@ -12,7 +12,6 @@ import UI
 class LocalViewController: BaseViewController {
 
     enum Section: Int, CaseIterable {
-        case header
         case about
         case interesets
         case languages
@@ -27,11 +26,15 @@ class LocalViewController: BaseViewController {
         }
     }
     
-    // MARK: - Outpu
+    // MARK: - Output
     var onInterestClicked: ((Interest) -> Void)?
+    var onBookingClicked: (() -> Void)?
+    var onMessageClicked: (() -> Void)?
     
     // MARK: - Outlets
-    @IBOutlet private weak var tableView: UITableView?
+    @IBOutlet private var headerView: HeaderView!
+    @IBOutlet private var tableView: UITableView!
+    @IBOutlet private var backButton: BackBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,19 +42,33 @@ class LocalViewController: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        navigationController?.navigationBar.topItem?.title = ""
+        // navigationController?.navigationBar.topItem?.title = ""
         updateView()
     }
     
     // MARK: - Update view
     private func updateView() {
+        guard let local = local else { return }
         tableView?.reloadData()
+        headerView?.configure(with: local.imageLargeURL, title: local.name)
     }
 
+    // MARK: - Actions
+    @IBAction func backButtonAction(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction func bookingButtonClicked(_ sender: Any) {
+        onBookingClicked?()
+    }
+    
+    @IBAction func messageClickedAction(_ sender: Any) {
+        onMessageClicked?()
+    }
+    
 }
 
 // MARK: - UITableViewDataSource
-
 extension LocalViewController: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -65,8 +82,6 @@ extension LocalViewController: UITableViewDataSource {
             else { return 0 }
         
         switch viewSection {
-        case .header:
-            return 1
         case .about:
             return 1
         case .interesets:
@@ -87,13 +102,6 @@ extension LocalViewController: UITableViewDataSource {
             else { return UITableViewCell() }
         
         switch viewSection {
-        case .header:
-            let cell = tableView.dequeueReusableCell(
-                forClass: TitleTableViewCell.self,
-                for: indexPath
-            )            
-            cell.configure(imageURL: local.imageURL, name: local.name)
-            return cell
         case .about:
             let cell = tableView.dequeueReusableCell(
                 forClass: AboutTableViewCell.self,
@@ -112,9 +120,19 @@ extension LocalViewController: UITableViewDataSource {
             cell.configure(interests: local.interests)
             return cell
         case .languages:
-            return UITableViewCell()
+             let cell = tableView.dequeueReusableCell(
+                forClass: LanguagesTableViewCell.self,
+                for: indexPath
+            )
+            cell.configure(languages: local.languages)
+            return cell
         case .activities:
-            return UITableViewCell()
+             let cell = tableView.dequeueReusableCell(
+                forClass: ActivitiesTableViewCell.self,
+                for: indexPath
+            )
+             cell.configure(activities: local.activities)
+            return cell
         case .reviews:
             return UITableViewCell()
         }
@@ -122,4 +140,21 @@ extension LocalViewController: UITableViewDataSource {
         
     }
                 
+}
+
+// MARK: - UIScrollViewDelegate
+extension LocalViewController: UIScrollViewDelegate {
+ 
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let scrollTop = scrollView.contentOffset.y
+                    
+        if scrollTop <= 0 {
+            headerView.contentView.transform = CGAffineTransform(translationX: 0, y: scrollTop)
+            headerView.imageView.transform = .identity
+        } else {
+            headerView.imageView.transform = CGAffineTransform(translationX: 0, y: scrollTop / 2)
+        }
+    }
+
+    
 }

@@ -12,10 +12,10 @@ import UI
 class LocalsCollectionViewCell: UICollectionViewCell {
     
     //MARK: - Outlets
-    @IBOutlet private weak var imageView: ImageView?
-    @IBOutlet private weak var nameLabel: UILabel?
-    @IBOutlet private weak var tagsLabel: UILabel?
-    @IBOutlet private weak var priceLabel: UILabel?
+    @IBOutlet private var imageView: ImageView!
+    @IBOutlet private var nameLabel: UILabel!
+    @IBOutlet private var tagsLabel: UILabel!
+    @IBOutlet private var priceLabel: UILabel!
     
     
     func configure(with local: Local) {
@@ -35,7 +35,7 @@ class LocalsCollectionViewCell: UICollectionViewCell {
  
     override func prepareForReuse() {
         super.prepareForReuse()
-        imageView?.image = nil
+        imageView?.imageURL = nil
         nameLabel?.text = nil
         tagsLabel?.text = nil
         priceLabel?.text = nil

@@ -12,8 +12,8 @@ import UI
 class AboutTableViewCell: UITableViewCell {
     
     // MARK: - Outlets
-    @IBOutlet private weak var titleLabel: Label?
-    @IBOutlet weak var aboutLabel: Label?
+    @IBOutlet private var titleLabel: Label!
+    @IBOutlet private var aboutLabel: Label!
     
     func configure(title: String, aboutText: String) {
         titleLabel?.text = title

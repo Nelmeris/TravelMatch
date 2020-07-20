@@ -13,6 +13,7 @@ public class ImageView: UIImageView {
 
     public var imageURL: URL? {
         didSet {
+            sd_imageIndicator = SDWebImageActivityIndicator.grayLarge
             sd_setImage(with: imageURL, completed: nil)
         }
     }

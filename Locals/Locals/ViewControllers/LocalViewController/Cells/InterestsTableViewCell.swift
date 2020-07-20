@@ -14,14 +14,17 @@ class InterestsTableViewCell: UITableViewCell {
     var onInterestSelected: ((Interest) -> Void)?
     
     // MARK: - Outlets
-    @IBOutlet private weak var collectionView: UICollectionView!
+    @IBOutlet private var collectionView: UICollectionView!
     
-    private var items: [Interest]?
+    private var items: [Interest]? {
+        didSet {
+            collectionView.reloadData()
+            contentView.setNeedsLayout()
+        }
+    }
     
     func configure(interests: [Interest]) {
         items = interests
-        collectionView.reloadData()
-        contentView.setNeedsLayout()
     }
 }
 
@@ -64,6 +67,7 @@ extension InterestsTableViewCell: UICollectionViewDelegateFlowLayout {
         self.collectionView.layoutIfNeeded()
         let contentSize = self.collectionView.collectionViewLayout.collectionViewContentSize
         
+        // @todo рассчитывать высоту полностью динамически
         let viewTitleHeight: CGFloat = 80
         
         return CGSize(width: contentSize.width, height: contentSize.height + viewTitleHeight)

@@ -21,6 +21,9 @@
 		E121511F24A49C2F00C691E4 /* UIColor+ThemeColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = E121511A24A49C2600C691E4 /* UIColor+ThemeColors.swift */; };
 		E121512024A49C3200C691E4 /* UIColor+hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = E121511B24A49C2600C691E4 /* UIColor+hex.swift */; };
 		E121512324A49C6D00C691E4 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E121512124A49C6D00C691E4 /* BaseViewController.swift */; };
+		E150DE1824C424C900804B9E /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E150DE1724C424C900804B9E /* ProgressView.swift */; };
+		E150DE1F24C4370F00804B9E /* BackBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E150DE1E24C4370F00804B9E /* BackBarButtonItem.swift */; };
+		E150DE2124C4379E00804B9E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E150DE2024C4379E00804B9E /* Assets.xcassets */; };
 		E152E2BB24B2FE98002453D7 /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E152E2BA24B2FE98002453D7 /* ImageView.swift */; };
 		E152E2BE24B2FEB6002453D7 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = E152E2BD24B2FEB6002453D7 /* SDWebImage */; };
 		E17CAAD324B44C7E009C5318 /* BarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17CAAD224B44C7E009C5318 /* BarButtonItem.swift */; };
@@ -30,6 +33,7 @@
 		E1E450A924AA846500BDDAFF /* UICollectionView+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E450A824AA846500BDDAFF /* UICollectionView+Helpers.swift */; };
 		E1E450C924AA93DD00BDDAFF /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E450C824AA93DD00BDDAFF /* ShadowView.swift */; };
 		E1E450CC24AB11EB00BDDAFF /* RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E450CB24AB11EB00BDDAFF /* RoundedView.swift */; };
+		E1F22E4F24C585A30089BB48 /* DropdownButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F22E4E24C585A30089BB48 /* DropdownButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +78,9 @@
 		E121511A24A49C2600C691E4 /* UIColor+ThemeColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+ThemeColors.swift"; sourceTree = "<group>"; };
 		E121511B24A49C2600C691E4 /* UIColor+hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+hex.swift"; sourceTree = "<group>"; };
 		E121512124A49C6D00C691E4 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		E150DE1724C424C900804B9E /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
+		E150DE1E24C4370F00804B9E /* BackBarButtonItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackBarButtonItem.swift; sourceTree = "<group>"; };
+		E150DE2024C4379E00804B9E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E152E2BA24B2FE98002453D7 /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
 		E17CAAD224B44C7E009C5318 /* BarButtonItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarButtonItem.swift; sourceTree = "<group>"; };
 		E1B9B63124A785020031C0AD /* PhoneNumberMetadata.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = PhoneNumberMetadata.json; sourceTree = "<group>"; };
@@ -81,6 +88,7 @@
 		E1E450A824AA846500BDDAFF /* UICollectionView+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Helpers.swift"; sourceTree = "<group>"; };
 		E1E450C824AA93DD00BDDAFF /* ShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
 		E1E450CB24AB11EB00BDDAFF /* RoundedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedView.swift; sourceTree = "<group>"; };
+		E1F22E4E24C585A30089BB48 /* DropdownButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +166,7 @@
 				E121510124A49B8000C691E4 /* LinkButton.swift */,
 				E121510224A49B8000C691E4 /* PrimaryButton.swift */,
 				E121510324A49B8000C691E4 /* SecondaryButton.swift */,
+				E1F22E4E24C585A30089BB48 /* DropdownButton.swift */,
 			);
 			path = Buttons;
 			sourceTree = "<group>";
@@ -165,11 +174,13 @@
 		E121510824A49B8000C691E4 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				E150DE1624C424AD00804B9E /* ProgressView */,
 				E16034E824B2FBE7000E8303 /* ImageView */,
 				E1E450CA24AB11D500BDDAFF /* RoundedView */,
 				E1E450C724AA93CE00BDDAFF /* ShadowView */,
 				E121510024A49B8000C691E4 /* PhoneNumberField */,
 				E121510424A49B8000C691E4 /* Buttons */,
+				E150DE1D24C436ED00804B9E /* BarButton */,
 				E121510524A49B8000C691E4 /* Label.swift */,
 				E121510624A49B8000C691E4 /* Button.swift */,
 				E121510724A49B8000C691E4 /* TextField.swift */,
@@ -191,6 +202,22 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		E150DE1624C424AD00804B9E /* ProgressView */ = {
+			isa = PBXGroup;
+			children = (
+				E150DE1724C424C900804B9E /* ProgressView.swift */,
+			);
+			path = ProgressView;
+			sourceTree = "<group>";
+		};
+		E150DE1D24C436ED00804B9E /* BarButton */ = {
+			isa = PBXGroup;
+			children = (
+				E150DE1E24C4370F00804B9E /* BackBarButtonItem.swift */,
+			);
+			path = BarButton;
+			sourceTree = "<group>";
+		};
 		E16034E824B2FBE7000E8303 /* ImageView */ = {
 			isa = PBXGroup;
 			children = (
@@ -203,6 +230,7 @@
 			isa = PBXGroup;
 			children = (
 				E1B9B63124A785020031C0AD /* PhoneNumberMetadata.json */,
+				E150DE2024C4379E00804B9E /* Assets.xcassets */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -313,6 +341,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E150DE2124C4379E00804B9E /* Assets.xcassets in Resources */,
 				E1B9B63224A785020031C0AD /* PhoneNumberMetadata.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -333,7 +362,9 @@
 			files = (
 				E121510E24A49BC100C691E4 /* SecondaryButton.swift in Sources */,
 				E121511F24A49C2F00C691E4 /* UIColor+ThemeColors.swift in Sources */,
+				E1F22E4F24C585A30089BB48 /* DropdownButton.swift in Sources */,
 				E17CAAD324B44C7E009C5318 /* BarButtonItem.swift in Sources */,
+				E150DE1F24C4370F00804B9E /* BackBarButtonItem.swift in Sources */,
 				E121510924A49B8400C691E4 /* TextField.swift in Sources */,
 				E121510F24A49BD100C691E4 /* PhoneNumberField.swift in Sources */,
 				E1E450C924AA93DD00BDDAFF /* ShadowView.swift in Sources */,
@@ -347,6 +378,7 @@
 				E1BD8E2D24BD7EB600783F2A /* UITableView+Helpers.swift in Sources */,
 				E121512024A49C3200C691E4 /* UIColor+hex.swift in Sources */,
 				E121510A24A49B8700C691E4 /* Button.swift in Sources */,
+				E150DE1824C424C900804B9E /* ProgressView.swift in Sources */,
 				E121510B24A49BA900C691E4 /* Label.swift in Sources */,
 				E121511E24A49C2D00C691E4 /* UILabel+setLineHeight.swift in Sources */,
 			);

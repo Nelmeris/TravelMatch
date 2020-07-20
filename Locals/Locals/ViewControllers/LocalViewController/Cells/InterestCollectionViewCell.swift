@@ -12,8 +12,8 @@ import UI
 class InterestCollectionViewCell: UICollectionViewCell {
     
     // MARK: - Outlets
-    @IBOutlet private weak var iconImageView: ImageView?
-    @IBOutlet private weak var titleLabel: Label?
+    @IBOutlet private var iconImageView: ImageView!
+    @IBOutlet private var titleLabel: Label!
     
     func configure(with interest: Interest) {
         iconImageView?.imageURL = interest.iconURL

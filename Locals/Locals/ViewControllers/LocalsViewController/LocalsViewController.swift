@@ -29,8 +29,8 @@ class LocalsViewController: BaseViewController {
     var onFilterButtonClicked: (() -> Void)?
     
     // MARK: - Outlets
-    @IBOutlet private weak var collectionView: UICollectionView?
-    @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
+    @IBOutlet private var collectionView: UICollectionView!
+    @IBOutlet private var flowLayout: UICollectionViewFlowLayout!
     
     
     private var locals: [Local]? {
