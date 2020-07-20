@@ -40,14 +40,39 @@ public final class OffersCoordinator: BaseCoordinator {
         let controller = viewControllerFactory.makeOfferController()
         controller.offer = offer
         
-        controller.modalPresentationStyle = .fullScreen
-        rootController?.popViewController(animated: true)
+       /* controller.onPicController = { [weak self] images, scrollToItem in
+            self?.showPicController(images: images, scrollToItem: scrollToItem)
+        }*/
+        
         if nil != rootController?.viewControllers.last as? ListOfOffersController {
-            rootController?.pushViewController(controller, animated: false)
+            rootController?.pushViewController(controller, animated: true)
         } else {
             rootController?.pushViewController(controller, animated: true)
         }
     }
+    /*
+    private func showPicController(images: [UIImage], scrollToItem: Int) {
+        let controller = viewControllerFactory.makePicController()
+        controller.images = images
+        controller.scrollToItem = scrollToItem
+        
+        if nil != rootController?.viewControllers.last as? OfferController {
+            rootController?.pushViewController(controller, animated: true)
+        } else {
+            rootController?.pushViewController(controller, animated: true)
+        }
+    }
+    
+    private func showReviewsController(images: [UIImage], scrollToItem: Int) {
+        let controller = viewControllerFactory.makeReviewsController()
+        
+        
+        if nil != rootController?.viewControllers.last as? OfferController {
+            rootController?.pushViewController(controller, animated: true)
+        } else {
+            rootController?.pushViewController(controller, animated: true)
+        }
+    }*/
     
     private func showError(error: Error) {
         print("Error \(error.localizedDescription)")

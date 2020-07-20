@@ -78,6 +78,8 @@
 		CE196A6A24AA8543001D7157 /* mock_fake_data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mock_fake_data.swift; sourceTree = "<group>"; };
 		CE196A6C24AA8EEF001D7157 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		CE196A6E24AA9686001D7157 /* OffersCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffersCoordinator.swift; sourceTree = "<group>"; };
+		CE27402124C63AC000BAD20B /* Pic.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pic.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE27402224C63AC000BAD20B /* Reviews.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Reviews.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE2806A224A92C3B0066FE7A /* ListOfOffersController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOfOffersController.swift; sourceTree = "<group>"; };
 		CE2806A624A92CA30066FE7A /* ViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerFactory.swift; sourceTree = "<group>"; };
 		CE2806B224A93EBA0066FE7A /* Offer.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Offer.storyboard; sourceTree = "<group>"; };
@@ -165,6 +167,8 @@
 		CE17F77924A9295C0097B224 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CE27402124C63AC000BAD20B /* Pic.framework */,
+				CE27402224C63AC000BAD20B /* Reviews.framework */,
 				CE17F77E24A929600097B224 /* UI.framework */,
 				CE17F77A24A9295C0097B224 /* Core.framework */,
 			);

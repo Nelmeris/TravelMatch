@@ -9,8 +9,10 @@
 import UIKit
 import Core
 import UI
+import Pic
 
 class OfferController: BaseViewController {
+
     //MARK: - Constants
     
     public var offer: FakeOffer!
@@ -18,7 +20,7 @@ class OfferController: BaseViewController {
     
     // MARK: - Output
     
-    var onPicController: ((FakeOffer) -> Void)?
+    var onPicController: (([UIImage], Int) -> Void)?
     var onReviews: ((FakeOffer) -> Void)?
     var onSocialButtonClicked: ((FakeOffer) -> Void)?
     var onSendMessageButtonClicked: ((FakeOffer) -> Void)?
@@ -29,6 +31,11 @@ class OfferController: BaseViewController {
     @IBOutlet weak var tableView: UITableView!
     
     //MARK: - Controller Livecycle
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        navigationController?.setNavigationBarHidden(false, animated: true)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,8 +56,7 @@ class OfferController: BaseViewController {
     
     // MARK: NavigationBar configurate
     func configureNavigationBar() {
-        //show nav bar
-//        self.navigationController?.setNavigationBarHidden(false, animated: true)
+        
         // hite title for back button
         self.navigationController?.navigationBar.backItem?.title = ""
         // add addInFavorite button
@@ -92,6 +98,7 @@ extension OfferController: UITableViewDelegate, UITableViewDataSource {
         case 1:
             let offerRatingInfoCell = tableView.dequeueReusableCell(withIdentifier: OfferRatingInfoCell.reuseID, for: indexPath) as! OfferRatingInfoCell
             offerRatingInfoCell.separatorInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
+            offerRatingInfoCell.delegate = self
             cell = offerRatingInfoCell
             cell.fillData(offer: offer)
         case 2:
@@ -129,5 +136,21 @@ extension OfferController: UITableViewDelegate, UITableViewDataSource {
         if indexPath.row == 0 {
             navigationController?.setNavigationBarHidden(true, animated: true)
         }
+    }
+}
+
+extension OfferController: OfferRatingInfoCellCollectionDelegate {
+    func didSelectItem(index: Int) {
+   /*     let randomCount = Int.random(in: index...(index * 3))
+        let images = MockFakeDataPic.data.getPictures(count: randomCount)
+//        onPicController?(images, index)
+        
+        let pc = UIStoryboard(name: "Pic", bundle: Bundle(for: PicController.self)).instantiateViewController(PicController.self)
+        pc.images = images
+        pc.scrollToItem = index
+        print(index)
+        print(pc.images)
+        print(pc.scrollToItem)
+        show(pc, sender: self)*/
     }
 }

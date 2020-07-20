@@ -9,10 +9,15 @@
 import UIKit
 import UI
 
-class OfferRatingInfoCell: CustomTableViewCell {
-    
+protocol OfferRatingInfoCellCollectionDelegate: class {
+    func didSelectItem(index: Int)
+}
+
+class OfferRatingInfoCell: CustomTableViewCell, OfferRatingInfoCellCollectionDelegate {
+
     static let reuseID = "OfferRatingInfoCell"
     var imageCollection: [String] = []
+    weak var delegate: OfferRatingInfoCellCollectionDelegate?
 
     @IBOutlet weak var firstStarImageView: UIImageView!
     @IBOutlet weak var secondStarImageView: UIImageView!
@@ -49,7 +54,10 @@ class OfferRatingInfoCell: CustomTableViewCell {
         }
         collectionView.reloadData()
     }
-
+    
+    func didSelectItem(index: Int) {
+        
+    }
 }
 
 extension OfferRatingInfoCell: UICollectionViewDelegate, UICollectionViewDataSource {
@@ -67,6 +75,7 @@ extension OfferRatingInfoCell: UICollectionViewDelegate, UICollectionViewDataSou
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("didSelectItemAt \(indexPath.item)")
+        delegate?.didSelectItem(index: indexPath.item)
     }
     
 }
