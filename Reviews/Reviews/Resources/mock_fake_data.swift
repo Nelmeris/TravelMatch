@@ -12,8 +12,8 @@ import UIKit
 public class MockFakeDataReviews {
     public static let data = MockFakeDataReviews()
     
-    private let ownerNames = ["Изучение исторического центра","Лучшие Insta фото","Все о жизни местных"]
-    private let ownerImages = ["roman","cristina","yevhenii"]
+    private let ownerNames = ["Alexandru","Courtney","Janko"]
+    private let ownerImages = ["alexandru","courtney","janko"]
     private let descriptions = ["Откройте для себя прекрасную столицу Венгрии и исследуйте достопримечательности Будапешта с местным гидом! Общий обзор венгерской истории, культуры, искусства, традиций, гастрономии.","В каждом месте я покажу вам лучшие места для фото и поделюсь идеями, как создавать или снимать лучшие story в Instagram. Это будет лучшее впечатление!","Вы можете спросить все, что вы когда-либо хотели о Венгрии. И даже больше! Пусть это будет спорная политика, ее бурное прошлое или неопределенное будущее, экономика, наше личное мнение, идеи для изменения и т. д."]
     
     public func getReviews(count: Int) -> [Review] {

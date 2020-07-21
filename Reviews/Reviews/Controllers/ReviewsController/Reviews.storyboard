@@ -139,7 +139,7 @@
                                             <constraint firstAttribute="width" constant="48" id="FTu-aY-7w8"/>
                                             <constraint firstAttribute="height" constant="48" id="YPu-Bp-l4c"/>
                                         </constraints>
-                                        <state key="normal" image="plusWhite" backgroundImage="sendMailBackground"/>
+                                        <state key="normal" image="plusWhite" backgroundImage="buttonBackground"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                 <real key="value" value="10"/>
@@ -196,9 +196,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="buttonBackground" width="40" height="40"/>
         <image name="close" width="14" height="14"/>
         <image name="janko" width="80" height="80"/>
         <image name="plusWhite" width="24" height="24"/>
-        <image name="sendMailBackground" width="40" height="40"/>
     </resources>
 </document>

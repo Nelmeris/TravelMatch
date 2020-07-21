@@ -23,11 +23,10 @@ extension Date {
     }
     
     func randomDate() -> Date {
-        let days = Int.random(in: 10000...20000)
+        let days = Int.random(in: 10...1000)
         let interval =  Date().timeIntervalSince1970
         let intervalRange = Double(86_400 * days)
-        let random = Double(arc4random_uniform(UInt32(intervalRange)) + 1)
-        let newInterval = interval + (random - (intervalRange / 2.0))
+        let newInterval = interval - intervalRange
         return Date(timeIntervalSince1970: newInterval)
     }
 }

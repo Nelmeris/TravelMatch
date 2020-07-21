@@ -14,6 +14,9 @@ public class PicController: BaseViewController {
     public var images: [UIImage] = []
     public var scrollToItem: Int = 0
     
+    // MARK: - Output
+    public var didPressedCloseButton: (() -> Void)?
+    
     //MARK: - IBOutlet
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -66,7 +69,8 @@ public class PicController: BaseViewController {
     
     //MARK: - IBAction
     @IBAction func closeButton() {
-        navigationController?.popViewController(animated: true)
+//        navigationController?.popViewController(animated: true)
+        didPressedCloseButton?()
     }
     
 }

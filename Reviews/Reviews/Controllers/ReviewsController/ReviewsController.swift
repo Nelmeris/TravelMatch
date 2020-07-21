@@ -11,12 +11,18 @@ import UI
 
 public class ReviewsController: BaseViewController {
     //MARK: - Constant
-    var offerID: Int = 0
-    var reviews: [Review] = []
+    public var offerID: Int = 0
+    private var reviews: [Review] = []
+    public var isHiddenSendReviewView: Bool = true
+    
     private var keyboardHeightOldValue: CGFloat = 0
     
+    // MARK: - Output
+    public var didPressedCloseButton: (() -> Void)?
+
+    
     //MARK: - IBOutlet
-    @IBOutlet var reviewSuperView: UIView!
+    @IBOutlet weak var reviewSuperView: UIView!
     @IBOutlet weak var controllerNamelabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var reviewTextField: TextField!
@@ -24,18 +30,6 @@ public class ReviewsController: BaseViewController {
     
     //MARK: - Init
     ///init with Images for scrolling
-    init(offerID: Int, showSendReviewView: Bool) {
-        super.init(nibName: nil, bundle: nil)
-        self.offerID = offerID
-        if !showSendReviewView {
-            sendReviewView.translatesAutoresizingMaskIntoConstraints = false
-            sendReviewView.heightAnchor.constraint(equalToConstant: 0).isActive = true
-        }
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
     
     //MARK: - Live Cycle
     
@@ -55,12 +49,20 @@ public class ReviewsController: BaseViewController {
     func configure() {
         addGesture()
         configureTableView()
+        configureSendReviewView()
     }
     
     func configureTableView() {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.separatorStyle = .none
+    }
+    
+    func configureSendReviewView() {
+        if isHiddenSendReviewView {
+            sendReviewView.translatesAutoresizingMaskIntoConstraints = false
+            sendReviewView.heightAnchor.constraint(equalToConstant: 0).isActive = true
+        }
     }
     
     //MARK: - Gestures
@@ -120,8 +122,9 @@ public class ReviewsController: BaseViewController {
     
     //MARK: - IBAction
     @IBAction func closeButton() {
-        dismiss(animated: true, completion: nil)
+        didPressedCloseButton?()
     }
+    
     @IBAction func sendReviewButton() {
         print("sendReviewButton")
     }

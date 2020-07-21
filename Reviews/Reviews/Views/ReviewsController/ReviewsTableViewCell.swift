@@ -21,6 +21,12 @@ class ReviewsTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        configure()
+    }
+    
+    func configure() {
+        let cornerRadius:CGFloat = 10
+        reviewOwnerImageView.layer.cornerRadius = cornerRadius
     }
     
     func fillData(review: Review) {

@@ -47,6 +47,10 @@ public final class OffersCoordinator: BaseCoordinator {
             self?.showPicController(images: images, scrollToItem: scrollToItem)
         }
         
+        controller.onReviewsController = { [weak self] offerID, hideSendReviewView in
+            self?.showReviewsController(offerID: offerID, hideSendReviewView: hideSendReviewView)
+        }
+        
         if nil != rootController?.viewControllers.last as? ListOfOffersController {
             rootController?.pushViewController(controller, animated: true)
         } else {
@@ -59,6 +63,10 @@ public final class OffersCoordinator: BaseCoordinator {
         controller.images = images
         controller.scrollToItem = scrollToItem
         
+        controller.didPressedCloseButton = { [weak self] in
+            self?.rootController?.popViewController(animated: true)
+        }
+        
         if nil != rootController?.viewControllers.last as? OfferController {
             rootController?.pushViewController(controller, animated: true)
         } else {
@@ -66,9 +74,14 @@ public final class OffersCoordinator: BaseCoordinator {
         }
     }
     
-    private func showReviewsController(images: [UIImage], scrollToItem: Int) {
+    private func showReviewsController(offerID: Int, hideSendReviewView: Bool) {
         let controller = reviewsControllerFactory.makeReviewsController()
+        controller.offerID = offerID
+        controller.isHiddenSendReviewView = hideSendReviewView
         
+        controller.didPressedCloseButton = { [weak self] in
+            self?.rootController?.popViewController(animated: true)
+        }
         
         if nil != rootController?.viewControllers.last as? OfferController {
             rootController?.pushViewController(controller, animated: true)

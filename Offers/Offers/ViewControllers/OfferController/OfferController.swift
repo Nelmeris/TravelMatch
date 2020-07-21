@@ -18,9 +18,8 @@ class OfferController: BaseViewController {
     private let addToFavoriteButtton = OfferAddToFavoriteButtton()
     
     // MARK: - Output
-    
     var onPicController: (([UIImage], Int) -> Void)?
-    var onReviews: ((FakeOffer) -> Void)?
+    var onReviewsController: ((Int, Bool) -> Void)?
     var onSocialButtonClicked: ((FakeOffer) -> Void)?
     var onSendMessageButtonClicked: ((FakeOffer) -> Void)?
     var onBookingDetail: ((FakeOffer) -> Void)?
@@ -105,6 +104,7 @@ extension OfferController: UITableViewDelegate, UITableViewDataSource {
             cell = offerSocialCell
         case 3:
             let offerReviewWatchAllCell = tableView.dequeueReusableCell(withIdentifier: OfferReviewWatchAllCell.reuseID, for: indexPath) as! OfferReviewWatchAllCell
+            offerReviewWatchAllCell.delegate = self
             cell = offerReviewWatchAllCell
         case 4:
             let offerLastThreeReviewsCell = tableView.dequeueReusableCell(withIdentifier: OfferLastThreeReviewsCell.reuseID, for: indexPath) as! OfferLastThreeReviewsCell
@@ -141,5 +141,13 @@ extension OfferController: UITableViewDelegate, UITableViewDataSource {
 extension OfferController: OfferRatingInfoCellCollectionDelegate {
     func didSelectItem(images: [UIImage], index: Int) {
         onPicController?(images, index)
+    }
+}
+
+extension OfferController: OfferReviewWatchAllCellDelegate {
+    func didPressedShowAllReviewsButton() {
+        let offerID = offer.id
+        let hideSendReviewView = false
+        onReviewsController?(offerID, hideSendReviewView)
     }
 }
