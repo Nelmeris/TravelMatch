@@ -9,7 +9,6 @@
 import UIKit
 import Core
 import UI
-import Pic
 
 class OfferController: BaseViewController {
 
@@ -58,7 +57,7 @@ class OfferController: BaseViewController {
     func configureNavigationBar() {
         
         // hite title for back button
-        self.navigationController?.navigationBar.backItem?.title = ""
+        self.navigationController?.navigationBar.topItem?.title = ""
         // add addInFavorite button
         let inFavoriteButton = addToFavoriteButtton.returnButton(offer: offer)
         inFavoriteButton.addTarget(self, action: #selector(addToFavorite), for: .touchUpInside)
@@ -140,17 +139,7 @@ extension OfferController: UITableViewDelegate, UITableViewDataSource {
 }
 
 extension OfferController: OfferRatingInfoCellCollectionDelegate {
-    func didSelectItem(index: Int) {
-   /*     let randomCount = Int.random(in: index...(index * 3))
-        let images = MockFakeDataPic.data.getPictures(count: randomCount)
-//        onPicController?(images, index)
-        
-        let pc = UIStoryboard(name: "Pic", bundle: Bundle(for: PicController.self)).instantiateViewController(PicController.self)
-        pc.images = images
-        pc.scrollToItem = index
-        print(index)
-        print(pc.images)
-        print(pc.scrollToItem)
-        show(pc, sender: self)*/
+    func didSelectItem(images: [UIImage], index: Int) {
+        onPicController?(images, index)
     }
 }

@@ -8,15 +8,16 @@
 
 import UIKit
 import UI
+import Pic
 
 protocol OfferRatingInfoCellCollectionDelegate: class {
-    func didSelectItem(index: Int)
+    func didSelectItem(images: [UIImage], index: Int)
 }
 
 class OfferRatingInfoCell: CustomTableViewCell, OfferRatingInfoCellCollectionDelegate {
 
     static let reuseID = "OfferRatingInfoCell"
-    var imageCollection: [String] = []
+    var imageCollection: [UIImage] = []
     weak var delegate: OfferRatingInfoCellCollectionDelegate?
 
     @IBOutlet weak var firstStarImageView: UIImageView!
@@ -49,13 +50,13 @@ class OfferRatingInfoCell: CustomTableViewCell, OfferRatingInfoCellCollectionDel
     }
     
     override func fillData(offer: FakeOffer) {
-        for _ in 0...8 {
-            imageCollection.append(offer.image)
-        }
+        var images = MockFakeDataPic.data.getPictures(count: 9)
+        images.shuffle()
+        imageCollection = images
         collectionView.reloadData()
     }
     
-    func didSelectItem(index: Int) {
+    func didSelectItem(images: [UIImage], index: Int) {
         
     }
 }
@@ -75,7 +76,7 @@ extension OfferRatingInfoCell: UICollectionViewDelegate, UICollectionViewDataSou
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("didSelectItemAt \(indexPath.item)")
-        delegate?.didSelectItem(index: indexPath.item)
+        delegate?.didSelectItem(images: imageCollection, index: indexPath.item)
     }
     
 }

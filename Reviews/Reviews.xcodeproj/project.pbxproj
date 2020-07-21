@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		CE273FF924C637A800BAD20B /* Reviews.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE273FEF24C637A700BAD20B /* Reviews.framework */; };
 		CE273FFE24C637A800BAD20B /* ReviewsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE273FFD24C637A800BAD20B /* ReviewsTests.swift */; };
-		CE27400024C637A800BAD20B /* Reviews.h in Headers */ = {isa = PBXBuildFile; fileRef = CE273FF224C637A700BAD20B /* Reviews.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CE27401B24C6398C00BAD20B /* ReviewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE27401A24C6398C00BAD20B /* ReviewsTableViewCell.swift */; };
 		CE27401C24C6398C00BAD20B /* ReviewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE27401A24C6398C00BAD20B /* ReviewsTableViewCell.swift */; };
 		CE27401F24C63A0000BAD20B /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE27401E24C63A0000BAD20B /* DateFormatter.swift */; };
@@ -54,7 +53,6 @@
 
 /* Begin PBXFileReference section */
 		CE273FEF24C637A700BAD20B /* Reviews.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Reviews.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		CE273FF224C637A700BAD20B /* Reviews.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Reviews.h; sourceTree = "<group>"; };
 		CE273FF324C637A800BAD20B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE273FF824C637A800BAD20B /* ReviewsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReviewsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE273FFD24C637A800BAD20B /* ReviewsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewsTests.swift; sourceTree = "<group>"; };
@@ -117,7 +115,6 @@
 				CE27400A24C6388B00BAD20B /* Views */,
 				CE27401D24C639EB00BAD20B /* Extensions */,
 				CE27400924C6388300BAD20B /* Resources */,
-				CE273FF224C637A700BAD20B /* Reviews.h */,
 				CE273FF324C637A800BAD20B /* Info.plist */,
 			);
 			path = Reviews;
@@ -194,23 +191,11 @@
 		};
 /* End PBXGroup section */
 
-/* Begin PBXHeadersBuildPhase section */
-		CE273FEA24C637A700BAD20B /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				CE27400024C637A800BAD20B /* Reviews.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXHeadersBuildPhase section */
-
 /* Begin PBXNativeTarget section */
 		CE273FEE24C637A700BAD20B /* Reviews */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = CE27400324C637A800BAD20B /* Build configuration list for PBXNativeTarget "Reviews" */;
 			buildPhases = (
-				CE273FEA24C637A700BAD20B /* Headers */,
 				CE273FEB24C637A700BAD20B /* Sources */,
 				CE273FEC24C637A700BAD20B /* Frameworks */,
 				CE273FED24C637A700BAD20B /* Resources */,

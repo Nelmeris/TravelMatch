@@ -6,38 +6,25 @@
 //  Copyright © 2020 Igor Gapanovich. All rights reserved.
 //
 
-import UIKit
 import UI
+import UIKit
 
-class PicController: BaseViewController {
+public class PicController: BaseViewController {
     //MARK: - Constant
-    var images: [UIImage] = []
-    var scrollToItem: Int = 0
+    public var images: [UIImage] = []
+    public var scrollToItem: Int = 0
     
     //MARK: - IBOutlet
     @IBOutlet weak var collectionView: UICollectionView!
     
-    //MARK: - Init
-    ///init with Images for scrolling
-    init(images: [UIImage], scrollToItem: Int) {
-        super.init(nibName: nil, bundle: nil)
-        self.images = images
-        self.scrollToItem = scrollToItem
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
     //MARK: - Live Cycle
     
-    override func viewWillAppear(_ animated: Bool) {
+    public override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        let indexPath = IndexPath(row: scrollToItem, section: 0)
-        collectionView.scrollToItem(at: indexPath, at: .left, animated: true)
+        
     }
     
-    override func viewDidLoad() {
+    public override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
@@ -49,34 +36,55 @@ class PicController: BaseViewController {
     }
     
     func configureCollectionView() {
-        
+        collectionView.delegate = self
+        collectionView.dataSource = self
         // Do any additional setup after loading the view.
-        let size = CGSize(width: collectionView.frame.width, height: collectionView.frame.height)
+        let size = CGSize(width: view.frame.width, height: view.frame.height)
         let layout = UICollectionViewFlowLayout()
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         layout.itemSize = CGSize(width: size.width, height: size.height)
+        layout.minimumInteritemSpacing = 0
+        layout.minimumLineSpacing = 0
         layout.sectionHeadersPinToVisibleBounds = true
+        layout.scrollDirection = .horizontal
        
-        collectionView.backgroundColor = .black
+        collectionView!.collectionViewLayout = layout
         collectionView.isPagingEnabled = true
+        collectionView.backgroundColor = .black
+        collectionView.backgroundColor?.withAlphaComponent(0.4)
+    }
+    
+    public override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        scrollToItemAtIndex()
+    }
+    
+    func scrollToItemAtIndex() {
+        let indexPath = IndexPath(row: scrollToItem, section: 0)
+        collectionView.scrollToItem(at: indexPath, at: .left, animated: false)
     }
     
     //MARK: - IBAction
     @IBAction func closeButton() {
-        dismiss(animated: true, completion: nil)
+        navigationController?.popViewController(animated: true)
     }
     
 }
 
 extension PicController: UICollectionViewDataSource, UICollectionViewDelegate {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    
+    public func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+    public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return images.count
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PicCollectionViewCell.reuseID, for: indexPath) as! PicCollectionViewCell
         
         cell.fillData(image: images[indexPath.item])
-        
         return cell
     }
 }

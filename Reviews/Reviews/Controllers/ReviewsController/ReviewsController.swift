@@ -9,7 +9,7 @@
 import UIKit
 import UI
 
-class ReviewsController: BaseViewController {
+public class ReviewsController: BaseViewController {
     //MARK: - Constant
     var offerID: Int = 0
     var reviews: [Review] = []
@@ -39,13 +39,13 @@ class ReviewsController: BaseViewController {
     
     //MARK: - Live Cycle
     
-    override func viewWillAppear(_ animated: Bool) {
+    public override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         let randonInt = Int.random(in: 5...16)
         reviews = MockFakeDataReviews.data.getReviews(count: randonInt)
     }
     
-    override func viewDidLoad() {
+    public override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
@@ -128,11 +128,11 @@ class ReviewsController: BaseViewController {
 }
 
 extension ReviewsController: UITableViewDataSource, UITableViewDelegate {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return reviews.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: ReviewsTableViewCell.reuseID, for: indexPath) as! ReviewsTableViewCell
         cell.fillData(review: reviews[indexPath.row])
         return cell

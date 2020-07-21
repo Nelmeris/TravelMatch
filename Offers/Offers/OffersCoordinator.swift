@@ -7,17 +7,20 @@
 //
 
 import UIKit
-import Core
 import UI
+import Core
+import Pic
+import Reviews
+
 
 public final class OffersCoordinator: BaseCoordinator {
     
     private weak var rootController: NavigationController?
-    private let viewControllerFactory: ViewControllerFactory
+    private let reviewsControllerFactory: ViewControllerFactory
     
     public init(rootController: NavigationController) {
         self.rootController = rootController
-        self.viewControllerFactory = ViewControllerFactory()
+        self.reviewsControllerFactory = ViewControllerFactory()
         super.init()
     }
     
@@ -27,7 +30,7 @@ public final class OffersCoordinator: BaseCoordinator {
     }
     
     private func showListOfOffersController() {
-        let controller = viewControllerFactory.makeListOfOffersController()
+        let controller = reviewsControllerFactory.makeListOfOffersController()
           
         controller.onOfferController = { [weak self] offer in
             self?.showOfferController(offer: offer)
@@ -37,12 +40,12 @@ public final class OffersCoordinator: BaseCoordinator {
     }
     
     private func showOfferController(offer: FakeOffer) {
-        let controller = viewControllerFactory.makeOfferController()
+        let controller = reviewsControllerFactory.makeOfferController()
         controller.offer = offer
         
-       /* controller.onPicController = { [weak self] images, scrollToItem in
+        controller.onPicController = { [weak self] images, scrollToItem in
             self?.showPicController(images: images, scrollToItem: scrollToItem)
-        }*/
+        }
         
         if nil != rootController?.viewControllers.last as? ListOfOffersController {
             rootController?.pushViewController(controller, animated: true)
@@ -50,9 +53,9 @@ public final class OffersCoordinator: BaseCoordinator {
             rootController?.pushViewController(controller, animated: true)
         }
     }
-    /*
+    
     private func showPicController(images: [UIImage], scrollToItem: Int) {
-        let controller = viewControllerFactory.makePicController()
+        let controller = reviewsControllerFactory.makePicController()
         controller.images = images
         controller.scrollToItem = scrollToItem
         
@@ -64,7 +67,7 @@ public final class OffersCoordinator: BaseCoordinator {
     }
     
     private func showReviewsController(images: [UIImage], scrollToItem: Int) {
-        let controller = viewControllerFactory.makeReviewsController()
+        let controller = reviewsControllerFactory.makeReviewsController()
         
         
         if nil != rootController?.viewControllers.last as? OfferController {
@@ -72,7 +75,7 @@ public final class OffersCoordinator: BaseCoordinator {
         } else {
             rootController?.pushViewController(controller, animated: true)
         }
-    }*/
+    }
     
     private func showError(error: Error) {
         print("Error \(error.localizedDescription)")
