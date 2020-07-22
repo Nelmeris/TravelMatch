@@ -39,6 +39,21 @@ class SignInViewController: BaseViewController {
 
     @IBOutlet private weak var buttonsBottomConstraint: NSLayoutConstraint?
     
+    // MARK: - Validation
+    
+    private let passwordPredicate = NSPredicate(
+        format: "SELF MATCHES %@",
+        ".{6,}"
+    )
+    
+    // MARK: - Lifecycle
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        navigationController?.navigationBar.topItem?.title = ""
+        nextButton?.isEnabled = isInputValid()
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         updateView()
@@ -67,19 +82,6 @@ class SignInViewController: BaseViewController {
             print("error \(error)")
             hideActivityIndicator()
         }
-    }
-    
-    // MARK: - Validation
-    
-    private let passwordPredicate = NSPredicate(
-        format: "SELF MATCHES %@",
-        ".{6,}"
-    )
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        navigationController?.navigationBar.topItem?.title = ""
-        nextButton?.isEnabled = isInputValid()
     }
     
     // MARK: - Notifications
@@ -137,6 +139,8 @@ class SignInViewController: BaseViewController {
         guard isInputValid() else {return}
         continueButtonClicked(sender)
     }
+    
+    // MARK: - Keyboard
     
     @objc func keyboardWillShown(notification: Notification) {
         let info = notification.userInfo! as NSDictionary

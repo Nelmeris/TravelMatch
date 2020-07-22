@@ -17,8 +17,6 @@
 		E14659C62494B0C100BBC9F5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14659C52494B0C100BBC9F5 /* AppDelegate.swift */; };
 		E14659CF2494B0C300BBC9F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E14659CE2494B0C300BBC9F5 /* Assets.xcassets */; };
 		E14659D22494B0C300BBC9F5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E14659D02494B0C300BBC9F5 /* LaunchScreen.storyboard */; };
-		E14659DD2494B0C300BBC9F5 /* Travel_MatchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14659DC2494B0C300BBC9F5 /* Travel_MatchTests.swift */; };
-		E14659E82494B0C300BBC9F5 /* Travel_MatchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14659E72494B0C300BBC9F5 /* Travel_MatchUITests.swift */; };
 		E1465A002494DD0900BBC9F5 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14659FF2494DD0900BBC9F5 /* AppCoordinator.swift */; };
 		E1465A1E24950C5200BBC9F5 /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E1465A1424950A8500BBC9F5 /* Lato-Regular.ttf */; };
 		E1465A1F24950C5200BBC9F5 /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E1465A1124950A8500BBC9F5 /* Montserrat-Bold.ttf */; };
@@ -52,23 +50,6 @@
 		E1E450C624AA8BE900BDDAFF /* q9.png in Resources */ = {isa = PBXBuildFile; fileRef = E1E450BC24AA8BE900BDDAFF /* q9.png */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		E14659D92494B0C300BBC9F5 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = E14659BA2494B0C100BBC9F5 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = E14659C12494B0C100BBC9F5;
-			remoteInfo = "Travel Match";
-		};
-		E14659E42494B0C300BBC9F5 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = E14659BA2494B0C100BBC9F5 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = E14659C12494B0C100BBC9F5;
-			remoteInfo = "Travel Match";
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXCopyFilesBuildPhase section */
 		E121508824A491FE00C691E4 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -98,12 +79,6 @@
 		E14659CE2494B0C300BBC9F5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E14659D12494B0C300BBC9F5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E14659D32494B0C300BBC9F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E14659D82494B0C300BBC9F5 /* Travel MatchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Travel MatchTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		E14659DC2494B0C300BBC9F5 /* Travel_MatchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Travel_MatchTests.swift; sourceTree = "<group>"; };
-		E14659DE2494B0C300BBC9F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E14659E32494B0C300BBC9F5 /* Travel MatchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Travel MatchUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		E14659E72494B0C300BBC9F5 /* Travel_MatchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Travel_MatchUITests.swift; sourceTree = "<group>"; };
-		E14659E92494B0C300BBC9F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E14659FF2494DD0900BBC9F5 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		E1465A1124950A8500BBC9F5 /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
 		E1465A1224950A8500BBC9F5 /* Montserrat-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.ttf"; sourceTree = "<group>"; };
@@ -151,20 +126,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E14659D52494B0C300BBC9F5 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E14659E02494B0C300BBC9F5 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -187,8 +148,6 @@
 			isa = PBXGroup;
 			children = (
 				E14659C42494B0C100BBC9F5 /* Travel Match */,
-				E14659DB2494B0C300BBC9F5 /* Travel MatchTests */,
-				E14659E62494B0C300BBC9F5 /* Travel MatchUITests */,
 				E14659C32494B0C100BBC9F5 /* Products */,
 				D94AE2D6B9F91AED3D8518BA /* Frameworks */,
 			);
@@ -198,8 +157,6 @@
 			isa = PBXGroup;
 			children = (
 				E14659C22494B0C100BBC9F5 /* Travel Match.app */,
-				E14659D82494B0C300BBC9F5 /* Travel MatchTests.xctest */,
-				E14659E32494B0C300BBC9F5 /* Travel MatchUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -218,24 +175,6 @@
 				E1CE976D249E23B2007630E9 /* Travel Match.entitlements */,
 			);
 			path = "Travel Match";
-			sourceTree = "<group>";
-		};
-		E14659DB2494B0C300BBC9F5 /* Travel MatchTests */ = {
-			isa = PBXGroup;
-			children = (
-				E14659DC2494B0C300BBC9F5 /* Travel_MatchTests.swift */,
-				E14659DE2494B0C300BBC9F5 /* Info.plist */,
-			);
-			path = "Travel MatchTests";
-			sourceTree = "<group>";
-		};
-		E14659E62494B0C300BBC9F5 /* Travel MatchUITests */ = {
-			isa = PBXGroup;
-			children = (
-				E14659E72494B0C300BBC9F5 /* Travel_MatchUITests.swift */,
-				E14659E92494B0C300BBC9F5 /* Info.plist */,
-			);
-			path = "Travel MatchUITests";
 			sourceTree = "<group>";
 		};
 		E14659F62494D42D00BBC9F5 /* App */ = {
@@ -352,42 +291,6 @@
 			productReference = E14659C22494B0C100BBC9F5 /* Travel Match.app */;
 			productType = "com.apple.product-type.application";
 		};
-		E14659D72494B0C300BBC9F5 /* Travel MatchTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = E14659EF2494B0C300BBC9F5 /* Build configuration list for PBXNativeTarget "Travel MatchTests" */;
-			buildPhases = (
-				E14659D42494B0C300BBC9F5 /* Sources */,
-				E14659D52494B0C300BBC9F5 /* Frameworks */,
-				E14659D62494B0C300BBC9F5 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				E14659DA2494B0C300BBC9F5 /* PBXTargetDependency */,
-			);
-			name = "Travel MatchTests";
-			productName = "Travel MatchTests";
-			productReference = E14659D82494B0C300BBC9F5 /* Travel MatchTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		E14659E22494B0C300BBC9F5 /* Travel MatchUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = E14659F22494B0C300BBC9F5 /* Build configuration list for PBXNativeTarget "Travel MatchUITests" */;
-			buildPhases = (
-				E14659DF2494B0C300BBC9F5 /* Sources */,
-				E14659E02494B0C300BBC9F5 /* Frameworks */,
-				E14659E12494B0C300BBC9F5 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				E14659E52494B0C300BBC9F5 /* PBXTargetDependency */,
-			);
-			name = "Travel MatchUITests";
-			productName = "Travel MatchUITests";
-			productReference = E14659E32494B0C300BBC9F5 /* Travel MatchUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -400,14 +303,6 @@
 				TargetAttributes = {
 					E14659C12494B0C100BBC9F5 = {
 						CreatedOnToolsVersion = 11.5;
-					};
-					E14659D72494B0C300BBC9F5 = {
-						CreatedOnToolsVersion = 11.5;
-						TestTargetID = E14659C12494B0C100BBC9F5;
-					};
-					E14659E22494B0C300BBC9F5 = {
-						CreatedOnToolsVersion = 11.5;
-						TestTargetID = E14659C12494B0C100BBC9F5;
 					};
 				};
 			};
@@ -425,8 +320,6 @@
 			projectRoot = "";
 			targets = (
 				E14659C12494B0C100BBC9F5 /* Travel Match */,
-				E14659D72494B0C300BBC9F5 /* Travel MatchTests */,
-				E14659E22494B0C300BBC9F5 /* Travel MatchUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -454,20 +347,6 @@
 				E1E450C424AA8BE900BDDAFF /* q3.png in Resources */,
 				E14659CF2494B0C300BBC9F5 /* Assets.xcassets in Resources */,
 				E1E450C224AA8BE900BDDAFF /* q5.png in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E14659D62494B0C300BBC9F5 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E14659E12494B0C300BBC9F5 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -510,36 +389,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E14659D42494B0C300BBC9F5 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E14659DD2494B0C300BBC9F5 /* Travel_MatchTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E14659DF2494B0C300BBC9F5 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E14659E82494B0C300BBC9F5 /* Travel_MatchUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		E14659DA2494B0C300BBC9F5 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = E14659C12494B0C100BBC9F5 /* Travel Match */;
-			targetProxy = E14659D92494B0C300BBC9F5 /* PBXContainerItemProxy */;
-		};
-		E14659E52494B0C300BBC9F5 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = E14659C12494B0C100BBC9F5 /* Travel Match */;
-			targetProxy = E14659E42494B0C300BBC9F5 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		E14659D02494B0C300BBC9F5 /* LaunchScreen.storyboard */ = {
@@ -711,90 +561,6 @@
 			};
 			name = Release;
 		};
-		E14659F02494B0C300BBC9F5 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = "Travel MatchTests/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "ru.getproger.Travel-MatchTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Travel Match.app/Travel Match";
-			};
-			name = Debug;
-		};
-		E14659F12494B0C300BBC9F5 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = "Travel MatchTests/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "ru.getproger.Travel-MatchTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Travel Match.app/Travel Match";
-			};
-			name = Release;
-		};
-		E14659F32494B0C300BBC9F5 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = "Travel MatchUITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "ru.getproger.Travel-MatchUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "Travel Match";
-			};
-			name = Debug;
-		};
-		E14659F42494B0C300BBC9F5 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = "Travel MatchUITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "ru.getproger.Travel-MatchUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "Travel Match";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -812,24 +578,6 @@
 			buildConfigurations = (
 				E14659ED2494B0C300BBC9F5 /* Debug */,
 				E14659EE2494B0C300BBC9F5 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		E14659EF2494B0C300BBC9F5 /* Build configuration list for PBXNativeTarget "Travel MatchTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				E14659F02494B0C300BBC9F5 /* Debug */,
-				E14659F12494B0C300BBC9F5 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		E14659F22494B0C300BBC9F5 /* Build configuration list for PBXNativeTarget "Travel MatchUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				E14659F32494B0C300BBC9F5 /* Debug */,
-				E14659F42494B0C300BBC9F5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

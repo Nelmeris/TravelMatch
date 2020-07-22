@@ -38,8 +38,6 @@ class PicController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
         configure()
     }
     
@@ -48,8 +46,6 @@ class PicController: BaseViewController {
     }
     
     func configureCollectionView() {
-        
-        // Do any additional setup after loading the view.
         let size = CGSize(width: collectionView.frame.width, height: collectionView.frame.height)
         let layout = UICollectionViewFlowLayout()
         layout.itemSize = CGSize(width: size.width, height: size.height)

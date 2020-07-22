@@ -9,11 +9,11 @@
 import Foundation
 import Core
 
-public typealias AuthSignInCompletion = (_ result: Result<Authentificatable>) -> Void
-public typealias AuthSignUpCompletion = (_ result: Result<Authentificatable>) -> Void
-public typealias AuthSearchCompletion = (_ result: Result<Authentificatable?>) -> Void
-public typealias AuthLogoutCompletion = (_ result: Result<Bool>) -> Void
-public typealias AuthResetPasswordCompletion = (_ result: Result<Bool>) -> Void
+public typealias AuthSignInCompletion = (_ result: Result<Authentificatable, Error>) -> Void
+public typealias AuthSignUpCompletion = (_ result: Result<Authentificatable, Error>) -> Void
+public typealias AuthSearchCompletion = (_ result: Result<Authentificatable?, Error>) -> Void
+public typealias AuthLogoutCompletion = (_ result: Result<Bool, Error>) -> Void
+public typealias AuthResetPasswordCompletion = (_ result: Result<Bool, Error>) -> Void
 
 public protocol AuthService {
     

@@ -32,4 +32,5 @@ public class Label: UILabel {
     func setUpView() {
         setLineHeight(lineHeight: lineHeight)
     }
+    
 }

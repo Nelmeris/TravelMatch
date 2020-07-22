@@ -7,9 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CE0DECBC24A921930066B2FB /* Offers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE0DECB224A921930066B2FB /* Offers.framework */; };
-		CE0DECC124A921930066B2FB /* OffersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0DECC024A921930066B2FB /* OffersTests.swift */; };
-		CE0DECC324A921930066B2FB /* Offers.h in Headers */ = {isa = PBXBuildFile; fileRef = CE0DECB524A921930066B2FB /* Offers.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CE17F77B24A9295C0097B224 /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE17F77A24A9295C0097B224 /* Core.framework */; };
 		CE17F77C24A9295C0097B224 /* Core.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CE17F77A24A9295C0097B224 /* Core.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CE17F77F24A929600097B224 /* UI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE17F77E24A929600097B224 /* UI.framework */; };
@@ -40,16 +37,6 @@
 		CE90C79324C4634D00731135 /* OfferAddToFavoriteButtton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE90C79224C4634D00731135 /* OfferAddToFavoriteButtton.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		CE0DECBD24A921930066B2FB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CE0DECA924A921930066B2FB /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = CE0DECB124A921930066B2FB;
-			remoteInfo = Offers;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXCopyFilesBuildPhase section */
 		CE17F77D24A9295C0097B224 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -67,11 +54,7 @@
 
 /* Begin PBXFileReference section */
 		CE0DECB224A921930066B2FB /* Offers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Offers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		CE0DECB524A921930066B2FB /* Offers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Offers.h; sourceTree = "<group>"; };
 		CE0DECB624A921930066B2FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CE0DECBB24A921930066B2FB /* OffersTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OffersTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		CE0DECC024A921930066B2FB /* OffersTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffersTests.swift; sourceTree = "<group>"; };
-		CE0DECC224A921930066B2FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE17F77A24A9295C0097B224 /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE17F77E24A929600097B224 /* UI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = UI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE196A6824AA7A41001D7157 /* ListOfOffersFilterCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOfOffersFilterCollectionCell.swift; sourceTree = "<group>"; };
@@ -110,14 +93,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CE0DECB824A921930066B2FB /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				CE0DECBC24A921930066B2FB /* Offers.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -125,7 +100,6 @@
 			isa = PBXGroup;
 			children = (
 				CE0DECB424A921930066B2FB /* Offers */,
-				CE0DECBF24A921930066B2FB /* OffersTests */,
 				CE0DECB324A921930066B2FB /* Products */,
 				CE17F77924A9295C0097B224 /* Frameworks */,
 			);
@@ -135,7 +109,6 @@
 			isa = PBXGroup;
 			children = (
 				CE0DECB224A921930066B2FB /* Offers.framework */,
-				CE0DECBB24A921930066B2FB /* OffersTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -147,19 +120,9 @@
 				CE2806A024A92BDC0066FE7A /* ViewControllers */,
 				CE686BA824AFC78D00952E43 /* Resources */,
 				CE196A6E24AA9686001D7157 /* OffersCoordinator.swift */,
-				CE0DECB524A921930066B2FB /* Offers.h */,
 				CE0DECB624A921930066B2FB /* Info.plist */,
 			);
 			path = Offers;
-			sourceTree = "<group>";
-		};
-		CE0DECBF24A921930066B2FB /* OffersTests */ = {
-			isa = PBXGroup;
-			children = (
-				CE0DECC024A921930066B2FB /* OffersTests.swift */,
-				CE0DECC224A921930066B2FB /* Info.plist */,
-			);
-			path = OffersTests;
 			sourceTree = "<group>";
 		};
 		CE17F77924A9295C0097B224 /* Frameworks */ = {
@@ -294,7 +257,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE0DECC324A921930066B2FB /* Offers.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -320,24 +282,6 @@
 			productReference = CE0DECB224A921930066B2FB /* Offers.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		CE0DECBA24A921930066B2FB /* OffersTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = CE0DECC924A921930066B2FB /* Build configuration list for PBXNativeTarget "OffersTests" */;
-			buildPhases = (
-				CE0DECB724A921930066B2FB /* Sources */,
-				CE0DECB824A921930066B2FB /* Frameworks */,
-				CE0DECB924A921930066B2FB /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				CE0DECBE24A921930066B2FB /* PBXTargetDependency */,
-			);
-			name = OffersTests;
-			productName = OffersTests;
-			productReference = CE0DECBB24A921930066B2FB /* OffersTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -351,9 +295,6 @@
 					CE0DECB124A921930066B2FB = {
 						CreatedOnToolsVersion = 11.5;
 						LastSwiftMigration = 1150;
-					};
-					CE0DECBA24A921930066B2FB = {
-						CreatedOnToolsVersion = 11.5;
 					};
 				};
 			};
@@ -371,7 +312,6 @@
 			projectRoot = "";
 			targets = (
 				CE0DECB124A921930066B2FB /* Offers */,
-				CE0DECBA24A921930066B2FB /* OffersTests */,
 			);
 		};
 /* End PBXProject section */
@@ -384,13 +324,6 @@
 				CE2806B324A93EBA0066FE7A /* Offer.storyboard in Resources */,
 				CE2806BD24A947010066FE7A /* ListOfOffers.storyboard in Resources */,
 				CE686BAA24AFC7F000952E43 /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		CE0DECB924A921930066B2FB /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -425,23 +358,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CE0DECB724A921930066B2FB /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				CE0DECC124A921930066B2FB /* OffersTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		CE0DECBE24A921930066B2FB /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = CE0DECB124A921930066B2FB /* Offers */;
-			targetProxy = CE0DECBD24A921930066B2FB /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		CE0DECC424A921930066B2FB /* Debug */ = {
@@ -615,42 +532,6 @@
 			};
 			name = Release;
 		};
-		CE0DECCA24A921930066B2FB /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = OffersTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.igorlab.OffersTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		CE0DECCB24A921930066B2FB /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = OffersTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.igorlab.OffersTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -668,15 +549,6 @@
 			buildConfigurations = (
 				CE0DECC724A921930066B2FB /* Debug */,
 				CE0DECC824A921930066B2FB /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		CE0DECC924A921930066B2FB /* Build configuration list for PBXNativeTarget "OffersTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				CE0DECCA24A921930066B2FB /* Debug */,
-				CE0DECCB24A921930066B2FB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

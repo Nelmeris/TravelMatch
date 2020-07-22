@@ -17,11 +17,6 @@ class ReviewsTableViewCell: UITableViewCell {
     @IBOutlet weak var reviewDateLabel: UILabel!
     @IBOutlet weak var reviewDescriptionLabel: UILabel!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-    
     func fillData(review: Review) {
         reviewOwnerImageView.image = review.ownerImage
         reviewOwnerNameLabel.text = review.ownerName

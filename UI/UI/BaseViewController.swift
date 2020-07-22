@@ -12,6 +12,8 @@ open class BaseViewController: UIViewController {
 
     public var notificationCenter = NotificationCenter.default
     
+    // MARK: - Lifecycle
+    
     open override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.tintColor = UIColor.ThemeColors.blackColor
@@ -59,6 +61,7 @@ open class BaseViewController: UIViewController {
     
     public func showActivityIndicator() {
         view.bringSubviewToFront(activityIndicator)
+        view.isUserInteractionEnabled = false
         activityIndicator.isHidden = false
         activityIndicator.startAnimating()
         UIView.animate(withDuration: 0.3) {
@@ -67,6 +70,7 @@ open class BaseViewController: UIViewController {
     }
     
     public func hideActivityIndicator() {
+        view.isUserInteractionEnabled = true
         activityIndicator.isHidden = true
         activityIndicator.stopAnimating()
         UIView.animate(withDuration: 0.3) {
@@ -87,4 +91,5 @@ open class BaseViewController: UIViewController {
             handler: nil))
         present(alert, animated: true, completion: nil)
     }
+    
 }

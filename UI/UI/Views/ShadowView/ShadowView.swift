@@ -13,22 +13,22 @@ public class ShadowView: UIView {
     
     @IBInspectable
     var shadowColor: UIColor = .black {
-           didSet {
-               setupView()
-           }
-       }
+        didSet {
+            setupGradient()
+        }
+    }
 
     @IBInspectable
     var shadowOpacity: CGFloat = 0.7 {
         didSet {
-            setupView()
+            setupGradient()
         }
     }
     
     @IBInspectable
     var shadowSize: CGFloat = 0.6 {
         didSet {
-            setupView()
+            setupGradient()
         }
     }
     
@@ -44,8 +44,10 @@ public class ShadowView: UIView {
     
     private func setupView() {
         backgroundColor = .clear
-
-        // setup gradient
+        setupGradient()
+    }
+    
+    private func setupGradient() {
         let gradient = CAGradientLayer()
         let shadowHeight: CGFloat = bounds.height * shadowSize
         gradient.frame = CGRect(
@@ -68,6 +70,6 @@ public class ShadowView: UIView {
         } else {
             layer.insertSublayer(gradient, below: nil)
         }
-
     }
+    
 }
