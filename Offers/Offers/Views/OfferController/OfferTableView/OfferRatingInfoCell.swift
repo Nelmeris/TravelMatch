@@ -10,8 +10,8 @@ import UIKit
 import UI
 import Pic
 
-protocol OfferRatingInfoCellCollectionDelegate: class {
-    func didSelectItem(images: [UIImage], index: Int)
+@objc protocol OfferRatingInfoCellCollectionDelegate: class {
+    @objc optional func didSelectItem(index: Int)
 }
 
 class OfferRatingInfoCell: CustomTableViewCell, OfferRatingInfoCellCollectionDelegate {
@@ -50,14 +50,8 @@ class OfferRatingInfoCell: CustomTableViewCell, OfferRatingInfoCellCollectionDel
     }
     
     override func fillData(offer: FakeOffer) {
-        var images = MockFakeDataPic.data.getPictures(count: 9)
-        images.shuffle()
-        imageCollection = images
+        imageCollection = MockFakeDataPic.data.images
         collectionView.reloadData()
-    }
-    
-    func didSelectItem(images: [UIImage], index: Int) {
-        
     }
 }
 
@@ -76,7 +70,7 @@ extension OfferRatingInfoCell: UICollectionViewDelegate, UICollectionViewDataSou
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("didSelectItemAt \(indexPath.item)")
-        delegate?.didSelectItem(images: imageCollection, index: indexPath.item)
+        delegate?.didSelectItem?(index: indexPath.item)
     }
     
 }

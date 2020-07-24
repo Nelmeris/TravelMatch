@@ -17,13 +17,13 @@
 		CE27402D24C63B0600BAD20B /* UI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CE27402924C63B0600BAD20B /* UI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CE27403024C63B2800BAD20B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE27402F24C63B2800BAD20B /* Assets.xcassets */; };
 		CE27403224C63B3C00BAD20B /* mock_fake_data.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE27403124C63B3C00BAD20B /* mock_fake_data.swift */; };
-		CE27403724C63ED900BAD20B /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE27403624C63ED900BAD20B /* Core.framework */; };
-		CE27403824C63ED900BAD20B /* Core.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CE27403624C63ED900BAD20B /* Core.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CE27403B24C6414C00BAD20B /* ReviewsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE27403924C6414C00BAD20B /* ReviewsController.swift */; };
 		CE27403C24C6414C00BAD20B /* ReviewsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE27403924C6414C00BAD20B /* ReviewsController.swift */; };
 		CE27403D24C6414C00BAD20B /* Reviews.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE27403A24C6414C00BAD20B /* Reviews.storyboard */; };
 		CE27403E24C6414C00BAD20B /* Reviews.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE27403A24C6414C00BAD20B /* Reviews.storyboard */; };
 		CE27404E24C648FC00BAD20B /* mock_fake_data.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE27403124C63B3C00BAD20B /* mock_fake_data.swift */; };
+		CE4A911324CB53A100379AF0 /* ViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4A911224CB53A100379AF0 /* ViewControllerFactory.swift */; };
+		CE4A913E24CB71EE00379AF0 /* ReviewsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4A913D24CB71EE00379AF0 /* ReviewsCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,7 +44,6 @@
 			dstSubfolderSpec = 10;
 			files = (
 				CE27402D24C63B0600BAD20B /* UI.framework in Embed Frameworks */,
-				CE27403824C63ED900BAD20B /* Core.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -63,9 +62,10 @@
 		CE27402924C63B0600BAD20B /* UI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = UI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE27402F24C63B2800BAD20B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE27403124C63B3C00BAD20B /* mock_fake_data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mock_fake_data.swift; sourceTree = "<group>"; };
-		CE27403624C63ED900BAD20B /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE27403924C6414C00BAD20B /* ReviewsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewsController.swift; sourceTree = "<group>"; };
 		CE27403A24C6414C00BAD20B /* Reviews.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Reviews.storyboard; sourceTree = "<group>"; };
+		CE4A911224CB53A100379AF0 /* ViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerFactory.swift; sourceTree = "<group>"; };
+		CE4A913D24CB71EE00379AF0 /* ReviewsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewsCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,7 +74,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE27402C24C63B0600BAD20B /* UI.framework in Frameworks */,
-				CE27403724C63ED900BAD20B /* Core.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -114,8 +113,10 @@
 				CE27400B24C6389200BAD20B /* Controllers */,
 				CE27400A24C6388B00BAD20B /* Views */,
 				CE27401D24C639EB00BAD20B /* Extensions */,
+				CE4A914024CB845400379AF0 /* Helpers */,
 				CE27400924C6388300BAD20B /* Resources */,
 				CE273FF324C637A800BAD20B /* Info.plist */,
+				CE4A913D24CB71EE00379AF0 /* ReviewsCoordinator.swift */,
 			);
 			path = Reviews;
 			sourceTree = "<group>";
@@ -150,6 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				CE27400C24C638A600BAD20B /* ReviewsController */,
+				CE4A911224CB53A100379AF0 /* ViewControllerFactory.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -182,11 +184,17 @@
 		CE27402724C63B0600BAD20B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				CE27403624C63ED900BAD20B /* Core.framework */,
 				CE27402824C63B0600BAD20B /* Core.framework */,
 				CE27402924C63B0600BAD20B /* UI.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CE4A914024CB845400379AF0 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -292,6 +300,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE27403224C63B3C00BAD20B /* mock_fake_data.swift in Sources */,
+				CE4A911324CB53A100379AF0 /* ViewControllerFactory.swift in Sources */,
+				CE4A913E24CB71EE00379AF0 /* ReviewsCoordinator.swift in Sources */,
 				CE27401F24C63A0000BAD20B /* DateFormatter.swift in Sources */,
 				CE27401B24C6398C00BAD20B /* ReviewsTableViewCell.swift in Sources */,
 				CE27403B24C6414C00BAD20B /* ReviewsController.swift in Sources */,

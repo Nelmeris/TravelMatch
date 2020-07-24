@@ -31,7 +31,7 @@ public final class OffersCoordinator: BaseCoordinator {
     
     private func showListOfOffersController() {
         let controller = reviewsControllerFactory.makeListOfOffersController()
-          
+        
         controller.onOfferController = { [weak self] offer in
             self?.showOfferController(offer: offer)
         }
@@ -43,12 +43,12 @@ public final class OffersCoordinator: BaseCoordinator {
         let controller = reviewsControllerFactory.makeOfferController()
         controller.offer = offer
         
-        controller.onPicController = { [weak self] images, scrollToItem in
-            self?.showPicController(images: images, scrollToItem: scrollToItem)
+        controller.onPicController = { [weak self] offerID, scrollToItem in
+            self?.showPicController(offerID: offerID, scrollToItem: scrollToItem)
         }
         
-        controller.onReviewsController = { [weak self] offerID, hideSendReviewView in
-            self?.showReviewsController(offerID: offerID, hideSendReviewView: hideSendReviewView)
+        controller.onReviewsController = { [weak self] offerID in
+            self?.showReviewsController(offerID: offerID)
         }
         
         if nil != rootController?.viewControllers.last as? ListOfOffersController {
@@ -58,36 +58,17 @@ public final class OffersCoordinator: BaseCoordinator {
         }
     }
     
-    private func showPicController(images: [UIImage], scrollToItem: Int) {
-        let controller = reviewsControllerFactory.makePicController()
-        controller.images = images
-        controller.scrollToItem = scrollToItem
-        
-        controller.didPressedCloseButton = { [weak self] in
-            self?.rootController?.popViewController(animated: true)
-        }
-        
-        if nil != rootController?.viewControllers.last as? OfferController {
-            rootController?.pushViewController(controller, animated: true)
-        } else {
-            rootController?.pushViewController(controller, animated: true)
-        }
+    private func showPicController(offerID: Int, scrollToItem: Int) {
+        let picCoordinator = PicCoordinator(rootController: self.rootController!,
+                                            offerID: offerID,
+                                            scrollToItem: scrollToItem)
+        picCoordinator.start()
     }
     
-    private func showReviewsController(offerID: Int, hideSendReviewView: Bool) {
-        let controller = reviewsControllerFactory.makeReviewsController()
-        controller.offerID = offerID
-        controller.isHiddenSendReviewView = hideSendReviewView
-        
-        controller.didPressedCloseButton = { [weak self] in
-            self?.rootController?.popViewController(animated: true)
-        }
-        
-        if nil != rootController?.viewControllers.last as? OfferController {
-            rootController?.pushViewController(controller, animated: true)
-        } else {
-            rootController?.pushViewController(controller, animated: true)
-        }
+    private func showReviewsController(offerID: Int) {
+        let picCoordinator = ReviewsCoordinator(rootController: self.rootController!,
+                                                offerID: offerID)
+        picCoordinator.start()
     }
     
     private func showError(error: Error) {

@@ -18,8 +18,8 @@ class OfferController: BaseViewController {
     private let addToFavoriteButtton = OfferAddToFavoriteButtton()
     
     // MARK: - Output
-    var onPicController: (([UIImage], Int) -> Void)?
-    var onReviewsController: ((Int, Bool) -> Void)?
+    var onPicController: ((Int, Int) -> Void)?
+    var onReviewsController: ((Int) -> Void)?
     var onSocialButtonClicked: ((FakeOffer) -> Void)?
     var onSendMessageButtonClicked: ((FakeOffer) -> Void)?
     var onBookingDetail: ((FakeOffer) -> Void)?
@@ -54,7 +54,6 @@ class OfferController: BaseViewController {
     
     // MARK: NavigationBar configurate
     func configureNavigationBar() {
-        
         // hite title for back button
         self.navigationController?.navigationBar.topItem?.title = ""
         // add addInFavorite button
@@ -139,15 +138,14 @@ extension OfferController: UITableViewDelegate, UITableViewDataSource {
 }
 
 extension OfferController: OfferRatingInfoCellCollectionDelegate {
-    func didSelectItem(images: [UIImage], index: Int) {
-        onPicController?(images, index)
+    func didSelectItem(index: Int) {
+        onPicController?(offer.id, index)
     }
 }
 
 extension OfferController: OfferReviewWatchAllCellDelegate {
     func didPressedShowAllReviewsButton() {
         let offerID = offer.id
-        let hideSendReviewView = false
-        onReviewsController?(offerID, hideSendReviewView)
+        onReviewsController?(offerID)
     }
 }

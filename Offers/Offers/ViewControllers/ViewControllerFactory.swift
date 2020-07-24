@@ -7,8 +7,6 @@
 //
 
 import UIKit
-import Pic
-import Reviews
 
 class ViewControllerFactory {
     
@@ -21,16 +19,4 @@ class ViewControllerFactory {
         return UIStoryboard(name: "Offer", bundle: Bundle(for: OfferController.self))
             .instantiateViewController(OfferController.self)
     }
-    
-    func makePicController() -> PicController {
-        
-        return UIStoryboard(name: "Pic", bundle: Bundle(for: PicController.self))
-            .instantiateViewController(PicController.self)
-    }
-
-    func makeReviewsController() -> ReviewsController {
-        return UIStoryboard(name: "Reviews", bundle: Bundle(for: ReviewsController.self))
-            .instantiateViewController(ReviewsController.self)
-    }
-    
 }

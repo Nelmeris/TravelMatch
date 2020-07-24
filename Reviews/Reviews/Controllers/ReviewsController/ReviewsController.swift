@@ -9,17 +9,18 @@
 import UIKit
 import UI
 
-public class ReviewsController: BaseViewController {
+class ReviewsController: BaseViewController {
     //MARK: - Constant
     public var offerID: Int = 0
+    public var impressionID: Int = 0
     private var reviews: [Review] = []
     public var isHiddenSendReviewView: Bool = true
     
-    private var keyboardHeightOldValue: CGFloat = 0
+    var keyboardHeightOldValue: CGFloat = 0
     
     // MARK: - Output
-    public var didPressedCloseButton: (() -> Void)?
-
+    var didPressedCloseButton: (() -> Void)?
+    
     
     //MARK: - IBOutlet
     @IBOutlet weak var reviewSuperView: UIView!
@@ -33,15 +34,15 @@ public class ReviewsController: BaseViewController {
     
     //MARK: - Live Cycle
     
-    public override func viewWillAppear(_ animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         let randonInt = Int.random(in: 5...16)
         reviews = MockFakeDataReviews.data.getReviews(count: randonInt)
     }
     
-    public override func viewDidLoad() {
+    override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         configure()
     }
@@ -80,20 +81,24 @@ public class ReviewsController: BaseViewController {
         let info = notification.userInfo as NSDictionary?
         let keyboardHeight = (info?.value(forKey: UIResponder.keyboardFrameEndUserInfoKey) as! NSValue).cgRectValue.size.height
         var contentInsets: UIEdgeInsets?
-
+        let spotterHeigh: CGFloat = 24
+        
         print("⌨️ Keyboard Height Was => \(self.keyboardHeightOldValue)")
-
+        
         if notification.name == UIResponder.keyboardWillShowNotification {
-            contentInsets = UIEdgeInsets(top: 0, left: 0, bottom: keyboardHeight, right: 0)
+            contentInsets = UIEdgeInsets(top: 0,
+                                         left: 0,
+                                         bottom: keyboardHeight - spotterHeigh,
+                                         right: 0)
             print("⌨️ will show")
         } else if notification.name == UIResponder.keyboardWillHideNotification {
-            contentInsets = UIEdgeInsets(top: 0, left: 0, bottom: -keyboardHeight, right: 0)
+            contentInsets = UIEdgeInsets(top: 0, left: 0, bottom: -keyboardHeight + spotterHeigh, right: 0)
             reviewSuperView.frame = reviewSuperView.frame.inset(by: contentInsets!)
             self.keyboardHeightOldValue = 0
             print("⌨️ will hide")
         } else if notification.name == UIResponder.keyboardWillChangeFrameNotification {
             if self.keyboardHeightOldValue == 0 {
-                contentInsets = UIEdgeInsets(top: 0, left: 0, bottom: keyboardHeight, right: 0)
+                contentInsets = UIEdgeInsets(top: 0, left: 0, bottom: keyboardHeight - spotterHeigh, right: 0)
                 reviewSuperView.frame = reviewSuperView.frame.inset(by: contentInsets!)
                 self.keyboardHeightOldValue = keyboardHeight
                 print("⌨️ will add \(keyboardHeight)")
@@ -131,11 +136,11 @@ public class ReviewsController: BaseViewController {
 }
 
 extension ReviewsController: UITableViewDataSource, UITableViewDelegate {
-    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return reviews.count
     }
     
-    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: ReviewsTableViewCell.reuseID, for: indexPath) as! ReviewsTableViewCell
         cell.fillData(review: reviews[indexPath.row])
         return cell

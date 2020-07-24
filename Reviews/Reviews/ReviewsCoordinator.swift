@@ -1,8 +1,8 @@
 //
-//  PicCoordinator.swift
-//  Pic
+//  ReviewsCoordinator.swift
+//  Reviews
 //
-//  Created by Igor on 21.07.2020.
+//  Created by Igor on 24.07.2020.
 //  Copyright © 2020 Igor Gapanovich. All rights reserved.
 //
 
@@ -10,45 +10,42 @@ import UIKit
 import UI
 import Core
 
-public final class PicCoordinator: BaseCoordinator {
+public final class ReviewsCoordinator: BaseCoordinator {
     
     private weak var rootController: NavigationController?
     private var offerID: Int?
     private var impressionID: Int?
-    private var scrollToItem: Int = 0
-    private let picControllerFactory: ViewControllerFactory
+    private let reviewsControllerFactory: ViewControllerFactory
     
-    public init(rootController: NavigationController, offerID: Int, scrollToItem: Int) {
+    public init(rootController: NavigationController, offerID: Int) {
         self.rootController = rootController
         self.offerID = offerID
-        self.scrollToItem = scrollToItem
-        self.picControllerFactory = ViewControllerFactory()
+        self.reviewsControllerFactory = ViewControllerFactory()
         super.init()
     }
     
-    public init(rootController: NavigationController, impressionID: Int, scrollToItem: Int) {
+    public init(rootController: NavigationController, impressionID: Int) {
         self.rootController = rootController
         self.impressionID = impressionID
-        self.scrollToItem = scrollToItem
-        self.picControllerFactory = ViewControllerFactory()
+        self.reviewsControllerFactory = ViewControllerFactory()
         super.init()
     }
     
     public override func start() {
         rootController?.setNavigationBarHidden(true, animated: true)
-        showPicController()
+        showReviewsController()
     }
-        
-    private func showPicController() {
-        let controller = picControllerFactory.makePicController()
+    
+    private func showReviewsController() {
+        let controller = reviewsControllerFactory.makeReviewController()
         if let offerID = offerID {
             controller.offerID = offerID
+            controller.isHiddenSendReviewView = false
         } else if let impressionID = impressionID {
             controller.impressionID = impressionID
+            controller.isHiddenSendReviewView = false
         }
-        
-        controller.scrollToItem = scrollToItem
-          
+                  
         controller.didPressedCloseButton = { [weak self] in
             self?.rootController?.popViewController(animated: true) /// not working
             controller.navigationController?.popViewController(animated: true) ///work

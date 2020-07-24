@@ -14,8 +14,9 @@ public class MockFakeDataPic {
     
     ///PIC data
     private let pictures = ["cristina","daniel","emma","florian","cristina","yevhenii"]
+    public var images: [UIImage] = []
     
-    public func getPictures(count: Int) -> [UIImage] {
+    private func getPictures(count: Int) -> [UIImage] {
         var array: [UIImage] = []
         
         let counter: Int = count / pictures.count
@@ -32,8 +33,11 @@ public class MockFakeDataPic {
             let picture = UIImage(named: pictures[i], in: Bundle(for: MockFakeDataPic.self), compatibleWith: nil)
             array.append(picture!)
         }
+        array.shuffle()
         return array
     }
+    
     private init() {
+        self.images = self.getPictures(count: 9)
     }
 }

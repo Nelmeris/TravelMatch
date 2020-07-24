@@ -9,27 +9,24 @@
 import UI
 import UIKit
 
-public class PicController: BaseViewController {
+class PicController: BaseViewController {
     //MARK: - Constant
-    public var images: [UIImage] = []
+    private var images: [UIImage] = MockFakeDataPic.data.images
+    public var impressionID: Int?
+    public var offerID: Int?
     public var scrollToItem: Int = 0
     
     // MARK: - Output
-    public var didPressedCloseButton: (() -> Void)?
+    var didPressedCloseButton: (() -> Void)?
     
     //MARK: - IBOutlet
     @IBOutlet weak var collectionView: UICollectionView!
     
     //MARK: - Live Cycle
     
-    public override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
-        
-    }
-    
-    public override func viewDidLoad() {
+    override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         configure()
     }
@@ -50,14 +47,14 @@ public class PicController: BaseViewController {
         layout.minimumLineSpacing = 0
         layout.sectionHeadersPinToVisibleBounds = true
         layout.scrollDirection = .horizontal
-       
-        collectionView!.collectionViewLayout = layout
+        
+        collectionView.collectionViewLayout = layout
         collectionView.isPagingEnabled = true
         collectionView.backgroundColor = .black
         collectionView.backgroundColor?.withAlphaComponent(0.4)
     }
     
-    public override func viewDidLayoutSubviews() {
+    override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         scrollToItemAtIndex()
     }
@@ -69,7 +66,6 @@ public class PicController: BaseViewController {
     
     //MARK: - IBAction
     @IBAction func closeButton() {
-//        navigationController?.popViewController(animated: true)
         didPressedCloseButton?()
     }
     
@@ -77,15 +73,15 @@ public class PicController: BaseViewController {
 
 extension PicController: UICollectionViewDataSource, UICollectionViewDelegate {
     
-    public func numberOfSections(in collectionView: UICollectionView) -> Int {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
     
-    public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return images.count
     }
     
-    public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PicCollectionViewCell.reuseID, for: indexPath) as! PicCollectionViewCell
         
         cell.fillData(image: images[indexPath.item])
