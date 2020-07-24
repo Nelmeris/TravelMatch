@@ -27,6 +27,7 @@ class ReviewsController: BaseViewController {
     @IBOutlet weak var controllerNamelabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var reviewTextField: TextField!
+    @IBOutlet weak var sendReviewButtonOutlet: Button!
     @IBOutlet weak var sendReviewView: UIView!
     
     //MARK: - Init
@@ -130,8 +131,20 @@ class ReviewsController: BaseViewController {
         didPressedCloseButton?()
     }
     
-    @IBAction func sendReviewButton() {
+    @IBAction func sendReviewButtonAction() {
         print("sendReviewButton")
+        if let text = reviewTextField.text, text.isEmpty {
+            UIView.animate(withDuration: 0.5, animations: {
+                self.reviewTextField.backgroundColor = .systemRed
+            }) { _ in
+                self.reviewTextField.backgroundColor = .white
+            }
+            
+            print("reviewTextField isEmpty")
+        } else if let text = reviewTextField.text, !text.isEmpty{
+            reviewTextField.text = ""
+            print("\(text) is sended")
+        }
     }
 }
 
