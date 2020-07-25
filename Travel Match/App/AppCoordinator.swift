@@ -6,7 +6,6 @@
 //  Copyright © 2020 Maxim Timokhin. All rights reserved.
 //
 
-import UIKit
 import Core
 import Auth
 import OnBoarding

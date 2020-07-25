@@ -7,36 +7,19 @@
 //
 
 import UIKit
-import Services
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
-    var coordinator: AppCoordinator?
+    var appStartManager: AppStartManager?
 
     func application(
         _ application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
     ) -> Bool {
-        
-        window = UIWindow()
-        window?.makeKeyAndVisible()
-        
-        coordinator = AppCoordinator(
-            onBoardingService: UserDefaultsOnBoardingService(
-                userDefaults: UserDefaults.standard
-            ),
-            authService: UserDefaultsAuthService(
-                userDefaults: UserDefaults.standard
-            ),
-            questionsService: TravelQuestionService(
-                userDefaults: UserDefaults.standard
-            )
-        )
-        
-        coordinator?.start()
-        
+        appStartManager = AppStartManager(with: window)
+        appStartManager?.start()
         return true
     }
 

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		570B38E824CC591C00827B42 /* AppStartManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570B38E724CC591C00827B42 /* AppStartManager.swift */; };
 		57AFF42024CC514E007B913E /* Services.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57AFF41F24CC514E007B913E /* Services.framework */; };
 		57AFF42124CC514E007B913E /* Services.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 57AFF41F24CC514E007B913E /* Services.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CE17F77524A9223D0097B224 /* Offers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE17F77424A9223D0097B224 /* Offers.framework */; };
@@ -68,6 +69,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		570B38E724CC591C00827B42 /* AppStartManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStartManager.swift; sourceTree = "<group>"; };
 		57AFF41F24CC514E007B913E /* Services.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Services.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE17F77424A9223D0097B224 /* Offers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Offers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E12150CF24A4961100C691E4 /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -165,8 +167,6 @@
 				E14659F82494D48B00BBC9F5 /* Environment */,
 				E14659F92494D4BB00BBC9F5 /* Resources */,
 				E1E450B124AA8ADD00BDDAFF /* Data */,
-				E14659D02494B0C300BBC9F5 /* LaunchScreen.storyboard */,
-				E1CE976D249E23B2007630E9 /* Travel Match.entitlements */,
 			);
 			path = "Travel Match";
 			sourceTree = "<group>";
@@ -175,6 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				E14659C52494B0C100BBC9F5 /* AppDelegate.swift */,
+				570B38E724CC591C00827B42 /* AppStartManager.swift */,
 				E14659FF2494DD0900BBC9F5 /* AppCoordinator.swift */,
 				E17396E524AC720B0010D117 /* TabCoordinator.swift */,
 			);
@@ -185,6 +186,7 @@
 			isa = PBXGroup;
 			children = (
 				E14659D32494B0C300BBC9F5 /* Info.plist */,
+				E1CE976D249E23B2007630E9 /* Travel Match.entitlements */,
 			);
 			path = Environment;
 			sourceTree = "<group>";
@@ -192,6 +194,7 @@
 		E14659F92494D4BB00BBC9F5 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E14659D02494B0C300BBC9F5 /* LaunchScreen.storyboard */,
 				E1465A04249506FD00BBC9F5 /* Fonts */,
 				E14659CE2494B0C300BBC9F5 /* Assets.xcassets */,
 			);
@@ -355,6 +358,7 @@
 				E17396E624AC720B0010D117 /* TabCoordinator.swift in Sources */,
 				E1465A002494DD0900BBC9F5 /* AppCoordinator.swift in Sources */,
 				E1AB54EF24A1ED60008F5436 /* User.swift in Sources */,
+				570B38E824CC591C00827B42 /* AppStartManager.swift in Sources */,
 				E14659C62494B0C100BBC9F5 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -491,7 +495,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "Travel Match/Travel Match.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "Travel Match/Environment/Travel Match.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
@@ -513,7 +517,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "Travel Match/Travel Match.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "Travel Match/Environment/Travel Match.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
