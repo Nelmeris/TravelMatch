@@ -12,6 +12,8 @@
 		E12150C624A495EE00C691E4 /* Core.h in Headers */ = {isa = PBXBuildFile; fileRef = E12150B824A495EE00C691E4 /* Core.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E12150D524A4962A00C691E4 /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12150D324A4962A00C691E4 /* BaseCoordinator.swift */; };
 		E152D3CF24A88E2D0009972F /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = E152D3CE24A88E2D0009972F /* Result.swift */; };
+		E168AC7524C5B73100AE8A98 /* UI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E168AC7424C5B73100AE8A98 /* UI.framework */; };
+		E168AC7624C5B73100AE8A98 /* UI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E168AC7424C5B73100AE8A98 /* UI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E18E999824A8CA330072ADD4 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18E999724A8CA330072ADD4 /* NavigationController.swift */; };
 /* End PBXBuildFile section */
 
@@ -25,6 +27,20 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		E168AC7724C5B73100AE8A98 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				E168AC7624C5B73100AE8A98 /* UI.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		E12150B524A495EE00C691E4 /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E12150B824A495EE00C691E4 /* Core.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Core.h; sourceTree = "<group>"; };
@@ -34,6 +50,7 @@
 		E12150C524A495EE00C691E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E12150D324A4962A00C691E4 /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
 		E152D3CE24A88E2D0009972F /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		E168AC7424C5B73100AE8A98 /* UI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = UI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E18E999724A8CA330072ADD4 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -42,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E168AC7524C5B73100AE8A98 /* UI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,6 +80,7 @@
 				E12150B724A495EE00C691E4 /* Core */,
 				E12150C224A495EE00C691E4 /* CoreTests */,
 				E12150B624A495EE00C691E4 /* Products */,
+				E168AC7324C5B73100AE8A98 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -95,6 +114,14 @@
 			path = CoreTests;
 			sourceTree = "<group>";
 		};
+		E168AC7324C5B73100AE8A98 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E168AC7424C5B73100AE8A98 /* UI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -117,6 +144,7 @@
 				E12150B124A495EE00C691E4 /* Sources */,
 				E12150B224A495EE00C691E4 /* Frameworks */,
 				E12150B324A495EE00C691E4 /* Resources */,
+				E168AC7724C5B73100AE8A98 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);

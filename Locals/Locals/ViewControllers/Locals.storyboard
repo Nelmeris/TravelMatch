@@ -101,7 +101,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="бесплатно" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Zz-rC-hb7">
-                                                    <rect key="frame" x="17" y="259.5" width="57" height="13"/>
+                                                    <rect key="frame" x="17" y="260" width="49" height="12"/>
                                                     <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="10"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -187,14 +187,13 @@
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2Zi-jI-LYF" customClass="ImageView" customModule="UI">
                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="440"/>
-                                                    <color key="backgroundColor" red="0.20000000000000001" green="0.31764705879999999" blue="0.50588235290000005" alpha="1" colorSpace="calibratedRGB"/>
                                                 </imageView>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ePy-M9-ll4" customClass="ShadowView" customModule="UI">
                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="440"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ханна Секерешне" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ypk-OR-kow" customClass="Label" customModule="UI">
-                                                    <rect key="frame" x="20" y="379" width="374" height="41"/>
+                                                    <rect key="frame" x="20" y="387" width="374" height="33"/>
                                                     <fontDescription key="fontDescription" name="Montserrat-ExtraBold" family="Montserrat" pointSize="28"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
@@ -272,13 +271,13 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Обо мне" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Tt-Oo-rQi" customClass="Label" customModule="UI">
-                                                    <rect key="frame" x="20" y="40" width="374" height="22"/>
+                                                    <rect key="frame" x="20" y="40" width="374" height="21"/>
                                                     <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="18"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b8u-I4-2fz" customClass="Label" customModule="UI">
-                                                    <rect key="frame" x="20" y="82" width="374" height="172.5"/>
+                                                    <rect key="frame" x="20" y="81" width="374" height="90"/>
                                                     <string key="text">Я выросла в Будапеште и с детства путешествовала пешком по городу и в окрестностях, родители брали меня всегда с собой, чтобы показать мне всю красоту места, где я живу. Помощь туристам для меня больше, чем просто рутина, я занимаюсь этим уже много лет. Я одна из первых, кто начал помогать людям с организацией нестандартных впечатлений. Мне очень нравится делиться радостью открытия скрытых сокровищ города с посетителями со всего мира.</string>
                                                     <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="11"/>
                                                     <nil key="textColor"/>
@@ -290,7 +289,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="atA-0b-jfd" userLabel="SeparatorView">
-                                                    <rect key="frame" x="20" y="274.5" width="374" height="1"/>
+                                                    <rect key="frame" x="20" y="191" width="374" height="1"/>
                                                     <color key="backgroundColor" red="0.16862745098039217" green="0.16470588235294117" blue="0.1803921568627451" alpha="0.20163918711656442" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="1" id="5ZH-an-SGH"/>
@@ -323,7 +322,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" bouncesZoom="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="o7p-bx-Fc4">
-                                                    <rect key="frame" x="20" y="62" width="374" height="158"/>
+                                                    <rect key="frame" x="20" y="61" width="374" height="159"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                     <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="hg4-dh-ZxN" customClass="InterestsViewFlowLayout" customModule="Locals" customModuleProvider="target">
                                                         <size key="itemSize" width="30" height="30"/>
@@ -333,14 +332,14 @@
                                                     </collectionViewFlowLayout>
                                                     <cells>
                                                         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="InterestCollectionViewCell" id="o18-sr-aPW" customClass="InterestCollectionViewCell" customModule="Locals" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="0.0" width="118" height="45"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="111" height="45"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="g7J-Yw-o0W">
-                                                                <rect key="frame" x="0.0" y="0.0" width="118" height="45"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="111" height="45"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <subviews>
                                                                     <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HPQ-9B-xgh" customClass="RoundedView" customModule="UI">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="118" height="45"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="111" height="45"/>
                                                                         <subviews>
                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bcx-xX-XGx" customClass="ImageView" customModule="UI">
                                                                                 <rect key="frame" x="10" y="10" width="25" height="25"/>
@@ -350,7 +349,7 @@
                                                                                 </constraints>
                                                                             </imageView>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Волейбол" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uy5-Sb-2zf" customClass="Label" customModule="UI">
-                                                                                <rect key="frame" x="45" y="15" width="63" height="15"/>
+                                                                                <rect key="frame" x="45" y="15.5" width="56" height="14"/>
                                                                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="12"/>
                                                                                 <nil key="textColor"/>
                                                                                 <nil key="highlightedColor"/>
@@ -394,7 +393,7 @@
                                                     </connections>
                                                 </collectionView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Интересы" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BRn-Y0-CLc" customClass="Label" customModule="UI">
-                                                    <rect key="frame" x="20" y="20" width="374" height="22"/>
+                                                    <rect key="frame" x="20" y="20" width="374" height="21"/>
                                                     <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="18"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -422,13 +421,13 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Языки" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VNi-GN-flS" customClass="Label" customModule="UI">
-                                                    <rect key="frame" x="20" y="20" width="374" height="22"/>
+                                                    <rect key="frame" x="20" y="20" width="374" height="21"/>
                                                     <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="18"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="30" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dGS-AM-1NR">
-                                                    <rect key="frame" x="20" y="62" width="374" height="135"/>
+                                                    <rect key="frame" x="20" y="61" width="374" height="136"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                     <prototypes>
                                                         <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="LanguageTableViewCell" rowHeight="58" id="cRr-A9-97L" customClass="LanguageTableViewCell" customModule="Locals" customModuleProvider="target">
@@ -439,7 +438,7 @@
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Русский" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sv3-oh-f8l">
-                                                                        <rect key="frame" x="0.0" y="21.5" width="100" height="15"/>
+                                                                        <rect key="frame" x="0.0" y="22" width="100" height="14"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" constant="100" id="Zdv-iX-3Wn"/>
                                                                         </constraints>
@@ -510,13 +509,13 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Активности" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WRI-N1-heM" customClass="Label" customModule="UI">
-                                                    <rect key="frame" x="20" y="20" width="374" height="22"/>
+                                                    <rect key="frame" x="20" y="20" width="374" height="21"/>
                                                     <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="18"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="30" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="boq-dA-WMP">
-                                                    <rect key="frame" x="20" y="62" width="374" height="139"/>
+                                                    <rect key="frame" x="20" y="61" width="374" height="140"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                     <prototypes>
                                                         <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ActivityTableViewCell" rowHeight="65" id="ZAw-s1-zNk" customClass="ActivityTableViewCell" customModule="Locals" customModuleProvider="target">
@@ -540,7 +539,7 @@
                                                                         </userDefinedRuntimeAttributes>
                                                                     </view>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Организация активного отдыха" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="adA-uH-KNm">
-                                                                        <rect key="frame" x="28" y="25" width="346" height="15"/>
+                                                                        <rect key="frame" x="28" y="25.5" width="346" height="14"/>
                                                                         <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="12"/>
                                                                         <color key="textColor" red="0.16862745100000001" green="0.1647058824" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <nil key="highlightedColor"/>
@@ -636,16 +635,70 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="lOf-wU-ddi">
-                                <rect key="frame" x="20" y="134" width="374" height="48"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="lOf-wU-ddi">
+                                <rect key="frame" x="20" y="134" width="374" height="412"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9su-MX-KsU" customClass="DropdownButton" customModule="UI">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="48"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rb3-Sd-rdH" customClass="PriceRangeControl" customModule="UI">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="140"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="48" id="kC9-ct-DoR"/>
+                                            <constraint firstAttribute="height" constant="140" id="Bma-j7-JCC"/>
                                         </constraints>
-                                        <state key="normal" title="Язык"/>
-                                    </button>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="numberOfBars">
+                                                <integer key="value" value="40"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="valueFrom">
+                                                <real key="value" value="40"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="valueTo">
+                                                <real key="value" value="170"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <outlet property="dataSource" destination="lY4-4B-3Xl" id="q0M-Z2-RDu"/>
+                                        </connections>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b36-LN-ZwE" customClass="DropdownControl" customModule="UI">
+                                        <rect key="frame" x="0.0" y="160" width="374" height="48"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="48" id="4nk-ho-Y2o"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Язык"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JV9-PV-n7b" customClass="DropdownControl" customModule="UI">
+                                        <rect key="frame" x="0.0" y="228" width="374" height="48"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="48" id="3wl-Gt-7iF"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Активность"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="thF-Ku-0b8" customClass="DropdownControl" customModule="UI">
+                                        <rect key="frame" x="0.0" y="296" width="374" height="48"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="48" id="Zyu-8H-Fjv"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Пол"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b2e-WD-bSg" customClass="DropdownControl" customModule="UI">
+                                        <rect key="frame" x="0.0" y="364" width="374" height="48"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="48" id="tOl-ln-Y3B"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Интересы"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lIt-3l-IMh" customClass="PrimaryButton" customModule="UI">
@@ -675,6 +728,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="eA5-4J-RXD"/>
                     </view>
+                    <connections>
+                        <outlet property="pricePicker" destination="rb3-Sd-rdH" id="BW1-N0-3DU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="snG-HM-4ff" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -78,15 +78,20 @@ class TabCoordinator: BaseCoordinator {
         addDependency(localsCoordinator)
         localsCoordinator.start()
 
-        tabController.selectedIndex = 3
-
-        tabController.modalPresentationStyle = .fullScreen
-        rootController?.present(tabController, animated: false, completion: nil)
-
-        let offersCoordinator = OffersCoordinator(rootController: offersNavContrller)
+        let offersCoordinator = OffersCoordinator(
+            rootController: offersNavContrller
+        )
         addDependency(offersCoordinator)
         offersCoordinator.start()
 
+        
+        tabController.selectedIndex = 3
+        tabController.modalPresentationStyle = .fullScreen
+        rootController?.present(
+            tabController,
+            animated: false,
+            completion: nil
+        )
     }
 
 }

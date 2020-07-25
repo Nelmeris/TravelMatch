@@ -42,6 +42,7 @@ class SignUpViewController: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        navigationController?.navigationBar.topItem?.title = ""
         updateView()
     }
     
@@ -83,6 +84,7 @@ class SignUpViewController: BaseViewController {
         nameField?.autocorrectionType = .no
         nextButton?.isEnabled = isInputValid()
     }
+    
     
     // MARK: - Notifications
     

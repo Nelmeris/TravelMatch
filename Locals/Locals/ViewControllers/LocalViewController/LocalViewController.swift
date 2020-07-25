@@ -154,6 +154,12 @@ extension LocalViewController: UIScrollViewDelegate {
         } else {
             headerView.imageView.transform = CGAffineTransform(translationX: 0, y: scrollTop / 2)
         }
+        
+        if scrollTop > 150 {
+            navigationController?.setNavigationBarHidden(true, animated: true)
+        } else {
+            navigationController?.setNavigationBarHidden(false, animated: true)
+        }
     }
 
     
