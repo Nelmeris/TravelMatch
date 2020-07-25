@@ -9,13 +9,18 @@
 import UIKit
 import Models
 
-class ReviewsController: BaseViewController {
+public class ReviewsController: BaseViewController {
+    
     //MARK: - Constant
+    
     var offerID: Int = 0
     var reviews: [Review] = []
     private var keyboardHeightOldValue: CGFloat = 0
     
+    private var tableAdapter: TableViewAdapter<ReviewsTableViewCell>?
+    
     //MARK: - IBOutlet
+    
     @IBOutlet var reviewSuperView: UIView!
     @IBOutlet weak var controllerNamelabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
@@ -23,8 +28,9 @@ class ReviewsController: BaseViewController {
     @IBOutlet weak var sendReviewView: UIView!
     
     //MARK: - Init
+    
     ///init with Images for scrolling
-    init(offerID: Int, showSendReviewView: Bool) {
+    public init(offerID: Int, showSendReviewView: Bool) {
         super.init(nibName: nil, bundle: nil)
         self.offerID = offerID
         if !showSendReviewView {
@@ -39,16 +45,15 @@ class ReviewsController: BaseViewController {
     
     //MARK: - Live Cycle
     
-    override func viewWillAppear(_ animated: Bool) {
+    public override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         let randonInt = Int.random(in: 5...16)
         reviews = MockFakeDataUI.data.getReviews(count: randonInt)
+        tableAdapter?.set(items: reviews)
     }
     
-    override func viewDidLoad() {
+    public override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
         configure()
     }
     
@@ -58,12 +63,12 @@ class ReviewsController: BaseViewController {
     }
     
     func configureTableView() {
-        tableView.delegate = self
-        tableView.dataSource = self
+        tableAdapter = TableViewAdapter(table: tableView)
         tableView.separatorStyle = .none
     }
     
     //MARK: - Gestures
+    
     func addGesture() {
         
         let tapGR = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
@@ -119,22 +124,13 @@ class ReviewsController: BaseViewController {
     }
     
     //MARK: - IBAction
+    
     @IBAction func closeButton() {
         dismiss(animated: true, completion: nil)
     }
+    
     @IBAction func sendReviewButton() {
         print("sendReviewButton")
     }
-}
-
-extension ReviewsController: UITableViewDataSource, UITableViewDelegate {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return reviews.count
-    }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: ReviewsTableViewCell.reuseID, for: indexPath) as! ReviewsTableViewCell
-        cell.fillData(review: reviews[indexPath.row])
-        return cell
-    }
 }

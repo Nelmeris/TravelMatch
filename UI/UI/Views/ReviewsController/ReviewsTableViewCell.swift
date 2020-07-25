@@ -9,21 +9,25 @@
 import UIKit
 import Models
 
-class ReviewsTableViewCell: UITableViewCell {
+class ReviewsTableViewCell: UITableViewCell, ConfigurableCell {
     
-    static let reuseID = "ReviewsTableViewCell"
+    typealias ViewModel = Review
+    
+    static var reuseIdentifier: String {
+        return "ReviewsTableViewCell"
+    }
     
     @IBOutlet weak var reviewOwnerImageView: UIImageView!
     @IBOutlet weak var reviewOwnerNameLabel: UILabel!
     @IBOutlet weak var reviewDateLabel: UILabel!
     @IBOutlet weak var reviewDescriptionLabel: UILabel!
     
-    func fillData(review: Review) {
-        reviewOwnerImageView.image = review.ownerImage
-        reviewOwnerNameLabel.text = review.ownerName
+    func configure(_ viewModel: Review, at indexPath: IndexPath) {
+        reviewOwnerImageView.image = viewModel.ownerImage
+        reviewOwnerNameLabel.text = viewModel.ownerName
         let date = Date()
-        reviewDateLabel.text = date.getMonthYear(date: review.date)
-        reviewDescriptionLabel.text = review.description
+        reviewDateLabel.text = date.getMonthYear(date: viewModel.date)
+        reviewDescriptionLabel.text = viewModel.description
     }
-
+    
 }
