@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		57AFF42024CC514E007B913E /* Services.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57AFF41F24CC514E007B913E /* Services.framework */; };
+		57AFF42124CC514E007B913E /* Services.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 57AFF41F24CC514E007B913E /* Services.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CE17F77524A9223D0097B224 /* Offers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE17F77424A9223D0097B224 /* Offers.framework */; };
 		CE17F77624A9223D0097B224 /* Offers.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CE17F77424A9223D0097B224 /* Offers.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E12150D024A4961100C691E4 /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E12150CF24A4961100C691E4 /* Core.framework */; };
@@ -29,15 +31,10 @@
 		E152D37B24A7A0460009972F /* Questions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1A1598324A7949600E7C313 /* Questions.framework */; };
 		E152D37C24A7A0460009972F /* Questions.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E1A1598324A7949600E7C313 /* Questions.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E17396E624AC720B0010D117 /* TabCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17396E524AC720B0010D117 /* TabCoordinator.swift */; };
-		E18E998A24A8A7D70072ADD4 /* UserDefaults+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18E998924A8A7D70072ADD4 /* UserDefaults+Codable.swift */; };
-		E19063132496086500A3CB2E /* UserDefaults+Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19063122496086500A3CB2E /* UserDefaults+Keys.swift */; };
-		E1906318249610AC00A3CB2E /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1906317249610AC00A3CB2E /* AuthService.swift */; };
 		E190E90A24A4A74500E95698 /* OnBoarding.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E190E90924A4A74500E95698 /* OnBoarding.framework */; };
 		E190E90B24A4A74500E95698 /* OnBoarding.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E190E90924A4A74500E95698 /* OnBoarding.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E1A4CEC1249B47B200DF254F /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1A4CEC0249B47B200DF254F /* CloudKit.framework */; };
 		E1AB54EF24A1ED60008F5436 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1AB54EE24A1ED60008F5436 /* User.swift */; };
-		E1BB31102495568C00A4DA88 /* OnBoardingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BB310F2495568C00A4DA88 /* OnBoardingService.swift */; };
-		E1E450B024AA8A9900BDDAFF /* TravelQuestionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E450AF24AA8A9900BDDAFF /* TravelQuestionService.swift */; };
 		E1E450BD24AA8BE900BDDAFF /* q2.png in Resources */ = {isa = PBXBuildFile; fileRef = E1E450B324AA8BE800BDDAFF /* q2.png */; };
 		E1E450BE24AA8BE900BDDAFF /* q6.png in Resources */ = {isa = PBXBuildFile; fileRef = E1E450B424AA8BE800BDDAFF /* q6.png */; };
 		E1E450BF24AA8BE900BDDAFF /* q7.png in Resources */ = {isa = PBXBuildFile; fileRef = E1E450B524AA8BE800BDDAFF /* q7.png */; };
@@ -57,6 +54,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				57AFF42124CC514E007B913E /* Services.framework in Embed Frameworks */,
 				E12150DA24A4980B00C691E4 /* Auth.framework in Embed Frameworks */,
 				E12150D124A4961100C691E4 /* Core.framework in Embed Frameworks */,
 				E152D36924A79E370009972F /* UI.framework in Embed Frameworks */,
@@ -70,6 +68,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		57AFF41F24CC514E007B913E /* Services.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Services.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE17F77424A9223D0097B224 /* Offers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Offers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E12150CF24A4961100C691E4 /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E12150D824A4980B00C691E4 /* Auth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Auth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -88,16 +87,11 @@
 		E1465A1624950A8500BBC9F5 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
 		E152D36724A79E370009972F /* UI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = UI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E17396E524AC720B0010D117 /* TabCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabCoordinator.swift; sourceTree = "<group>"; };
-		E18E998924A8A7D70072ADD4 /* UserDefaults+Codable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Codable.swift"; sourceTree = "<group>"; };
-		E19063122496086500A3CB2E /* UserDefaults+Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Keys.swift"; sourceTree = "<group>"; };
-		E1906317249610AC00A3CB2E /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		E190E90924A4A74500E95698 /* OnBoarding.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = OnBoarding.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1A1598324A7949600E7C313 /* Questions.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Questions.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1A4CEC0249B47B200DF254F /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		E1AB54EE24A1ED60008F5436 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		E1BB310F2495568C00A4DA88 /* OnBoardingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingService.swift; sourceTree = "<group>"; };
 		E1CE976D249E23B2007630E9 /* Travel Match.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Travel Match.entitlements"; sourceTree = "<group>"; };
-		E1E450AF24AA8A9900BDDAFF /* TravelQuestionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelQuestionService.swift; sourceTree = "<group>"; };
 		E1E450B324AA8BE800BDDAFF /* q2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = q2.png; sourceTree = "<group>"; };
 		E1E450B424AA8BE800BDDAFF /* q6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = q6.png; sourceTree = "<group>"; };
 		E1E450B524AA8BE800BDDAFF /* q7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = q7.png; sourceTree = "<group>"; };
@@ -116,6 +110,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E152D36824A79E370009972F /* UI.framework in Frameworks */,
+				57AFF42024CC514E007B913E /* Services.framework in Frameworks */,
 				CE17F77524A9223D0097B224 /* Offers.framework in Frameworks */,
 				E12150D024A4961100C691E4 /* Core.framework in Frameworks */,
 				E12150D924A4980B00C691E4 /* Auth.framework in Frameworks */,
@@ -132,6 +127,7 @@
 		D94AE2D6B9F91AED3D8518BA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				57AFF41F24CC514E007B913E /* Services.framework */,
 				CE17F77424A9223D0097B224 /* Offers.framework */,
 				E1A1598324A7949600E7C313 /* Questions.framework */,
 				E152D36724A79E370009972F /* UI.framework */,
@@ -165,8 +161,6 @@
 			isa = PBXGroup;
 			children = (
 				E14659F62494D42D00BBC9F5 /* App */,
-				E14659F72494D45500BBC9F5 /* Core */,
-				E14659FA2494DAE300BBC9F5 /* BusinessLogic */,
 				E14659FE2494DB4700BBC9F5 /* Models */,
 				E14659F82494D48B00BBC9F5 /* Environment */,
 				E14659F92494D4BB00BBC9F5 /* Resources */,
@@ -187,15 +181,6 @@
 			path = App;
 			sourceTree = "<group>";
 		};
-		E14659F72494D45500BBC9F5 /* Core */ = {
-			isa = PBXGroup;
-			children = (
-				E19063122496086500A3CB2E /* UserDefaults+Keys.swift */,
-				E18E998924A8A7D70072ADD4 /* UserDefaults+Codable.swift */,
-			);
-			path = Core;
-			sourceTree = "<group>";
-		};
 		E14659F82494D48B00BBC9F5 /* Environment */ = {
 			isa = PBXGroup;
 			children = (
@@ -211,16 +196,6 @@
 				E14659CE2494B0C300BBC9F5 /* Assets.xcassets */,
 			);
 			path = Resources;
-			sourceTree = "<group>";
-		};
-		E14659FA2494DAE300BBC9F5 /* BusinessLogic */ = {
-			isa = PBXGroup;
-			children = (
-				E1906317249610AC00A3CB2E /* AuthService.swift */,
-				E1BB310F2495568C00A4DA88 /* OnBoardingService.swift */,
-				E1E450AF24AA8A9900BDDAFF /* TravelQuestionService.swift */,
-			);
-			path = BusinessLogic;
 			sourceTree = "<group>";
 		};
 		E14659FE2494DB4700BBC9F5 /* Models */ = {
@@ -377,15 +352,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E19063132496086500A3CB2E /* UserDefaults+Keys.swift in Sources */,
 				E17396E624AC720B0010D117 /* TabCoordinator.swift in Sources */,
 				E1465A002494DD0900BBC9F5 /* AppCoordinator.swift in Sources */,
-				E18E998A24A8A7D70072ADD4 /* UserDefaults+Codable.swift in Sources */,
 				E1AB54EF24A1ED60008F5436 /* User.swift in Sources */,
 				E14659C62494B0C100BBC9F5 /* AppDelegate.swift in Sources */,
-				E1E450B024AA8A9900BDDAFF /* TravelQuestionService.swift in Sources */,
-				E1BB31102495568C00A4DA88 /* OnBoardingService.swift in Sources */,
-				E1906318249610AC00A3CB2E /* AuthService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,25 +9,25 @@
 import UIKit
 import OnBoarding
 
-final class UserDefaultsOnBoardingService: OnBoardingService {
+public final class UserDefaultsOnBoardingService: OnBoardingService {
         
     private let userDefaults: UserDefaults
     
-    init(
+    public init(
         userDefaults: UserDefaults
     ) {
         self.userDefaults = userDefaults
     }
     
-    func shouldShow() -> Bool {
+    public func shouldShow() -> Bool {
         return !userDefaults.bool(forKey: .onBoardingShown)
     }
     
-    func wasShown() {
+    public func wasShown() {
         userDefaults.set(true, forKey: .onBoardingShown)
     }
     
-    func getSlides() -> [OnBoardingSlide] {
+    public func getSlides() -> [OnBoardingSlide] {
         return [
             OnBoardingSlide(
                 image: UIImage(named: "onboarding1")!,

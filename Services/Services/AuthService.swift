@@ -16,21 +16,21 @@ struct UserDefaultsUser: Codable, Identifiable, Authentificatable {
     let password: String
 }
 
-final class UserDefaultsAuthService: AuthService {
+public final class UserDefaultsAuthService: AuthService {
 
     private let userDefaults: UserDefaults
     
-    init(userDefaults: UserDefaults) {
+    public init(userDefaults: UserDefaults) {
         self.userDefaults = userDefaults
     }
     
     // MARK: - AuthService
     
-    var isAuthorized: Bool {
+    public var isAuthorized: Bool {
         return currentUser != nil
     }
     
-    var currentUser: Authentificatable? {
+    public var currentUser: Authentificatable? {
         get {
             try? userDefaults.get(
                 objectType: UserDefaultsUser.self,
@@ -45,7 +45,7 @@ final class UserDefaultsAuthService: AuthService {
         }
     }
     
-    func searchUser(
+    public func searchUser(
         byEmail email: String,
         completion: @escaping AuthSearchCompletion
     ) {
@@ -64,7 +64,7 @@ final class UserDefaultsAuthService: AuthService {
         }
     }
     
-    func searchUser(
+    public func searchUser(
         byPhone email: String,
         completion: @escaping AuthSearchCompletion
     ) {
@@ -84,7 +84,7 @@ final class UserDefaultsAuthService: AuthService {
         }
     }
     
-    func signInGuest(
+    public func signInGuest(
         completion: @escaping AuthSignInCompletion
     ) {
         let user = UserDefaultsUser(
@@ -99,7 +99,7 @@ final class UserDefaultsAuthService: AuthService {
         }
     }
     
-    func signIn(
+    public func signIn(
         userId: String,
         password: String,
         remember: Bool,
@@ -124,7 +124,7 @@ final class UserDefaultsAuthService: AuthService {
         }
     }
     
-    func signUp(
+    public func signUp(
         email: String,
         password: String,
         name: String,
@@ -142,7 +142,7 @@ final class UserDefaultsAuthService: AuthService {
         }
     }
     
-    func signUp(
+    public func signUp(
         phone: String,
         password: String,
         name: String,
@@ -160,7 +160,7 @@ final class UserDefaultsAuthService: AuthService {
         }
     }
     
-    func logout(
+    public func logout(
         completion: @escaping AuthLogoutCompletion
     ) {
         currentUser = nil
@@ -169,7 +169,7 @@ final class UserDefaultsAuthService: AuthService {
         }
     }
     
-    func resetPasssword(phone: String, completion: @escaping AuthResetPasswordCompletion) {
+    public func resetPasssword(phone: String, completion: @escaping AuthResetPasswordCompletion) {
         do {
             if (try userDefaults.get(
                 objectType: UserDefaultsUser.self,
@@ -187,7 +187,7 @@ final class UserDefaultsAuthService: AuthService {
         }
     }
     
-    func resetPasssword(email: String, completion: @escaping AuthResetPasswordCompletion) {
+    public func resetPasssword(email: String, completion: @escaping AuthResetPasswordCompletion) {
         do {
             if (try userDefaults.get(
                 objectType: UserDefaultsUser.self,

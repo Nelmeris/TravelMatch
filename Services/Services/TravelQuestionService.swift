@@ -21,17 +21,17 @@ struct TravelAnswer: Answer {
     let imageURL: URL
 }
 
-final class TravelQuestionService: QuestionsService {
+public final class TravelQuestionService: QuestionsService {
     
     private let userDefaults: UserDefaults
     
-    init(
+    public init(
         userDefaults: UserDefaults
     ) {
         self.userDefaults = userDefaults
     }
     
-    var shouldShowQuestion: Bool {
+    public var shouldShowQuestion: Bool {
         return !userDefaults.bool(forKey: .questionsShown)
     }
     
@@ -92,11 +92,11 @@ final class TravelQuestionService: QuestionsService {
         ]
     )
     
-    func getQuestion(completion: @escaping GetQuestionsCompletion) {
+    public func getQuestion(completion: @escaping GetQuestionsCompletion) {
         completion(.success(question))
     }
     
-    func saveAnswers(_ answers: [Answer], completion: @escaping SaveAnswersCompletion) {
+    public func saveAnswers(_ answers: [Answer], completion: @escaping SaveAnswersCompletion) {
         userDefaults.set(true, forKey: .questionsShown)
         completion(.success(true))
     }

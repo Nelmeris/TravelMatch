@@ -7,67 +7,88 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		57AFF41624CC5013007B913E /* UserDefaults+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57AFF41524CC5013007B913E /* UserDefaults+Codable.swift */; };
-		57AFF41824CC502B007B913E /* UserDefaults+Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57AFF41724CC502B007B913E /* UserDefaults+Keys.swift */; };
-		E12150D524A4962A00C691E4 /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12150D324A4962A00C691E4 /* BaseCoordinator.swift */; };
-		E152D3CF24A88E2D0009972F /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = E152D3CE24A88E2D0009972F /* Result.swift */; };
-		E18E999824A8CA330072ADD4 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18E999724A8CA330072ADD4 /* NavigationController.swift */; };
+		570B38E424CC51E700827B42 /* Questions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 570B38E324CC51E700827B42 /* Questions.framework */; };
+		570B38E524CC51E700827B42 /* Questions.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 570B38E324CC51E700827B42 /* Questions.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		57AFF41C24CC511B007B913E /* TravelQuestionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57AFF41924CC511B007B913E /* TravelQuestionService.swift */; };
+		57AFF41D24CC511B007B913E /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57AFF41A24CC511B007B913E /* AuthService.swift */; };
+		57AFF41E24CC511B007B913E /* OnBoardingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57AFF41B24CC511B007B913E /* OnBoardingService.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		570B38E624CC51E700827B42 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				570B38E524CC51E700827B42 /* Questions.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		57AFF41524CC5013007B913E /* UserDefaults+Codable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Codable.swift"; sourceTree = "<group>"; };
-		57AFF41724CC502B007B913E /* UserDefaults+Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Keys.swift"; sourceTree = "<group>"; };
-		E12150B524A495EE00C691E4 /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E12150B924A495EE00C691E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E12150D324A4962A00C691E4 /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
-		E152D3CE24A88E2D0009972F /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
-		E18E999724A8CA330072ADD4 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		570B38E324CC51E700827B42 /* Questions.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Questions.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		57AFF40A24CC4F7D007B913E /* Services.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Services.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		57AFF40E24CC4F7D007B913E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		57AFF41924CC511B007B913E /* TravelQuestionService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TravelQuestionService.swift; sourceTree = "<group>"; };
+		57AFF41A24CC511B007B913E /* AuthService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		57AFF41B24CC511B007B913E /* OnBoardingService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnBoardingService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		E12150B224A495EE00C691E4 /* Frameworks */ = {
+		57AFF40724CC4F7D007B913E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				570B38E424CC51E700827B42 /* Questions.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		E12150AB24A495EE00C691E4 = {
+		570B38E224CC51E700827B42 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				E12150B724A495EE00C691E4 /* Core */,
-				E12150B624A495EE00C691E4 /* Products */,
+				570B38E324CC51E700827B42 /* Questions.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		57AFF40024CC4F7D007B913E = {
+			isa = PBXGroup;
+			children = (
+				57AFF40C24CC4F7D007B913E /* Services */,
+				57AFF40B24CC4F7D007B913E /* Products */,
+				570B38E224CC51E700827B42 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
-		E12150B624A495EE00C691E4 /* Products */ = {
+		57AFF40B24CC4F7D007B913E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E12150B524A495EE00C691E4 /* Core.framework */,
+				57AFF40A24CC4F7D007B913E /* Services.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		E12150B724A495EE00C691E4 /* Core */ = {
+		57AFF40C24CC4F7D007B913E /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				E12150D324A4962A00C691E4 /* BaseCoordinator.swift */,
-				E18E999724A8CA330072ADD4 /* NavigationController.swift */,
-				E152D3CE24A88E2D0009972F /* Result.swift */,
-				57AFF41724CC502B007B913E /* UserDefaults+Keys.swift */,
-				57AFF41524CC5013007B913E /* UserDefaults+Codable.swift */,
-				E12150B924A495EE00C691E4 /* Info.plist */,
+				57AFF41A24CC511B007B913E /* AuthService.swift */,
+				57AFF41B24CC511B007B913E /* OnBoardingService.swift */,
+				57AFF41924CC511B007B913E /* TravelQuestionService.swift */,
+				57AFF40E24CC4F7D007B913E /* Info.plist */,
 			);
-			path = Core;
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		E12150B024A495EE00C691E4 /* Headers */ = {
+		57AFF40524CC4F7D007B913E /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -77,40 +98,40 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		E12150B424A495EE00C691E4 /* Core */ = {
+		57AFF40924CC4F7D007B913E /* Services */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E12150C924A495EE00C691E4 /* Build configuration list for PBXNativeTarget "Core" */;
+			buildConfigurationList = 57AFF41224CC4F7D007B913E /* Build configuration list for PBXNativeTarget "Services" */;
 			buildPhases = (
-				E12150B024A495EE00C691E4 /* Headers */,
-				E12150B124A495EE00C691E4 /* Sources */,
-				E12150B224A495EE00C691E4 /* Frameworks */,
-				E12150B324A495EE00C691E4 /* Resources */,
+				57AFF40524CC4F7D007B913E /* Headers */,
+				57AFF40624CC4F7D007B913E /* Sources */,
+				57AFF40724CC4F7D007B913E /* Frameworks */,
+				57AFF40824CC4F7D007B913E /* Resources */,
+				570B38E624CC51E700827B42 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = Core;
-			productName = Core;
-			productReference = E12150B524A495EE00C691E4 /* Core.framework */;
+			name = Services;
+			productName = Services;
+			productReference = 57AFF40A24CC4F7D007B913E /* Services.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		E12150AC24A495EE00C691E4 /* Project object */ = {
+		57AFF40124CC4F7D007B913E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1150;
 				LastUpgradeCheck = 1150;
-				ORGANIZATIONNAME = "Maxim Timokhin";
+				ORGANIZATIONNAME = "Artem Kufaev";
 				TargetAttributes = {
-					E12150B424A495EE00C691E4 = {
+					57AFF40924CC4F7D007B913E = {
 						CreatedOnToolsVersion = 11.5;
 					};
 				};
 			};
-			buildConfigurationList = E12150AF24A495EE00C691E4 /* Build configuration list for PBXProject "Core" */;
+			buildConfigurationList = 57AFF40424CC4F7D007B913E /* Build configuration list for PBXProject "Services" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -118,18 +139,18 @@
 				en,
 				Base,
 			);
-			mainGroup = E12150AB24A495EE00C691E4;
-			productRefGroup = E12150B624A495EE00C691E4 /* Products */;
+			mainGroup = 57AFF40024CC4F7D007B913E;
+			productRefGroup = 57AFF40B24CC4F7D007B913E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				E12150B424A495EE00C691E4 /* Core */,
+				57AFF40924CC4F7D007B913E /* Services */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		E12150B324A495EE00C691E4 /* Resources */ = {
+		57AFF40824CC4F7D007B913E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -139,22 +160,20 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		E12150B124A495EE00C691E4 /* Sources */ = {
+		57AFF40624CC4F7D007B913E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E152D3CF24A88E2D0009972F /* Result.swift in Sources */,
-				57AFF41624CC5013007B913E /* UserDefaults+Codable.swift in Sources */,
-				57AFF41824CC502B007B913E /* UserDefaults+Keys.swift in Sources */,
-				E18E999824A8CA330072ADD4 /* NavigationController.swift in Sources */,
-				E12150D524A4962A00C691E4 /* BaseCoordinator.swift in Sources */,
+				57AFF41E24CC511B007B913E /* OnBoardingService.swift in Sources */,
+				57AFF41C24CC511B007B913E /* TravelQuestionService.swift in Sources */,
+				57AFF41D24CC511B007B913E /* AuthService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		E12150C724A495EE00C691E4 /* Debug */ = {
+		57AFF41024CC4F7D007B913E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -217,7 +236,7 @@
 			};
 			name = Debug;
 		};
-		E12150C824A495EE00C691E4 /* Release */ = {
+		57AFF41124CC4F7D007B913E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -274,16 +293,16 @@
 			};
 			name = Release;
 		};
-		E12150CA24A495EE00C691E4 /* Debug */ = {
+		57AFF41324CC4F7D007B913E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = YX6VKW92JQ;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Core/Info.plist;
+				INFOPLIST_FILE = Services/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -291,26 +310,24 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = ru.getproger.Core;
+				PRODUCT_BUNDLE_IDENTIFIER = artemkufaev.Services;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
-				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		E12150CB24A495EE00C691E4 /* Release */ = {
+		57AFF41424CC4F7D007B913E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = YX6VKW92JQ;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Core/Info.plist;
+				INFOPLIST_FILE = Services/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -318,38 +335,36 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = ru.getproger.Core;
+				PRODUCT_BUNDLE_IDENTIFIER = artemkufaev.Services;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
-				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		E12150AF24A495EE00C691E4 /* Build configuration list for PBXProject "Core" */ = {
+		57AFF40424CC4F7D007B913E /* Build configuration list for PBXProject "Services" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E12150C724A495EE00C691E4 /* Debug */,
-				E12150C824A495EE00C691E4 /* Release */,
+				57AFF41024CC4F7D007B913E /* Debug */,
+				57AFF41124CC4F7D007B913E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E12150C924A495EE00C691E4 /* Build configuration list for PBXNativeTarget "Core" */ = {
+		57AFF41224CC4F7D007B913E /* Build configuration list for PBXNativeTarget "Services" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E12150CA24A495EE00C691E4 /* Debug */,
-				E12150CB24A495EE00C691E4 /* Release */,
+				57AFF41324CC4F7D007B913E /* Debug */,
+				57AFF41424CC4F7D007B913E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = E12150AC24A495EE00C691E4 /* Project object */;
+	rootObject = 57AFF40124CC4F7D007B913E /* Project object */;
 }
