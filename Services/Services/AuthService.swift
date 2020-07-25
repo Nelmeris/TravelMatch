@@ -16,6 +16,11 @@ struct UserDefaultsUser: Codable, Identifiable, Authentificatable {
     let password: String
 }
 
+public protocol AuthService: AuthLogin & AuthReset & AuthSearch & AuthSignUp {
+    var isAuthorized: Bool { get }
+    var currentUser: Authentificatable? { get set }
+}
+
 public final class UserDefaultsAuthService: AuthService {
 
     private let userDefaults: UserDefaults
@@ -84,8 +89,8 @@ public final class UserDefaultsAuthService: AuthService {
         }
     }
     
-    public func signInGuest(
-        completion: @escaping AuthSignInCompletion
+    public func loginGuest(
+        completion: @escaping AuthLoginCompletion
     ) {
         let user = UserDefaultsUser(
             id: "guest",
@@ -99,11 +104,11 @@ public final class UserDefaultsAuthService: AuthService {
         }
     }
     
-    public func signIn(
+    public func login(
         userId: String,
         password: String,
         remember: Bool,
-        completion: @escaping AuthSignInCompletion
+        completion: @escaping AuthLoginCompletion
     ) {
         do {
             if let user = try userDefaults.get(
@@ -128,7 +133,7 @@ public final class UserDefaultsAuthService: AuthService {
         email: String,
         password: String,
         name: String,
-        completion: @escaping AuthSignInCompletion
+        completion: @escaping AuthLoginCompletion
     ) {
         let user = UserDefaultsUser(
             id: email,
@@ -146,7 +151,7 @@ public final class UserDefaultsAuthService: AuthService {
         phone: String,
         password: String,
         name: String,
-        completion: @escaping AuthSignInCompletion
+        completion: @escaping AuthLoginCompletion
     ) {
         let user = UserDefaultsUser(
             id: phone,
@@ -160,16 +165,16 @@ public final class UserDefaultsAuthService: AuthService {
         }
     }
     
-    public func logout(
-        completion: @escaping AuthLogoutCompletion
-    ) {
-        currentUser = nil
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            completion(.success(true))
-        }
-    }
+//    public func logout(
+//        completion: @escaping AuthLogoutCompletion
+//    ) {
+//        currentUser = nil
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+//            completion(.success(true))
+//        }
+//    }
     
-    public func resetPasssword(phone: String, completion: @escaping AuthResetPasswordCompletion) {
+    public func resetPassword(phone: String, completion: @escaping AuthResetPasswordCompletion) {
         do {
             if (try userDefaults.get(
                 objectType: UserDefaultsUser.self,
@@ -187,7 +192,7 @@ public final class UserDefaultsAuthService: AuthService {
         }
     }
     
-    public func resetPasssword(email: String, completion: @escaping AuthResetPasswordCompletion) {
+    public func resetPassword(email: String, completion: @escaping AuthResetPasswordCompletion) {
         do {
             if (try userDefaults.get(
                 objectType: UserDefaultsUser.self,

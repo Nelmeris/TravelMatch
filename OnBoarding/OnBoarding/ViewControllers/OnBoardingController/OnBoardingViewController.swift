@@ -36,6 +36,8 @@ class OnBoardingViewController: UIViewController {
     var timer: Timer?
     var transitionDuration: Double = 3.0
     
+    // MARK: - Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }

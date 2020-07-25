@@ -12,11 +12,4 @@ public struct OnBoardingSlide {
     let image: UIImage
     let title: String
     let text: String
-    
-    public init(image: UIImage, title: String, text: String) {
-        self.image = image
-        self.title = title
-        self.text = text
-    }
-
 }
