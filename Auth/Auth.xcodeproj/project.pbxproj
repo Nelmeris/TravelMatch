@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		570B392824CCB28900827B42 /* Models.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 570B392724CCB28900827B42 /* Models.framework */; };
+		570B392924CCB28900827B42 /* Models.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 570B392724CCB28900827B42 /* Models.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E121508A24A4924800C691E4 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E121508924A4924800C691E4 /* AuthService.swift */; };
 		E121508E24A492DF00C691E4 /* AuthCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E121508D24A492DF00C691E4 /* AuthCoordinator.swift */; };
 		E12150A024A493C200C691E4 /* ViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E121509F24A493C200C691E4 /* ViewControllerFactory.swift */; };
@@ -18,7 +20,6 @@
 		E12150A624A4949B00C691E4 /* PhoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E121509924A4933200C691E4 /* PhoneViewController.swift */; };
 		E12150A724A4949F00C691E4 /* EmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E121509B24A4933200C691E4 /* EmailViewController.swift */; };
 		E12150A824A494A300C691E4 /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E121509D24A4933200C691E4 /* Auth.storyboard */; };
-		E152D3D124A88EEC0009972F /* Authentificatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E152D3D024A88EEC0009972F /* Authentificatable.swift */; };
 		E18E998D24A8ABD50072ADD4 /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E18E998B24A8ABD50072ADD4 /* Core.framework */; };
 		E18E998E24A8ABD50072ADD4 /* Core.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E18E998B24A8ABD50072ADD4 /* Core.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E18E998F24A8ABD50072ADD4 /* UI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E18E998C24A8ABD50072ADD4 /* UI.framework */; };
@@ -35,6 +36,7 @@
 			files = (
 				E18E999024A8ABD50072ADD4 /* UI.framework in Embed Frameworks */,
 				E18E998E24A8ABD50072ADD4 /* Core.framework in Embed Frameworks */,
+				570B392924CCB28900827B42 /* Models.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -42,6 +44,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		570B391A24CCA9FC00827B42 /* Entities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Entities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		570B392724CCB28900827B42 /* Models.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Models.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E121506A24A4919100C691E4 /* Auth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Auth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E121506E24A4919100C691E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E121508924A4924800C691E4 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
@@ -56,7 +60,6 @@
 		E121509D24A4933200C691E4 /* Auth.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Auth.storyboard; sourceTree = "<group>"; };
 		E121509F24A493C200C691E4 /* ViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerFactory.swift; sourceTree = "<group>"; };
 		E121512624A49CC500C691E4 /* UI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = UI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E152D3D024A88EEC0009972F /* Authentificatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authentificatable.swift; sourceTree = "<group>"; };
 		E18E998B24A8ABD50072ADD4 /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E18E998C24A8ABD50072ADD4 /* UI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = UI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E190E90C24A4A9BE00E95698 /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -70,6 +73,7 @@
 			files = (
 				E18E998F24A8ABD50072ADD4 /* UI.framework in Frameworks */,
 				E18E998D24A8ABD50072ADD4 /* Core.framework in Frameworks */,
+				570B392824CCB28900827B42 /* Models.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -180,6 +184,8 @@
 		E121512524A49CC500C691E4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				570B392724CCB28900827B42 /* Models.framework */,
+				570B391A24CCA9FC00827B42 /* Entities.framework */,
 				E18E998B24A8ABD50072ADD4 /* Core.framework */,
 				E18E998C24A8ABD50072ADD4 /* UI.framework */,
 				E190E90C24A4A9BE00E95698 /* Core.framework */,
@@ -208,7 +214,6 @@
 			isa = PBXGroup;
 			children = (
 				E121508924A4924800C691E4 /* AuthService.swift */,
-				E152D3D024A88EEC0009972F /* Authentificatable.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -315,7 +320,6 @@
 				E12150A524A4949800C691E4 /* SignUpViewController.swift in Sources */,
 				E121508E24A492DF00C691E4 /* AuthCoordinator.swift in Sources */,
 				E12150A724A4949F00C691E4 /* EmailViewController.swift in Sources */,
-				E152D3D124A88EEC0009972F /* Authentificatable.swift in Sources */,
 				E121508A24A4924800C691E4 /* AuthService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

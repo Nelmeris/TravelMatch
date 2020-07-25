@@ -9,7 +9,7 @@
 import UIKit
 
 public struct OnBoardingSlide {
-    let image: UIImage
-    let title: String
-    let text: String
+    public let image: UIImage
+    public let title: String
+    public let text: String
 }

@@ -9,6 +9,7 @@
 import UIKit
 import Core
 import UI
+import Models
 
 class OfferController: BaseViewController {
     //MARK: - Constants

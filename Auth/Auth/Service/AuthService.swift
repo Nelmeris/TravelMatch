@@ -8,6 +8,7 @@
 
 import Foundation
 import Core
+import Models
 
 public typealias AuthLoginCompletion = (_ result: Result<Authentificatable, Error>) -> Void
 public typealias AuthSignUpCompletion = (_ result: Result<Authentificatable, Error>) -> Void

@@ -9,12 +9,7 @@
 import Foundation
 import Core
 import Auth
-
-struct UserDefaultsUser: Codable, Identifiable, Authentificatable {
-    let id: String
-    let name: String
-    let password: String
-}
+import Models
 
 public protocol AuthService: AuthLogin & AuthReset & AuthSearch & AuthSignUp {
     var isAuthorized: Bool { get }

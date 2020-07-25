@@ -6,9 +6,9 @@
 //  Copyright © 2020 Maxim Timokhin. All rights reserved.
 //
 
-import Foundation
 import UIKit
 import Core
+import Models
 
 public final class AuthCoordinator: BaseCoordinator {
     

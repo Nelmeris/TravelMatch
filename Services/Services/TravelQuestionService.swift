@@ -8,18 +8,7 @@
 
 import Foundation
 import Questions
-
-struct TravelQuestion: Question {
-    let title: String
-    let description: String
-    let answers: [Answer]
-}
-
-struct TravelAnswer: Answer {
-    let id: String
-    let title: String
-    let imageURL: URL
-}
+import Models
 
 public final class TravelQuestionService: QuestionsService {
     
@@ -96,7 +85,7 @@ public final class TravelQuestionService: QuestionsService {
         completion(.success(question))
     }
     
-    public func saveAnswers(_ answers: [Answer], completion: @escaping SaveAnswersCompletion) {
+    public func saveAnswers(_ answers: [TravelAnswer], completion: @escaping SaveAnswersCompletion) {
         userDefaults.set(true, forKey: .questionsShown)
         completion(.success(true))
     }

@@ -9,6 +9,7 @@
 import UIKit
 import UI
 import CVCalendar
+import Models
 
 class OfferBookingCell: CustomTableViewCell {
     

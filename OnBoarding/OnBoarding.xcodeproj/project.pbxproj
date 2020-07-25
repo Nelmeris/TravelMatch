@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		570B392524CCB27B00827B42 /* Models.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 570B392424CCB27B00827B42 /* Models.framework */; };
+		570B392624CCB27B00827B42 /* Models.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 570B392424CCB27B00827B42 /* Models.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E18E999324A8ABE60072ADD4 /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E18E999124A8ABE60072ADD4 /* Core.framework */; };
 		E18E999424A8ABE60072ADD4 /* Core.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E18E999124A8ABE60072ADD4 /* Core.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E18E999524A8ABE60072ADD4 /* UI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E18E999224A8ABE60072ADD4 /* UI.framework */; };
@@ -14,7 +16,6 @@
 		E190E8FE24A4A69A00E95698 /* OnBoardingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E190E8FD24A4A69A00E95698 /* OnBoardingCoordinator.swift */; };
 		E190E90424A4A6C500E95698 /* ViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E190E90324A4A6C500E95698 /* ViewControllerFactory.swift */; };
 		E190E90624A4A71200E95698 /* OnBoardingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E190E90524A4A71200E95698 /* OnBoardingService.swift */; };
-		E190E90824A4A72C00E95698 /* OnBoardingSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = E190E90724A4A72C00E95698 /* OnBoardingSlide.swift */; };
 		E190E91724A4A9EC00E95698 /* OnBoarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E190E90124A4A6B400E95698 /* OnBoarding.storyboard */; };
 		E190E91824A4A9F000E95698 /* OnBoardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E190E8FF24A4A6B400E95698 /* OnBoardingViewController.swift */; };
 /* End PBXBuildFile section */
@@ -28,6 +29,7 @@
 			files = (
 				E18E999624A8ABE60072ADD4 /* UI.framework in Embed Frameworks */,
 				E18E999424A8ABE60072ADD4 /* Core.framework in Embed Frameworks */,
+				570B392624CCB27B00827B42 /* Models.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -35,6 +37,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		570B390924CC703F00827B42 /* Entities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Entities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		570B391D24CCAA2000827B42 /* Entities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Entities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		570B392424CCB27B00827B42 /* Models.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Models.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E18E999124A8ABE60072ADD4 /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E18E999224A8ABE60072ADD4 /* UI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = UI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E190E8E324A4A67F00E95698 /* OnBoarding.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OnBoarding.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,7 +49,6 @@
 		E190E90124A4A6B400E95698 /* OnBoarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OnBoarding.storyboard; sourceTree = "<group>"; };
 		E190E90324A4A6C500E95698 /* ViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerFactory.swift; sourceTree = "<group>"; };
 		E190E90524A4A71200E95698 /* OnBoardingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingService.swift; sourceTree = "<group>"; };
-		E190E90724A4A72C00E95698 /* OnBoardingSlide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingSlide.swift; sourceTree = "<group>"; };
 		E190E91024A4A9CA00E95698 /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E190E91124A4A9CA00E95698 /* UI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = UI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -56,6 +60,7 @@
 			files = (
 				E18E999524A8ABE60072ADD4 /* UI.framework in Frameworks */,
 				E18E999324A8ABE60072ADD4 /* Core.framework in Frameworks */,
+				570B392524CCB27B00827B42 /* Models.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,7 +90,6 @@
 				E190E90224A4A6B400E95698 /* ViewControllers */,
 				E190E8E724A4A67F00E95698 /* Info.plist */,
 				E190E8FD24A4A69A00E95698 /* OnBoardingCoordinator.swift */,
-				E190E90724A4A72C00E95698 /* OnBoardingSlide.swift */,
 				E190E90524A4A71200E95698 /* OnBoardingService.swift */,
 			);
 			path = OnBoarding;
@@ -112,6 +116,9 @@
 		E190E90F24A4A9CA00E95698 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				570B392424CCB27B00827B42 /* Models.framework */,
+				570B391D24CCAA2000827B42 /* Entities.framework */,
+				570B390924CC703F00827B42 /* Entities.framework */,
 				E18E999124A8ABE60072ADD4 /* Core.framework */,
 				E18E999224A8ABE60072ADD4 /* UI.framework */,
 				E190E91024A4A9CA00E95698 /* Core.framework */,
@@ -190,7 +197,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E190E90824A4A72C00E95698 /* OnBoardingSlide.swift in Sources */,
 				E190E90624A4A71200E95698 /* OnBoardingService.swift in Sources */,
 				E190E8FE24A4A69A00E95698 /* OnBoardingCoordinator.swift in Sources */,
 				E190E90424A4A6C500E95698 /* ViewControllerFactory.swift in Sources */,

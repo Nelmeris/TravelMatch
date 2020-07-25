@@ -7,12 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		570B393024CCB31700827B42 /* Models.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 570B392F24CCB31700827B42 /* Models.framework */; };
+		570B393124CCB31700827B42 /* Models.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 570B392F24CCB31700827B42 /* Models.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		570B393724CCB4B700827B42 /* Services.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 570B393624CCB4B700827B42 /* Services.framework */; };
+		570B393824CCB4B700827B42 /* Services.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 570B393624CCB4B700827B42 /* Services.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CE17F77B24A9295C0097B224 /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE17F77A24A9295C0097B224 /* Core.framework */; };
 		CE17F77C24A9295C0097B224 /* Core.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CE17F77A24A9295C0097B224 /* Core.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CE17F77F24A929600097B224 /* UI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE17F77E24A929600097B224 /* UI.framework */; };
 		CE17F78024A929600097B224 /* UI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CE17F77E24A929600097B224 /* UI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CE196A6924AA7A41001D7157 /* ListOfOffersFilterCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE196A6824AA7A41001D7157 /* ListOfOffersFilterCollectionCell.swift */; };
-		CE196A6B24AA8543001D7157 /* mock_fake_data.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE196A6A24AA8543001D7157 /* mock_fake_data.swift */; };
 		CE196A6D24AA8EEF001D7157 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE196A6C24AA8EEF001D7157 /* CalendarView.swift */; };
 		CE196A6F24AA9686001D7157 /* OffersCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE196A6E24AA9686001D7157 /* OffersCoordinator.swift */; };
 		CE2806A324A92C3B0066FE7A /* ListOfOffersController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2806A224A92C3B0066FE7A /* ListOfOffersController.swift */; };
@@ -46,6 +49,8 @@
 			files = (
 				CE17F78024A929600097B224 /* UI.framework in Embed Frameworks */,
 				CE17F77C24A9295C0097B224 /* Core.framework in Embed Frameworks */,
+				570B393824CCB4B700827B42 /* Services.framework in Embed Frameworks */,
+				570B393124CCB31700827B42 /* Models.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -53,12 +58,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		570B392F24CCB31700827B42 /* Models.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Models.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		570B393624CCB4B700827B42 /* Services.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Services.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE0DECB224A921930066B2FB /* Offers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Offers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE0DECB624A921930066B2FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE17F77A24A9295C0097B224 /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE17F77E24A929600097B224 /* UI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = UI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE196A6824AA7A41001D7157 /* ListOfOffersFilterCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOfOffersFilterCollectionCell.swift; sourceTree = "<group>"; };
-		CE196A6A24AA8543001D7157 /* mock_fake_data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mock_fake_data.swift; sourceTree = "<group>"; };
 		CE196A6C24AA8EEF001D7157 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		CE196A6E24AA9686001D7157 /* OffersCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffersCoordinator.swift; sourceTree = "<group>"; };
 		CE2806A224A92C3B0066FE7A /* ListOfOffersController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOfOffersController.swift; sourceTree = "<group>"; };
@@ -90,6 +96,8 @@
 			files = (
 				CE17F77F24A929600097B224 /* UI.framework in Frameworks */,
 				CE17F77B24A9295C0097B224 /* Core.framework in Frameworks */,
+				570B393724CCB4B700827B42 /* Services.framework in Frameworks */,
+				570B393024CCB31700827B42 /* Models.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -128,6 +136,8 @@
 		CE17F77924A9295C0097B224 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				570B393624CCB4B700827B42 /* Services.framework */,
+				570B392F24CCB31700827B42 /* Models.framework */,
 				CE17F77E24A929600097B224 /* UI.framework */,
 				CE17F77A24A9295C0097B224 /* Core.framework */,
 			);
@@ -244,7 +254,6 @@
 		CE686BA824AFC78D00952E43 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				CE196A6A24AA8543001D7157 /* mock_fake_data.swift */,
 				CE686BA924AFC7F000952E43 /* Assets.xcassets */,
 			);
 			path = Resources;
@@ -340,7 +349,6 @@
 				CE196A6F24AA9686001D7157 /* OffersCoordinator.swift in Sources */,
 				CE2806C224A94DF10066FE7A /* ListOfOffersDescriptionCell.swift in Sources */,
 				CE2E6D7324B0E1A90025023E /* OfferSocialCell.swift in Sources */,
-				CE196A6B24AA8543001D7157 /* mock_fake_data.swift in Sources */,
 				CE90C79324C4634D00731135 /* OfferAddToFavoriteButtton.swift in Sources */,
 				CE2E6D7B24B1112C0025023E /* OfferGuideInfoCell.swift in Sources */,
 				CE2806A324A92C3B0066FE7A /* ListOfOffersController.swift in Sources */,

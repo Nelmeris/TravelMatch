@@ -8,12 +8,13 @@
 
 import UIKit
 import UI
+import Models
 
 class QuestionsViewController: BaseViewController {
 
     // MARK: - Input
     
-    var question: Question? {
+    var question: TravelQuestion? {
         didSet {
             updateView()
         }
@@ -21,7 +22,7 @@ class QuestionsViewController: BaseViewController {
     
     // MARK: - Output
     
-    var onContinueClicked: (([Answer]) -> Void)?
+    var onContinueClicked: (([TravelAnswer]) -> Void)?
     
     // MARK: - Outlets
     
