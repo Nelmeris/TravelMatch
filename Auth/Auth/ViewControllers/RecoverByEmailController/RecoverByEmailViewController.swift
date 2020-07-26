@@ -45,9 +45,15 @@ class RecoverByEmailViewController: BaseViewController {
         "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
     )
     
+    // MARK: - Lifecycle
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        navigationController?.navigationBar.topItem?.title = ""
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        navigationController?.navigationBar.topItem?.title = ""
         updateView()
     }
     
@@ -100,7 +106,7 @@ class RecoverByEmailViewController: BaseViewController {
     func isInputValid() -> Bool {
         guard let emailValue = emailField?.text,
             emailPredicate.evaluate(with: emailValue)
-            else {return false}
+            else { return false }
         
         return true
     }
@@ -109,24 +115,6 @@ class RecoverByEmailViewController: BaseViewController {
     
     @IBAction func scrollViewTapAction(_ sender: Any) {
         scrollView?.endEditing(true)
-    }
-    
-    @objc func keyboardWillShown(notification: Notification) {
-        let info = notification.userInfo! as NSDictionary
-        
-        guard
-            let kbSize = (
-                info.value(
-                    forKey: UIResponder.keyboardFrameEndUserInfoKey
-                    ) as? NSValue)?.cgRectValue.size,
-            kbSize.height > buttonsBottomConstraint?.constant ?? 0
-            else { return }
-        
-        buttonsBottomConstraint?.constant = kbSize.height
-    }
-    
-    @objc func keyboardWillHide(notification: Notification) {
-        buttonsBottomConstraint?.constant = 0
     }
     
     @IBAction func phoneModeClicked(_ sender: Any) {
@@ -146,6 +134,26 @@ class RecoverByEmailViewController: BaseViewController {
     
     @IBAction func emailFieldDidEndOnExit(_ sender: Any) {
         continueButtonClicked(sender)
+    }
+    
+    // MARK: - Keyboard
+    
+    @objc func keyboardWillShown(notification: Notification) {
+        let info = notification.userInfo! as NSDictionary
+        
+        guard
+            let kbSize = (
+                info.value(
+                    forKey: UIResponder.keyboardFrameEndUserInfoKey
+                    ) as? NSValue)?.cgRectValue.size,
+            kbSize.height > buttonsBottomConstraint?.constant ?? 0
+            else { return }
+        
+        buttonsBottomConstraint?.constant = kbSize.height
+    }
+    
+    @objc func keyboardWillHide(notification: Notification) {
+        buttonsBottomConstraint?.constant = 0
     }
     
 }

@@ -6,7 +6,6 @@
 //  Copyright © 2020 Maxim Timokhin. All rights reserved.
 //
 
-import Foundation
 import UIKit
 import UI
 

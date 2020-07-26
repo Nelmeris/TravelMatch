@@ -10,6 +10,8 @@ import UIKit
 import Core
 import UI
 import CVCalendar
+import Models
+import Services
 
 class ListOfOffersController: BaseViewController {
     //MARK: - Constants

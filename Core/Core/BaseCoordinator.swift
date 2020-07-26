@@ -21,22 +21,12 @@ open class BaseCoordinator {
     }
     
     public func addDependency(_ coordinator: BaseCoordinator) {
-        for element in childCoordinators where element === coordinator {
-            return
-        }
+        guard !childCoordinators.contains(where: { $0 === coordinator } ) else { return }
         childCoordinators.append(coordinator)
     }
     
     public func removeDependency(_ coordinator: BaseCoordinator?) {
-        guard
-            childCoordinators.isEmpty == false,
-            let coordinator = coordinator
-            else { return }
-        
-        for (index, element) in childCoordinators.reversed().enumerated() where element === coordinator {
-            childCoordinators.remove(at: index)
-            break
-        }
+        childCoordinators.removeAll { $0 === coordinator }
     }
     
     public func setAsRoot(_ controller: UIViewController) {

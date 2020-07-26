@@ -8,6 +8,7 @@
 
 import UIKit
 import UI
+import Models
 
 class QuestionCollectionViewCell: UICollectionViewCell {
  
@@ -23,7 +24,7 @@ class QuestionCollectionViewCell: UICollectionViewCell {
     @IBOutlet private weak var titleLabel: UILabel?
     @IBOutlet private weak var checkmarkView: UIImageView?
     
-    func configure(with answer: Answer) {
+    func configure(with answer: TravelAnswer) {
         imageView?.imageURL = answer.imageURL
         titleLabel?.text = answer.title
     }

@@ -6,12 +6,12 @@
 //  Copyright © 2020 Maxim Timokhin. All rights reserved.
 //
 
-import UIKit
 import Core
 import Auth
 import OnBoarding
 import Questions
 import Locals
+import Services
 
 final class AppCoordinator: BaseCoordinator {
         
@@ -19,7 +19,7 @@ final class AppCoordinator: BaseCoordinator {
     private let authService: AuthService
     private let questionsService: QuestionsService
     private let localsService: LocalsService
-    
+
     private var rootController: NavigationController!
     
     init(
@@ -106,7 +106,6 @@ final class AppCoordinator: BaseCoordinator {
     // MARK: - Main tabbar
     
     private func showMain() {
-        
         let coordinator = TabCoordinator(
             rootController: rootController,
             localsService: localsService

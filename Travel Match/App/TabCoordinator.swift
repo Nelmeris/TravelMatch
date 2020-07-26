@@ -26,72 +26,51 @@ class TabCoordinator: BaseCoordinator {
     }
     
     override func start() {
-        let tabController = UITabBarController()
-        
-        let homeNavContrller = NavigationController()
-        homeNavContrller.tabBarItem = UITabBarItem(
-            title: nil,
-            image: UIImage(named: "home"),
-            tag: 0
-        )
+        let tabBarController = buildTabBarController()
+        rootController?.present(tabBarController, animated: false, completion: nil)
+        startOffersCoordinator(with: tabBarController.viewControllers![1])
+        startLocalsCoordinator(with: tabBarController.viewControllers![3])
+    }
 
-        let offersNavContrller = NavigationController()
-        offersNavContrller.tabBarItem = UITabBarItem(
-            title: nil,
-            image: UIImage(named: "offers"),
-            tag: 1
-        )
-
-        let impressionsNavContrller = NavigationController()
-        impressionsNavContrller.tabBarItem = UITabBarItem(
-            title: nil,
-            image: UIImage(named: "impression"),
-            tag: 2
-        )
-
-        let localsNavContrller = NavigationController()
-        localsNavContrller.tabBarItem = UITabBarItem(
-            title: nil,
-            image: UIImage(named: "locals"),
-            tag: 3
-        )
-
-        let profileNavContrller = NavigationController()
-        profileNavContrller.tabBarItem = UITabBarItem(
-            title: nil,
-            image: UIImage(named: "profile"),
-            tag: 4
-        )
-        
-        tabController.viewControllers = [
-            homeNavContrller,
-            offersNavContrller,
-            impressionsNavContrller,
-            localsNavContrller,
-            profileNavContrller
-        ]
-
+    private func startOffersCoordinator(with controller: UIViewController) {
+        guard let controller = controller as? NavigationController else { fatalError() }
+        let offersCoordinator = OffersCoordinator(rootController: controller)
+        addDependency(offersCoordinator)
+        offersCoordinator.start()
+    }
+    
+    private func startLocalsCoordinator(with controller: UIViewController) {
+        guard let controller = controller as? NavigationController else { fatalError() }
         let localsCoordinator = LocalsCoordinator(
-            rootController: localsNavContrller,
+            rootController: controller,
             localsService: localsService
         )
         addDependency(localsCoordinator)
         localsCoordinator.start()
+    }
 
-        let offersCoordinator = OffersCoordinator(
-            rootController: offersNavContrller
-        )
-        addDependency(offersCoordinator)
-        offersCoordinator.start()
-
-        
-        tabController.selectedIndex = 3
+    private func buildTabBarController() -> UITabBarController {
+        let tabController = UITabBarController()
         tabController.modalPresentationStyle = .fullScreen
-        rootController?.present(
-            tabController,
-            animated: false,
-            completion: nil
+        tabController.setViewControllers([
+            createNavigationController(imageName: "home", tag: 0),
+            createNavigationController(imageName: "offers", tag: 1),
+            createNavigationController(imageName: "impression", tag: 2),
+            createNavigationController(imageName: "locals", tag: 3),
+            createNavigationController(imageName: "profile", tag: 4)
+        ], animated: false)
+        return tabController
+    }
+
+    private func createNavigationController(imageName: String,
+                                            tag: Int) -> NavigationController {
+        let navController = NavigationController()
+        navController.tabBarItem = UITabBarItem(
+            title: nil,
+            image: UIImage(named: imageName),
+            tag: tag
         )
+        return navController
     }
 
 }

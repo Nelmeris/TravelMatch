@@ -6,7 +6,7 @@
 //  Copyright © 2020 Igor Gapanovich. All rights reserved.
 //
 
-import Foundation
+import Models
 import UIKit
 import UI
 

@@ -9,7 +9,7 @@
 import Foundation
 import Core
 
-public typealias LocalsSearchCompletion = (_ result: Result<[Local]>) -> Void
+public typealias LocalsSearchCompletion = (_ result: Result<[Local], Error>) -> Void
 
 public protocol LocalsService {
     
