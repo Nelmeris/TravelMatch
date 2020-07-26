@@ -307,16 +307,15 @@ public class PriceRangeControl: UIControl {
         guard let dataSource = dataSource else { return }
         minPrice = dataSource.minPrice(in: self)
         maxPrice = dataSource.maxPrice(in: self)
-        
+    
         bars = (0..<numberOfBars).map {
             let price = minPrice + (maxPrice - minPrice) / Double(numberOfBars) * Double($0)
             let value = dataSource.rangeControl(self, valueForPrice: price)
             return Bar(value: value, price: price)
         }
         
-        updateLeftX()
-        updateRightX()
-        updateLayers()
+        valueFrom = minPrice
+        valueTo = maxPrice
     }
     
     // MARK: - Interaction
@@ -337,9 +336,12 @@ public class PriceRangeControl: UIControl {
             let location = recognizer.location(in: self)
             let leftDistance = abs(leftHandle.frame.minX - location.x)
             let rightDisstance = abs(rightHandle.frame.minX - location.x)
+            let newPrice = Double(location.x / bounds.width) * (maxPrice - minPrice) + minPrice
             if leftDistance < rightDisstance {
+                valueFrom = max(minPrice, min(valueTo - minPriceDelta, newPrice.rounded()))
                 movingHandle = .left
             } else {
+                valueTo = min(maxPrice, max(valueFrom + minPriceDelta, newPrice.rounded()))
                 movingHandle = .right
             }
         case .cancelled:

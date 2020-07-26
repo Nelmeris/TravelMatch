@@ -71,7 +71,25 @@ public final class LocalsCoordinator: BaseCoordinator {
     
     private func showFilter() {
         let controller = viewControllerFactory.makeFilterViewController()
+        controller.modalPresentationStyle = .fullScreen
+        
+        controller.onClose = { [weak controller] in
+            controller?.dismiss(animated: true, completion: nil)
+        }
+     
+        controller.onSubmit = { [weak controller] in
+            controller?.dismiss(animated: true, completion: nil)
+        }
+        
+        controller.onChooseLanguage = { [weak self] in
+            self?.showLanguagePicker()
+        }
+        
         rootController?.present(controller, animated: true, completion: nil)        
+    }
+    
+    private func showLanguagePicker() {
+        
     }
     
 }

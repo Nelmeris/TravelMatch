@@ -11,18 +11,37 @@ import UI
 
 class FilterViewController: BaseViewController {
 
+    // MARK: - Output
+    var onClose: (() -> Void)?
+    var onChooseLanguage: (() -> Void)?
+    var onSubmit: (() -> Void)?
     
+    // MARK: - Outlets
     @IBOutlet var pricePicker: PriceRangeControl!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        pricePicker.valueFrom = 30
-        pricePicker.valueTo = 170
         pricePicker.reloadData()
     }
     
-
+    // MARK: - Actions
+    @IBAction func submitButtonAction(_ sender: Any) {
+        onSubmit?()
+    }
+    
+    @IBAction func priceChangeAction(_ sender: Any) {
+        print("price \(pricePicker.valueFrom)-\(pricePicker.valueTo)")
+    }
+    
+    @IBAction func closeButtonAction(_ sender: Any) {
+        onClose?()
+    }
+    
+    @IBAction func languageAction(_ sender: Any) {
+        onChooseLanguage?()
+    }
+    
 }
 
 
@@ -32,10 +51,10 @@ extension FilterViewController: PriceRangeControlDataSource {
     }
     
     func minPrice(in rangeControl: PriceRangeControl) -> Double {
-        return 30
+        return 500
     }
     
     func maxPrice(in rangeControl: PriceRangeControl) -> Double {
-        return 170
+        return 23000
     }
 }

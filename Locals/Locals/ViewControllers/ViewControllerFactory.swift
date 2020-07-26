@@ -27,5 +27,10 @@ class ViewControllerFactory {
             .instantiateViewController(FilterViewController.self)
     }
     
+    func makeFilterValuesController() -> FilterValuesViewController {
+        return UIStoryboard(name: "Locals", bundle: Bundle(for: FilterValuesViewController.self))
+            .instantiateViewController(FilterValuesViewController.self)
+    }
+    
 }
 
