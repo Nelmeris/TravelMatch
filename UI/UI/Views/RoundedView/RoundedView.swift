@@ -14,7 +14,7 @@ public class RoundedView: UIView {
     @IBInspectable
     var cornerRadius: CGFloat = 10.0 {
         didSet {
-            setupView()
+            layer.cornerRadius = cornerRadius
         }
     }
         
@@ -25,6 +25,5 @@ public class RoundedView: UIView {
     
     private func setupView() {
         clipsToBounds = true
-        layer.cornerRadius = cornerRadius
     }
 }

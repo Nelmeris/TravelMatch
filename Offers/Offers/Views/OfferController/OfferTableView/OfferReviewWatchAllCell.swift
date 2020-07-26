@@ -8,6 +8,7 @@
 
 import UIKit
 import UI
+import Models
 
 @objc protocol OfferReviewWatchAllCellDelegate: class {
     @objc optional func didPressedShowAllReviewsButton()

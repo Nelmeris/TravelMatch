@@ -7,9 +7,11 @@
 //
 
 import UIKit
+import Models
 import UI
 
-class ReviewsController: BaseViewController {
+public class ReviewsController: BaseViewController {
+    
     //MARK: - Constant
     public var offerID: Int = 0
     public var impressionID: Int = 0
@@ -22,6 +24,8 @@ class ReviewsController: BaseViewController {
     var didPressedCloseButton: (() -> Void)?
     
     
+    private var tableAdapter: TableViewAdapter<ReviewsTableViewCell>?
+    
     //MARK: - IBOutlet
     @IBOutlet weak var reviewSuperView: UIView!
     @IBOutlet weak var controllerNamelabel: UILabel!
@@ -31,17 +35,31 @@ class ReviewsController: BaseViewController {
     @IBOutlet weak var sendReviewView: UIView!
     
     //MARK: - Init
+    
     ///init with Images for scrolling
+    public init(offerID: Int, showSendReviewView: Bool) {
+        super.init(nibName: nil, bundle: nil)
+        self.offerID = offerID
+        if !showSendReviewView {
+            sendReviewView.translatesAutoresizingMaskIntoConstraints = false
+            sendReviewView.heightAnchor.constraint(equalToConstant: 0).isActive = true
+        }
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     //MARK: - Live Cycle
     
-    override func viewWillAppear(_ animated: Bool) {
+    public override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         let randonInt = Int.random(in: 5...16)
-        reviews = MockFakeDataReviews.data.getReviews(count: randonInt)
+//        reviews = MockFakeDataUI.data.getReviews(count: randonInt)
+        tableAdapter?.set(items: reviews)
     }
     
-    override func viewDidLoad() {
+    public override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
@@ -55,8 +73,7 @@ class ReviewsController: BaseViewController {
     }
     
     func configureTableView() {
-        tableView.delegate = self
-        tableView.dataSource = self
+        tableAdapter = TableViewAdapter(table: tableView)
         tableView.separatorStyle = .none
     }
     
@@ -68,6 +85,7 @@ class ReviewsController: BaseViewController {
     }
     
     //MARK: - Gestures
+    
     func addGesture() {
         
         let tapGR = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
@@ -127,6 +145,7 @@ class ReviewsController: BaseViewController {
     }
     
     //MARK: - IBAction
+    
     @IBAction func closeButton() {
         didPressedCloseButton?()
     }
@@ -146,16 +165,5 @@ class ReviewsController: BaseViewController {
             print("\(text) is sended")
         }
     }
-}
-
-extension ReviewsController: UITableViewDataSource, UITableViewDelegate {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return reviews.count
-    }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: ReviewsTableViewCell.reuseID, for: indexPath) as! ReviewsTableViewCell
-        cell.fillData(review: reviews[indexPath.row])
-        return cell
-    }
 }

@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		176425C624CD9329000F0E8A /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 176425C524CD9329000F0E8A /* Core.framework */; };
+		176425C724CD9329000F0E8A /* Core.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 176425C524CD9329000F0E8A /* Core.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		176425D324CD949B000F0E8A /* Models.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 176425D224CD949B000F0E8A /* Models.framework */; };
+		176425D424CD949B000F0E8A /* Models.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 176425D224CD949B000F0E8A /* Models.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CE273FF924C637A800BAD20B /* Reviews.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE273FEF24C637A700BAD20B /* Reviews.framework */; };
 		CE273FFE24C637A800BAD20B /* ReviewsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE273FFD24C637A800BAD20B /* ReviewsTests.swift */; };
 		CE27401B24C6398C00BAD20B /* ReviewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE27401A24C6398C00BAD20B /* ReviewsTableViewCell.swift */; };
@@ -44,6 +48,8 @@
 			dstSubfolderSpec = 10;
 			files = (
 				CE27402D24C63B0600BAD20B /* UI.framework in Embed Frameworks */,
+				176425C724CD9329000F0E8A /* Core.framework in Embed Frameworks */,
+				176425D424CD949B000F0E8A /* Models.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -51,6 +57,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		176425C524CD9329000F0E8A /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		176425D224CD949B000F0E8A /* Models.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Models.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE273FEF24C637A700BAD20B /* Reviews.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Reviews.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE273FF324C637A800BAD20B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE273FF824C637A800BAD20B /* ReviewsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReviewsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -74,6 +82,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE27402C24C63B0600BAD20B /* UI.framework in Frameworks */,
+				176425C624CD9329000F0E8A /* Core.framework in Frameworks */,
+				176425D324CD949B000F0E8A /* Models.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -184,6 +194,8 @@
 		CE27402724C63B0600BAD20B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				176425D224CD949B000F0E8A /* Models.framework */,
+				176425C524CD9329000F0E8A /* Core.framework */,
 				CE27402824C63B0600BAD20B /* Core.framework */,
 				CE27402924C63B0600BAD20B /* UI.framework */,
 			);

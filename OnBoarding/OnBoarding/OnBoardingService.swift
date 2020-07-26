@@ -6,7 +6,7 @@
 //  Copyright © 2020 Maxim Timokhin. All rights reserved.
 //
 
-import Foundation
+import Models
 
 public protocol OnBoardingService {
     func shouldShow() -> Bool

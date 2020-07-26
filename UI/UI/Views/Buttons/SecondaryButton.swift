@@ -12,7 +12,7 @@ public class SecondaryButton: Button {
     
     public override var isEnabled: Bool {
         didSet {
-            setupView()
+            setupBackgroundColor()
         }
     }
     
@@ -21,12 +21,12 @@ public class SecondaryButton: Button {
         
         setTitleColor(UIColor.Buttons.secondaryTextColor, for: .normal)
         setTitleColor(UIColor.Buttons.disabledTextColor, for: .disabled)
-
-        if isEnabled {
-            backgroundColor = UIColor.Buttons.secondaryBackgroundColor
-        } else {
-            backgroundColor = UIColor.Buttons.disabledBackgroundColor
-        }
+    }
+    
+    private func setupBackgroundColor() {
+        backgroundColor = isEnabled ?
+            UIColor.Buttons.secondaryBackgroundColor :
+            UIColor.Buttons.disabledBackgroundColor
     }
 
 }

@@ -26,8 +26,6 @@ class PicController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
         configure()
     }
     
@@ -39,7 +37,7 @@ class PicController: BaseViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
         // Do any additional setup after loading the view.
-        let size = CGSize(width: view.frame.width, height: view.frame.height)
+        let size = CGSize(width: collectionView.frame.width, height: collectionView.frame.height)
         let layout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         layout.itemSize = CGSize(width: size.width, height: size.height)

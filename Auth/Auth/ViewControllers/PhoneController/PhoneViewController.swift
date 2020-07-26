@@ -42,6 +42,8 @@ class PhoneViewController: BaseViewController {
     
     @IBOutlet private weak var buttonsBottomConstraint: NSLayoutConstraint?
     
+    // MARK: - Lifecycle
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         updateView()
@@ -99,44 +101,13 @@ class PhoneViewController: BaseViewController {
     }
     
     func isInputValid() -> Bool {
-        guard phoneField?.isValidNumber ?? false
-            else {return false}
-        
-        return true
+        return phoneField?.isValidNumber ?? false
     }
     
     // MARK: - Actions
     
     @IBAction func scrollViewTapAction(_ sender: Any) {
         scrollView?.endEditing(true)
-    }
-    
-    @objc func keyboardWillShown(notification: Notification) {
-        let info = notification.userInfo! as NSDictionary
-        
-        guard
-            let kbSize = (
-                info.value(
-                    forKey: UIResponder.keyboardFrameEndUserInfoKey
-                    ) as? NSValue)?.cgRectValue.size,
-            kbSize.height > buttonsBottomConstraint?.constant ?? 0
-            else { return }
-        
-        buttonsBottomConstraint?.constant = kbSize.height
-        
-        guestButton?.alpha = 0
-        guestButton?.isHidden = true
-        
-        facebookButton?.alpha = 0
-        facebookButton?.isHidden = true
-    }
-    
-    @objc func keyboardWillHide(notification: Notification) {
-        buttonsBottomConstraint?.constant = 0
-        guestButton?.alpha = 1
-        guestButton?.isHidden = false
-        facebookButton?.alpha = 1
-        facebookButton?.isHidden = false
     }
     
     @IBAction func emailModeClicked(_ sender: Any) {
@@ -164,6 +135,36 @@ class PhoneViewController: BaseViewController {
     
     @IBAction func emailFieldDidEndOnExit(_ sender: Any) {
         continueButtonClicked(sender)
+    }
+    
+    // MARK: - Keyboard
+    
+    @objc func keyboardWillShown(notification: Notification) {
+        let info = notification.userInfo! as NSDictionary
+        
+        guard
+            let kbSize = (
+                info.value(
+                    forKey: UIResponder.keyboardFrameEndUserInfoKey
+                    ) as? NSValue)?.cgRectValue.size,
+            kbSize.height > buttonsBottomConstraint?.constant ?? 0
+            else { return }
+        
+        buttonsBottomConstraint?.constant = kbSize.height
+        
+        guestButton?.alpha = 0
+        guestButton?.isHidden = true
+        
+        facebookButton?.alpha = 0
+        facebookButton?.isHidden = true
+    }
+    
+    @objc func keyboardWillHide(notification: Notification) {
+        buttonsBottomConstraint?.constant = 0
+        guestButton?.alpha = 1
+        guestButton?.isHidden = false
+        facebookButton?.alpha = 1
+        facebookButton?.isHidden = false
     }
     
 }

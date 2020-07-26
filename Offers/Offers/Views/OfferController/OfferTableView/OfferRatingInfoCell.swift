@@ -8,6 +8,7 @@
 
 import UIKit
 import UI
+import Models
 import Pic
 
 @objc protocol OfferRatingInfoCellCollectionDelegate: class {

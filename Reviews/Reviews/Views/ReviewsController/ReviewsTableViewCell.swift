@@ -7,11 +7,19 @@
 //
 
 import UIKit
+import Models
 import UI
 
-class ReviewsTableViewCell: UITableViewCell {
+class ReviewsTableViewCell: UITableViewCell, ConfigurableCell {
+    func configure(_ viewModel: Review, at indexPath: IndexPath) {
+        //TODO: add protocol conformance
+    }
     
-    static let reuseID = "ReviewsTableViewCell"
+    typealias ViewModel = Review
+    
+    static var reuseIdentifier: String {
+        return "ReviewsTableViewCell"
+    }
     
     @IBOutlet weak var reviewOwnerImageView: UIImageView!
     @IBOutlet weak var reviewOwnerNameLabel: UILabel!
@@ -29,12 +37,12 @@ class ReviewsTableViewCell: UITableViewCell {
         reviewOwnerImageView.layer.cornerRadius = cornerRadius
     }
     
-    func fillData(review: Review) {
-        reviewOwnerImageView.image = review.ownerImage
-        reviewOwnerNameLabel.text = review.ownerName
-        let date = Date()
-        reviewDateLabel.text = date.getMonthYear(date: review.date)
-        reviewDescriptionLabel.text = review.description
-    }
-
+//    func fillData(review: Review) {
+//        reviewOwnerImageView.image = review.ownerImage
+//        reviewOwnerNameLabel.text = review.ownerName
+//        let date = Date()
+//        reviewDateLabel.text = date.getMonthYear(date: viewModel.date)
+//        reviewDescriptionLabel.text = viewModel.description
+//    }
+    
 }

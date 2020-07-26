@@ -18,6 +18,7 @@ enum SignUpViewControllerState {
 class SignUpViewController: BaseViewController {
     
     // MARK: - Input
+    
     var state: SignUpViewControllerState? {
         didSet {
             updateView()
@@ -40,12 +41,34 @@ class SignUpViewController: BaseViewController {
     
     @IBOutlet private weak var buttonsBottomConstraint: NSLayoutConstraint?
     
+    // MARK: - Validation
+    
+    private let namePredicate = NSPredicate(
+        format: "SELF MATCHES %@",
+        ".{2,}"
+    )
+    
+    private let passwordPredicate = NSPredicate(
+        format: "SELF MATCHES %@",
+        ".{6,}"
+    )
+    
+    // MARK: - Lifecycle
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        navigationController?.navigationBar.topItem?.title = ""
+        nameField?.autocorrectionType = .no
+        nextButton?.isEnabled = isInputValid()
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         updateView()
     }
     
     // MARK: - Update view
+    
     private func updateView() {
         guard let state = state else { return }
         switch state {
@@ -63,25 +86,6 @@ class SignUpViewController: BaseViewController {
             hideActivityIndicator()
             showCommonError(error)
         }
-    }
-    
-    // MARK: - Validation
-    
-    private let namePredicate = NSPredicate(
-        format: "SELF MATCHES %@",
-        ".{2,}"
-    )
-    
-    private let passwordPredicate = NSPredicate(
-        format: "SELF MATCHES %@",
-        ".{6,}"
-    )
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        navigationController?.navigationBar.topItem?.title = ""
-        nameField?.autocorrectionType = .no
-        nextButton?.isEnabled = isInputValid()
     }
     
     // MARK: - Notifications
@@ -150,6 +154,8 @@ class SignUpViewController: BaseViewController {
         guard isInputValid() else {return}
         continueButtonClicked(sender)
     }
+    
+    // MARK: - Keyboard
     
     @objc func keyboardWillShown(notification: Notification) {
         let info = notification.userInfo! as NSDictionary

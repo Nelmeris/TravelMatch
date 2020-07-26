@@ -8,6 +8,7 @@
 
 import UIKit
 import UI
+import Models
 import Core
 import Pic
 import Reviews

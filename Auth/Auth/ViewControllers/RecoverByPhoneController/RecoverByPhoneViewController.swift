@@ -38,9 +38,15 @@ class RecoverByPhoneViewController: BaseViewController {
     
     @IBOutlet private weak var buttonsBottomConstraint: NSLayoutConstraint?
     
+    // MARK: - Lifecycle
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        navigationController?.navigationBar.topItem?.title = ""
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        navigationController?.navigationBar.topItem?.title = ""
         updateView()
     }
     
@@ -89,10 +95,7 @@ class RecoverByPhoneViewController: BaseViewController {
     }
     
     func isInputValid() -> Bool {
-        guard phoneField?.isValidNumber ?? false
-            else {return false}
-        
-        return true
+        return phoneField?.isValidNumber ?? false
     }
     
     // MARK: - Actions
@@ -100,6 +103,27 @@ class RecoverByPhoneViewController: BaseViewController {
     @IBAction func scrollViewTapAction(_ sender: Any) {
         scrollView?.endEditing(true)
     }
+    
+    @IBAction func emailModeClicked(_ sender: Any) {
+        onEmailModeClicked?()
+    }
+    
+    @IBAction func continueButtonClicked(_ sender: Any) {
+        guard isInputValid(),
+            let phoneValue = phoneField?.text else { return }
+        onContinueButtonClicked?(phoneValue)
+        scrollView?.endEditing(true)
+    }
+    
+    @IBAction func emailValueChanged(_ sender: Any) {
+        nextButton?.isEnabled = isInputValid()
+    }
+    
+    @IBAction func emailFieldDidEndOnExit(_ sender: Any) {
+        continueButtonClicked(sender)
+    }
+    
+    // MARK: - Keyboard
     
     @objc func keyboardWillShown(notification: Notification) {
         let info = notification.userInfo! as NSDictionary
@@ -117,25 +141,6 @@ class RecoverByPhoneViewController: BaseViewController {
     
     @objc func keyboardWillHide(notification: Notification) {
         buttonsBottomConstraint?.constant = 0
-    }
-    
-    @IBAction func emailModeClicked(_ sender: Any) {
-        onEmailModeClicked?()
-    }
-    
-    @IBAction func continueButtonClicked(_ sender: Any) {
-        guard isInputValid(),
-            let phoneValue = phoneField?.text else {return}
-        onContinueButtonClicked?(phoneValue)
-        scrollView?.endEditing(true)
-    }
-    
-    @IBAction func emailValueChanged(_ sender: Any) {
-        nextButton?.isEnabled = isInputValid()
-    }
-    
-    @IBAction func emailFieldDidEndOnExit(_ sender: Any) {
-        continueButtonClicked(sender)
     }
     
 }
