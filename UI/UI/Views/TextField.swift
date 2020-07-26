@@ -20,28 +20,28 @@ public class TextField: UITextField {
     @IBInspectable
     var cornerRadius: CGFloat = 10 {
         didSet {
-            setUpView()
+            self.layer.cornerRadius = self.cornerRadius
         }
     }
     
     @IBInspectable
     var borderColor: UIColor = UIColor.TextFields.defaultBorderColor {
         didSet {
-            setUpView()
+            setupColors()
         }
     }
     
     @IBInspectable
     var borderWidth: CGFloat = 1 {
         didSet {
-            setUpView()
+            self.layer.borderWidth = borderWidth
         }
     }
     
     @IBInspectable
     public var isInvalid: Bool = false {
         didSet {
-            setUpView()
+            setupColors()
         }
     }
     
@@ -60,19 +60,19 @@ public class TextField: UITextField {
     
     public override func awakeFromNib() {
         super.awakeFromNib()
-        setUpView()
+        setupView()
     }
     
     public override func prepareForInterfaceBuilder() {
         super.prepareForInterfaceBuilder()
-        setUpView()
+        setupView()
     }
     
-    func setUpView() {
-        self.layer.cornerRadius = self.cornerRadius
-        self.layer.borderWidth = borderWidth
+    private func setupView() {
         self.clipsToBounds = true
-        
+    }
+    
+    private func setupColors() {
         if isInvalid {
             self.textColor = UIColor.TextFields.invalidTextColor
             self.layer.borderColor = UIColor.TextFields.invalidBorderColor.cgColor

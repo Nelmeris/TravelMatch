@@ -6,11 +6,11 @@
 //  Copyright © 2020 Maxim Timokhin. All rights reserved.
 //
 
-import UIKit
 import Core
 import Auth
 import OnBoarding
 import Questions
+import Services
 
 final class AppCoordinator: BaseCoordinator {
         
@@ -37,20 +37,13 @@ final class AppCoordinator: BaseCoordinator {
         
         if onBoardingService.shouldShow() {
             showOnBoarding()
-            return
-        }
-        
-        if !authService.isAuthorized {
+        } else if !authService.isAuthorized {
             showAuth()
-            return
-        }
-        
-        if questionsService.shouldShowQuestion {
+        } else if questionsService.shouldShowQuestion {
             showQuestions()
-            return
+        } else {
+            showMain()
         }
-        
-        showMain()
     }
     
     // MARK: - Onboarding
@@ -102,7 +95,6 @@ final class AppCoordinator: BaseCoordinator {
     // MARK: - Main tabbar
     
     private func showMain() {
-        
         let coordinator = TabCoordinator(
             rootController: rootController
         )

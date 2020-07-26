@@ -5,6 +5,15 @@
       location = "group:Travel Match.xcodeproj">
    </FileRef>
    <FileRef
+      location = "group:Services/Services.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:/Users/nelmeris/Develop/Travel Match/Entities/Models.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Auth/Auth.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:UI/UI.xcodeproj">
    </FileRef>
    <FileRef
@@ -12,9 +21,6 @@
    </FileRef>
    <FileRef
       location = "group:OnBoarding/OnBoarding.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:Auth/Auth.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Questions/Questions.xcodeproj">

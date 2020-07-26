@@ -6,11 +6,11 @@
 //  Copyright © 2020 Maxim Timokhin. All rights reserved.
 //
 
-import Foundation
 import Core
+import Models
 
-public typealias GetQuestionsCompletion = (_ result: Result<Question>) -> Void
-public typealias SaveAnswersCompletion = (_ result: Result<Bool>) -> Void
+public typealias GetQuestionsCompletion = (_ result: Result<TravelQuestion, Error>) -> Void
+public typealias SaveAnswersCompletion = (_ result: Result<Bool, Error>) -> Void
 
 public protocol QuestionsService {
 
@@ -27,7 +27,7 @@ public protocol QuestionsService {
     ///   - answers: массив с выбранными ответами
     ///   - completion: Result<Bool>
     func saveAnswers(
-        _ answers: [Answer],
+        _ answers: [TravelAnswer],
         completion: @escaping SaveAnswersCompletion
     )
     

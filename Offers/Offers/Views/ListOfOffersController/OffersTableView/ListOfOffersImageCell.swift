@@ -8,6 +8,7 @@
 
 import UIKit
 import UI
+import Models
 
 class ListOfOffersImageCell: CustomTableViewCell {
     

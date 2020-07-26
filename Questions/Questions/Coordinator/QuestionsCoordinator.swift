@@ -30,15 +30,15 @@ public final class QuestionsCoordinator: BaseCoordinator {
     public override func start() {
         let controller = viewControllerFactory.makeQuestionsController()
         
-        controller.onContinueClicked = {[weak self, weak controller] answers in
-            self?.questionsService.saveAnswers(answers, completion: { (result) in
+        controller.onContinueClicked = { [weak self, weak controller] answers in
+            self?.questionsService.saveAnswers(answers) { (result) in
                 switch result {
                 case .success:
                     self?.onFinishFlow?()
                 case .failure(let error):
                     controller?.showCommonError(error.localizedDescription)
                 }
-            })
+            }
         }
         
         questionsService.getQuestion { (result) in

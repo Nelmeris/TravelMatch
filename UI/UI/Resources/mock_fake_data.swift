@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import Models
 
 public class MockFakeDataUI {
     static let data = MockFakeDataUI()
@@ -79,23 +80,5 @@ public class MockFakeDataUI {
     }
     
     private init() {
-    }
-}
-
-public struct Review {
-    let id: Int
-    let offerID: Int
-    let ownerName: String
-    let ownerImage: UIImage
-    let date: Date
-    let description: String
-    
-    init (id: Int, offerID: Int, ownerName: String, ownerImage: UIImage, date: Date, description: String) {
-        self.id = id
-        self.offerID = offerID
-        self.ownerName = ownerName
-        self.ownerImage = ownerImage
-        self.date = date
-        self.description = description
     }
 }
