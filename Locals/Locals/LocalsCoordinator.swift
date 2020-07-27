@@ -8,6 +8,7 @@
 
 import Foundation
 import Core
+import UIKit
 
 public final class LocalsCoordinator: BaseCoordinator {
     
@@ -81,15 +82,28 @@ public final class LocalsCoordinator: BaseCoordinator {
             controller?.dismiss(animated: true, completion: nil)
         }
         
-        controller.onChooseLanguage = { [weak self] in
-            self?.showLanguagePicker()
+        controller.onChooseLanguage = { [weak self, weak controller] in
+            self?.showLanguagePicker(from: controller)
         }
         
         rootController?.present(controller, animated: true, completion: nil)        
     }
     
-    private func showLanguagePicker() {
+    private func showLanguagePicker(from viewController: UIViewController?) {
+        let controller = viewControllerFactory.makeFilterValuesController()
+        controller.title = "Язык"
+        controller.values = [
+            FilterValue(title: "Русский"),
+            FilterValue(title: "Английский"),
+            FilterValue(title: "Испанский"),
+            FilterValue(title: "Китайский"),
+        ]
         
+        controller.onChangeSelection = { indicies in
+            print("Selection \(indicies)")
+        }
+        
+        viewController?.present(controller, animated: true, completion: nil)
     }
     
 }

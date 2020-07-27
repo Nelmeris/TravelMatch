@@ -101,7 +101,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="бесплатно" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Zz-rC-hb7">
-                                                    <rect key="frame" x="17" y="260" width="49" height="12"/>
+                                                    <rect key="frame" x="17" y="260" width="57" height="12"/>
                                                     <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="10"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -193,7 +193,7 @@
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ханна Секерешне" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ypk-OR-kow" customClass="Label" customModule="UI">
-                                                    <rect key="frame" x="20" y="387" width="374" height="33"/>
+                                                    <rect key="frame" x="20" y="385.5" width="374" height="34.5"/>
                                                     <fontDescription key="fontDescription" name="Montserrat-ExtraBold" family="Montserrat" pointSize="28"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
@@ -271,13 +271,13 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Обо мне" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Tt-Oo-rQi" customClass="Label" customModule="UI">
-                                                    <rect key="frame" x="20" y="40" width="374" height="21"/>
+                                                    <rect key="frame" x="20" y="40" width="374" height="22"/>
                                                     <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="18"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b8u-I4-2fz" customClass="Label" customModule="UI">
-                                                    <rect key="frame" x="20" y="81" width="374" height="90"/>
+                                                    <rect key="frame" x="20" y="82" width="374" height="92.5"/>
                                                     <string key="text">Я выросла в Будапеште и с детства путешествовала пешком по городу и в окрестностях, родители брали меня всегда с собой, чтобы показать мне всю красоту места, где я живу. Помощь туристам для меня больше, чем просто рутина, я занимаюсь этим уже много лет. Я одна из первых, кто начал помогать людям с организацией нестандартных впечатлений. Мне очень нравится делиться радостью открытия скрытых сокровищ города с посетителями со всего мира.</string>
                                                     <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="11"/>
                                                     <nil key="textColor"/>
@@ -289,7 +289,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="atA-0b-jfd" userLabel="SeparatorView">
-                                                    <rect key="frame" x="20" y="191" width="374" height="1"/>
+                                                    <rect key="frame" x="20" y="194.5" width="374" height="1"/>
                                                     <color key="backgroundColor" red="0.16862745098039217" green="0.16470588235294117" blue="0.1803921568627451" alpha="0.20163918711656442" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="1" id="5ZH-an-SGH"/>
@@ -322,7 +322,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" bouncesZoom="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="o7p-bx-Fc4">
-                                                    <rect key="frame" x="20" y="61" width="374" height="159"/>
+                                                    <rect key="frame" x="20" y="62" width="374" height="158"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                     <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="hg4-dh-ZxN" customClass="InterestsViewFlowLayout" customModule="Locals" customModuleProvider="target">
                                                         <size key="itemSize" width="30" height="30"/>
@@ -332,14 +332,14 @@
                                                     </collectionViewFlowLayout>
                                                     <cells>
                                                         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="InterestCollectionViewCell" id="o18-sr-aPW" customClass="InterestCollectionViewCell" customModule="Locals" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="0.0" width="111" height="45"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="118" height="45"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="g7J-Yw-o0W">
-                                                                <rect key="frame" x="0.0" y="0.0" width="111" height="45"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="118" height="45"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <subviews>
                                                                     <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HPQ-9B-xgh" customClass="RoundedView" customModule="UI">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="111" height="45"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="118" height="45"/>
                                                                         <subviews>
                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bcx-xX-XGx" customClass="ImageView" customModule="UI">
                                                                                 <rect key="frame" x="10" y="10" width="25" height="25"/>
@@ -349,7 +349,7 @@
                                                                                 </constraints>
                                                                             </imageView>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Волейбол" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uy5-Sb-2zf" customClass="Label" customModule="UI">
-                                                                                <rect key="frame" x="45" y="15.5" width="56" height="14"/>
+                                                                                <rect key="frame" x="45" y="15" width="63" height="15"/>
                                                                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="12"/>
                                                                                 <nil key="textColor"/>
                                                                                 <nil key="highlightedColor"/>
@@ -393,7 +393,7 @@
                                                     </connections>
                                                 </collectionView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Интересы" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BRn-Y0-CLc" customClass="Label" customModule="UI">
-                                                    <rect key="frame" x="20" y="20" width="374" height="21"/>
+                                                    <rect key="frame" x="20" y="20" width="374" height="22"/>
                                                     <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="18"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -421,13 +421,13 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Языки" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VNi-GN-flS" customClass="Label" customModule="UI">
-                                                    <rect key="frame" x="20" y="20" width="374" height="21"/>
+                                                    <rect key="frame" x="20" y="20" width="374" height="22"/>
                                                     <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="18"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="30" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dGS-AM-1NR">
-                                                    <rect key="frame" x="20" y="61" width="374" height="136"/>
+                                                    <rect key="frame" x="20" y="62" width="374" height="135"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                     <prototypes>
                                                         <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="LanguageTableViewCell" rowHeight="58" id="cRr-A9-97L" customClass="LanguageTableViewCell" customModule="Locals" customModuleProvider="target">
@@ -438,7 +438,7 @@
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Русский" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sv3-oh-f8l">
-                                                                        <rect key="frame" x="0.0" y="22" width="100" height="14"/>
+                                                                        <rect key="frame" x="0.0" y="21.5" width="100" height="15"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" constant="100" id="Zdv-iX-3Wn"/>
                                                                         </constraints>
@@ -509,13 +509,13 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Активности" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WRI-N1-heM" customClass="Label" customModule="UI">
-                                                    <rect key="frame" x="20" y="20" width="374" height="21"/>
+                                                    <rect key="frame" x="20" y="20" width="374" height="22"/>
                                                     <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="18"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="30" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="boq-dA-WMP">
-                                                    <rect key="frame" x="20" y="61" width="374" height="140"/>
+                                                    <rect key="frame" x="20" y="62" width="374" height="139"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                     <prototypes>
                                                         <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ActivityTableViewCell" rowHeight="65" id="ZAw-s1-zNk" customClass="ActivityTableViewCell" customModule="Locals" customModuleProvider="target">
@@ -539,7 +539,7 @@
                                                                         </userDefinedRuntimeAttributes>
                                                                     </view>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Организация активного отдыха" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="adA-uH-KNm">
-                                                                        <rect key="frame" x="28" y="25.5" width="346" height="14"/>
+                                                                        <rect key="frame" x="28" y="25" width="346" height="15"/>
                                                                         <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="12"/>
                                                                         <color key="textColor" red="0.16862745100000001" green="0.1647058824" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <nil key="highlightedColor"/>
@@ -759,13 +759,94 @@
                     <view key="view" contentMode="scaleToFill" id="ohd-pD-zwq">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Фильтр" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="20l-Ja-CCT" customClass="Label" customModule="UI">
+                                <rect key="frame" x="174.5" y="64" width="65" height="20"/>
+                                <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vvO-gU-8QJ">
+                                <rect key="frame" x="380" y="63" width="14" height="22"/>
+                                <state key="normal" image="close"/>
+                                <connections>
+                                    <action selector="closeButtonAction:" destination="ruf-TM-sOG" eventType="touchUpInside" id="4xU-4h-dDi"/>
+                                    <action selector="closeButtonAction:" destination="lY4-4B-3Xl" eventType="touchUpInside" id="KDY-HX-GUg"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsMultipleSelection="YES" rowHeight="72" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="77b-wW-HSn">
+                                <rect key="frame" x="20" y="104" width="374" height="758"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <view key="tableFooterView" contentMode="scaleToFill" id="mKC-xD-y4Z" userLabel="FooterView">
+                                    <rect key="frame" x="0.0" y="128" width="374" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                </view>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="FilterValueTableViewCell" rowHeight="72" id="8gb-G2-DqJ" customClass="FilterValueTableViewCell" customModule="Locals" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="374" height="72"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8gb-G2-DqJ" id="V5w-K0-MNe">
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="72"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Value label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kxv-Dn-taE">
+                                                    <rect key="frame" x="0.0" y="27.5" width="324" height="17.5"/>
+                                                    <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="14"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AUF-qH-wev" customClass="CheckboxControl" customModule="UI">
+                                                    <rect key="frame" x="344" y="24" width="24" height="24"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="24" id="BNI-Uz-wEP"/>
+                                                        <constraint firstAttribute="height" constant="24" id="qTy-Rc-X1K"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Kxv-Dn-taE" firstAttribute="centerY" secondItem="V5w-K0-MNe" secondAttribute="centerY" id="9PO-yr-heu"/>
+                                                <constraint firstAttribute="trailing" secondItem="AUF-qH-wev" secondAttribute="trailing" constant="6" id="BFX-Cw-LEr"/>
+                                                <constraint firstItem="AUF-qH-wev" firstAttribute="centerY" secondItem="V5w-K0-MNe" secondAttribute="centerY" id="OqX-m3-hcV"/>
+                                                <constraint firstItem="AUF-qH-wev" firstAttribute="leading" secondItem="Kxv-Dn-taE" secondAttribute="trailing" constant="20" id="dkY-PP-dqZ"/>
+                                                <constraint firstItem="Kxv-Dn-taE" firstAttribute="leading" secondItem="V5w-K0-MNe" secondAttribute="leading" id="nqM-ZQ-k9D"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="checkBox" destination="AUF-qH-wev" id="YbG-Yw-nku"/>
+                                            <outlet property="valueLabel" destination="Kxv-Dn-taE" id="BMn-cn-xTH"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="ruf-TM-sOG" id="Gpl-on-46b"/>
+                                    <outlet property="delegate" destination="ruf-TM-sOG" id="j19-b9-GbG"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="bLn-EI-O3i" firstAttribute="trailing" secondItem="77b-wW-HSn" secondAttribute="trailing" constant="20" id="EnE-1v-BgI"/>
+                            <constraint firstItem="20l-Ja-CCT" firstAttribute="centerX" secondItem="ohd-pD-zwq" secondAttribute="centerX" id="HJ8-hu-THM"/>
+                            <constraint firstItem="bLn-EI-O3i" firstAttribute="bottom" secondItem="77b-wW-HSn" secondAttribute="bottom" id="Klu-rA-7Te"/>
+                            <constraint firstItem="bLn-EI-O3i" firstAttribute="trailing" secondItem="vvO-gU-8QJ" secondAttribute="trailing" constant="20" id="OhM-ny-v7y"/>
+                            <constraint firstItem="vvO-gU-8QJ" firstAttribute="centerY" secondItem="20l-Ja-CCT" secondAttribute="centerY" id="TN9-Qu-3jw"/>
+                            <constraint firstItem="77b-wW-HSn" firstAttribute="top" secondItem="20l-Ja-CCT" secondAttribute="bottom" constant="20" id="VCK-o9-87a"/>
+                            <constraint firstItem="77b-wW-HSn" firstAttribute="leading" secondItem="bLn-EI-O3i" secondAttribute="leading" constant="20" id="Y1I-PM-wSb"/>
+                            <constraint firstItem="20l-Ja-CCT" firstAttribute="top" secondItem="bLn-EI-O3i" secondAttribute="top" constant="20" id="jp2-PT-3Zm"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="bLn-EI-O3i"/>
                     </view>
+                    <connections>
+                        <outlet property="closeButton" destination="vvO-gU-8QJ" id="4ND-kU-bLY"/>
+                        <outlet property="tableView" destination="77b-wW-HSn" id="WMp-Eq-INL"/>
+                        <outlet property="titleLabel" destination="20l-Ja-CCT" id="Sow-yC-JaP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qDK-7E-cx7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="103" y="1248"/>
+            <point key="canvasLocation" x="102.89855072463769" y="1247.5446428571429"/>
         </scene>
     </scenes>
     <resources>

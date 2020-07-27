@@ -59,6 +59,10 @@ class TabCoordinator: BaseCoordinator {
             createNavigationController(imageName: "locals", tag: 3),
             createNavigationController(imageName: "profile", tag: 4)
         ], animated: false)
+        
+        #warning("debug")
+        tabController.selectedIndex = 3
+        
         return tabController
     }
 

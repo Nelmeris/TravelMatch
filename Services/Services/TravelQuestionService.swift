@@ -85,7 +85,7 @@ public final class TravelQuestionService: QuestionsService {
         completion(.success(question))
     }
     
-    public func saveAnswers(_ answers: [TravelAnswer], completion: @escaping SaveAnswersCompletion) {
+    public func saveAnswers(_ answers: [Answer], completion: @escaping SaveAnswersCompletion) {
         userDefaults.set(true, forKey: .questionsShown)
         completion(.success(true))
     }

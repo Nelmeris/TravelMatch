@@ -28,6 +28,7 @@ final class AppStartManager {
     }
     
     public func startCoorditator() {
+        
         coordinator = AppCoordinator(
             onBoardingService: UserDefaultsOnBoardingService(
                 userDefaults: UserDefaults.standard
