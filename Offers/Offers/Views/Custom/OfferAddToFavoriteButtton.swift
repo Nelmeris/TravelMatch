@@ -13,7 +13,7 @@ class OfferAddToFavoriteButtton {
 
     private let moreButton = Button(frame: CGRect(x: 0, y: 0, width: 18, height: 16))
 
-    public func returnButton (offer: FakeOffer) -> Button {
+    public func returnButton (offer: Offer) -> Button {
         changeImageOnButton(offer: offer)
         moreButton.imageView?.translatesAutoresizingMaskIntoConstraints = false
         moreButton.imageView?.centerYAnchor.constraint(equalTo: moreButton.centerYAnchor, constant: 0.0).isActive = true
@@ -24,7 +24,7 @@ class OfferAddToFavoriteButtton {
         return moreButton
     }
     
-    public func changeImageOnButton (offer: FakeOffer) {
+    public func changeImageOnButton (offer: Offer) {
         var inFavoriteImage = "favoriteHeartNotFill"
         if offer.inFavorite {
             inFavoriteImage = "favoriteHeartFilled"

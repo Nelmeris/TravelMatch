@@ -8,24 +8,28 @@
       location = "group:Services/Services.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:Auth/Auth.xcodeproj">
-   </FileRef>
-   <FileRef
       location = "group:UI/UI.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Core/Core.xcodeproj">
    </FileRef>
-   <FileRef
-      location = "group:OnBoarding/OnBoarding.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:Questions/Questions.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:Locals/Locals.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:Offers/Offers.xcodeproj">
-   </FileRef>
+   <Group
+      location = "container:"
+      name = "Modules">
+      <FileRef
+         location = "group:Auth/Auth.xcodeproj">
+      </FileRef>
+      <FileRef
+         location = "group:OnBoarding/OnBoarding.xcodeproj">
+      </FileRef>
+      <FileRef
+         location = "group:Questions/Questions.xcodeproj">
+      </FileRef>
+      <FileRef
+         location = "group:Locals/Locals.xcodeproj">
+      </FileRef>
+      <FileRef
+         location = "group:Offers/Offers.xcodeproj">
+      </FileRef>
+   </Group>
 </Workspace>

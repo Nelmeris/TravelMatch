@@ -9,14 +9,18 @@
 /* Begin PBXBuildFile section */
 		570B38E424CC51E700827B42 /* Questions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 570B38E324CC51E700827B42 /* Questions.framework */; };
 		570B38E524CC51E700827B42 /* Questions.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 570B38E324CC51E700827B42 /* Questions.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		570B393524CCB48C00827B42 /* MockFakeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570B393424CCB48C00827B42 /* MockFakeData.swift */; };
+		570B393524CCB48C00827B42 /* OffersService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570B393424CCB48C00827B42 /* OffersService.swift */; };
 		57A37FAB24CEFD4D006FAFEC /* TravelAnswer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A37FA224CEFD4D006FAFEC /* TravelAnswer.swift */; };
-		57A37FAD24CEFD4D006FAFEC /* FakeOffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A37FA424CEFD4D006FAFEC /* FakeOffer.swift */; };
+		57A37FAD24CEFD4D006FAFEC /* Offer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A37FA424CEFD4D006FAFEC /* Offer.swift */; };
 		57A37FAE24CEFD4D006FAFEC /* UserDefaultsUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A37FA524CEFD4D006FAFEC /* UserDefaultsUser.swift */; };
 		57A37FAF24CEFD4D006FAFEC /* TravelQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A37FA624CEFD4D006FAFEC /* TravelQuestion.swift */; };
 		57A37FB024CEFD4D006FAFEC /* OnBoardingSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A37FA724CEFD4D006FAFEC /* OnBoardingSlide.swift */; };
 		57A37FB624CEFEE5006FAFEC /* Offers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57A37FB524CEFEE5006FAFEC /* Offers.framework */; };
 		57A37FB724CEFEE5006FAFEC /* Offers.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 57A37FB524CEFEE5006FAFEC /* Offers.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		57A37FC924CF42A4006FAFEC /* LocalActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A37FC824CF42A4006FAFEC /* LocalActivity.swift */; };
+		57A37FCB24CF42AD006FAFEC /* LocalLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A37FCA24CF42AD006FAFEC /* LocalLanguage.swift */; };
+		57A37FCD24CF42B8006FAFEC /* LocalInterest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A37FCC24CF42B8006FAFEC /* LocalInterest.swift */; };
+		57A37FCF24CF42C1006FAFEC /* LocalEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A37FCE24CF42C1006FAFEC /* LocalEntity.swift */; };
 		57AFF41C24CC511B007B913E /* TravelQuestionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57AFF41924CC511B007B913E /* TravelQuestionService.swift */; };
 		57AFF41D24CC511B007B913E /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57AFF41A24CC511B007B913E /* AuthService.swift */; };
 		57AFF41E24CC511B007B913E /* OnBoardingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57AFF41B24CC511B007B913E /* OnBoardingService.swift */; };
@@ -45,13 +49,17 @@
 		570B38E324CC51E700827B42 /* Questions.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Questions.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		570B390624CC6FFD00827B42 /* Entities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Entities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		570B392A24CCB29200827B42 /* Models.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Models.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		570B393424CCB48C00827B42 /* MockFakeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockFakeData.swift; sourceTree = "<group>"; };
+		570B393424CCB48C00827B42 /* OffersService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffersService.swift; sourceTree = "<group>"; };
 		57A37FA224CEFD4D006FAFEC /* TravelAnswer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TravelAnswer.swift; sourceTree = "<group>"; };
-		57A37FA424CEFD4D006FAFEC /* FakeOffer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FakeOffer.swift; sourceTree = "<group>"; };
+		57A37FA424CEFD4D006FAFEC /* Offer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Offer.swift; sourceTree = "<group>"; };
 		57A37FA524CEFD4D006FAFEC /* UserDefaultsUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsUser.swift; sourceTree = "<group>"; };
 		57A37FA624CEFD4D006FAFEC /* TravelQuestion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TravelQuestion.swift; sourceTree = "<group>"; };
 		57A37FA724CEFD4D006FAFEC /* OnBoardingSlide.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnBoardingSlide.swift; sourceTree = "<group>"; };
 		57A37FB524CEFEE5006FAFEC /* Offers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Offers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		57A37FC824CF42A4006FAFEC /* LocalActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalActivity.swift; sourceTree = "<group>"; };
+		57A37FCA24CF42AD006FAFEC /* LocalLanguage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalLanguage.swift; sourceTree = "<group>"; };
+		57A37FCC24CF42B8006FAFEC /* LocalInterest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalInterest.swift; sourceTree = "<group>"; };
+		57A37FCE24CF42C1006FAFEC /* LocalEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalEntity.swift; sourceTree = "<group>"; };
 		57AFF40A24CC4F7D007B913E /* Services.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Services.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		57AFF40E24CC4F7D007B913E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		57AFF41924CC511B007B913E /* TravelQuestionService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TravelQuestionService.swift; sourceTree = "<group>"; };
@@ -87,18 +95,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		57A37F9F24CEFD4D006FAFEC /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				57A37FA424CEFD4D006FAFEC /* FakeOffer.swift */,
-				57A37FA524CEFD4D006FAFEC /* UserDefaultsUser.swift */,
-				57A37FA224CEFD4D006FAFEC /* TravelAnswer.swift */,
-				57A37FA624CEFD4D006FAFEC /* TravelQuestion.swift */,
-				57A37FA724CEFD4D006FAFEC /* OnBoardingSlide.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
 		57A37FB224CEFDC2006FAFEC /* Environments */ = {
 			isa = PBXGroup;
 			children = (
@@ -107,11 +103,99 @@
 			path = Environments;
 			sourceTree = "<group>";
 		};
+		57A37FBE24CF3FBD006FAFEC /* AuthServices */ = {
+			isa = PBXGroup;
+			children = (
+				57AFF41A24CC511B007B913E /* AuthService.swift */,
+				57A37FBF24CF41BC006FAFEC /* Models */,
+			);
+			path = AuthServices;
+			sourceTree = "<group>";
+		};
+		57A37FBF24CF41BC006FAFEC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				57A37FA524CEFD4D006FAFEC /* UserDefaultsUser.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		57A37FC024CF41D3006FAFEC /* OnBoardingServices */ = {
+			isa = PBXGroup;
+			children = (
+				57AFF41B24CC511B007B913E /* OnBoardingService.swift */,
+				57A37FC124CF41EB006FAFEC /* Models */,
+			);
+			path = OnBoardingServices;
+			sourceTree = "<group>";
+		};
+		57A37FC124CF41EB006FAFEC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				57A37FA724CEFD4D006FAFEC /* OnBoardingSlide.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		57A37FC224CF41F3006FAFEC /* LocalsServices */ = {
+			isa = PBXGroup;
+			children = (
+				E166335B24CD8A0200CDDAC8 /* LocalsService.swift */,
+				57A37FC724CF428D006FAFEC /* Models */,
+			);
+			path = LocalsServices;
+			sourceTree = "<group>";
+		};
+		57A37FC324CF4218006FAFEC /* OffersServices */ = {
+			isa = PBXGroup;
+			children = (
+				570B393424CCB48C00827B42 /* OffersService.swift */,
+				57A37FC524CF4269006FAFEC /* Models */,
+			);
+			path = OffersServices;
+			sourceTree = "<group>";
+		};
+		57A37FC424CF4222006FAFEC /* TravelQuestionServices */ = {
+			isa = PBXGroup;
+			children = (
+				57AFF41924CC511B007B913E /* TravelQuestionService.swift */,
+				57A37FC624CF4272006FAFEC /* Models */,
+			);
+			path = TravelQuestionServices;
+			sourceTree = "<group>";
+		};
+		57A37FC524CF4269006FAFEC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				57A37FA424CEFD4D006FAFEC /* Offer.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		57A37FC624CF4272006FAFEC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				57A37FA224CEFD4D006FAFEC /* TravelAnswer.swift */,
+				57A37FA624CEFD4D006FAFEC /* TravelQuestion.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		57A37FC724CF428D006FAFEC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				57A37FC824CF42A4006FAFEC /* LocalActivity.swift */,
+				57A37FCA24CF42AD006FAFEC /* LocalLanguage.swift */,
+				57A37FCC24CF42B8006FAFEC /* LocalInterest.swift */,
+				57A37FCE24CF42C1006FAFEC /* LocalEntity.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		57AFF40024CC4F7D007B913E = {
 			isa = PBXGroup;
 			children = (
 				57AFF40C24CC4F7D007B913E /* Services */,
-				57A37F9F24CEFD4D006FAFEC /* Models */,
 				57A37FB224CEFDC2006FAFEC /* Environments */,
 				57AFF40B24CC4F7D007B913E /* Products */,
 				570B38E224CC51E700827B42 /* Frameworks */,
@@ -129,11 +213,11 @@
 		57AFF40C24CC4F7D007B913E /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				57AFF41A24CC511B007B913E /* AuthService.swift */,
-				57AFF41B24CC511B007B913E /* OnBoardingService.swift */,
-				57AFF41924CC511B007B913E /* TravelQuestionService.swift */,
-				570B393424CCB48C00827B42 /* MockFakeData.swift */,
-				E166335B24CD8A0200CDDAC8 /* LocalsService.swift */,
+				57A37FBE24CF3FBD006FAFEC /* AuthServices */,
+				57A37FC024CF41D3006FAFEC /* OnBoardingServices */,
+				57A37FC224CF41F3006FAFEC /* LocalsServices */,
+				57A37FC324CF4218006FAFEC /* OffersServices */,
+				57A37FC424CF4222006FAFEC /* TravelQuestionServices */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -217,16 +301,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				570B393524CCB48C00827B42 /* MockFakeData.swift in Sources */,
+				570B393524CCB48C00827B42 /* OffersService.swift in Sources */,
 				57A37FAF24CEFD4D006FAFEC /* TravelQuestion.swift in Sources */,
 				57AFF41E24CC511B007B913E /* OnBoardingService.swift in Sources */,
 				57AFF41C24CC511B007B913E /* TravelQuestionService.swift in Sources */,
-				57A37FAD24CEFD4D006FAFEC /* FakeOffer.swift in Sources */,
+				57A37FCD24CF42B8006FAFEC /* LocalInterest.swift in Sources */,
+				57A37FAD24CEFD4D006FAFEC /* Offer.swift in Sources */,
+				57A37FCF24CF42C1006FAFEC /* LocalEntity.swift in Sources */,
+				57A37FCB24CF42AD006FAFEC /* LocalLanguage.swift in Sources */,
 				57A37FAB24CEFD4D006FAFEC /* TravelAnswer.swift in Sources */,
 				E166335C24CD8A0200CDDAC8 /* LocalsService.swift in Sources */,
 				57AFF41D24CC511B007B913E /* AuthService.swift in Sources */,
 				57A37FAE24CEFD4D006FAFEC /* UserDefaultsUser.swift in Sources */,
 				57A37FB024CEFD4D006FAFEC /* OnBoardingSlide.swift in Sources */,
+				57A37FC924CF42A4006FAFEC /* LocalActivity.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

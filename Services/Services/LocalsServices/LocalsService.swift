@@ -9,32 +9,6 @@
 import Foundation
 import Locals
 
-struct LocalEntity: Local {
-    let imageURL: URL
-    let imageLargeURL: URL
-    let name: String
-    let aboutText: String
-    let interests: [Interest]
-    let languages: [Language]
-    let activities: [Activity]
-    let price: Double
-    let priceDescriptor: String
-}
-
-struct LocalInterest: Interest {
-    let iconURL: URL
-    let title: String
-}
-
-struct LocalLanguage: Language {
-    let title: String
-    let level: Int
-}
-
-struct LocalActivity: Activity {
-    let title: String
-}
-
 public final class FakeLocalsService: LocalsService {
     
     public init() {}

@@ -19,7 +19,7 @@ final class AppCoordinator: BaseCoordinator {
     private let authService: AuthService
     private let questionsService: QuestionsService
     private let localsService: LocalsService
-    private let mockFakeDataService: MockFakeData
+    private let mockFakeDataService: OffersService
 
     private var rootController: NavigationController!
     
@@ -28,7 +28,7 @@ final class AppCoordinator: BaseCoordinator {
         authService: AuthService,
         questionsService: QuestionsService,
         localsService: LocalsService,
-        mockFakeDataService: MockFakeData
+        mockFakeDataService: OffersService
     ) {
         self.onBoardingService = onBoardingService
         self.authService = authService

@@ -16,12 +16,12 @@ class TabCoordinator: BaseCoordinator {
     private weak var rootController: NavigationController?
 
     private let localsService: LocalsService
-    private let mockFakeDataService: MockFakeData
+    private let mockFakeDataService: OffersService
 
     init(
         rootController: NavigationController,
         localsService: LocalsService,
-        mockFakeDataService: MockFakeData
+        mockFakeDataService: OffersService
     ) {
         self.rootController = rootController
         self.localsService = localsService

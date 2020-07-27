@@ -32,7 +32,7 @@ class ListOfOffersImageCell: CustomTableViewCell {
         offerPictureImageView.layer.cornerRadius = 20
     }
     
-    override func fillData(offer: FakeOffer) {
+    override func fillData(offer: Offer) {
         let image = offer.image
         offerPictureImageView.image = UIImage(named: image, in: Bundle(for: ListOfOffersController.self), compatibleWith: nil)
         var name = "favoriteHeartNotFill"

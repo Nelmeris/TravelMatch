@@ -19,13 +19,13 @@ class ListOfOffersController: BaseViewController {
     private var animationFinished = true
     private var selectedDay: DayView?
     private let refreshControler = UIRefreshControl()
-    public var mockFakeDataService: MockFakeData?
+    public var mockFakeDataService: OffersService?
     
-    var offers: [FakeOffer] = []
+    var offers: [Offer] = []
     
     // MARK: - Output
     
-    var onOfferController: ((FakeOffer) -> Void)?
+    var onOfferController: ((Offer) -> Void)?
     
     //MARK: - IBOutlet
     

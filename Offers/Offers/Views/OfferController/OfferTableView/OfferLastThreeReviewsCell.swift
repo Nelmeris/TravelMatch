@@ -45,7 +45,7 @@ class OfferLastThreeReviewsCell: CustomTableViewCell {
         thirdReviewOwnerImageLabel.layer.cornerRadius = cornerRadius
     }
     
-    override func fillData(offer: FakeOffer) {
+    override func fillData(offer: Offer) {
         
     }
 
