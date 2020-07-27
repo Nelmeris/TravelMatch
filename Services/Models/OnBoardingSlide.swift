@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import OnBoarding
 
 public struct OnBoardingSlide {
     public let image: UIImage
@@ -21,3 +22,5 @@ public struct OnBoardingSlide {
         self.text = text
     }
 }
+
+extension OnBoardingSlide: OnBoarding.OnBoardingSlide {}

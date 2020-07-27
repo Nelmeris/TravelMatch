@@ -8,9 +8,6 @@
       location = "group:Services/Services.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:Entities/Models.xcodeproj">
-   </FileRef>
-   <FileRef
       location = "group:Auth/Auth.xcodeproj">
    </FileRef>
    <FileRef

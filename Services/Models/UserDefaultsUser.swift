@@ -6,7 +6,9 @@
 //  Copyright © 2020 Artem Kufaev. All rights reserved.
 //
 
-public struct UserDefaultsUser: Codable, Identifiable, Authentificatable {
+import Auth
+
+public struct UserDefaultsUser: Codable, Identifiable {
     public let id: String
     public let name: String
     public let password: String
@@ -19,3 +21,5 @@ public struct UserDefaultsUser: Codable, Identifiable, Authentificatable {
         self.password = password
     }
 }
+
+extension UserDefaultsUser: Authentificatable {}

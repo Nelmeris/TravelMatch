@@ -16,13 +16,16 @@ class TabCoordinator: BaseCoordinator {
     private weak var rootController: NavigationController?
 
     private let localsService: LocalsService
+    private let mockFakeDataService: MockFakeData
 
     init(
         rootController: NavigationController,
-        localsService: LocalsService
+        localsService: LocalsService,
+        mockFakeDataService: MockFakeData
     ) {
         self.rootController = rootController
         self.localsService = localsService
+        self.mockFakeDataService = mockFakeDataService
     }
     
     override func start() {
@@ -34,7 +37,7 @@ class TabCoordinator: BaseCoordinator {
 
     private func startOffersCoordinator(with controller: UIViewController) {
         guard let controller = controller as? NavigationController else { fatalError() }
-        let offersCoordinator = OffersCoordinator(rootController: controller)
+        let offersCoordinator = OffersCoordinator(rootController: controller, mockFakeDataService: mockFakeDataService)
         addDependency(offersCoordinator)
         offersCoordinator.start()
     }
