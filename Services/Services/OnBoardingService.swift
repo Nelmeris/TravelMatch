@@ -8,7 +8,6 @@
 
 import UIKit
 import OnBoarding
-import Models
 
 public final class UserDefaultsOnBoardingService: OnBoardingService {
         

@@ -9,7 +9,6 @@
 import Foundation
 import Core
 import Auth
-import Models
 
 public protocol AuthService: AuthLogin & AuthReset & AuthSearch & AuthSignUp {
     var isAuthorized: Bool { get }

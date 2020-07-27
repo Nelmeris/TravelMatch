@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		570B392824CCB28900827B42 /* Models.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 570B392724CCB28900827B42 /* Models.framework */; };
-		570B392924CCB28900827B42 /* Models.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 570B392724CCB28900827B42 /* Models.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E121508A24A4924800C691E4 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E121508924A4924800C691E4 /* AuthService.swift */; };
 		E121508E24A492DF00C691E4 /* AuthCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E121508D24A492DF00C691E4 /* AuthCoordinator.swift */; };
 		E12150A024A493C200C691E4 /* ViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E121509F24A493C200C691E4 /* ViewControllerFactory.swift */; };
@@ -36,7 +34,6 @@
 			files = (
 				E18E999024A8ABD50072ADD4 /* UI.framework in Embed Frameworks */,
 				E18E998E24A8ABD50072ADD4 /* Core.framework in Embed Frameworks */,
-				570B392924CCB28900827B42 /* Models.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -73,7 +70,6 @@
 			files = (
 				E18E998F24A8ABD50072ADD4 /* UI.framework in Frameworks */,
 				E18E998D24A8ABD50072ADD4 /* Core.framework in Frameworks */,
-				570B392824CCB28900827B42 /* Models.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

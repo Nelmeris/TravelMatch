@@ -6,8 +6,6 @@
 //  Copyright © 2020 Igor Gapanovich. All rights reserved.
 //
 
-import Foundation
-import Models
 
 public class MockFakeData {
     public static let data = MockFakeData()

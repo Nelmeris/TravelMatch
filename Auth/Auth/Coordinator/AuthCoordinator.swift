@@ -8,7 +8,6 @@
 
 import UIKit
 import Core
-import Models
 
 public final class AuthCoordinator: BaseCoordinator {
     

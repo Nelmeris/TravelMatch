@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		570B392524CCB27B00827B42 /* Models.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 570B392424CCB27B00827B42 /* Models.framework */; };
-		570B392624CCB27B00827B42 /* Models.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 570B392424CCB27B00827B42 /* Models.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E18E999324A8ABE60072ADD4 /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E18E999124A8ABE60072ADD4 /* Core.framework */; };
 		E18E999424A8ABE60072ADD4 /* Core.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E18E999124A8ABE60072ADD4 /* Core.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E18E999524A8ABE60072ADD4 /* UI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E18E999224A8ABE60072ADD4 /* UI.framework */; };
@@ -29,7 +27,6 @@
 			files = (
 				E18E999624A8ABE60072ADD4 /* UI.framework in Embed Frameworks */,
 				E18E999424A8ABE60072ADD4 /* Core.framework in Embed Frameworks */,
-				570B392624CCB27B00827B42 /* Models.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -60,7 +57,6 @@
 			files = (
 				E18E999524A8ABE60072ADD4 /* UI.framework in Frameworks */,
 				E18E999324A8ABE60072ADD4 /* Core.framework in Frameworks */,
-				570B392524CCB27B00827B42 /* Models.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,7 +8,6 @@
 
 import UIKit
 import UI
-import Models
 
 class ListOfOffersNameCell: CustomTableViewCell {
     
