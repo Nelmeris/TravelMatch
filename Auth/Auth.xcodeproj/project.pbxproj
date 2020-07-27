@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		57A37FB924CEFF78006FAFEC /* Authentificatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A37FB824CEFF78006FAFEC /* Authentificatable.swift */; };
 		E121508A24A4924800C691E4 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E121508924A4924800C691E4 /* AuthService.swift */; };
 		E121508E24A492DF00C691E4 /* AuthCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E121508D24A492DF00C691E4 /* AuthCoordinator.swift */; };
 		E12150A024A493C200C691E4 /* ViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E121509F24A493C200C691E4 /* ViewControllerFactory.swift */; };
@@ -43,6 +44,7 @@
 /* Begin PBXFileReference section */
 		570B391A24CCA9FC00827B42 /* Entities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Entities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		570B392724CCB28900827B42 /* Models.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Models.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		57A37FB824CEFF78006FAFEC /* Authentificatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authentificatable.swift; sourceTree = "<group>"; };
 		E121506A24A4919100C691E4 /* Auth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Auth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E121506E24A4919100C691E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E121508924A4924800C691E4 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
@@ -210,6 +212,7 @@
 			isa = PBXGroup;
 			children = (
 				E121508924A4924800C691E4 /* AuthService.swift */,
+				57A37FB824CEFF78006FAFEC /* Authentificatable.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -316,6 +319,7 @@
 				E12150A524A4949800C691E4 /* SignUpViewController.swift in Sources */,
 				E121508E24A492DF00C691E4 /* AuthCoordinator.swift in Sources */,
 				E12150A724A4949F00C691E4 /* EmailViewController.swift in Sources */,
+				57A37FB924CEFF78006FAFEC /* Authentificatable.swift in Sources */,
 				E121508A24A4924800C691E4 /* AuthService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

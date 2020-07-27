@@ -6,6 +6,7 @@
 //  Copyright © 2020 Artem Kufaev. All rights reserved.
 //
 
+import Auth
 
 public struct UserDefaultsUser: Codable, Identifiable {
     public let id: String

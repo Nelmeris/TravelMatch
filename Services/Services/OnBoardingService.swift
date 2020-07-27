@@ -27,7 +27,7 @@ public final class UserDefaultsOnBoardingService: OnBoardingService {
         userDefaults.set(true, forKey: .onBoardingShown)
     }
     
-    public func getSlides() -> [OnBoardingSlide] {
+    public func getSlides() -> [OnBoarding.OnBoardingSlide] {
         return [
             OnBoardingSlide(
                 image: UIImage(named: "onboarding1")!,

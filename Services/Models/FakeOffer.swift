@@ -6,6 +6,8 @@
 //  Copyright © 2020 Artem Kufaev. All rights reserved.
 //
 
+import Offers
+
 public struct FakeOffer {
     public let id: Int
     public let name: String
@@ -28,3 +30,5 @@ public struct FakeOffer {
         self.inFavorite = inFavorite
     }
 }
+
+extension FakeOffer: Offers.FakeOffer { }

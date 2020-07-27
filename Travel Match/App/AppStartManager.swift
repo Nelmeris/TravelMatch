@@ -39,7 +39,8 @@ final class AppStartManager {
             questionsService: TravelQuestionService(
                 userDefaults: UserDefaults.standard
             ),
-            localsService: FakeLocalsService()
+            localsService: FakeLocalsService(),
+            mockFakeDataService: MockFakeData.data
         )
         
         coordinator?.start()

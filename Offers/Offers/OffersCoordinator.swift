@@ -14,10 +14,13 @@ public final class OffersCoordinator: BaseCoordinator {
     
     private weak var rootController: NavigationController?
     private let viewControllerFactory: ViewControllerFactory
+    private let mockFakeDataService: MockFakeData
     
-    public init(rootController: NavigationController) {
+    public init(rootController: NavigationController,
+                mockFakeDataService: MockFakeData) {
         self.rootController = rootController
         self.viewControllerFactory = ViewControllerFactory()
+        self.mockFakeDataService = mockFakeDataService
         super.init()
     }
     
@@ -28,6 +31,7 @@ public final class OffersCoordinator: BaseCoordinator {
     
     private func showListOfOffersController() {
         let controller = viewControllerFactory.makeListOfOffersController()
+        controller.mockFakeDataService = mockFakeDataService
           
         controller.onOfferController = { [weak self] offer in
             self?.showOfferController(offer: offer)
