@@ -1,5 +1,5 @@
 //
-//  FakeOffer.swift
+//  Offer.swift
 //  Models
 //
 //  Created by Artem Kufaev on 25.07.2020.
@@ -8,7 +8,7 @@
 
 import Offers
 
-public struct FakeOffer {
+public struct Offer {
     public let id: Int
     public let name: String
     public let image: String
@@ -31,4 +31,4 @@ public struct FakeOffer {
     }
 }
 
-extension FakeOffer: Offers.Offer { }
+extension Offer: Offers.Offer { }

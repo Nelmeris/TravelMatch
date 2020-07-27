@@ -10,5 +10,5 @@ import Foundation
 
 public protocol OffersService {
     var filterCollection: [String] { get }
-    func getOffers(count: Int) -> [FakeOffer]
+    func getOffers(count: Int) -> [Offer]
 }

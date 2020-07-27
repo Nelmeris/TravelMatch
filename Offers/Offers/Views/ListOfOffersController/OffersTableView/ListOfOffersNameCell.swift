@@ -27,7 +27,7 @@ class ListOfOffersNameCell: CustomTableViewCell {
         // Configure the view for the selected state
     }
     
-    override func fillData(offer: FakeOffer) {
+    override func fillData(offer: Offer) {
         offerNameLabel.text = offer.name
         offerPriceLabel.text = "\(offer.price) руб"
     }

@@ -41,7 +41,7 @@ class OfferGuideInfoCell: CustomTableViewCell {
         guidePhotoImageView.layer.cornerRadius = cornerRadius
     }
     
-    override func fillData(offer: FakeOffer) {
+    override func fillData(offer: Offer) {
         
     }
 

@@ -6,7 +6,7 @@
 //  Copyright © 2020 Igor Gapanovich. All rights reserved.
 //
 
-public protocol FakeOffer {
+public protocol Offer {
     var id: Int { get }
     var name: String { get }
     var image: String { get }

@@ -24,7 +24,7 @@ class OfferSocialCell: CustomTableViewCell {
         // Configure the view for the selected state
     }
     
-    override func fillData(offer: FakeOffer) {
+    override func fillData(offer: Offer) {
         
     }
     

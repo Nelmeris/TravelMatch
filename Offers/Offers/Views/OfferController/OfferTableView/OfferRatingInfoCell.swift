@@ -43,7 +43,7 @@ class OfferRatingInfoCell: CustomTableViewCell {
         collectionView.delegate = self
     }
     
-    override func fillData(offer: FakeOffer) {
+    override func fillData(offer: Offer) {
         for _ in 0...8 {
             imageCollection.append(offer.image)
         }
