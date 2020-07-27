@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import UI
 
 public class NavigationController: UINavigationController {
 
@@ -26,6 +27,7 @@ public class NavigationController: UINavigationController {
         navigationBar.shadowImage = UIImage()
         navigationBar.backgroundColor = .clear
         navigationBar.isTranslucent = true
+        navigationBar.tintColor = UIColor.ThemeColors.blackColor
     }
         
 }

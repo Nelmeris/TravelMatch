@@ -10,6 +10,7 @@ import Core
 import Auth
 import OnBoarding
 import Questions
+import Locals
 import Services
 
 final class AppCoordinator: BaseCoordinator {
@@ -17,17 +18,20 @@ final class AppCoordinator: BaseCoordinator {
     private let onBoardingService: OnBoardingService
     private let authService: AuthService
     private let questionsService: QuestionsService
-    
+    private let localsService: LocalsService
+
     private var rootController: NavigationController!
     
     init(
         onBoardingService: OnBoardingService,
         authService: AuthService,
-        questionsService: QuestionsService
+        questionsService: QuestionsService,
+        localsService: LocalsService
     ) {
         self.onBoardingService = onBoardingService
         self.authService = authService
         self.questionsService = questionsService
+        self.localsService = localsService
     }
     
     override func start() {
@@ -37,13 +41,20 @@ final class AppCoordinator: BaseCoordinator {
         
         if onBoardingService.shouldShow() {
             showOnBoarding()
-        } else if !authService.isAuthorized {
-            showAuth()
-        } else if questionsService.shouldShowQuestion {
-            showQuestions()
-        } else {
-            showMain()
+            return
         }
+        
+        if !authService.isAuthorized {
+            showAuth()
+            return
+        }
+        
+        if questionsService.shouldShowQuestion {
+            showQuestions()
+            return
+        }
+        
+        showMain()
     }
     
     // MARK: - Onboarding
@@ -96,7 +107,8 @@ final class AppCoordinator: BaseCoordinator {
     
     private func showMain() {
         let coordinator = TabCoordinator(
-            rootController: rootController
+            rootController: rootController,
+            localsService: localsService
         )
         
         addDependency(coordinator)

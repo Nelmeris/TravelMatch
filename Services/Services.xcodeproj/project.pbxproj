@@ -15,6 +15,9 @@
 		57AFF41C24CC511B007B913E /* TravelQuestionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57AFF41924CC511B007B913E /* TravelQuestionService.swift */; };
 		57AFF41D24CC511B007B913E /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57AFF41A24CC511B007B913E /* AuthService.swift */; };
 		57AFF41E24CC511B007B913E /* OnBoardingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57AFF41B24CC511B007B913E /* OnBoardingService.swift */; };
+		E166335C24CD8A0200CDDAC8 /* LocalsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E166335B24CD8A0200CDDAC8 /* LocalsService.swift */; };
+		E1BF21FC24CD8FC90023BCFC /* OnBoarding.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1BF21FB24CD8FC90023BCFC /* OnBoarding.framework */; };
+		E1BF21FD24CD8FC90023BCFC /* OnBoarding.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E1BF21FB24CD8FC90023BCFC /* OnBoarding.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +28,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				570B392C24CCB29200827B42 /* Models.framework in Embed Frameworks */,
+				E1BF21FD24CD8FC90023BCFC /* OnBoarding.framework in Embed Frameworks */,
 				570B38E524CC51E700827B42 /* Questions.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -42,6 +46,8 @@
 		57AFF41924CC511B007B913E /* TravelQuestionService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TravelQuestionService.swift; sourceTree = "<group>"; };
 		57AFF41A24CC511B007B913E /* AuthService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		57AFF41B24CC511B007B913E /* OnBoardingService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnBoardingService.swift; sourceTree = "<group>"; };
+		E166335B24CD8A0200CDDAC8 /* LocalsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalsService.swift; sourceTree = "<group>"; };
+		E1BF21FB24CD8FC90023BCFC /* OnBoarding.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = OnBoarding.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +56,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				570B392B24CCB29200827B42 /* Models.framework in Frameworks */,
+				E1BF21FC24CD8FC90023BCFC /* OnBoarding.framework in Frameworks */,
 				570B38E424CC51E700827B42 /* Questions.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -60,6 +67,7 @@
 		570B38E224CC51E700827B42 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E1BF21FB24CD8FC90023BCFC /* OnBoarding.framework */,
 				570B392A24CCB29200827B42 /* Models.framework */,
 				570B390624CC6FFD00827B42 /* Entities.framework */,
 				570B38E324CC51E700827B42 /* Questions.framework */,
@@ -91,6 +99,7 @@
 				57AFF41B24CC511B007B913E /* OnBoardingService.swift */,
 				57AFF41924CC511B007B913E /* TravelQuestionService.swift */,
 				570B393424CCB48C00827B42 /* MockFakeData.swift */,
+				E166335B24CD8A0200CDDAC8 /* LocalsService.swift */,
 				57AFF40E24CC4F7D007B913E /* Info.plist */,
 			);
 			path = Services;
@@ -178,6 +187,7 @@
 				570B393524CCB48C00827B42 /* MockFakeData.swift in Sources */,
 				57AFF41E24CC511B007B913E /* OnBoardingService.swift in Sources */,
 				57AFF41C24CC511B007B913E /* TravelQuestionService.swift in Sources */,
+				E166335C24CD8A0200CDDAC8 /* LocalsService.swift in Sources */,
 				57AFF41D24CC511B007B913E /* AuthService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

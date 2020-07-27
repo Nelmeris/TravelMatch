@@ -17,13 +17,33 @@ public class RoundedView: UIView {
             layer.cornerRadius = cornerRadius
         }
     }
-        
+
+    @IBInspectable
+    var borderColor: UIColor? {
+        didSet {
+            setupView()
+        }
+    }
+
     public override func awakeFromNib() {
         super.awakeFromNib()
         setupView()
     }
     
+    public override func prepareForInterfaceBuilder() {
+        super.prepareForInterfaceBuilder()
+        setupView()
+    }
+
     private func setupView() {
         clipsToBounds = true
+        layer.cornerRadius = cornerRadius
+
+        if let borderColor = borderColor {
+            layer.borderWidth = 1
+            layer.borderColor = borderColor.cgColor
+        } else {
+            layer.borderWidth = 0
+        }
     }
 }

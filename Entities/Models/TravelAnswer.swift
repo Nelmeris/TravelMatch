@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Questions
 
 public struct TravelAnswer {
     public let id: String
@@ -21,3 +22,5 @@ public struct TravelAnswer {
         self.imageURL = imageURL
     }
 }
+
+extension TravelAnswer: Answer {}

@@ -40,14 +40,7 @@ public final class OffersCoordinator: BaseCoordinator {
     private func showOfferController(offer: FakeOffer) {
         let controller = viewControllerFactory.makeOfferController()
         controller.offer = offer
-        
-        controller.modalPresentationStyle = .fullScreen
-        rootController?.popViewController(animated: true)
-        if nil != rootController?.viewControllers.last as? ListOfOffersController {
-            rootController?.pushViewController(controller, animated: false)
-        } else {
-            rootController?.pushViewController(controller, animated: true)
-        }
+        rootController?.pushViewController(controller, animated: true)
     }
     
     private func showError(error: Error) {

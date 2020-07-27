@@ -54,7 +54,7 @@ class OfferController: BaseViewController {
         //show nav bar
 //        self.navigationController?.setNavigationBarHidden(false, animated: true)
         // hite title for back button
-        self.navigationController?.navigationBar.backItem?.title = ""
+        self.navigationController?.navigationBar.topItem?.title = ""
         // add addInFavorite button
         let inFavoriteButton = addToFavoriteButtton.returnButton(offer: offer)
         inFavoriteButton.addTarget(self, action: #selector(addToFavorite), for: .touchUpInside)

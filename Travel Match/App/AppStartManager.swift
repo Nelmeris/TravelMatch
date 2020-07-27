@@ -28,6 +28,7 @@ final class AppStartManager {
     }
     
     public func startCoorditator() {
+        
         coordinator = AppCoordinator(
             onBoardingService: UserDefaultsOnBoardingService(
                 userDefaults: UserDefaults.standard
@@ -37,7 +38,8 @@ final class AppStartManager {
             ),
             questionsService: TravelQuestionService(
                 userDefaults: UserDefaults.standard
-            )
+            ),
+            localsService: FakeLocalsService()
         )
         
         coordinator?.start()

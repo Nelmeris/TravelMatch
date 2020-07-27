@@ -48,13 +48,17 @@
                                                         <constraint firstAttribute="height" constant="440" id="cRX-rW-mZ8"/>
                                                     </constraints>
                                                 </imageView>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2yh-XF-mTA" customClass="ShadowView" customModule="UI">
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="440"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Исследование исторического центра" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jzw-cL-pUS">
                                                     <rect key="frame" x="20" y="351.5" width="374" height="68.5"/>
                                                     <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="28"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IE4-Oq-6vd" customClass="Label" customModule="UI">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IE4-Oq-6vd" customClass="Label" customModule="UI">
                                                     <rect key="frame" x="20" y="460" width="374" height="85.5"/>
                                                     <string key="text">Откройте для себя прекрасную столицу Венгрии и исследуйте достопримечательности Будапешта с местным гидом! Общий обзор венгерской истории, культуры, искусства, традиций, гастрономии.</string>
                                                     <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="12"/>
@@ -68,14 +72,18 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="2yh-XF-mTA" secondAttribute="trailing" id="2TO-Tb-Net"/>
                                                 <constraint firstAttribute="trailing" secondItem="421-yY-Nyw" secondAttribute="trailing" id="3GU-IA-MQc"/>
                                                 <constraint firstItem="IE4-Oq-6vd" firstAttribute="top" secondItem="421-yY-Nyw" secondAttribute="bottom" constant="20" id="COD-P5-bBx"/>
+                                                <constraint firstItem="2yh-XF-mTA" firstAttribute="leading" secondItem="bYB-wl-Rdd" secondAttribute="leading" id="EFM-5f-2mS"/>
                                                 <constraint firstItem="421-yY-Nyw" firstAttribute="top" secondItem="bYB-wl-Rdd" secondAttribute="top" id="Ozo-z5-BBG"/>
                                                 <constraint firstAttribute="bottom" secondItem="IE4-Oq-6vd" secondAttribute="bottom" constant="20" id="SaF-lo-ka8"/>
+                                                <constraint firstItem="2yh-XF-mTA" firstAttribute="top" secondItem="bYB-wl-Rdd" secondAttribute="top" id="V0a-q2-h0x"/>
                                                 <constraint firstItem="IE4-Oq-6vd" firstAttribute="leading" secondItem="bYB-wl-Rdd" secondAttribute="leading" constant="20" id="Zqr-4l-CBI"/>
                                                 <constraint firstItem="421-yY-Nyw" firstAttribute="leading" secondItem="bYB-wl-Rdd" secondAttribute="leading" id="fZE-cd-EMg"/>
                                                 <constraint firstAttribute="trailing" secondItem="jzw-cL-pUS" secondAttribute="trailing" constant="20" id="g6s-hL-cV8"/>
                                                 <constraint firstAttribute="trailing" secondItem="IE4-Oq-6vd" secondAttribute="trailing" constant="20" id="jYH-3n-Dyb"/>
+                                                <constraint firstItem="2yh-XF-mTA" firstAttribute="bottom" secondItem="421-yY-Nyw" secondAttribute="bottom" id="ky7-zP-Imc"/>
                                                 <constraint firstItem="jzw-cL-pUS" firstAttribute="leading" secondItem="bYB-wl-Rdd" secondAttribute="leading" constant="20" id="ypp-iw-HXW"/>
                                                 <constraint firstItem="421-yY-Nyw" firstAttribute="bottom" secondItem="jzw-cL-pUS" secondAttribute="bottom" constant="20" id="zWK-12-yOQ"/>
                                             </constraints>

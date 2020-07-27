@@ -7,9 +7,8 @@
 //
 
 import Core
-import Models
 
-public typealias GetQuestionsCompletion = (_ result: Result<TravelQuestion, Error>) -> Void
+public typealias GetQuestionsCompletion = (_ result: Result<Question, Error>) -> Void
 public typealias SaveAnswersCompletion = (_ result: Result<Bool, Error>) -> Void
 
 public protocol QuestionsService {
@@ -27,7 +26,7 @@ public protocol QuestionsService {
     ///   - answers: массив с выбранными ответами
     ///   - completion: Result<Bool>
     func saveAnswers(
-        _ answers: [TravelAnswer],
+        _ answers: [Answer],
         completion: @escaping SaveAnswersCompletion
     )
     

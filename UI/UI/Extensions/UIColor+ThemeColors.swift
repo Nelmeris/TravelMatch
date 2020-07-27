@@ -10,11 +10,11 @@ import UIKit
 
 extension UIColor {
     
-    struct ThemeColors {
-        static let brandBlueColor = UIColor(hexString: "#304E7E")
-        static let mediumGrayColor = UIColor(hexString: "#D8D8D8")
-        static let blackColor = UIColor(hexString: "#2B2A2E")
-        static let redColor = UIColor(hexString: "#F25757")
+    public struct ThemeColors {
+        public static let brandBlueColor = UIColor(hexString: "#304E7E")
+        public static let mediumGrayColor = UIColor(hexString: "#D8D8D8")
+        public static let blackColor = UIColor(hexString: "#2B2A2E")
+        public static let redColor = UIColor(hexString: "#F25757")
     }
     
 }
@@ -22,15 +22,15 @@ extension UIColor {
 // MARK: - Buttons
 extension UIColor {
     
-    struct Buttons {
-        static let primaryBackgroundColor = UIColor.ThemeColors.brandBlueColor
-        static let primaryTextColor = UIColor.white
+    public struct Buttons {
+        public static let primaryBackgroundColor = UIColor.ThemeColors.brandBlueColor
+        public static let primaryTextColor = UIColor.white
         
-        static let secondaryBackgroundColor = UIColor.ThemeColors.mediumGrayColor
-        static let secondaryTextColor = UIColor.ThemeColors.blackColor
+        public static let secondaryBackgroundColor = UIColor.ThemeColors.mediumGrayColor
+        public static let secondaryTextColor = UIColor.ThemeColors.blackColor
         
-        static let disabledBackgroundColor = UIColor(hexString: "#E4E4E4")
-        static let disabledTextColor = UIColor(hexString: "#A0A0A0")
+        public static let disabledBackgroundColor = UIColor(hexString: "#E4E4E4")
+        public static let disabledTextColor = UIColor(hexString: "#A0A0A0")
         
     }
     
@@ -39,11 +39,11 @@ extension UIColor {
 // MARK: - Text fields
 extension UIColor {
     
-    struct TextFields {
-        static let defaultTextColor = UIColor.ThemeColors.blackColor
-        static let defaultBorderColor = UIColor.ThemeColors.blackColor.withAlphaComponent(0.5)
-        static let invalidTextColor = UIColor.ThemeColors.redColor
-        static let invalidBorderColor = UIColor.ThemeColors.redColor.withAlphaComponent(0.5)
+    public struct TextFields {
+        public static let defaultTextColor = UIColor.ThemeColors.blackColor
+        public static let defaultBorderColor = UIColor.ThemeColors.blackColor.withAlphaComponent(0.5)
+        public static let invalidTextColor = UIColor.ThemeColors.redColor
+        public static let invalidBorderColor = UIColor.ThemeColors.redColor.withAlphaComponent(0.5)
     }
     
 }
