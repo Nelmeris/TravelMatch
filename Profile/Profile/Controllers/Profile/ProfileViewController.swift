@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import UI
 
 struct ProfileMenuSection {
     let title: String
@@ -23,14 +24,15 @@ struct ProfileMenuItem {
     let type: ProfileMenuItemType
 }
 
-protocol ProfileDisplayLogic: class {
+protocol ProfileViewInput: class {
     func displayMenuItems(_ items: [ProfileMenuSection])
     func displayProfileData(_ data: ProfileData)
 }
 
 class ProfileViewController: UIViewController {
     
-    var presenter: ProfilePresentationLogic?
+    var coordinator: ProfileRoutingLogic?
+    var presenter: ProfileViewOutput?
 
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
@@ -39,21 +41,87 @@ class ProfileViewController: UIViewController {
         didSet {
             menuTableView.dataSource = self
             menuTableView.delegate = self
+            menuTableView.register(UINib(nibName: "ProfileMenuSwitchCell",
+                                         bundle: Bundle(for: Self.self)),
+                                   forCellReuseIdentifier: ProfileMenuSwitchCell.reuseIdentifier)
+            menuTableView.register(UINib(nibName: "ProfileMenuLinkCell",
+                                         bundle: Bundle(for: Self.self)),
+                                   forCellReuseIdentifier: ProfileMenuLinkCell.reuseIdentifier)
         }
     }
     
     @IBOutlet weak var menuTableViewHeight: NSLayoutConstraint!
     
-    private var items: [ProfileMenuSection] = [] {
-        didSet {
-            menuTableView.reloadData()
-        }
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    private lazy var menuSections = [
+        ProfileMenuSection(title: "Аккаунт",
+                           items: [
+                           ProfileMenuItem(title: "Личная информация",
+                                           type: .link(onSelect: { [weak self] in
+                                            self?.coordinator?.toPersonalInfo()
+                                           })),
+
+                           ProfileMenuItem(title: "Мои предложения",
+                                           type: .link(onSelect: { [weak self] in
+                                            self?.coordinator?.toOffers()
+                                           })),
+
+                           ProfileMenuItem(title: "Сообщения",
+                                           type: .link(onSelect: { [weak self] in
+                                            self?.coordinator?.toMessages()
+                                           })),
+
+                           ProfileMenuItem(title: "Избранное",
+                                           type: .link(onSelect: { [weak self] in
+                                            self?.coordinator?.toFavourites()
+                                           }))
+        ]),
         
-        presenter?.presentMenuItems()
+        ProfileMenuSection(title: "Активность",
+                           items: [
+                           ProfileMenuItem(title: "Мои бронирования",
+                                           type: .link(onSelect: { [weak self] in
+                                            self?.coordinator?.toBookings()
+                                           })),
+
+                           ProfileMenuItem(title: "Реквизиты",
+                                           type: .link(onSelect: { [weak self] in
+                                           self?.coordinator?.toRequisites()
+                                           })),
+
+                           ProfileMenuItem(title: "Я местный",
+                                           type: .link(onSelect: { [weak self] in
+                                           self?.coordinator?.toLocal()
+                                           })),
+
+                           ProfileMenuItem(title: "Заявки на бронирование",
+                                           type: .link(onSelect: { [weak self] in
+                                           self?.coordinator?.toBookingRequests()
+                                           }))
+        ]),
+        
+        ProfileMenuSection(title: "Уведомления",
+                           items: [
+                           ProfileMenuItem(title: "Push-уведомления",
+                                           type: .switch),
+
+                           ProfileMenuItem(title: "Sms рассылка",
+                                           type: .switch),
+
+                           ProfileMenuItem(title: "E-mail рассылка",
+                                           type: .switch),
+        ]),
+        
+        ProfileMenuSection(title: "Поддержка",
+                           items: [
+                           ProfileMenuItem(title: "Чат с поддержкой",
+                                           type: .link(onSelect: { [weak self] in
+                                            self?.coordinator?.toSupportChat()
+                                           }))
+        ])
+    ]
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         presenter?.presentProfileData()
     }
     
@@ -64,7 +132,7 @@ class ProfileViewController: UIViewController {
     
 }
 
-extension ProfileViewController: ProfileDisplayLogic {
+extension ProfileViewController: ProfileViewInput {
     
     func displayProfileData(_ data: ProfileData) {
         self.profileImageView.sd_setImage(with: data.imageUrl, completed: nil)
@@ -73,7 +141,7 @@ extension ProfileViewController: ProfileDisplayLogic {
     }
     
     func displayMenuItems(_ items: [ProfileMenuSection]) {
-        self.items = items
+        menuSections = items
     }
     
 }
@@ -81,28 +149,39 @@ extension ProfileViewController: ProfileDisplayLogic {
 extension ProfileViewController: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return items.count
+        return menuSections.count
     }
     
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return items[section].title
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 50
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return items[section].items.count
+        return menuSections[section].items.count
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let view = UIView(frame: CGRect(x: 0, y: 0, width: menuTableView.frame.width, height: 50))
+        let title = UILabel(frame: view.frame)
+        title.font = UIFont(name: "Montserrat-Bold", size: 18)
+        title.text = menuSections[section].title
+        view.backgroundColor = .white
+        view.addSubview(title)
+        return view
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-        let item = items[indexPath.section].items[indexPath.row]
-        cell.textLabel?.text = item.title
+        let item = menuSections[indexPath.section].items[indexPath.row]
         switch item.type {
         case .switch:
-            cell.accessoryType = .none
+            let cell = tableView.dequeueReusableCell(withIdentifier: ProfileMenuSwitchCell.reuseIdentifier, for: indexPath) as! ProfileMenuSwitchCell
+            cell.configure((title: item.title, isEnable: false), at: indexPath)
+            return cell
         case .link:
-            cell.accessoryType = .disclosureIndicator
+            let cell = tableView.dequeueReusableCell(withIdentifier: ProfileMenuLinkCell.reuseIdentifier, for: indexPath) as! ProfileMenuLinkCell
+            cell.configure(item.title, at: indexPath)
+            return cell
         }
-        return cell
     }
     
 }
@@ -110,7 +189,12 @@ extension ProfileViewController: UITableViewDataSource {
 extension ProfileViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        presenter?.menuItemDidSelect(indexPath)
+        let item = menuSections[indexPath.section].items[indexPath.row]
+        switch item.type {
+        case .link(let onSelect):
+            onSelect()
+        default: break
+        }
     }
     
 }

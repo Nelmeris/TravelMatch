@@ -10,13 +10,16 @@
 		57A3802B24CF49E3006FAFEC /* ProfileCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A3802A24CF49E3006FAFEC /* ProfileCoordinator.swift */; };
 		57A3802E24CF49EF006FAFEC /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57A3802D24CF49EF006FAFEC /* Core.framework */; };
 		57A3802F24CF49EF006FAFEC /* Core.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 57A3802D24CF49EF006FAFEC /* Core.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		57A3803424CF5395006FAFEC /* ProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A3803324CF5395006FAFEC /* ProfilePresenter.swift */; };
-		57A3803624D01740006FAFEC /* ProfileAssembley.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A3803524D01740006FAFEC /* ProfileAssembley.swift */; };
 		57A3803E24D01B88006FAFEC /* ViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A3803D24D01B88006FAFEC /* ViewControllerFactory.swift */; };
 		57A3804824D01FD1006FAFEC /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A3804624D01FD1006FAFEC /* ProfileViewController.swift */; };
 		57A3804924D01FD1006FAFEC /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57A3804724D01FD1006FAFEC /* ProfileViewController.xib */; };
 		57A3805924D04464006FAFEC /* ProfileData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A3805824D04463006FAFEC /* ProfileData.swift */; };
 		57A3806424D04658006FAFEC /* ProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A3806324D04658006FAFEC /* ProfileService.swift */; };
+		57A3806C24D0518E006FAFEC /* ProfileMenuLinkCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A3806A24D0518E006FAFEC /* ProfileMenuLinkCell.swift */; };
+		57A3806D24D0518E006FAFEC /* ProfileMenuLinkCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57A3806B24D0518E006FAFEC /* ProfileMenuLinkCell.xib */; };
+		57A3807024D0519E006FAFEC /* ProfileMenuSwitchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A3806E24D0519E006FAFEC /* ProfileMenuSwitchCell.swift */; };
+		57A3807124D0519E006FAFEC /* ProfileMenuSwitchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57A3806F24D0519E006FAFEC /* ProfileMenuSwitchCell.xib */; };
+		57A3807324D05CCE006FAFEC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57A3807224D05CCE006FAFEC /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -37,14 +40,17 @@
 		57A37FDA24CF456D006FAFEC /* Profile.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Profile.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		57A3802A24CF49E3006FAFEC /* ProfileCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCoordinator.swift; sourceTree = "<group>"; };
 		57A3802D24CF49EF006FAFEC /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		57A3803324CF5395006FAFEC /* ProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePresenter.swift; sourceTree = "<group>"; };
-		57A3803524D01740006FAFEC /* ProfileAssembley.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileAssembley.swift; sourceTree = "<group>"; };
 		57A3803B24D019AF006FAFEC /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		57A3803D24D01B88006FAFEC /* ViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerFactory.swift; sourceTree = "<group>"; };
 		57A3804624D01FD1006FAFEC /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		57A3804724D01FD1006FAFEC /* ProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
 		57A3805824D04463006FAFEC /* ProfileData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileData.swift; sourceTree = "<group>"; };
 		57A3806324D04658006FAFEC /* ProfileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileService.swift; sourceTree = "<group>"; };
+		57A3806A24D0518E006FAFEC /* ProfileMenuLinkCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileMenuLinkCell.swift; sourceTree = "<group>"; };
+		57A3806B24D0518E006FAFEC /* ProfileMenuLinkCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileMenuLinkCell.xib; sourceTree = "<group>"; };
+		57A3806E24D0519E006FAFEC /* ProfileMenuSwitchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileMenuSwitchCell.swift; sourceTree = "<group>"; };
+		57A3806F24D0519E006FAFEC /* ProfileMenuSwitchCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileMenuSwitchCell.xib; sourceTree = "<group>"; };
+		57A3807224D05CCE006FAFEC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,10 +87,9 @@
 		57A37FDC24CF456D006FAFEC /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				57A3806824D0516E006FAFEC /* Cells */,
 				57A3805424D042E0006FAFEC /* Coordinators */,
-				57A3805324D042DA006FAFEC /* Presenters */,
 				57A3805024D042B9006FAFEC /* Controllers */,
-				57A3804F24D04294006FAFEC /* Assembley */,
 				57A3805724D0444C006FAFEC /* DataProtocols */,
 				57A3803D24D01B88006FAFEC /* ViewControllerFactory.swift */,
 			);
@@ -110,16 +115,9 @@
 		57A3804B24D0266C006FAFEC /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				57A3807224D05CCE006FAFEC /* Assets.xcassets */,
 			);
 			path = Resources;
-			sourceTree = "<group>";
-		};
-		57A3804F24D04294006FAFEC /* Assembley */ = {
-			isa = PBXGroup;
-			children = (
-				57A3805224D042D2006FAFEC /* Profile */,
-			);
-			path = Assembley;
 			sourceTree = "<group>";
 		};
 		57A3805024D042B9006FAFEC /* Controllers */ = {
@@ -139,36 +137,12 @@
 			path = Profile;
 			sourceTree = "<group>";
 		};
-		57A3805224D042D2006FAFEC /* Profile */ = {
-			isa = PBXGroup;
-			children = (
-				57A3803524D01740006FAFEC /* ProfileAssembley.swift */,
-			);
-			path = Profile;
-			sourceTree = "<group>";
-		};
-		57A3805324D042DA006FAFEC /* Presenters */ = {
-			isa = PBXGroup;
-			children = (
-				57A3805524D042FC006FAFEC /* Profile */,
-			);
-			path = Presenters;
-			sourceTree = "<group>";
-		};
 		57A3805424D042E0006FAFEC /* Coordinators */ = {
 			isa = PBXGroup;
 			children = (
 				57A3805624D04300006FAFEC /* Profile */,
 			);
 			path = Coordinators;
-			sourceTree = "<group>";
-		};
-		57A3805524D042FC006FAFEC /* Profile */ = {
-			isa = PBXGroup;
-			children = (
-				57A3803324CF5395006FAFEC /* ProfilePresenter.swift */,
-			);
-			path = Profile;
 			sourceTree = "<group>";
 		};
 		57A3805624D04300006FAFEC /* Profile */ = {
@@ -186,6 +160,25 @@
 				57A3806324D04658006FAFEC /* ProfileService.swift */,
 			);
 			path = DataProtocols;
+			sourceTree = "<group>";
+		};
+		57A3806824D0516E006FAFEC /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				57A3806924D05174006FAFEC /* Profile */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		57A3806924D05174006FAFEC /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				57A3806A24D0518E006FAFEC /* ProfileMenuLinkCell.swift */,
+				57A3806B24D0518E006FAFEC /* ProfileMenuLinkCell.xib */,
+				57A3806E24D0519E006FAFEC /* ProfileMenuSwitchCell.swift */,
+				57A3806F24D0519E006FAFEC /* ProfileMenuSwitchCell.xib */,
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,6 +251,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57A3807124D0519E006FAFEC /* ProfileMenuSwitchCell.xib in Resources */,
+				57A3806D24D0518E006FAFEC /* ProfileMenuLinkCell.xib in Resources */,
+				57A3807324D05CCE006FAFEC /* Assets.xcassets in Resources */,
 				57A3804924D01FD1006FAFEC /* ProfileViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -269,11 +265,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57A3806C24D0518E006FAFEC /* ProfileMenuLinkCell.swift in Sources */,
 				57A3802B24CF49E3006FAFEC /* ProfileCoordinator.swift in Sources */,
 				57A3803E24D01B88006FAFEC /* ViewControllerFactory.swift in Sources */,
 				57A3804824D01FD1006FAFEC /* ProfileViewController.swift in Sources */,
-				57A3803624D01740006FAFEC /* ProfileAssembley.swift in Sources */,
-				57A3803424CF5395006FAFEC /* ProfilePresenter.swift in Sources */,
+				57A3807024D0519E006FAFEC /* ProfileMenuSwitchCell.swift in Sources */,
 				57A3805924D04464006FAFEC /* ProfileData.swift in Sources */,
 				57A3806424D04658006FAFEC /* ProfileService.swift in Sources */,
 			);
