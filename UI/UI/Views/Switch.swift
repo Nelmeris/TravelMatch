@@ -12,7 +12,7 @@ import UIKit
 public class Switch: UISwitch {
     
     @IBInspectable
-    var offTintColor: UIColor? = UIColor.ThemeColors.blackColor {
+    var offTintColor: UIColor? = UIColor.ThemeColors.blackColor.withAlphaComponent(0.6) {
         didSet {
             setOffTintColor(offTintColor)
         }
