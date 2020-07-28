@@ -19,6 +19,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProfileViewController" customModule="Profile" customModuleProvider="target">
             <connections>
                 <outlet property="menuTableView" destination="Sgs-Zq-CoY" id="2nE-Hn-HXE"/>
+                <outlet property="menuTableViewHeight" destination="ToS-Ol-KPH" id="Rij-c6-p1w"/>
                 <outlet property="nameLabel" destination="Eu3-G6-VBI" id="ymF-C8-9Sl"/>
                 <outlet property="phoneNumberLabel" destination="ujM-HC-RXu" id="htR-ft-IA8"/>
                 <outlet property="profileImageView" destination="dzr-I3-u5F" id="AC7-7Q-YxK"/>
@@ -30,50 +31,78 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dzr-I3-u5F">
-                    <rect key="frame" x="20" y="64" width="120" height="120"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="120" id="1Bb-ZS-OZp"/>
-                        <constraint firstAttribute="width" constant="120" id="sxf-CQ-1rl"/>
-                    </constraints>
-                </imageView>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="wbf-Cs-ceR">
-                    <rect key="frame" x="160" y="105.5" width="234" height="37.5"/>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ArR-oB-Fja">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Константин Коронов" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eu3-G6-VBI">
-                            <rect key="frame" x="0.0" y="0.0" width="159.5" height="17.5"/>
-                            <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="14"/>
-                            <nil key="textColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+7 922 328 93 34" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ujM-HC-RXu">
-                            <rect key="frame" x="0.0" y="22.5" width="97.5" height="15"/>
-                            <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="12"/>
-                            <nil key="textColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kuq-IS-aBL">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="680"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dzr-I3-u5F">
+                                    <rect key="frame" x="20" y="20" width="120" height="120"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="120" id="1Bb-ZS-OZp"/>
+                                        <constraint firstAttribute="width" constant="120" id="sxf-CQ-1rl"/>
+                                    </constraints>
+                                </imageView>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="wbf-Cs-ceR">
+                                    <rect key="frame" x="160" y="61.5" width="234" height="37.5"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Константин Коронов" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eu3-G6-VBI">
+                                            <rect key="frame" x="0.0" y="0.0" width="159.5" height="17.5"/>
+                                            <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="14"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+7 922 328 93 34" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ujM-HC-RXu">
+                                            <rect key="frame" x="0.0" y="22.5" width="97.5" height="15"/>
+                                            <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </stackView>
+                                <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" bouncesZoom="NO" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Sgs-Zq-CoY">
+                                    <rect key="frame" x="20" y="160" width="374" height="500"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="500" id="ToS-Ol-KPH"/>
+                                    </constraints>
+                                    <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </tableView>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <constraints>
+                                <constraint firstItem="wbf-Cs-ceR" firstAttribute="centerY" secondItem="dzr-I3-u5F" secondAttribute="centerY" id="2Yh-tD-RjV"/>
+                                <constraint firstItem="Sgs-Zq-CoY" firstAttribute="leading" secondItem="kuq-IS-aBL" secondAttribute="leading" constant="20" id="53c-HX-hce"/>
+                                <constraint firstItem="Sgs-Zq-CoY" firstAttribute="top" secondItem="dzr-I3-u5F" secondAttribute="bottom" constant="20" id="F40-Vy-FmA"/>
+                                <constraint firstAttribute="bottom" secondItem="Sgs-Zq-CoY" secondAttribute="bottom" constant="20" id="NlZ-J5-b5s"/>
+                                <constraint firstItem="dzr-I3-u5F" firstAttribute="top" secondItem="kuq-IS-aBL" secondAttribute="top" constant="20" id="PrO-X4-xou"/>
+                                <constraint firstAttribute="trailing" secondItem="Sgs-Zq-CoY" secondAttribute="trailing" constant="20" id="RDL-fN-YYN"/>
+                                <constraint firstItem="Sgs-Zq-CoY" firstAttribute="top" secondItem="dzr-I3-u5F" secondAttribute="bottom" constant="20" id="WVe-rv-XLd"/>
+                                <constraint firstItem="wbf-Cs-ceR" firstAttribute="leading" secondItem="dzr-I3-u5F" secondAttribute="trailing" constant="20" id="b7f-Yo-WnD"/>
+                                <constraint firstItem="dzr-I3-u5F" firstAttribute="leading" secondItem="kuq-IS-aBL" secondAttribute="leading" constant="20" id="h7B-sN-v8L"/>
+                                <constraint firstAttribute="trailing" secondItem="wbf-Cs-ceR" secondAttribute="trailing" constant="20" id="vXW-zw-pvz"/>
+                            </constraints>
+                        </view>
                     </subviews>
-                </stackView>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" bouncesZoom="NO" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Sgs-Zq-CoY">
-                    <rect key="frame" x="20" y="204" width="374" height="638"/>
-                </tableView>
+                    <constraints>
+                        <constraint firstItem="kuq-IS-aBL" firstAttribute="top" secondItem="ArR-oB-Fja" secondAttribute="top" id="6F0-re-XdK"/>
+                        <constraint firstAttribute="bottom" secondItem="kuq-IS-aBL" secondAttribute="bottom" id="PGL-gm-wbU"/>
+                        <constraint firstAttribute="trailing" secondItem="kuq-IS-aBL" secondAttribute="trailing" id="TUW-zY-K3C"/>
+                        <constraint firstItem="kuq-IS-aBL" firstAttribute="leading" secondItem="ArR-oB-Fja" secondAttribute="leading" id="hnG-ds-PXJ"/>
+                    </constraints>
+                </scrollView>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
-                <constraint firstItem="wbf-Cs-ceR" firstAttribute="bottom" relation="lessThanOrEqual" secondItem="dzr-I3-u5F" secondAttribute="bottom" id="0Is-LR-uaD"/>
-                <constraint firstItem="wbf-Cs-ceR" firstAttribute="leading" secondItem="dzr-I3-u5F" secondAttribute="trailing" constant="20" id="2MO-jU-gr9"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="wbf-Cs-ceR" secondAttribute="trailing" constant="20" id="2eZ-P9-2ib"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Sgs-Zq-CoY" secondAttribute="trailing" constant="20" id="CPe-R4-rty"/>
-                <constraint firstItem="Sgs-Zq-CoY" firstAttribute="top" secondItem="dzr-I3-u5F" secondAttribute="bottom" constant="20" id="M2K-Wb-4aB"/>
-                <constraint firstItem="wbf-Cs-ceR" firstAttribute="centerY" secondItem="dzr-I3-u5F" secondAttribute="centerY" id="NQ0-LZ-R5a"/>
-                <constraint firstItem="wbf-Cs-ceR" firstAttribute="top" relation="greaterThanOrEqual" secondItem="dzr-I3-u5F" secondAttribute="top" id="SeR-xK-hlK"/>
-                <constraint firstItem="dzr-I3-u5F" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="mhq-fW-EZV"/>
-                <constraint firstItem="dzr-I3-u5F" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="tGs-Gq-4jM"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Sgs-Zq-CoY" secondAttribute="bottom" constant="20" id="uAB-26-JtR"/>
-                <constraint firstItem="Sgs-Zq-CoY" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="y7X-2N-E2U"/>
+                <constraint firstItem="ArR-oB-Fja" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="0jN-xx-uBX"/>
+                <constraint firstItem="kuq-IS-aBL" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" id="2zu-2h-0zn"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ArR-oB-Fja" secondAttribute="trailing" id="D0X-2Z-FWm"/>
+                <constraint firstItem="kuq-IS-aBL" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" priority="250" id="LBo-hi-NR2"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="ArR-oB-Fja" secondAttribute="bottom" id="iQ7-bP-F1G"/>
+                <constraint firstItem="ArR-oB-Fja" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="lkl-FL-0cE"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <point key="canvasLocation" x="139" y="115"/>
+            <point key="canvasLocation" x="137.68115942028987" y="114.50892857142857"/>
         </view>
     </objects>
 </document>

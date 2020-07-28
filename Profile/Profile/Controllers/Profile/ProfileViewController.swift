@@ -42,6 +42,8 @@ class ProfileViewController: UIViewController {
         }
     }
     
+    @IBOutlet weak var menuTableViewHeight: NSLayoutConstraint!
+    
     private var items: [ProfileMenuSection] = [] {
         didSet {
             menuTableView.reloadData()
@@ -53,6 +55,11 @@ class ProfileViewController: UIViewController {
         
         presenter?.presentMenuItems()
         presenter?.presentProfileData()
+    }
+    
+    override func updateViewConstraints() {
+        menuTableViewHeight.constant = menuTableView.contentSize.height
+        super.updateViewConstraints()
     }
     
 }
