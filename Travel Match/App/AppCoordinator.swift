@@ -10,7 +10,9 @@ import Core
 import Auth
 import OnBoarding
 import Questions
+import Offers
 import Locals
+import Profile
 import Services
 
 final class AppCoordinator: BaseCoordinator {
@@ -19,8 +21,9 @@ final class AppCoordinator: BaseCoordinator {
     private let authService: AuthService
     private let questionsService: QuestionsService
     private let localsService: LocalsService
-    private let mockFakeDataService: OffersService
-    private let profileService: ProfileService
+    private let mockFakeDataService: Offers.OffersService
+    private let profileService: Profile.ProfileService
+    private let notifySettingsService: NotifySettingsService
 
     private var rootController: NavigationController!
     
@@ -29,8 +32,9 @@ final class AppCoordinator: BaseCoordinator {
         authService: AuthService,
         questionsService: QuestionsService,
         localsService: LocalsService,
-        mockFakeDataService: OffersService,
-        profileService: ProfileService
+        mockFakeDataService: Offers.OffersService,
+        profileService: Profile.ProfileService,
+        notifySettingsService: NotifySettingsService
     ) {
         self.onBoardingService = onBoardingService
         self.authService = authService
@@ -38,6 +42,7 @@ final class AppCoordinator: BaseCoordinator {
         self.localsService = localsService
         self.mockFakeDataService = mockFakeDataService
         self.profileService = profileService
+        self.notifySettingsService = notifySettingsService
     }
     
     override func start() {
@@ -116,7 +121,8 @@ final class AppCoordinator: BaseCoordinator {
             rootController: rootController,
             localsService: localsService,
             mockFakeDataService: mockFakeDataService,
-            profileService: profileService
+            profileService: profileService,
+            notifySettingsService: notifySettingsService
         )
         
         addDependency(coordinator)

@@ -25,6 +25,8 @@
 		57A3805F24D045D7006FAFEC /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A3805E24D045D7006FAFEC /* ProfileModel.swift */; };
 		57A3806124D045DD006FAFEC /* Profile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57A3806024D045DD006FAFEC /* Profile.framework */; };
 		57A3806224D045DD006FAFEC /* Profile.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 57A3806024D045DD006FAFEC /* Profile.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		57A3807824D07174006FAFEC /* UserDefaultsSettingsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A3807724D07174006FAFEC /* UserDefaultsSettingsService.swift */; };
+		57A3807F24D08D04006FAFEC /* NotifySettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A3807E24D08D04006FAFEC /* NotifySettings.swift */; };
 		57AFF41C24CC511B007B913E /* TravelQuestionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57AFF41924CC511B007B913E /* TravelQuestionService.swift */; };
 		57AFF41D24CC511B007B913E /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57AFF41A24CC511B007B913E /* AuthService.swift */; };
 		57AFF41E24CC511B007B913E /* OnBoardingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57AFF41B24CC511B007B913E /* OnBoardingService.swift */; };
@@ -68,6 +70,8 @@
 		57A3805B24D045CB006FAFEC /* ProfileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileService.swift; sourceTree = "<group>"; };
 		57A3805E24D045D7006FAFEC /* ProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
 		57A3806024D045DD006FAFEC /* Profile.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Profile.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		57A3807724D07174006FAFEC /* UserDefaultsSettingsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsSettingsService.swift; sourceTree = "<group>"; };
+		57A3807E24D08D04006FAFEC /* NotifySettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifySettings.swift; sourceTree = "<group>"; };
 		57AFF40A24CC4F7D007B913E /* Services.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Services.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		57AFF40E24CC4F7D007B913E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		57AFF41924CC511B007B913E /* TravelQuestionService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TravelQuestionService.swift; sourceTree = "<group>"; };
@@ -219,6 +223,23 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		57A3807624D07150006FAFEC /* SettingsServices */ = {
+			isa = PBXGroup;
+			children = (
+				57A3807724D07174006FAFEC /* UserDefaultsSettingsService.swift */,
+				57A3807D24D08CFA006FAFEC /* Models */,
+			);
+			path = SettingsServices;
+			sourceTree = "<group>";
+		};
+		57A3807D24D08CFA006FAFEC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				57A3807E24D08D04006FAFEC /* NotifySettings.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		57AFF40024CC4F7D007B913E = {
 			isa = PBXGroup;
 			children = (
@@ -240,6 +261,7 @@
 		57AFF40C24CC4F7D007B913E /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				57A3807624D07150006FAFEC /* SettingsServices */,
 				57A3805A24D045BD006FAFEC /* ProfileServices */,
 				57A37FBE24CF3FBD006FAFEC /* AuthServices */,
 				57A37FC024CF41D3006FAFEC /* OnBoardingServices */,
@@ -334,6 +356,7 @@
 				57AFF41E24CC511B007B913E /* OnBoardingService.swift in Sources */,
 				57AFF41C24CC511B007B913E /* TravelQuestionService.swift in Sources */,
 				57A37FCD24CF42B8006FAFEC /* LocalInterest.swift in Sources */,
+				57A3807824D07174006FAFEC /* UserDefaultsSettingsService.swift in Sources */,
 				57A37FAD24CEFD4D006FAFEC /* Offer.swift in Sources */,
 				57A37FCF24CF42C1006FAFEC /* LocalEntity.swift in Sources */,
 				57A37FCB24CF42AD006FAFEC /* LocalLanguage.swift in Sources */,
@@ -343,6 +366,7 @@
 				57AFF41D24CC511B007B913E /* AuthService.swift in Sources */,
 				57A37FAE24CEFD4D006FAFEC /* UserDefaultsUser.swift in Sources */,
 				57A37FB024CEFD4D006FAFEC /* OnBoardingSlide.swift in Sources */,
+				57A3807F24D08D04006FAFEC /* NotifySettings.swift in Sources */,
 				57A37FC924CF42A4006FAFEC /* LocalActivity.swift in Sources */,
 				57A3805C24D045CB006FAFEC /* ProfileService.swift in Sources */,
 			);

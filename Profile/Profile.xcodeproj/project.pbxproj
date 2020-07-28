@@ -20,6 +20,8 @@
 		57A3807024D0519E006FAFEC /* ProfileMenuSwitchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A3806E24D0519E006FAFEC /* ProfileMenuSwitchCell.swift */; };
 		57A3807124D0519E006FAFEC /* ProfileMenuSwitchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57A3806F24D0519E006FAFEC /* ProfileMenuSwitchCell.xib */; };
 		57A3807324D05CCE006FAFEC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57A3807224D05CCE006FAFEC /* Assets.xcassets */; };
+		57A3807A24D0841F006FAFEC /* NotifySettingsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A3807924D0841F006FAFEC /* NotifySettingsService.swift */; };
+		57A3807C24D08569006FAFEC /* NotifySettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A3807B24D08569006FAFEC /* NotifySettings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -51,6 +53,8 @@
 		57A3806E24D0519E006FAFEC /* ProfileMenuSwitchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileMenuSwitchCell.swift; sourceTree = "<group>"; };
 		57A3806F24D0519E006FAFEC /* ProfileMenuSwitchCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileMenuSwitchCell.xib; sourceTree = "<group>"; };
 		57A3807224D05CCE006FAFEC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		57A3807924D0841F006FAFEC /* NotifySettingsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifySettingsService.swift; sourceTree = "<group>"; };
+		57A3807B24D08569006FAFEC /* NotifySettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifySettings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +162,8 @@
 			children = (
 				57A3805824D04463006FAFEC /* ProfileData.swift */,
 				57A3806324D04658006FAFEC /* ProfileService.swift */,
+				57A3807924D0841F006FAFEC /* NotifySettingsService.swift */,
+				57A3807B24D08569006FAFEC /* NotifySettings.swift */,
 			);
 			path = DataProtocols;
 			sourceTree = "<group>";
@@ -267,9 +273,11 @@
 			files = (
 				57A3806C24D0518E006FAFEC /* ProfileMenuLinkCell.swift in Sources */,
 				57A3802B24CF49E3006FAFEC /* ProfileCoordinator.swift in Sources */,
+				57A3807A24D0841F006FAFEC /* NotifySettingsService.swift in Sources */,
 				57A3803E24D01B88006FAFEC /* ViewControllerFactory.swift in Sources */,
 				57A3804824D01FD1006FAFEC /* ProfileViewController.swift in Sources */,
 				57A3807024D0519E006FAFEC /* ProfileMenuSwitchCell.swift in Sources */,
+				57A3807C24D08569006FAFEC /* NotifySettings.swift in Sources */,
 				57A3805924D04464006FAFEC /* ProfileData.swift in Sources */,
 				57A3806424D04658006FAFEC /* ProfileService.swift in Sources */,
 			);

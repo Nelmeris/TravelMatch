@@ -24,20 +24,27 @@ protocol ProfileRoutingLogic {
 
 protocol ProfileViewOutput {
     func presentProfileData()
+    func presentNotifySettings()
+    func setPushSetting(isOn: Bool)
+    func setSmsSetting(isOn: Bool)
+    func setEmailSetting(isOn: Bool)
 }
 
 public final class ProfileCoordinator: BaseCoordinator {
     
     private weak var rootController: NavigationController?
     private var profileService: ProfileService
+    private var notifySettingsService: NotifySettingsService
     private var viewControllerFactory: ViewControllerFactory
     
     weak var controller: ProfileViewController?
     
     public init(rootController: NavigationController,
-                profileService: ProfileService) {
+                profileService: ProfileService,
+                notifySettingsService: NotifySettingsService) {
         self.rootController = rootController
         self.profileService = profileService
+        self.notifySettingsService = notifySettingsService
         self.viewControllerFactory = ViewControllerFactory()
     }
     
@@ -100,6 +107,22 @@ extension ProfileCoordinator: ProfileViewOutput {
     func presentProfileData() {
         let data = profileService.getProfileData()
         controller?.displayProfileData(data)
+    }
+    
+    func setPushSetting(isOn: Bool) {
+        notifySettingsService.setIsPushOn(isOn)
+    }
+    
+    func setSmsSetting(isOn: Bool) {
+        notifySettingsService.setIsSmsOn(isOn)
+    }
+    
+    func setEmailSetting(isOn: Bool) {
+        notifySettingsService.setIsEmailOn(isOn)
+    }
+    
+    func presentNotifySettings() {
+        controller?.displayNotifySettings(notifySettingsService.get())
     }
     
 }
