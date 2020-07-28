@@ -49,7 +49,7 @@ public final class ProfileCoordinator: BaseCoordinator {
     }
     
     public override func start() {
-        let vc = viewControllerFactory.makeController()
+        let vc = viewControllerFactory.makeProfileController()
         vc.coordinator = self
         vc.presenter = self
         controller = vc
@@ -61,7 +61,9 @@ public final class ProfileCoordinator: BaseCoordinator {
 extension ProfileCoordinator: ProfileRoutingLogic {
     
     func toPersonalInfo() {
-        print("TO PERSONAL INFO")
+        let vc = viewControllerFactory.makePersonalInfoController()
+        vc.title = "Личная информация"
+        rootController?.pushViewController(vc, animated: true)
     }
     
     func toAchievements() {

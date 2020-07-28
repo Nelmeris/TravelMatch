@@ -23,6 +23,8 @@
 		57A3807A24D0841F006FAFEC /* NotifySettingsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A3807924D0841F006FAFEC /* NotifySettingsService.swift */; };
 		57A3807C24D08569006FAFEC /* NotifySettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A3807B24D08569006FAFEC /* NotifySettings.swift */; };
 		57A3808A24D0B60C006FAFEC /* TableSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A3808924D0B60C006FAFEC /* TableSectionHeaderView.swift */; };
+		57A3808E24D0BEA1006FAFEC /* PersonalInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A3808C24D0BEA1006FAFEC /* PersonalInfoViewController.swift */; };
+		57A3808F24D0BEA1006FAFEC /* PersonalInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57A3808D24D0BEA1006FAFEC /* PersonalInfoViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -57,6 +59,8 @@
 		57A3807924D0841F006FAFEC /* NotifySettingsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifySettingsService.swift; sourceTree = "<group>"; };
 		57A3807B24D08569006FAFEC /* NotifySettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifySettings.swift; sourceTree = "<group>"; };
 		57A3808924D0B60C006FAFEC /* TableSectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableSectionHeaderView.swift; sourceTree = "<group>"; };
+		57A3808C24D0BEA1006FAFEC /* PersonalInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalInfoViewController.swift; sourceTree = "<group>"; };
+		57A3808D24D0BEA1006FAFEC /* PersonalInfoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PersonalInfoViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				57A3805124D042C2006FAFEC /* Profile */,
+				57A3808B24D0BE88006FAFEC /* PersonalInfo */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -196,6 +201,15 @@
 				57A3808924D0B60C006FAFEC /* TableSectionHeaderView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		57A3808B24D0BE88006FAFEC /* PersonalInfo */ = {
+			isa = PBXGroup;
+			children = (
+				57A3808C24D0BEA1006FAFEC /* PersonalInfoViewController.swift */,
+				57A3808D24D0BEA1006FAFEC /* PersonalInfoViewController.xib */,
+			);
+			path = PersonalInfo;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -271,6 +285,7 @@
 				57A3807124D0519E006FAFEC /* ProfileMenuSwitchCell.xib in Resources */,
 				57A3806D24D0518E006FAFEC /* ProfileMenuLinkCell.xib in Resources */,
 				57A3807324D05CCE006FAFEC /* Assets.xcassets in Resources */,
+				57A3808F24D0BEA1006FAFEC /* PersonalInfoViewController.xib in Resources */,
 				57A3804924D01FD1006FAFEC /* ProfileViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -286,6 +301,7 @@
 				57A3802B24CF49E3006FAFEC /* ProfileCoordinator.swift in Sources */,
 				57A3807A24D0841F006FAFEC /* NotifySettingsService.swift in Sources */,
 				57A3803E24D01B88006FAFEC /* ViewControllerFactory.swift in Sources */,
+				57A3808E24D0BEA1006FAFEC /* PersonalInfoViewController.swift in Sources */,
 				57A3804824D01FD1006FAFEC /* ProfileViewController.swift in Sources */,
 				57A3807024D0519E006FAFEC /* ProfileMenuSwitchCell.swift in Sources */,
 				57A3808A24D0B60C006FAFEC /* TableSectionHeaderView.swift in Sources */,
