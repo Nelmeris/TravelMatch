@@ -10,10 +10,10 @@ import Foundation
 
 class ViewControllerFactory {
     
-    func makeMainController() -> ProfileMainViewController {
-        return ProfileMainViewController(
-            nibName: String(describing: ProfileMainViewController.self),
-            bundle: Bundle(for: ProfileMainViewController.self))
+    func makeController() -> ProfileViewController {
+        return ProfileViewController(
+            nibName: String(describing: ProfileViewController.self),
+            bundle: Bundle(for: ProfileViewController.self))
     }
     
 }

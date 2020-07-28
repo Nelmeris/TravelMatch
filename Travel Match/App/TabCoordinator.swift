@@ -18,15 +18,18 @@ class TabCoordinator: BaseCoordinator {
 
     private let localsService: LocalsService
     private let mockFakeDataService: OffersService
+    private let profileService: ProfileService
 
     init(
         rootController: NavigationController,
         localsService: LocalsService,
-        mockFakeDataService: OffersService
+        mockFakeDataService: OffersService,
+        profileService: ProfileService
     ) {
         self.rootController = rootController
         self.localsService = localsService
         self.mockFakeDataService = mockFakeDataService
+        self.profileService = profileService
     }
     
     override func start() {
@@ -73,7 +76,8 @@ class TabCoordinator: BaseCoordinator {
     
     private func startProfileCoordinator(with controller: UIViewController) {
         guard let controller = controller as? NavigationController else { fatalError() }
-        let coordinator = ProfileMainCoordinator(with: controller)
+        let coordinator = ProfileCoordinator(rootController: controller,
+                                             profileService: profileService)
         addDependency(coordinator)
         coordinator.start()
     }

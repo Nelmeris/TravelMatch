@@ -21,6 +21,10 @@
 		57A37FCB24CF42AD006FAFEC /* LocalLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A37FCA24CF42AD006FAFEC /* LocalLanguage.swift */; };
 		57A37FCD24CF42B8006FAFEC /* LocalInterest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A37FCC24CF42B8006FAFEC /* LocalInterest.swift */; };
 		57A37FCF24CF42C1006FAFEC /* LocalEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A37FCE24CF42C1006FAFEC /* LocalEntity.swift */; };
+		57A3805C24D045CB006FAFEC /* ProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A3805B24D045CB006FAFEC /* ProfileService.swift */; };
+		57A3805F24D045D7006FAFEC /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A3805E24D045D7006FAFEC /* ProfileModel.swift */; };
+		57A3806124D045DD006FAFEC /* Profile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57A3806024D045DD006FAFEC /* Profile.framework */; };
+		57A3806224D045DD006FAFEC /* Profile.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 57A3806024D045DD006FAFEC /* Profile.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		57AFF41C24CC511B007B913E /* TravelQuestionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57AFF41924CC511B007B913E /* TravelQuestionService.swift */; };
 		57AFF41D24CC511B007B913E /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57AFF41A24CC511B007B913E /* AuthService.swift */; };
 		57AFF41E24CC511B007B913E /* OnBoardingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57AFF41B24CC511B007B913E /* OnBoardingService.swift */; };
@@ -38,6 +42,7 @@
 			files = (
 				57A37FB724CEFEE5006FAFEC /* Offers.framework in Embed Frameworks */,
 				E1BF21FD24CD8FC90023BCFC /* OnBoarding.framework in Embed Frameworks */,
+				57A3806224D045DD006FAFEC /* Profile.framework in Embed Frameworks */,
 				570B38E524CC51E700827B42 /* Questions.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -60,6 +65,9 @@
 		57A37FCA24CF42AD006FAFEC /* LocalLanguage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalLanguage.swift; sourceTree = "<group>"; };
 		57A37FCC24CF42B8006FAFEC /* LocalInterest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalInterest.swift; sourceTree = "<group>"; };
 		57A37FCE24CF42C1006FAFEC /* LocalEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalEntity.swift; sourceTree = "<group>"; };
+		57A3805B24D045CB006FAFEC /* ProfileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileService.swift; sourceTree = "<group>"; };
+		57A3805E24D045D7006FAFEC /* ProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
+		57A3806024D045DD006FAFEC /* Profile.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Profile.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		57AFF40A24CC4F7D007B913E /* Services.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Services.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		57AFF40E24CC4F7D007B913E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		57AFF41924CC511B007B913E /* TravelQuestionService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TravelQuestionService.swift; sourceTree = "<group>"; };
@@ -76,6 +84,7 @@
 			files = (
 				57A37FB624CEFEE5006FAFEC /* Offers.framework in Frameworks */,
 				E1BF21FC24CD8FC90023BCFC /* OnBoarding.framework in Frameworks */,
+				57A3806124D045DD006FAFEC /* Profile.framework in Frameworks */,
 				570B38E424CC51E700827B42 /* Questions.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -86,6 +95,7 @@
 		570B38E224CC51E700827B42 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				57A3806024D045DD006FAFEC /* Profile.framework */,
 				57A37FB524CEFEE5006FAFEC /* Offers.framework */,
 				E1BF21FB24CD8FC90023BCFC /* OnBoarding.framework */,
 				570B392A24CCB29200827B42 /* Models.framework */,
@@ -192,6 +202,23 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		57A3805A24D045BD006FAFEC /* ProfileServices */ = {
+			isa = PBXGroup;
+			children = (
+				57A3805B24D045CB006FAFEC /* ProfileService.swift */,
+				57A3805D24D045CF006FAFEC /* Models */,
+			);
+			path = ProfileServices;
+			sourceTree = "<group>";
+		};
+		57A3805D24D045CF006FAFEC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				57A3805E24D045D7006FAFEC /* ProfileModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		57AFF40024CC4F7D007B913E = {
 			isa = PBXGroup;
 			children = (
@@ -213,6 +240,7 @@
 		57AFF40C24CC4F7D007B913E /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				57A3805A24D045BD006FAFEC /* ProfileServices */,
 				57A37FBE24CF3FBD006FAFEC /* AuthServices */,
 				57A37FC024CF41D3006FAFEC /* OnBoardingServices */,
 				57A37FC224CF41F3006FAFEC /* LocalsServices */,
@@ -310,11 +338,13 @@
 				57A37FCF24CF42C1006FAFEC /* LocalEntity.swift in Sources */,
 				57A37FCB24CF42AD006FAFEC /* LocalLanguage.swift in Sources */,
 				57A37FAB24CEFD4D006FAFEC /* TravelAnswer.swift in Sources */,
+				57A3805F24D045D7006FAFEC /* ProfileModel.swift in Sources */,
 				E166335C24CD8A0200CDDAC8 /* LocalsService.swift in Sources */,
 				57AFF41D24CC511B007B913E /* AuthService.swift in Sources */,
 				57A37FAE24CEFD4D006FAFEC /* UserDefaultsUser.swift in Sources */,
 				57A37FB024CEFD4D006FAFEC /* OnBoardingSlide.swift in Sources */,
 				57A37FC924CF42A4006FAFEC /* LocalActivity.swift in Sources */,
+				57A3805C24D045CB006FAFEC /* ProfileService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -16,7 +16,7 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProfileMainViewController" customModule="Profile" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProfileViewController" customModule="Profile" customModuleProvider="target">
             <connections>
                 <outlet property="menuTableView" destination="Sgs-Zq-CoY" id="2nE-Hn-HXE"/>
                 <outlet property="nameLabel" destination="Eu3-G6-VBI" id="ymF-C8-9Sl"/>

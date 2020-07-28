@@ -1,0 +1,22 @@
+//
+//  ProfileService.swift
+//  Services
+//
+//  Created by Artem Kufaev on 28.07.2020.
+//  Copyright © 2020 Artem Kufaev. All rights reserved.
+//
+
+import Profile
+import Foundation
+
+public class ProfileService: Profile.ProfileService {
+    
+    public init() {}
+    
+    public func getProfileData() -> ProfileData {
+        return ProfileModel(imageUrl: Bundle.main.url(forResource: "profileImage", withExtension: "png"),
+                            name: "Константин Коронов",
+                            phoneNumber: "+7 922 328 93 34")
+    }
+    
+}

@@ -7,14 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		57A3802B24CF49E3006FAFEC /* ProfileMainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A3802A24CF49E3006FAFEC /* ProfileMainCoordinator.swift */; };
+		57A3802B24CF49E3006FAFEC /* ProfileCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A3802A24CF49E3006FAFEC /* ProfileCoordinator.swift */; };
 		57A3802E24CF49EF006FAFEC /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57A3802D24CF49EF006FAFEC /* Core.framework */; };
 		57A3802F24CF49EF006FAFEC /* Core.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 57A3802D24CF49EF006FAFEC /* Core.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		57A3803424CF5395006FAFEC /* ProfileMainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A3803324CF5395006FAFEC /* ProfileMainPresenter.swift */; };
-		57A3803624D01740006FAFEC /* ProfileMainAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A3803524D01740006FAFEC /* ProfileMainAssembler.swift */; };
+		57A3803424CF5395006FAFEC /* ProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A3803324CF5395006FAFEC /* ProfilePresenter.swift */; };
+		57A3803624D01740006FAFEC /* ProfileAssembley.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A3803524D01740006FAFEC /* ProfileAssembley.swift */; };
 		57A3803E24D01B88006FAFEC /* ViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A3803D24D01B88006FAFEC /* ViewControllerFactory.swift */; };
-		57A3804824D01FD1006FAFEC /* ProfileMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A3804624D01FD1006FAFEC /* ProfileMainViewController.swift */; };
-		57A3804924D01FD1006FAFEC /* ProfileMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57A3804724D01FD1006FAFEC /* ProfileMainViewController.xib */; };
+		57A3804824D01FD1006FAFEC /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A3804624D01FD1006FAFEC /* ProfileViewController.swift */; };
+		57A3804924D01FD1006FAFEC /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57A3804724D01FD1006FAFEC /* ProfileViewController.xib */; };
+		57A3805924D04464006FAFEC /* ProfileData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A3805824D04463006FAFEC /* ProfileData.swift */; };
+		57A3806424D04658006FAFEC /* ProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A3806324D04658006FAFEC /* ProfileService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -33,14 +35,16 @@
 
 /* Begin PBXFileReference section */
 		57A37FDA24CF456D006FAFEC /* Profile.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Profile.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		57A3802A24CF49E3006FAFEC /* ProfileMainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileMainCoordinator.swift; sourceTree = "<group>"; };
+		57A3802A24CF49E3006FAFEC /* ProfileCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCoordinator.swift; sourceTree = "<group>"; };
 		57A3802D24CF49EF006FAFEC /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		57A3803324CF5395006FAFEC /* ProfileMainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileMainPresenter.swift; sourceTree = "<group>"; };
-		57A3803524D01740006FAFEC /* ProfileMainAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileMainAssembler.swift; sourceTree = "<group>"; };
+		57A3803324CF5395006FAFEC /* ProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePresenter.swift; sourceTree = "<group>"; };
+		57A3803524D01740006FAFEC /* ProfileAssembley.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileAssembley.swift; sourceTree = "<group>"; };
 		57A3803B24D019AF006FAFEC /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		57A3803D24D01B88006FAFEC /* ViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerFactory.swift; sourceTree = "<group>"; };
-		57A3804624D01FD1006FAFEC /* ProfileMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileMainViewController.swift; sourceTree = "<group>"; };
-		57A3804724D01FD1006FAFEC /* ProfileMainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileMainViewController.xib; sourceTree = "<group>"; };
+		57A3804624D01FD1006FAFEC /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		57A3804724D01FD1006FAFEC /* ProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
+		57A3805824D04463006FAFEC /* ProfileData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileData.swift; sourceTree = "<group>"; };
+		57A3806324D04658006FAFEC /* ProfileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,7 +81,11 @@
 		57A37FDC24CF456D006FAFEC /* Profile */ = {
 			isa = PBXGroup;
 			children = (
-				57A3804124D01F73006FAFEC /* Main */,
+				57A3805424D042E0006FAFEC /* Coordinators */,
+				57A3805324D042DA006FAFEC /* Presenters */,
+				57A3805024D042B9006FAFEC /* Controllers */,
+				57A3804F24D04294006FAFEC /* Assembley */,
+				57A3805724D0444C006FAFEC /* DataProtocols */,
 				57A3803D24D01B88006FAFEC /* ViewControllerFactory.swift */,
 			);
 			path = Profile;
@@ -99,55 +107,85 @@
 			path = Environments;
 			sourceTree = "<group>";
 		};
-		57A3804124D01F73006FAFEC /* Main */ = {
-			isa = PBXGroup;
-			children = (
-				57A3804424D01F94006FAFEC /* Assembler */,
-				57A3804224D01F84006FAFEC /* Controller */,
-				57A3804324D01F88006FAFEC /* Presenter */,
-				57A3804524D01F9C006FAFEC /* Coordinator */,
-			);
-			path = Main;
-			sourceTree = "<group>";
-		};
-		57A3804224D01F84006FAFEC /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				57A3804624D01FD1006FAFEC /* ProfileMainViewController.swift */,
-				57A3804724D01FD1006FAFEC /* ProfileMainViewController.xib */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		57A3804324D01F88006FAFEC /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-				57A3803324CF5395006FAFEC /* ProfileMainPresenter.swift */,
-			);
-			path = Presenter;
-			sourceTree = "<group>";
-		};
-		57A3804424D01F94006FAFEC /* Assembler */ = {
-			isa = PBXGroup;
-			children = (
-				57A3803524D01740006FAFEC /* ProfileMainAssembler.swift */,
-			);
-			path = Assembler;
-			sourceTree = "<group>";
-		};
-		57A3804524D01F9C006FAFEC /* Coordinator */ = {
-			isa = PBXGroup;
-			children = (
-				57A3802A24CF49E3006FAFEC /* ProfileMainCoordinator.swift */,
-			);
-			path = Coordinator;
-			sourceTree = "<group>";
-		};
 		57A3804B24D0266C006FAFEC /* Resources */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		57A3804F24D04294006FAFEC /* Assembley */ = {
+			isa = PBXGroup;
+			children = (
+				57A3805224D042D2006FAFEC /* Profile */,
+			);
+			path = Assembley;
+			sourceTree = "<group>";
+		};
+		57A3805024D042B9006FAFEC /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				57A3805124D042C2006FAFEC /* Profile */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		57A3805124D042C2006FAFEC /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				57A3804624D01FD1006FAFEC /* ProfileViewController.swift */,
+				57A3804724D01FD1006FAFEC /* ProfileViewController.xib */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		57A3805224D042D2006FAFEC /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				57A3803524D01740006FAFEC /* ProfileAssembley.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		57A3805324D042DA006FAFEC /* Presenters */ = {
+			isa = PBXGroup;
+			children = (
+				57A3805524D042FC006FAFEC /* Profile */,
+			);
+			path = Presenters;
+			sourceTree = "<group>";
+		};
+		57A3805424D042E0006FAFEC /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				57A3805624D04300006FAFEC /* Profile */,
+			);
+			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		57A3805524D042FC006FAFEC /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				57A3803324CF5395006FAFEC /* ProfilePresenter.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		57A3805624D04300006FAFEC /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				57A3802A24CF49E3006FAFEC /* ProfileCoordinator.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		57A3805724D0444C006FAFEC /* DataProtocols */ = {
+			isa = PBXGroup;
+			children = (
+				57A3805824D04463006FAFEC /* ProfileData.swift */,
+				57A3806324D04658006FAFEC /* ProfileService.swift */,
+			);
+			path = DataProtocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -220,7 +258,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				57A3804924D01FD1006FAFEC /* ProfileMainViewController.xib in Resources */,
+				57A3804924D01FD1006FAFEC /* ProfileViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -231,11 +269,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				57A3802B24CF49E3006FAFEC /* ProfileMainCoordinator.swift in Sources */,
+				57A3802B24CF49E3006FAFEC /* ProfileCoordinator.swift in Sources */,
 				57A3803E24D01B88006FAFEC /* ViewControllerFactory.swift in Sources */,
-				57A3804824D01FD1006FAFEC /* ProfileMainViewController.swift in Sources */,
-				57A3803624D01740006FAFEC /* ProfileMainAssembler.swift in Sources */,
-				57A3803424CF5395006FAFEC /* ProfileMainPresenter.swift in Sources */,
+				57A3804824D01FD1006FAFEC /* ProfileViewController.swift in Sources */,
+				57A3803624D01740006FAFEC /* ProfileAssembley.swift in Sources */,
+				57A3803424CF5395006FAFEC /* ProfilePresenter.swift in Sources */,
+				57A3805924D04464006FAFEC /* ProfileData.swift in Sources */,
+				57A3806424D04658006FAFEC /* ProfileService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

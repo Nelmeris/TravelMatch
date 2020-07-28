@@ -8,36 +8,39 @@
 
 import UIKit
 
-struct ProfileData {
-    let imageUrl: URL?
-    let name: String
-    let phoneNumber: String
-}
-
 struct ProfileMenuSection {
     let title: String
     let items: [ProfileMenuItem]
 }
 
 struct ProfileMenuItem {
+    enum ProfileMenuItemType {
+        case link(onSelect: () -> ())
+        case `switch`
+    }
+    
     let title: String
-    let getController: () -> UIViewController
+    let type: ProfileMenuItemType
 }
 
-protocol ProfileMainDisplayLogic: class {
+protocol ProfileDisplayLogic: class {
     func displayMenuItems(_ items: [ProfileMenuSection])
     func displayProfileData(_ data: ProfileData)
 }
 
-class ProfileMainViewController: UIViewController {
+class ProfileViewController: UIViewController {
     
-    var presenter: ProfileMainPresentationLogic?
-    var coordinator: ProfileMainRoutingLogic?
+    var presenter: ProfilePresentationLogic?
 
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var phoneNumberLabel: UILabel!
-    @IBOutlet weak var menuTableView: UITableView!
+    @IBOutlet weak var menuTableView: UITableView! {
+        didSet {
+            menuTableView.dataSource = self
+            menuTableView.delegate = self
+        }
+    }
     
     private var items: [ProfileMenuSection] = [] {
         didSet {
@@ -48,16 +51,13 @@ class ProfileMainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        menuTableView.dataSource = self
-        menuTableView.delegate = self
-        
         presenter?.presentMenuItems()
         presenter?.presentProfileData()
     }
     
 }
 
-extension ProfileMainViewController: ProfileMainDisplayLogic {
+extension ProfileViewController: ProfileDisplayLogic {
     
     func displayProfileData(_ data: ProfileData) {
         self.profileImageView.sd_setImage(with: data.imageUrl, completed: nil)
@@ -71,7 +71,7 @@ extension ProfileMainViewController: ProfileMainDisplayLogic {
     
 }
 
-extension ProfileMainViewController: UITableViewDataSource {
+extension ProfileViewController: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return items.count
@@ -87,19 +87,23 @@ extension ProfileMainViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
-        cell.textLabel?.text = items[indexPath.section].items[indexPath.row].title
-        cell.accessoryType = .disclosureIndicator
+        let item = items[indexPath.section].items[indexPath.row]
+        cell.textLabel?.text = item.title
+        switch item.type {
+        case .switch:
+            cell.accessoryType = .none
+        case .link:
+            cell.accessoryType = .disclosureIndicator
+        }
         return cell
     }
     
 }
 
-extension ProfileMainViewController: UITableViewDelegate {
+extension ProfileViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let controller = items[indexPath.section].items[indexPath.row].getController()
-        coordinator?.toController(controller)
-        menuTableView.cellForRow(at: indexPath)?.setSelected(false, animated: true)
+        presenter?.menuItemDidSelect(indexPath)
     }
     
 }

@@ -20,6 +20,7 @@ final class AppCoordinator: BaseCoordinator {
     private let questionsService: QuestionsService
     private let localsService: LocalsService
     private let mockFakeDataService: OffersService
+    private let profileService: ProfileService
 
     private var rootController: NavigationController!
     
@@ -28,13 +29,15 @@ final class AppCoordinator: BaseCoordinator {
         authService: AuthService,
         questionsService: QuestionsService,
         localsService: LocalsService,
-        mockFakeDataService: OffersService
+        mockFakeDataService: OffersService,
+        profileService: ProfileService
     ) {
         self.onBoardingService = onBoardingService
         self.authService = authService
         self.questionsService = questionsService
         self.localsService = localsService
         self.mockFakeDataService = mockFakeDataService
+        self.profileService = profileService
     }
     
     override func start() {
@@ -112,7 +115,8 @@ final class AppCoordinator: BaseCoordinator {
         let coordinator = TabCoordinator(
             rootController: rootController,
             localsService: localsService,
-            mockFakeDataService: mockFakeDataService
+            mockFakeDataService: mockFakeDataService,
+            profileService: profileService
         )
         
         addDependency(coordinator)

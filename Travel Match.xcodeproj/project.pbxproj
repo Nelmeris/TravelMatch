@@ -8,9 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		570B38E824CC591C00827B42 /* AppStartManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570B38E724CC591C00827B42 /* AppStartManager.swift */; };
-		57A3803824D01947006FAFEC /* Profile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57A3803724D01947006FAFEC /* Profile.framework */; };
-		57A3803924D01947006FAFEC /* Profile.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 57A3803724D01947006FAFEC /* Profile.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		57A3804E24D0284E006FAFEC /* profileImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 57A3804D24D0284E006FAFEC /* profileImage.png */; };
+		57A3806724D0482C006FAFEC /* Profile.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 57A3806524D0482C006FAFEC /* Profile.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		57AFF42024CC514E007B913E /* Services.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57AFF41F24CC514E007B913E /* Services.framework */; };
 		57AFF42124CC514E007B913E /* Services.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 57AFF41F24CC514E007B913E /* Services.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CE17F77524A9223D0097B224 /* Offers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE17F77424A9223D0097B224 /* Offers.framework */; };
@@ -82,7 +81,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				57A3803924D01947006FAFEC /* Profile.framework in Embed Frameworks */,
 				E1EE7EB424AC845D00715B02 /* Locals.framework in Embed Frameworks */,
 				57AFF42124CC514E007B913E /* Services.framework in Embed Frameworks */,
 				E12150DA24A4980B00C691E4 /* Auth.framework in Embed Frameworks */,
@@ -90,6 +88,7 @@
 				E152D36924A79E370009972F /* UI.framework in Embed Frameworks */,
 				CE17F77624A9223D0097B224 /* Offers.framework in Embed Frameworks */,
 				E190E90B24A4A74500E95698 /* OnBoarding.framework in Embed Frameworks */,
+				57A3806724D0482C006FAFEC /* Profile.framework in Embed Frameworks */,
 				E152D37C24A7A0460009972F /* Questions.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -99,8 +98,8 @@
 
 /* Begin PBXFileReference section */
 		570B38E724CC591C00827B42 /* AppStartManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStartManager.swift; sourceTree = "<group>"; };
-		57A3803724D01947006FAFEC /* Profile.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Profile.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		57A3804D24D0284E006FAFEC /* profileImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profileImage.png; sourceTree = "<group>"; };
+		57A3806524D0482C006FAFEC /* Profile.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Profile.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		57AFF41F24CC514E007B913E /* Services.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Services.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE17F77424A9223D0097B224 /* Offers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Offers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E12150CF24A4961100C691E4 /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -167,7 +166,6 @@
 			files = (
 				E152D36824A79E370009972F /* UI.framework in Frameworks */,
 				57AFF42024CC514E007B913E /* Services.framework in Frameworks */,
-				57A3803824D01947006FAFEC /* Profile.framework in Frameworks */,
 				CE17F77524A9223D0097B224 /* Offers.framework in Frameworks */,
 				E12150D024A4961100C691E4 /* Core.framework in Frameworks */,
 				E1EE7EB324AC845D00715B02 /* Locals.framework in Frameworks */,
@@ -193,7 +191,7 @@
 		D94AE2D6B9F91AED3D8518BA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				57A3803724D01947006FAFEC /* Profile.framework */,
+				57A3806524D0482C006FAFEC /* Profile.framework */,
 				E1EE7EB224AC845D00715B02 /* Locals.framework */,
 				57AFF41F24CC514E007B913E /* Services.framework */,
 				CE17F77424A9223D0097B224 /* Offers.framework */,

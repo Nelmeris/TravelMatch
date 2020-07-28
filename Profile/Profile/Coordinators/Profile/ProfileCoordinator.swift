@@ -1,5 +1,5 @@
 //
-//  ProfileMainCoordinator.swift
+//  ProfileCoordinator.swift
 //  Profile
 //
 //  Created by Artem Kufaev on 27.07.2020.
@@ -9,28 +9,32 @@
 import Core
 import UIKit
 
-protocol ProfileMainRoutingLogic {
+protocol ProfileRoutingLogic {
     func toController(_ controller: UIViewController)
 }
 
-public final class ProfileMainCoordinator: BaseCoordinator {
+public final class ProfileCoordinator: BaseCoordinator {
     
     private weak var rootController: NavigationController?
+    private var profileService: ProfileService
     
-    weak var controller: ProfileMainViewController?
+    weak var controller: ProfileViewController?
     
-    public init(with rootController: NavigationController) {
+    public init(rootController: NavigationController,
+                profileService: ProfileService) {
         self.rootController = rootController
+        self.profileService = profileService
     }
     
     public override func start() {
-        let vc = ProfileMainAssembler.assembleMainController(for: self)
+        let vc = ProfileAssembley.assembleProfileController(for: self,
+                                                            profileService: profileService)
         rootController?.viewControllers = [vc]
     }
     
 }
 
-extension ProfileMainCoordinator: ProfileMainRoutingLogic {
+extension ProfileCoordinator: ProfileRoutingLogic {
     
     func toController(_ controller: UIViewController) {
         rootController?.pushViewController(controller, animated: true)

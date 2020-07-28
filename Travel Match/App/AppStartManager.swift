@@ -40,7 +40,8 @@ final class AppStartManager {
                 userDefaults: UserDefaults.standard
             ),
             localsService: FakeLocalsService(),
-            mockFakeDataService: OffersService.data
+            mockFakeDataService: OffersService.data,
+            profileService: ProfileService()
         )
         
         coordinator?.start()
