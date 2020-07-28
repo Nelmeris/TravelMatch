@@ -59,6 +59,7 @@
 			isa = PBXGroup;
 			children = (
 				57A37FDC24CF456D006FAFEC /* Profile */,
+				57A3804B24D0266C006FAFEC /* Resources */,
 				57A3803A24D019AF006FAFEC /* Environments */,
 				57A37FDB24CF456D006FAFEC /* Products */,
 				57A3802C24CF49EF006FAFEC /* Frameworks */,
@@ -140,6 +141,13 @@
 				57A3802A24CF49E3006FAFEC /* ProfileMainCoordinator.swift */,
 			);
 			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		57A3804B24D0266C006FAFEC /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

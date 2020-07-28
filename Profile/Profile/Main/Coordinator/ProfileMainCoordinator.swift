@@ -7,9 +7,10 @@
 //
 
 import Core
+import UIKit
 
 protocol ProfileMainRoutingLogic {
-    
+    func toController(_ controller: UIViewController)
 }
 
 public final class ProfileMainCoordinator: BaseCoordinator {
@@ -30,5 +31,9 @@ public final class ProfileMainCoordinator: BaseCoordinator {
 }
 
 extension ProfileMainCoordinator: ProfileMainRoutingLogic {
+    
+    func toController(_ controller: UIViewController) {
+        rootController?.pushViewController(controller, animated: true)
+    }
     
 }
