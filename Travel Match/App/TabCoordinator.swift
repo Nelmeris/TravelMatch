@@ -10,6 +10,7 @@ import UIKit
 import Core
 import Locals
 import Offers
+import Profile
 
 class TabCoordinator: BaseCoordinator {
     
@@ -33,6 +34,7 @@ class TabCoordinator: BaseCoordinator {
         rootController?.present(tabBarController, animated: false, completion: nil)
         startOffersCoordinator(with: tabBarController.viewControllers![1])
         startLocalsCoordinator(with: tabBarController.viewControllers![3])
+        startProfileCoordinator(with: tabBarController.viewControllers![4])
     }
 
     private func startOffersCoordinator(with controller: UIViewController) {
@@ -67,6 +69,13 @@ class TabCoordinator: BaseCoordinator {
         tabController.selectedIndex = 3
         
         return tabController
+    }
+    
+    private func startProfileCoordinator(with controller: UIViewController) {
+        guard let controller = controller as? NavigationController else { fatalError() }
+        let coordinator = ProfileMainCoordinator(with: controller)
+        addDependency(coordinator)
+        coordinator.start()
     }
 
     private func createNavigationController(imageName: String,

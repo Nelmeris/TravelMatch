@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		570B38E824CC591C00827B42 /* AppStartManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570B38E724CC591C00827B42 /* AppStartManager.swift */; };
+		57A3803824D01947006FAFEC /* Profile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57A3803724D01947006FAFEC /* Profile.framework */; };
+		57A3803924D01947006FAFEC /* Profile.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 57A3803724D01947006FAFEC /* Profile.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		57AFF42024CC514E007B913E /* Services.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57AFF41F24CC514E007B913E /* Services.framework */; };
 		57AFF42124CC514E007B913E /* Services.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 57AFF41F24CC514E007B913E /* Services.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CE17F77524A9223D0097B224 /* Offers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE17F77424A9223D0097B224 /* Offers.framework */; };
@@ -79,8 +81,9 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-			    E1EE7EB424AC845D00715B02 /* Locals.framework in Embed Frameworks */,
-			    57AFF42124CC514E007B913E /* Services.framework in Embed Frameworks */,
+				57A3803924D01947006FAFEC /* Profile.framework in Embed Frameworks */,
+				E1EE7EB424AC845D00715B02 /* Locals.framework in Embed Frameworks */,
+				57AFF42124CC514E007B913E /* Services.framework in Embed Frameworks */,
 				E12150DA24A4980B00C691E4 /* Auth.framework in Embed Frameworks */,
 				E12150D124A4961100C691E4 /* Core.framework in Embed Frameworks */,
 				E152D36924A79E370009972F /* UI.framework in Embed Frameworks */,
@@ -95,6 +98,7 @@
 
 /* Begin PBXFileReference section */
 		570B38E724CC591C00827B42 /* AppStartManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStartManager.swift; sourceTree = "<group>"; };
+		57A3803724D01947006FAFEC /* Profile.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Profile.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		57AFF41F24CC514E007B913E /* Services.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Services.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE17F77424A9223D0097B224 /* Offers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Offers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E12150CF24A4961100C691E4 /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -113,7 +117,6 @@
 		E1465A1524950A8500BBC9F5 /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.ttf"; sourceTree = "<group>"; };
 		E1465A1624950A8500BBC9F5 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
 		E152D36724A79E370009972F /* UI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = UI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E16034D524B2F376000E8303 /* LocalsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalsService.swift; sourceTree = "<group>"; };
 		E16034D824B2F8E8000E8303 /* l4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = l4.png; sourceTree = "<group>"; };
 		E16034D924B2F8E8000E8303 /* l2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = l2.png; sourceTree = "<group>"; };
 		E16034DA24B2F8E9000E8303 /* l6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = l6.png; sourceTree = "<group>"; };
@@ -162,6 +165,7 @@
 			files = (
 				E152D36824A79E370009972F /* UI.framework in Frameworks */,
 				57AFF42024CC514E007B913E /* Services.framework in Frameworks */,
+				57A3803824D01947006FAFEC /* Profile.framework in Frameworks */,
 				CE17F77524A9223D0097B224 /* Offers.framework in Frameworks */,
 				E12150D024A4961100C691E4 /* Core.framework in Frameworks */,
 				E1EE7EB324AC845D00715B02 /* Locals.framework in Frameworks */,
@@ -179,8 +183,9 @@
 		D94AE2D6B9F91AED3D8518BA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-			    E1EE7EB224AC845D00715B02 /* Locals.framework */,
-			    57AFF41F24CC514E007B913E /* Services.framework */,
+				57A3803724D01947006FAFEC /* Profile.framework */,
+				E1EE7EB224AC845D00715B02 /* Locals.framework */,
+				57AFF41F24CC514E007B913E /* Services.framework */,
 				CE17F77424A9223D0097B224 /* Offers.framework */,
 				E1A1598324A7949600E7C313 /* Questions.framework */,
 				E152D36724A79E370009972F /* UI.framework */,
@@ -249,14 +254,6 @@
 				E14659CE2494B0C300BBC9F5 /* Assets.xcassets */,
 			);
 			path = Resources;
-			sourceTree = "<group>";
-		};
-		E14659FA2494DAE300BBC9F5 /* BusinessLogic */ = {
-			isa = PBXGroup;
-			children = (
-				E16034D524B2F376000E8303 /* LocalsService.swift */,
-			);
-			path = BusinessLogic;
 			sourceTree = "<group>";
 		};
 		E1465A04249506FD00BBC9F5 /* Fonts */ = {
@@ -469,7 +466,6 @@
 			files = (
 				E17396E624AC720B0010D117 /* TabCoordinator.swift in Sources */,
 				E1465A002494DD0900BBC9F5 /* AppCoordinator.swift in Sources */,
-				E16034D624B2F376000E8303 /* LocalsService.swift in Sources */,
 				570B38E824CC591C00827B42 /* AppStartManager.swift in Sources */,
 				E14659C62494B0C100BBC9F5 /* AppDelegate.swift in Sources */,
 			);
