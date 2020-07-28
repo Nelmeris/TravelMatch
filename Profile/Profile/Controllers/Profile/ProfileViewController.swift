@@ -32,6 +32,8 @@ protocol ProfileViewInput: class {
 
 class ProfileViewController: UIViewController {
     
+    private let sectionHeaderHeight: CGFloat = 50
+    
     var coordinator: ProfileRoutingLogic?
     var presenter: ProfileViewOutput?
     
@@ -176,7 +178,7 @@ class ProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        menuTableView.tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: menuTableView.frame.size.width, height: 1))
+        hideLastSeparatorLine()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -190,14 +192,19 @@ class ProfileViewController: UIViewController {
         super.updateViewConstraints()
     }
     
+    private func hideLastSeparatorLine() {
+        let frame = CGRect(x: 0, y: 0, width: menuTableView.frame.size.width, height: 1)
+        menuTableView.tableFooterView = UIView(frame: frame)
+    }
+    
 }
 
 extension ProfileViewController: ProfileViewInput {
     
     func displayProfileData(_ data: ProfileData) {
-        self.profileImageView.sd_setImage(with: data.imageUrl, completed: nil)
-        self.nameLabel.text = data.name
-        self.phoneNumberLabel.text = data.phoneNumber
+        profileImageView.sd_setImage(with: data.imageUrl, completed: nil)
+        nameLabel.text = data.name
+        phoneNumberLabel.text = data.phoneNumber
     }
     
     func displayMenuItems(_ items: [ProfileMenuSection]) {
@@ -217,7 +224,7 @@ extension ProfileViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 50
+        return sectionHeaderHeight
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -225,13 +232,10 @@ extension ProfileViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let view = UIView(frame: CGRect(x: 0, y: 0, width: menuTableView.frame.width, height: 50))
-        let title = UILabel(frame: view.frame)
-        title.font = UIFont(name: "Montserrat-Bold", size: 18)
-        title.text = menuSections[section].title
-        view.backgroundColor = .white
-        view.addSubview(title)
-        return view
+        let frame = CGRect(x: 0, y: 0, width: menuTableView.frame.width, height: sectionHeaderHeight)
+        let header = TableSectionHeaderView(frame: frame)
+        header.title = menuSections[section].title
+        return header
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -260,6 +264,7 @@ extension ProfileViewController: UITableViewDelegate {
         switch item.type {
         case .link(let onSelect):
             onSelect()
+            menuTableView.cellForRow(at: indexPath)?.setSelected(false, animated: true)
         default: break
         }
     }

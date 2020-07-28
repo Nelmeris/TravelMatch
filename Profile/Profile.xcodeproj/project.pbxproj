@@ -22,6 +22,7 @@
 		57A3807324D05CCE006FAFEC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57A3807224D05CCE006FAFEC /* Assets.xcassets */; };
 		57A3807A24D0841F006FAFEC /* NotifySettingsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A3807924D0841F006FAFEC /* NotifySettingsService.swift */; };
 		57A3807C24D08569006FAFEC /* NotifySettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A3807B24D08569006FAFEC /* NotifySettings.swift */; };
+		57A3808A24D0B60C006FAFEC /* TableSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A3808924D0B60C006FAFEC /* TableSectionHeaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -55,6 +56,7 @@
 		57A3807224D05CCE006FAFEC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		57A3807924D0841F006FAFEC /* NotifySettingsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifySettingsService.swift; sourceTree = "<group>"; };
 		57A3807B24D08569006FAFEC /* NotifySettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifySettings.swift; sourceTree = "<group>"; };
+		57A3808924D0B60C006FAFEC /* TableSectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableSectionHeaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +93,7 @@
 		57A37FDC24CF456D006FAFEC /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				57A3808824D0B59E006FAFEC /* Views */,
 				57A3806824D0516E006FAFEC /* Cells */,
 				57A3805424D042E0006FAFEC /* Coordinators */,
 				57A3805024D042B9006FAFEC /* Controllers */,
@@ -187,6 +190,14 @@
 			path = Profile;
 			sourceTree = "<group>";
 		};
+		57A3808824D0B59E006FAFEC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				57A3808924D0B60C006FAFEC /* TableSectionHeaderView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -277,6 +288,7 @@
 				57A3803E24D01B88006FAFEC /* ViewControllerFactory.swift in Sources */,
 				57A3804824D01FD1006FAFEC /* ProfileViewController.swift in Sources */,
 				57A3807024D0519E006FAFEC /* ProfileMenuSwitchCell.swift in Sources */,
+				57A3808A24D0B60C006FAFEC /* TableSectionHeaderView.swift in Sources */,
 				57A3807C24D08569006FAFEC /* NotifySettings.swift in Sources */,
 				57A3805924D04464006FAFEC /* ProfileData.swift in Sources */,
 				57A3806424D04658006FAFEC /* ProfileService.swift in Sources */,

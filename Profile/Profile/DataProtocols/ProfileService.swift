@@ -6,8 +6,6 @@
 //  Copyright © 2020 Artem Kufaev. All rights reserved.
 //
 
-import Foundation
-
 public protocol ProfileService {
     func getProfileData() -> ProfileData
 }

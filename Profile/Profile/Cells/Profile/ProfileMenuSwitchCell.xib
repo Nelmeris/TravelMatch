@@ -23,21 +23,21 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bwX-Q2-yfH">
-                        <rect key="frame" x="0.0" y="17.5" width="249" height="17.5"/>
+                        <rect key="frame" x="20" y="17.5" width="211" height="17.5"/>
                         <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="14"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TwK-MR-hpk">
-                        <rect key="frame" x="269" y="10.5" width="51" height="31"/>
+                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TwK-MR-hpk" customClass="Switch" customModule="UI">
+                        <rect key="frame" x="251" y="10.5" width="51" height="31"/>
                     </switch>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="TwK-MR-hpk" secondAttribute="trailing" constant="2" id="9ax-oe-gvY"/>
+                    <constraint firstAttribute="trailing" secondItem="TwK-MR-hpk" secondAttribute="trailing" constant="20" id="9ax-oe-gvY"/>
                     <constraint firstItem="TwK-MR-hpk" firstAttribute="leading" secondItem="bwX-Q2-yfH" secondAttribute="trailing" constant="20" id="F92-K4-Wce"/>
                     <constraint firstItem="TwK-MR-hpk" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="G39-59-rnt"/>
                     <constraint firstItem="bwX-Q2-yfH" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="cQ5-Fs-iWi"/>
-                    <constraint firstItem="bwX-Q2-yfH" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="cnB-iN-K4Y"/>
+                    <constraint firstItem="bwX-Q2-yfH" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="cnB-iN-K4Y"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>

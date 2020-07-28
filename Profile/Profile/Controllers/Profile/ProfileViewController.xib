@@ -62,21 +62,21 @@
                                     </subviews>
                                 </stackView>
                                 <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" bouncesZoom="NO" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Sgs-Zq-CoY">
-                                    <rect key="frame" x="20" y="160" width="374" height="500"/>
+                                    <rect key="frame" x="0.0" y="160" width="414" height="500"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="500" id="ToS-Ol-KPH"/>
                                     </constraints>
-                                    <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    <inset key="separatorInset" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
                                 </tableView>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             <constraints>
                                 <constraint firstItem="wbf-Cs-ceR" firstAttribute="centerY" secondItem="dzr-I3-u5F" secondAttribute="centerY" id="2Yh-tD-RjV"/>
-                                <constraint firstItem="Sgs-Zq-CoY" firstAttribute="leading" secondItem="kuq-IS-aBL" secondAttribute="leading" constant="20" id="53c-HX-hce"/>
+                                <constraint firstItem="Sgs-Zq-CoY" firstAttribute="leading" secondItem="kuq-IS-aBL" secondAttribute="leading" id="53c-HX-hce"/>
                                 <constraint firstItem="Sgs-Zq-CoY" firstAttribute="top" secondItem="dzr-I3-u5F" secondAttribute="bottom" constant="20" id="F40-Vy-FmA"/>
                                 <constraint firstAttribute="bottom" secondItem="Sgs-Zq-CoY" secondAttribute="bottom" constant="20" id="NlZ-J5-b5s"/>
                                 <constraint firstItem="dzr-I3-u5F" firstAttribute="top" secondItem="kuq-IS-aBL" secondAttribute="top" constant="20" id="PrO-X4-xou"/>
-                                <constraint firstAttribute="trailing" secondItem="Sgs-Zq-CoY" secondAttribute="trailing" constant="20" id="RDL-fN-YYN"/>
+                                <constraint firstAttribute="trailing" secondItem="Sgs-Zq-CoY" secondAttribute="trailing" id="RDL-fN-YYN"/>
                                 <constraint firstItem="Sgs-Zq-CoY" firstAttribute="top" secondItem="dzr-I3-u5F" secondAttribute="bottom" constant="20" id="WVe-rv-XLd"/>
                                 <constraint firstItem="wbf-Cs-ceR" firstAttribute="leading" secondItem="dzr-I3-u5F" secondAttribute="trailing" constant="20" id="b7f-Yo-WnD"/>
                                 <constraint firstItem="dzr-I3-u5F" firstAttribute="leading" secondItem="kuq-IS-aBL" secondAttribute="leading" constant="20" id="h7B-sN-v8L"/>

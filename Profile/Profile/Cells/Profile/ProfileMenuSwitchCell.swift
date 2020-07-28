@@ -29,7 +29,6 @@ class ProfileMenuSwitchCell: UITableViewCell, ConfigurableCell {
     }
     
     private func setupSwitch() {
-        self.switch.onTintColor = UIColor.ThemeColors.brandBlueColor
         self.switch.addTarget(self, action: #selector(onSwitchEvent), for: .valueChanged)
     }
     
