@@ -40,7 +40,7 @@ public final class ReviewsCoordinator: BaseCoordinator {
         let controller = reviewsControllerFactory.makeReviewController()
         if let offerID = offerID {
             controller.offerID = offerID
-            controller.isHiddenSendReviewView = true
+            controller.isHiddenSendReviewView = false
         } else if let impressionID = impressionID {
             controller.impressionID = impressionID
             controller.isHiddenSendReviewView = false

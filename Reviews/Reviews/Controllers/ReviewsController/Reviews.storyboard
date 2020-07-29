@@ -146,16 +146,16 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="sendReviewButtonAction" destination="hM5-9r-1Ux" eventType="touchUpInside" id="I7w-5G-Ubh"/>
+                                            <action selector="sendReviewButton" destination="hM5-9r-1Ux" eventType="touchUpInside" id="cXF-eg-9hX"/>
                                         </connections>
                                     </button>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Написать комментарий" textAlignment="natural" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="GwL-cc-QNQ" customClass="TextField" customModule="UI">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Написать комментарий" textAlignment="natural" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="GwL-cc-QNQ" customClass="TextField" customModule="UI">
                                         <rect key="frame" x="20" y="10" width="306" height="48"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="48" id="veg-AH-EZr"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
+                                        <textInputTraits key="textInputTraits"/>
                                     </textField>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -186,7 +186,6 @@
                         <outlet property="controllerNamelabel" destination="X18-vt-KTt" id="via-od-qoK"/>
                         <outlet property="reviewSuperView" destination="CDC-Xg-UYG" id="u0d-Hl-q8s"/>
                         <outlet property="reviewTextField" destination="GwL-cc-QNQ" id="oNO-AC-ZPp"/>
-                        <outlet property="sendReviewButtonOutlet" destination="4kZ-IM-gqc" id="fEB-nD-QEp"/>
                         <outlet property="sendReviewView" destination="lm2-xs-CSg" id="GYr-Hb-ksg"/>
                         <outlet property="tableView" destination="PIZ-Oq-YVe" id="44i-Nj-gwI"/>
                     </connections>
