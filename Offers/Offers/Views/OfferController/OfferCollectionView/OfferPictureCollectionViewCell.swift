@@ -18,10 +18,8 @@ class OfferPictureCollectionViewCell: CustomeCollectionCell {
         }
     }
     
-    override func fillData(image: String) {
-        offerPictureImageView.image = UIImage(named: image,
-                                              in: Bundle(for: OfferPictureCollectionViewCell.self),
-                                              compatibleWith: nil)
+    override func fillData(image: UIImage) {
+        offerPictureImageView.image = image
     }
     
 }
