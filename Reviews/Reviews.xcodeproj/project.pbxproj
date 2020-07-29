@@ -24,6 +24,8 @@
 		CE27404E24C648FC00BAD20B /* mock_fake_data.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE27403124C63B3C00BAD20B /* mock_fake_data.swift */; };
 		CE4A911324CB53A100379AF0 /* ViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4A911224CB53A100379AF0 /* ViewControllerFactory.swift */; };
 		CE4A913E24CB71EE00379AF0 /* ReviewsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4A913D24CB71EE00379AF0 /* ReviewsCoordinator.swift */; };
+		CE64945F24D230C400B79E74 /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE27402824C63B0600BAD20B /* Core.framework */; };
+		CE64946024D230C400B79E74 /* Core.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CE27402824C63B0600BAD20B /* Core.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +46,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				CE27402D24C63B0600BAD20B /* UI.framework in Embed Frameworks */,
+				CE64946024D230C400B79E74 /* Core.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -74,6 +77,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE27402C24C63B0600BAD20B /* UI.framework in Frameworks */,
+				CE64945F24D230C400B79E74 /* Core.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
