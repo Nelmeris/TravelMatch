@@ -31,14 +31,14 @@
 		CE4A911524CB569E00379AF0 /* OffersTests.xctest in Resources */ = {isa = PBXBuildFile; fileRef = CE0DECBB24A921930066B2FB /* OffersTests.xctest */; };
 		CE4A913524CB579500379AF0 /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE4A913124CB579500379AF0 /* Core.framework */; };
 		CE4A913624CB579500379AF0 /* Core.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CE4A913124CB579500379AF0 /* Core.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		CE4A913724CB579500379AF0 /* Pic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE4A913224CB579500379AF0 /* Pic.framework */; };
-		CE4A913824CB579500379AF0 /* Pic.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CE4A913224CB579500379AF0 /* Pic.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		CE4A913924CB579500379AF0 /* Reviews.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE4A913324CB579500379AF0 /* Reviews.framework */; };
-		CE4A913A24CB579500379AF0 /* Reviews.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CE4A913324CB579500379AF0 /* Reviews.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CE4A913B24CB579500379AF0 /* UI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE4A913424CB579500379AF0 /* UI.framework */; };
 		CE4A913C24CB579500379AF0 /* UI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CE4A913424CB579500379AF0 /* UI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CE64945624D2230900B79E74 /* OffersService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE64945524D2230900B79E74 /* OffersService.swift */; };
 		CE64945824D2232200B79E74 /* Offer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE64945724D2232200B79E74 /* Offer.swift */; };
+		CE64945B24D2301900B79E74 /* Pic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE4A913224CB579500379AF0 /* Pic.framework */; };
+		CE64945C24D2301900B79E74 /* Pic.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CE4A913224CB579500379AF0 /* Pic.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CE64945D24D2301900B79E74 /* Reviews.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE4A913324CB579500379AF0 /* Reviews.framework */; };
+		CE64945E24D2301900B79E74 /* Reviews.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CE4A913324CB579500379AF0 /* Reviews.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CE686BAA24AFC7F000952E43 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE686BA924AFC7F000952E43 /* Assets.xcassets */; };
 		CE686BAC24AFCE3600952E43 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE686BAB24AFCE3600952E43 /* CustomTableViewCell.swift */; };
 		CE686BAE24AFCFA900952E43 /* CustomeCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE686BAD24AFCFA900952E43 /* CustomeCollectionCell.swift */; };
@@ -62,10 +62,10 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				CE64945C24D2301900B79E74 /* Pic.framework in Embed Frameworks */,
 				CE4A913624CB579500379AF0 /* Core.framework in Embed Frameworks */,
-				CE4A913824CB579500379AF0 /* Pic.framework in Embed Frameworks */,
+				CE64945E24D2301900B79E74 /* Reviews.framework in Embed Frameworks */,
 				CE4A913C24CB579500379AF0 /* UI.framework in Embed Frameworks */,
-				CE4A913A24CB579500379AF0 /* Reviews.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -114,10 +114,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE64945B24D2301900B79E74 /* Pic.framework in Frameworks */,
 				CE4A913524CB579500379AF0 /* Core.framework in Frameworks */,
-				CE4A913724CB579500379AF0 /* Pic.framework in Frameworks */,
+				CE64945D24D2301900B79E74 /* Reviews.framework in Frameworks */,
 				CE4A913B24CB579500379AF0 /* UI.framework in Frameworks */,
-				CE4A913924CB579500379AF0 /* Reviews.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
