@@ -32,17 +32,23 @@ class PasswordSentViewController: BaseViewController {
     @IBAction func loginButtonClicked(_ sender: Any) {
         onLoginButtonClicked?()
     }
+    
+    // MARK: - Lifecycle
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        navigationController?.navigationBar.topItem?.title = ""
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        updateView()
+    }
         
     // MARK: - Update view
     
     private func updateView() {
         messageLabel?.text = message
         view.setNeedsLayout()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        navigationController?.navigationBar.topItem?.title = ""
-        updateView()
     }
 }

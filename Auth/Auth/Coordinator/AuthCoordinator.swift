@@ -6,7 +6,6 @@
 //  Copyright © 2020 Maxim Timokhin. All rights reserved.
 //
 
-import Foundation
 import UIKit
 import Core
 
@@ -14,7 +13,7 @@ public final class AuthCoordinator: BaseCoordinator {
     
     private weak var rootController: NavigationController?
     private let viewControllerFactory: ViewControllerFactory
-    private let authService: AuthService
+    private let authService: AuthLogin & AuthSignUp & AuthSearch & AuthReset
 
     private var user: Authentificatable?
     private var email: String?
@@ -22,7 +21,7 @@ public final class AuthCoordinator: BaseCoordinator {
     
     public init(
         rootController: NavigationController,
-        authService: AuthService
+        authService: AuthLogin & AuthSignUp & AuthSearch & AuthReset
     ) {
         self.rootController = rootController
         self.viewControllerFactory = ViewControllerFactory()
@@ -47,7 +46,7 @@ public final class AuthCoordinator: BaseCoordinator {
         
         controller.onGuestButtonClicked = { [weak self, weak controller] in
             controller?.state = .loading
-            self?.authService.signInGuest(completion: { (result) in
+            self?.authService.loginGuest(completion: { (result) in
                 switch result {
                 case .success:
                     self?.onFinishFlow?()
@@ -95,7 +94,7 @@ public final class AuthCoordinator: BaseCoordinator {
         
         controller.onGuestButtonClicked = { [weak self, weak controller] in
             controller?.state = .loading
-            self?.authService.signInGuest(completion: { (result) in
+            self?.authService.loginGuest(completion: { (result) in
                 switch result {
                 case .success:
                     self?.onFinishFlow?()
@@ -186,7 +185,7 @@ public final class AuthCoordinator: BaseCoordinator {
         
         controller.onContinueButtonClicked = { [weak self, weak controller] password, remember in
             controller?.state = .loading
-            self?.authService.signIn(
+            self?.authService.login(
                 userId: user.id,
                 password: password,
                 remember: remember,
@@ -235,7 +234,7 @@ public final class AuthCoordinator: BaseCoordinator {
         controller.onContinueButtonClicked = { [weak self, weak controller] email in
             self?.email = email
             controller?.state = .loading
-            self?.authService.resetPasssword(email: email, completion: { (result) in
+            self?.authService.resetPassword(email: email, completion: { (result) in
                 controller?.state = .initial(email)
                 switch result {
                 case .success:
@@ -266,7 +265,7 @@ public final class AuthCoordinator: BaseCoordinator {
         controller.onContinueButtonClicked = { [weak self, weak controller] phone in
             self?.phone = phone
             controller?.state = .loading
-            self?.authService.resetPasssword(phone: phone, completion: { (result) in
+            self?.authService.resetPassword(phone: phone, completion: { (result) in
                 controller?.state = .initial(phone)
                 switch result {
                 case .success:

@@ -48,6 +48,8 @@ class EmailViewController: BaseViewController {
         format: "SELF MATCHES %@",
         "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
     )
+    
+    // MARK: - Lifecycle
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -121,6 +123,35 @@ class EmailViewController: BaseViewController {
         scrollView?.endEditing(true)
     }
     
+    @IBAction func phoneModeClicked(_ sender: Any) {
+        onPhoneModeClicked?()
+    }
+    
+    @IBAction func guestButtonClicked(_ sender: Any) {
+        onGuestButtonClicked?()
+    }
+    
+    @IBAction func facebookButtonClicked(_ sender: Any) {
+        onFacebookButtonClicked?()
+    }
+    
+    @IBAction func continueButtonClicked(_ sender: Any) {
+        guard isInputValid(),
+            let emailValue = emailField?.text else {return}
+        onContinueButtonClicked?(emailValue)
+        scrollView?.endEditing(true)
+    }
+    
+    @IBAction func emailValueChanged(_ sender: Any) {
+        nextButton?.isEnabled = isInputValid()
+    }
+    
+    @IBAction func emailFieldDidEndOnExit(_ sender: Any) {
+        continueButtonClicked(sender)
+    }
+    
+    // MARK: - Keyboard
+    
     @objc func keyboardWillShown(notification: Notification) {
         let info = notification.userInfo! as NSDictionary
         
@@ -147,33 +178,6 @@ class EmailViewController: BaseViewController {
         guestButton?.isHidden = false
         facebookButton?.alpha = 1
         facebookButton?.isHidden = false
-    }
-    
-    @IBAction func phoneModeClicked(_ sender: Any) {
-        onPhoneModeClicked?()
-    }
-    
-    @IBAction func guestButtonClicked(_ sender: Any) {
-        onGuestButtonClicked?()
-    }
-    
-    @IBAction func facebookButtonClicked(_ sender: Any) {
-        onFacebookButtonClicked?()
-    }
-    
-    @IBAction func continueButtonClicked(_ sender: Any) {
-        guard isInputValid(),
-            let emailValue = emailField?.text else {return}
-        onContinueButtonClicked?(emailValue)
-        scrollView?.endEditing(true)
-    }
-    
-    @IBAction func emailValueChanged(_ sender: Any) {
-        nextButton?.isEnabled = isInputValid()
-    }
-    
-    @IBAction func emailFieldDidEndOnExit(_ sender: Any) {
-        continueButtonClicked(sender)
     }
     
 }

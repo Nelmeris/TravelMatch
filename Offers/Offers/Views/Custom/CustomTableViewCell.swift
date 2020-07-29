@@ -6,15 +6,14 @@
 //  Copyright © 2020 Igor Gapanovich. All rights reserved.
 //
 
-import Foundation
 import UIKit
 import UI
 
 protocol CustomTableViewCellProtocol: class {
-    func fillData(offer: FakeOffer)
+    func fillData(offer: Offer)
 }
 
 class CustomTableViewCell: UITableViewCell, CustomTableViewCellProtocol {
-    func fillData(offer: FakeOffer) {
+    func fillData(offer: Offer) {
     }
 }

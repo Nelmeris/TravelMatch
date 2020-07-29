@@ -6,11 +6,10 @@
 //  Copyright © 2020 Maxim Timokhin. All rights reserved.
 //
 
-import Foundation
 import Core
 
-public typealias GetQuestionsCompletion = (_ result: Result<Question>) -> Void
-public typealias SaveAnswersCompletion = (_ result: Result<Bool>) -> Void
+public typealias GetQuestionsCompletion = (_ result: Result<Question, Error>) -> Void
+public typealias SaveAnswersCompletion = (_ result: Result<Bool, Error>) -> Void
 
 public protocol QuestionsService {
 

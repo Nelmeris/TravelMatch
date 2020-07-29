@@ -14,7 +14,7 @@ public class Button: UIButton {
     @IBInspectable
     var cornerRadius: CGFloat = 0.0 {
         didSet {
-            setupView()
+            self.layer.cornerRadius = self.cornerRadius
         }
     }
 
@@ -29,7 +29,6 @@ public class Button: UIButton {
     }
     
     func setupView() {
-        self.layer.cornerRadius = self.cornerRadius
         self.clipsToBounds = true
     }
     

@@ -12,6 +12,7 @@ import UI
 class QuestionsViewController: BaseViewController {
 
     // MARK: - Input
+    
     var question: Question? {
         didSet {
             updateView()
@@ -19,16 +20,32 @@ class QuestionsViewController: BaseViewController {
     }
     
     // MARK: - Output
+    
     var onContinueClicked: (([Answer]) -> Void)?
     
     // MARK: - Outlets
+    
     @IBOutlet private weak var collectionView: UICollectionView?
     @IBOutlet private weak var continueButton: UIButton?
     @IBOutlet private weak var titleLabel: UILabel?
     @IBOutlet private weak var descriptionLabel: UILabel?
     @IBOutlet private weak var flowLayout: UICollectionViewFlowLayout?
     
+    // MARK: - Lifecycle
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        flowLayout?.estimatedItemSize = .zero
+        collectionView?.allowsMultipleSelection = true
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        updateView()
+    }
+    
     // MARK: - Actions
+    
     @IBAction func continueButtonClicked(_ sender: Any) {
         guard let answers = question?.answers,
             let selectedIndexPaths = collectionView?.indexPathsForSelectedItems
@@ -47,17 +64,6 @@ class QuestionsViewController: BaseViewController {
         descriptionLabel?.text = question.description
         
         collectionView?.reloadData()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        updateView()
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        flowLayout?.estimatedItemSize = .zero
-        collectionView?.allowsMultipleSelection = true
     }
 
 }

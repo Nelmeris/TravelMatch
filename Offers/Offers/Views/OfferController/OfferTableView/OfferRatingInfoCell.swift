@@ -49,7 +49,7 @@ class OfferRatingInfoCell: CustomTableViewCell, OfferRatingInfoCellCollectionDel
         collectionView.delegate = self
     }
     
-    override func fillData(offer: FakeOffer) {
+    override func fillData(offer: Offer) {
         imageCollection = MockFakeDataPic.data.images
         collectionView.reloadData()
     }

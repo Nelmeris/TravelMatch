@@ -12,16 +12,20 @@ import UI
 import CVCalendar
 
 class ListOfOffersController: BaseViewController {
+    
     //MARK: - Constants
+    
     private var currentCalendar: Calendar?
     private var animationFinished = true
     private var selectedDay: DayView?
     private let refreshControler = UIRefreshControl()
-    var offers: [FakeOffer] = MockFakeData.data.getOffers(count: 7)
+    public var mockFakeDataService: OffersService?
+    
+    var offers: [Offer] = []
     
     // MARK: - Output
     
-    var onOfferController: ((FakeOffer) -> Void)?
+    var onOfferController: ((Offer) -> Void)?
     
     //MARK: - IBOutlet
     
@@ -39,6 +43,7 @@ class ListOfOffersController: BaseViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.offers = mockFakeDataService?.getOffers(count: 7) ?? []
     }
     
     func configure() {
@@ -178,21 +183,23 @@ extension ListOfOffersController: CVCalendarViewDelegate, CVCalendarMenuViewDele
 //MARK: - Collection View Delegate & DataSource
 extension ListOfOffersController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return MockFakeData.data.filterCollection.count
+        return mockFakeDataService?.filterCollection.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ListOfOffersFilterCollectionCell.reuseID, for: indexPath) as! ListOfOffersFilterCollectionCell
         
-        cell.fillData(filter: MockFakeData.data.filterCollection[indexPath.item])
+        if let filter = mockFakeDataService?.filterCollection[indexPath.item] {
+            cell.fillData(filter: filter)
+        }
         
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("didSelectItemAt \(MockFakeData.data.filterCollection[indexPath.item])")
+        print("didSelectItemAt \(mockFakeDataService?.filterCollection[indexPath.item] ?? "")")
        
-        offers = MockFakeData.data.getOffers(count: indexPath.item + 1)
+        offers = mockFakeDataService?.getOffers(count: indexPath.item + 1) ?? []
         tableView.reloadData()
     }
     

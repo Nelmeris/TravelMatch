@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import SDWebImage
+import UI
 
 class QuestionCollectionViewCell: UICollectionViewCell {
  
@@ -19,12 +19,12 @@ class QuestionCollectionViewCell: UICollectionViewCell {
     
     // MARK: - Outlets
     
-    @IBOutlet private weak var imageView: UIImageView?
+    @IBOutlet private weak var imageView: ImageView?
     @IBOutlet private weak var titleLabel: UILabel?
     @IBOutlet private weak var checkmarkView: UIImageView?
     
     func configure(with answer: Answer) {
-        imageView?.sd_setImage(with: answer.imageURL, completed: nil)
+        imageView?.imageURL = answer.imageURL
         titleLabel?.text = answer.title
     }
     

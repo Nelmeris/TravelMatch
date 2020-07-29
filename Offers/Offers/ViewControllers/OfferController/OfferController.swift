@@ -14,15 +14,15 @@ class OfferController: BaseViewController {
 
     //MARK: - Constants
     
-    public var offer: FakeOffer!
+    public var offer: Offer!
     private let addToFavoriteButtton = OfferAddToFavoriteButtton()
     
     // MARK: - Output
     var onPicController: ((Int, Int) -> Void)?
     var onReviewsController: ((Int) -> Void)?
-    var onSocialButtonClicked: ((FakeOffer) -> Void)?
-    var onSendMessageButtonClicked: ((FakeOffer) -> Void)?
-    var onBookingDetail: ((FakeOffer) -> Void)?
+    var onSocialButtonClicked: ((Offer) -> Void)?
+    var onSendMessageButtonClicked: ((Offer) -> Void)?
+    var onBookingDetail: ((Offer) -> Void)?
     
     //MARK: - IBOutlet
     

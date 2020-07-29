@@ -6,28 +6,35 @@
 //  Copyright © 2020 Maxim Timokhin. All rights reserved.
 //
 
-import UIKit
 import Core
 import Auth
 import OnBoarding
 import Questions
+import Locals
+import Services
 
 final class AppCoordinator: BaseCoordinator {
         
     private let onBoardingService: OnBoardingService
     private let authService: AuthService
     private let questionsService: QuestionsService
-    
+    private let localsService: LocalsService
+    private let mockFakeDataService: OffersService
+
     private var rootController: NavigationController!
     
     init(
         onBoardingService: OnBoardingService,
         authService: AuthService,
-        questionsService: QuestionsService
+        questionsService: QuestionsService,
+        localsService: LocalsService,
+        mockFakeDataService: OffersService
     ) {
         self.onBoardingService = onBoardingService
         self.authService = authService
         self.questionsService = questionsService
+        self.localsService = localsService
+        self.mockFakeDataService = mockFakeDataService
     }
     
     override func start() {
@@ -102,9 +109,10 @@ final class AppCoordinator: BaseCoordinator {
     // MARK: - Main tabbar
     
     private func showMain() {
-        
         let coordinator = TabCoordinator(
-            rootController: rootController
+            rootController: rootController,
+            localsService: localsService,
+            mockFakeDataService: mockFakeDataService
         )
         
         addDependency(coordinator)

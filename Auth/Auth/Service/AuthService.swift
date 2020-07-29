@@ -9,18 +9,12 @@
 import Foundation
 import Core
 
-public typealias AuthSignInCompletion = (_ result: Result<Authentificatable>) -> Void
-public typealias AuthSignUpCompletion = (_ result: Result<Authentificatable>) -> Void
-public typealias AuthSearchCompletion = (_ result: Result<Authentificatable?>) -> Void
-public typealias AuthLogoutCompletion = (_ result: Result<Bool>) -> Void
-public typealias AuthResetPasswordCompletion = (_ result: Result<Bool>) -> Void
+public typealias AuthLoginCompletion = (_ result: Result<Authentificatable, Error>) -> Void
+public typealias AuthSignUpCompletion = (_ result: Result<Authentificatable, Error>) -> Void
+public typealias AuthSearchCompletion = (_ result: Result<Authentificatable?, Error>) -> Void
+public typealias AuthResetPasswordCompletion = (_ result: Result<Bool, Error>) -> Void
 
-public protocol AuthService {
-    
-    var isAuthorized: Bool { get }
-    
-    var currentUser: Authentificatable? { get }
-    
+public protocol AuthSearch {
     func searchUser(
         byEmail email: String,
         completion: @escaping AuthSearchCompletion
@@ -30,40 +24,42 @@ public protocol AuthService {
         byPhone email: String,
         completion: @escaping AuthSearchCompletion
     )
-    
-    func signInGuest(completion: @escaping AuthSignInCompletion)
-    
-    func signIn(
+}
+
+public protocol AuthLogin {
+    func login(
         userId: String,
         password: String,
         remember: Bool,
-        completion: @escaping AuthSignInCompletion
+        completion: @escaping AuthLoginCompletion
     )
-    
+    func loginGuest(completion: @escaping AuthLoginCompletion)
+}
+
+public protocol AuthSignUp {
     func signUp(
         email: String,
         password: String,
         name: String,
-        completion: @escaping AuthSignInCompletion
+        completion: @escaping AuthLoginCompletion
     )
 
     func signUp(
         phone: String,
         password: String,
         name: String,
-        completion: @escaping AuthSignInCompletion
+        completion: @escaping AuthLoginCompletion
     )
-    
-    func resetPasssword(
+}
+
+public protocol AuthReset {
+    func resetPassword(
         phone: String,
         completion: @escaping AuthResetPasswordCompletion
     )
 
-    func resetPasssword(
+    func resetPassword(
         email: String,
         completion: @escaping AuthResetPasswordCompletion
     )
-    
-    func logout(completion: @escaping AuthLogoutCompletion)
-
 }

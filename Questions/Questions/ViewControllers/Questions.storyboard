@@ -76,7 +76,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="190" height="190"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fj9-jZ-4lK">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fj9-jZ-4lK" customClass="ImageView" customModule="UI">
                                                     <rect key="frame" x="0.0" y="0.0" width="190" height="190"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="fj9-jZ-4lK" secondAttribute="height" multiplier="1:1" id="mNm-dd-Xxq"/>
