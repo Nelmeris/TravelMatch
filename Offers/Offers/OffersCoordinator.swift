@@ -16,14 +16,17 @@ import Reviews
 public final class OffersCoordinator: BaseCoordinator {
     
     private weak var rootController: NavigationController?
-    private let reviewsControllerFactory: ViewControllerFactory
+    private let viewControllerFactory: ViewControllerFactory
+    private let mockFakeDataService: OffersService
     
     public init(rootController: NavigationController,
                 mockFakeDataService: OffersService) {
         self.rootController = rootController
-        self.reviewsControllerFactory = ViewControllerFactory()
+        self.viewControllerFactory = ViewControllerFactory()
+        self.mockFakeDataService = mockFakeDataService
         super.init()
     }
+
     
     public override func start() {
         rootController?.setNavigationBarHidden(true, animated: true)
@@ -31,8 +34,9 @@ public final class OffersCoordinator: BaseCoordinator {
     }
     
     private func showListOfOffersController() {
-        let controller = reviewsControllerFactory.makeListOfOffersController()
-        
+        let controller = viewControllerFactory.makeListOfOffersController()
+        controller.mockFakeDataService = mockFakeDataService
+
         controller.onOfferController = { [weak self] offer in
             self?.showOfferController(offer: offer)
         }
@@ -41,7 +45,7 @@ public final class OffersCoordinator: BaseCoordinator {
     }
     
     private func showOfferController(offer: Offer) {
-        let controller = reviewsControllerFactory.makeOfferController()
+        let controller = viewControllerFactory.makeOfferController()
         controller.offer = offer
         
         controller.onPicController = { [weak self] offerID, scrollToItem in
