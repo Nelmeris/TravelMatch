@@ -47,8 +47,7 @@ public final class ReviewsCoordinator: BaseCoordinator {
         }
                   
         controller.didPressedCloseButton = { [weak self] in
-            self?.rootController?.popViewController(animated: true) /// not working
-            controller.navigationController?.popViewController(animated: true) ///work
+            self?.rootController?.popViewController(animated: true)
         }
         
         rootController?.pushViewController(controller, animated: true)

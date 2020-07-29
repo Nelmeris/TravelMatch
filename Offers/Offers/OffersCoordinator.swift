@@ -64,12 +64,14 @@ public final class OffersCoordinator: BaseCoordinator {
                                             offerID: offerID,
                                             scrollToItem: scrollToItem)
         picCoordinator.start()
+        addDependency(picCoordinator)
     }
     
     private func showReviewsController(offerID: Int) {
-        let picCoordinator = ReviewsCoordinator(rootController: self.rootController!,
+        let reviewsCoordinator = ReviewsCoordinator(rootController: self.rootController!,
                                                 offerID: offerID)
-        picCoordinator.start()
+        reviewsCoordinator.start()
+        addDependency(reviewsCoordinator)
     }
     
     private func showError(error: Error) {
