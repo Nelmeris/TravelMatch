@@ -52,11 +52,24 @@ public final class ProfileCoordinator: BaseCoordinator {
         let vc = viewControllerFactory.makeProfileController()
         vc.coordinator = self
         vc.presenter = self
+        vc.onLogoutButtonClicked = { [weak self] in
+            vc.showActivityIndicator()
+            self?.profileService.logout { (result) in
+                vc.hideActivityIndicator()
+                switch result {
+                case .success: break
+                case .failure(let error):
+                    print(error.localizedDescription)
+                }
+            }
+        }
         controller = vc
         rootController?.viewControllers = [vc]
     }
     
 }
+
+// MARK: - ProfileRoutingLogic
 
 extension ProfileCoordinator: ProfileRoutingLogic {
     
@@ -103,6 +116,8 @@ extension ProfileCoordinator: ProfileRoutingLogic {
     }
     
 }
+
+// MARK: - ProfileViewOutput
 
 extension ProfileCoordinator: ProfileViewOutput {
     

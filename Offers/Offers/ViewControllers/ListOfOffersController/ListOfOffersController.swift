@@ -43,7 +43,7 @@ class ListOfOffersController: BaseViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.offers = mockFakeDataService?.getOffers(count: 7) ?? []
+        self.offers = mockFakeDataService?.getOffers(count: 9) ?? []
     }
     
     func configure() {

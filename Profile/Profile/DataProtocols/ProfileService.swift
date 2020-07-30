@@ -7,5 +7,7 @@
 //
 
 public protocol ProfileService {
+    typealias ProfileLogoutCompletion = (Result<Bool, Error>) -> ()
+    func logout(completion: @escaping ProfileLogoutCompletion)
     func getProfileData() -> ProfileData
 }

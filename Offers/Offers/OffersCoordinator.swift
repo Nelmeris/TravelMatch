@@ -7,8 +7,11 @@
 //
 
 import UIKit
-import Core
 import UI
+import Core
+import Pic
+import Reviews
+
 
 public final class OffersCoordinator: BaseCoordinator {
     
@@ -23,6 +26,7 @@ public final class OffersCoordinator: BaseCoordinator {
         self.mockFakeDataService = mockFakeDataService
         super.init()
     }
+
     
     public override func start() {
         rootController?.setNavigationBarHidden(true, animated: true)
@@ -32,7 +36,7 @@ public final class OffersCoordinator: BaseCoordinator {
     private func showListOfOffersController() {
         let controller = viewControllerFactory.makeListOfOffersController()
         controller.mockFakeDataService = mockFakeDataService
-          
+
         controller.onOfferController = { [weak self] offer in
             self?.showOfferController(offer: offer)
         }
@@ -43,7 +47,35 @@ public final class OffersCoordinator: BaseCoordinator {
     private func showOfferController(offer: Offer) {
         let controller = viewControllerFactory.makeOfferController()
         controller.offer = offer
-        rootController?.pushViewController(controller, animated: true)
+        
+        controller.onPicController = { [weak self] offerID, scrollToItem in
+            self?.showPicController(offerID: offerID, scrollToItem: scrollToItem)
+        }
+        
+        controller.onReviewsController = { [weak self] offerID in
+            self?.showReviewsController(offerID: offerID)
+        }
+        
+        if nil != rootController?.viewControllers.last as? ListOfOffersController {
+            rootController?.pushViewController(controller, animated: true)
+        } else {
+            rootController?.pushViewController(controller, animated: true)
+        }
+    }
+    
+    private func showPicController(offerID: Int, scrollToItem: Int) {
+        let picCoordinator = PicCoordinator(rootController: self.rootController!,
+                                            offerID: offerID,
+                                            scrollToItem: scrollToItem)
+        picCoordinator.start()
+        addDependency(picCoordinator)
+    }
+    
+    private func showReviewsController(offerID: Int) {
+        let reviewsCoordinator = ReviewsCoordinator(rootController: self.rootController!,
+                                                offerID: offerID)
+        reviewsCoordinator.start()
+        addDependency(reviewsCoordinator)
     }
     
     private func showError(error: Error) {

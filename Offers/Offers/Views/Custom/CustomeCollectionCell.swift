@@ -12,12 +12,12 @@ import UI
 
 protocol CustomeCollectionCellProtocol: class {
     func fillData(filter: String)
-    func fillData(image: String)
+    func fillData(image: UIImage)
 }
 
 class CustomeCollectionCell: UICollectionViewCell, CustomeCollectionCellProtocol {
     func fillData(filter: String) {
     }
-    func fillData(image: String) {
+    func fillData(image: UIImage) {
     }
 }

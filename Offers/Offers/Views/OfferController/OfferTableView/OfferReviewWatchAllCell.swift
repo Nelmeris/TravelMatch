@@ -9,9 +9,15 @@
 import UIKit
 import UI
 
-class OfferReviewWatchAllCell: CustomTableViewCell {
-    
+@objc protocol OfferReviewWatchAllCellDelegate: class {
+    @objc optional func didPressedShowAllReviewsButton()
+}
+
+class OfferReviewWatchAllCell: CustomTableViewCell, OfferReviewWatchAllCellDelegate {
+
     static let reuseID = "OfferReviewWatchAllCell"
+    
+    weak var delegate: OfferReviewWatchAllCellDelegate?
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -30,6 +36,9 @@ class OfferReviewWatchAllCell: CustomTableViewCell {
     
     @IBAction func showAllReviewButton() {
         print("showAllReviewButton")
+        delegate?.didPressedShowAllReviewsButton?()
     }
 
 }
+
+

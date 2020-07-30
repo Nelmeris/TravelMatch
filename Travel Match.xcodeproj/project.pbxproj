@@ -14,6 +14,10 @@
 		57AFF42124CC514E007B913E /* Services.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 57AFF41F24CC514E007B913E /* Services.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CE17F77524A9223D0097B224 /* Offers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE17F77424A9223D0097B224 /* Offers.framework */; };
 		CE17F77624A9223D0097B224 /* Offers.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CE17F77424A9223D0097B224 /* Offers.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CE27404C24C6485800BAD20B /* Reviews.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE27404924C6485800BAD20B /* Reviews.framework */; };
+		CE27404D24C6485800BAD20B /* Reviews.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CE27404924C6485800BAD20B /* Reviews.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CE64946124D2311500B79E74 /* Pic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE27404824C6485800BAD20B /* Pic.framework */; };
+		CE64946224D2311500B79E74 /* Pic.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CE27404824C6485800BAD20B /* Pic.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E12150D024A4961100C691E4 /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E12150CF24A4961100C691E4 /* Core.framework */; };
 		E12150D124A4961100C691E4 /* Core.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E12150CF24A4961100C691E4 /* Core.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E12150D924A4980B00C691E4 /* Auth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E12150D824A4980B00C691E4 /* Auth.framework */; };
@@ -82,8 +86,10 @@
 			dstSubfolderSpec = 10;
 			files = (
 				E1EE7EB424AC845D00715B02 /* Locals.framework in Embed Frameworks */,
+				CE64946224D2311500B79E74 /* Pic.framework in Embed Frameworks */,
 				57AFF42124CC514E007B913E /* Services.framework in Embed Frameworks */,
 				E12150DA24A4980B00C691E4 /* Auth.framework in Embed Frameworks */,
+				CE27404D24C6485800BAD20B /* Reviews.framework in Embed Frameworks */,
 				E12150D124A4961100C691E4 /* Core.framework in Embed Frameworks */,
 				E152D36924A79E370009972F /* UI.framework in Embed Frameworks */,
 				CE17F77624A9223D0097B224 /* Offers.framework in Embed Frameworks */,
@@ -102,6 +108,8 @@
 		57A3807424D064B6006FAFEC /* profileImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profileImage.png; sourceTree = "<group>"; };
 		57AFF41F24CC514E007B913E /* Services.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Services.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE17F77424A9223D0097B224 /* Offers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Offers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE27404824C6485800BAD20B /* Pic.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pic.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE27404924C6485800BAD20B /* Reviews.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Reviews.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E12150CF24A4961100C691E4 /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E12150D824A4980B00C691E4 /* Auth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Auth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E130AF21249B43E6009C7A47 /* AuthenticationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AuthenticationServices.framework; path = System/Library/Frameworks/AuthenticationServices.framework; sourceTree = SDKROOT; };
@@ -164,6 +172,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE27404C24C6485800BAD20B /* Reviews.framework in Frameworks */,
 				E152D36824A79E370009972F /* UI.framework in Frameworks */,
 				57AFF42024CC514E007B913E /* Services.framework in Frameworks */,
 				CE17F77524A9223D0097B224 /* Offers.framework in Frameworks */,
@@ -172,6 +181,7 @@
 				E12150D924A4980B00C691E4 /* Auth.framework in Frameworks */,
 				E190E90A24A4A74500E95698 /* OnBoarding.framework in Frameworks */,
 				E1A4CEC1249B47B200DF254F /* CloudKit.framework in Frameworks */,
+				CE64946124D2311500B79E74 /* Pic.framework in Frameworks */,
 				E152D37B24A7A0460009972F /* Questions.framework in Frameworks */,
 				E130AF22249B43E6009C7A47 /* AuthenticationServices.framework in Frameworks */,
 			);
@@ -180,6 +190,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+        CE64945224D21BEB00B79E74 /* Recovered References */ = {
+            isa = PBXGroup;
+            children = (
+                CE27404924C6485800BAD20B /* Reviews.framework */,
+                CE27404824C6485800BAD20B /* Pic.framework */,
+            );
+            name = "Recovered References";
+            sourceTree = "<group>";
+        };
 		57A3804C24D0283C006FAFEC /* Profile */ = {
 			isa = PBXGroup;
 			children = (
@@ -212,6 +231,7 @@
 				E14659C42494B0C100BBC9F5 /* Travel Match */,
 				E14659C32494B0C100BBC9F5 /* Products */,
 				D94AE2D6B9F91AED3D8518BA /* Frameworks */,
+				CE64945224D21BEB00B79E74 /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -616,14 +636,14 @@
 				CODE_SIGN_ENTITLEMENTS = "Travel Match/Environment/Travel Match.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 927UD5JTBP;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "Travel Match/Environment/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "ru.getproger.Travel-Match";
+				PRODUCT_BUNDLE_IDENTIFIER = "ru.getproger.Travel-Match777";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
@@ -638,14 +658,14 @@
 				CODE_SIGN_ENTITLEMENTS = "Travel Match/Environment/Travel Match.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 927UD5JTBP;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "Travel Match/Environment/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "ru.getproger.Travel-Match";
+				PRODUCT_BUNDLE_IDENTIFIER = "ru.getproger.Travel-Match777";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;

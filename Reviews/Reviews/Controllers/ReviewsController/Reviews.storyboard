@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Lato-Regular.ttf">
+            <string>Lato-Regular</string>
+        </array>
+        <array key="Montserrat-Medium.ttf">
+            <string>Montserrat-Medium</string>
+        </array>
+        <array key="Montserrat-Regular.ttf">
+            <string>Montserrat-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Reviews Controller-->
+        <scene sceneID="Uic-LQ-UOA">
+            <objects>
+                <viewController storyboardIdentifier="ReviewsController" id="hM5-9r-1Ux" customClass="ReviewsController" customModule="Reviews" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="CDC-Xg-UYG">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="PIZ-Oq-YVe">
+                                <rect key="frame" x="0.0" y="44" width="414" height="750"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <view key="tableHeaderView" contentMode="scaleToFill" id="haS-zb-IJD">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Отзывы" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X18-vt-KTt">
+                                            <rect key="frame" x="174.5" y="12" width="65.5" height="20"/>
+                                            <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="16"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PUX-P1-DnI">
+                                            <rect key="frame" x="375" y="15" width="14" height="14"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="14" id="2io-Ig-2Ti"/>
+                                                <constraint firstAttribute="height" constant="14" id="Ow5-0A-hKG"/>
+                                            </constraints>
+                                            <state key="normal" image="close"/>
+                                            <connections>
+                                                <action selector="closeButton" destination="hM5-9r-1Ux" eventType="touchUpInside" id="xQX-bH-Lmp"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    <constraints>
+                                        <constraint firstItem="X18-vt-KTt" firstAttribute="centerX" secondItem="haS-zb-IJD" secondAttribute="centerX" id="HZP-js-453"/>
+                                        <constraint firstAttribute="trailing" secondItem="PUX-P1-DnI" secondAttribute="trailing" constant="25" id="Ip4-YJ-mTi"/>
+                                        <constraint firstItem="X18-vt-KTt" firstAttribute="centerY" secondItem="haS-zb-IJD" secondAttribute="centerY" id="RiW-Zy-6PD"/>
+                                        <constraint firstItem="PUX-P1-DnI" firstAttribute="centerY" secondItem="haS-zb-IJD" secondAttribute="centerY" id="tTC-5H-I69"/>
+                                    </constraints>
+                                </view>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="ReviewsTableViewCell" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ReviewsTableViewCell" rowHeight="172" id="294-YJ-tbb" customClass="ReviewsTableViewCell" customModule="Reviews" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="72" width="414" height="172"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="294-YJ-tbb" id="LHV-d5-xPR">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="172"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="janko" translatesAutoresizingMaskIntoConstraints="NO" id="qbh-OG-BJk">
+                                                    <rect key="frame" x="20" y="10" width="60" height="60"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="60" id="9Ss-56-zHR"/>
+                                                        <constraint firstAttribute="height" constant="60" id="j6e-nA-qfP"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Марко Сален" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wbw-yS-U9d">
+                                                    <rect key="frame" x="100" y="20" width="294" height="20"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="20" id="NSe-ij-Ivf"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="14"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Апрель 2020" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LV3-ik-USs">
+                                                    <rect key="frame" x="100" y="40" width="294" height="20"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="20" id="RDh-T5-INg"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="12"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Koe-4b-yTx" customClass="Label" customModule="UI">
+                                                    <rect key="frame" x="20" y="90" width="374" height="72"/>
+                                                    <string key="text">Очень хорошо продуманный тур. Зален профессионален, преподает венгерскую историю с очень большим количеством шуток, имея некоторые ссылки или связи с каждой историей, которую он рассказывает, что, безусловно, значительно облегчает понимание истории в целом. Настоятельно рекомендуется, никто не пожалеет!</string>
+                                                    <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="11"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="lineHeight">
+                                                            <real key="value" value="1.3999999999999999"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="Koe-4b-yTx" secondAttribute="bottom" constant="10" id="5lR-kt-u5F"/>
+                                                <constraint firstItem="LV3-ik-USs" firstAttribute="leading" secondItem="qbh-OG-BJk" secondAttribute="trailing" constant="20" id="6Hi-V2-6ee"/>
+                                                <constraint firstItem="qbh-OG-BJk" firstAttribute="leading" secondItem="LHV-d5-xPR" secondAttribute="leading" constant="20" id="BIW-xv-wh6"/>
+                                                <constraint firstItem="LV3-ik-USs" firstAttribute="top" secondItem="wbw-yS-U9d" secondAttribute="bottom" id="CzR-4L-JEN"/>
+                                                <constraint firstItem="Koe-4b-yTx" firstAttribute="leading" secondItem="LHV-d5-xPR" secondAttribute="leading" constant="20" id="ERc-rf-2dZ"/>
+                                                <constraint firstItem="wbw-yS-U9d" firstAttribute="bottom" secondItem="qbh-OG-BJk" secondAttribute="centerY" id="H88-SB-cx1"/>
+                                                <constraint firstItem="Koe-4b-yTx" firstAttribute="top" secondItem="qbh-OG-BJk" secondAttribute="bottom" constant="20" id="Jbm-5N-bce"/>
+                                                <constraint firstAttribute="trailing" secondItem="wbw-yS-U9d" secondAttribute="trailing" constant="20" id="JgD-yR-dcj"/>
+                                                <constraint firstItem="qbh-OG-BJk" firstAttribute="top" secondItem="LHV-d5-xPR" secondAttribute="top" constant="10" id="PsX-5N-OCq"/>
+                                                <constraint firstAttribute="trailing" secondItem="LV3-ik-USs" secondAttribute="trailing" constant="20" id="Tlb-bq-eZv"/>
+                                                <constraint firstItem="wbw-yS-U9d" firstAttribute="leading" secondItem="qbh-OG-BJk" secondAttribute="trailing" constant="20" id="cXz-z2-EZJ"/>
+                                                <constraint firstAttribute="trailing" secondItem="Koe-4b-yTx" secondAttribute="trailing" constant="20" id="v0A-Rt-AsZ"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="reviewDateLabel" destination="LV3-ik-USs" id="GSV-GB-vxR"/>
+                                            <outlet property="reviewDescriptionLabel" destination="Koe-4b-yTx" id="0vh-ke-6z0"/>
+                                            <outlet property="reviewOwnerImageView" destination="qbh-OG-BJk" id="rTC-lf-EUX"/>
+                                            <outlet property="reviewOwnerNameLabel" destination="wbw-yS-U9d" id="kL4-en-29P"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lm2-xs-CSg">
+                                <rect key="frame" x="0.0" y="794" width="414" height="102"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4kZ-IM-gqc" customClass="Button" customModule="UI">
+                                        <rect key="frame" x="346" y="10" width="48" height="48"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="48" id="FTu-aY-7w8"/>
+                                            <constraint firstAttribute="height" constant="48" id="YPu-Bp-l4c"/>
+                                        </constraints>
+                                        <state key="normal" image="plusWhite" backgroundImage="buttonBackground"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="sendReviewButtonAction" destination="hM5-9r-1Ux" eventType="touchUpInside" id="I7w-5G-Ubh"/>
+                                        </connections>
+                                    </button>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Написать комментарий" textAlignment="natural" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="GwL-cc-QNQ" customClass="TextField" customModule="UI">
+                                        <rect key="frame" x="20" y="10" width="306" height="48"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="48" id="veg-AH-EZr"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="4kZ-IM-gqc" secondAttribute="trailing" constant="20" id="6QJ-E6-CEc"/>
+                                    <constraint firstItem="4kZ-IM-gqc" firstAttribute="leading" secondItem="GwL-cc-QNQ" secondAttribute="trailing" constant="20" id="Lg2-SF-rjW"/>
+                                    <constraint firstAttribute="height" constant="102" id="TRl-Z9-mYV"/>
+                                    <constraint firstItem="GwL-cc-QNQ" firstAttribute="top" secondItem="lm2-xs-CSg" secondAttribute="top" constant="10" id="Wqe-Yn-VL5"/>
+                                    <constraint firstAttribute="bottom" secondItem="GwL-cc-QNQ" secondAttribute="bottom" constant="44" id="aQj-GD-4yE"/>
+                                    <constraint firstItem="4kZ-IM-gqc" firstAttribute="centerY" secondItem="GwL-cc-QNQ" secondAttribute="centerY" id="o5e-RL-PH3"/>
+                                    <constraint firstItem="GwL-cc-QNQ" firstAttribute="leading" secondItem="lm2-xs-CSg" secondAttribute="leading" constant="20" id="qkY-Tm-xuT"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="PIZ-Oq-YVe" firstAttribute="leading" secondItem="MnT-ZA-fC2" secondAttribute="leading" id="LHg-uE-47d"/>
+                            <constraint firstItem="lm2-xs-CSg" firstAttribute="leading" secondItem="MnT-ZA-fC2" secondAttribute="leading" id="S76-6K-V4a"/>
+                            <constraint firstItem="MnT-ZA-fC2" firstAttribute="trailing" secondItem="PIZ-Oq-YVe" secondAttribute="trailing" id="X9U-gG-vl0"/>
+                            <constraint firstItem="MnT-ZA-fC2" firstAttribute="trailing" secondItem="lm2-xs-CSg" secondAttribute="trailing" id="YaM-gI-fJo"/>
+                            <constraint firstItem="PIZ-Oq-YVe" firstAttribute="top" secondItem="MnT-ZA-fC2" secondAttribute="top" id="bxi-vF-mHG"/>
+                            <constraint firstAttribute="bottom" secondItem="lm2-xs-CSg" secondAttribute="bottom" id="f6o-V2-mJi"/>
+                            <constraint firstItem="lm2-xs-CSg" firstAttribute="top" secondItem="PIZ-Oq-YVe" secondAttribute="bottom" id="tXf-fS-1a2"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="MnT-ZA-fC2"/>
+                    </view>
+                    <connections>
+                        <outlet property="controllerNamelabel" destination="X18-vt-KTt" id="via-od-qoK"/>
+                        <outlet property="reviewSuperView" destination="CDC-Xg-UYG" id="u0d-Hl-q8s"/>
+                        <outlet property="reviewTextField" destination="GwL-cc-QNQ" id="oNO-AC-ZPp"/>
+                        <outlet property="sendReviewButtonOutlet" destination="4kZ-IM-gqc" id="fEB-nD-QEp"/>
+                        <outlet property="sendReviewView" destination="lm2-xs-CSg" id="GYr-Hb-ksg"/>
+                        <outlet property="tableView" destination="PIZ-Oq-YVe" id="44i-Nj-gwI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jh3-2h-Rj8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="53.623188405797109" y="65.625"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="buttonBackground" width="40" height="40"/>
+        <image name="close" width="14" height="14"/>
+        <image name="janko" width="80" height="80"/>
+        <image name="plusWhite" width="24" height="24"/>
+    </resources>
+</document>
