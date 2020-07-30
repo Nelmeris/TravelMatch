@@ -11,6 +11,7 @@ import Core
 import Locals
 import Offers
 import Profile
+import Auth
 
 class TabCoordinator: BaseCoordinator {
     
@@ -87,8 +88,7 @@ class TabCoordinator: BaseCoordinator {
         guard let controller = controller as? NavigationController else { fatalError() }
         let coordinator = ProfileCoordinator(rootController: controller,
                                              profileService: profileService,
-                                             notifySettingsService: notifySettingsService,
-                                             authService: authService)
+                                             notifySettingsService: notifySettingsService)
         addDependency(coordinator)
         coordinator.start()
     }

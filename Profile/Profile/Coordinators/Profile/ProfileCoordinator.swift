@@ -36,27 +36,26 @@ public final class ProfileCoordinator: BaseCoordinator {
     private var profileService: ProfileService
     private var notifySettingsService: NotifySettingsService
     private var viewControllerFactory: ViewControllerFactory
-    private let authService: AuthLogout
     
     weak var controller: ProfileViewController?
     
     public init(rootController: NavigationController,
                 profileService: ProfileService,
-                notifySettingsService: NotifySettingsService,
-                authService: AuthLogout) {
+                notifySettingsService: NotifySettingsService) {
         self.rootController = rootController
         self.profileService = profileService
         self.notifySettingsService = notifySettingsService
         self.viewControllerFactory = ViewControllerFactory()
-        self.authService = authService
     }
     
     public override func start() {
         let vc = viewControllerFactory.makeController()
         vc.coordinator = self
         vc.presenter = self
-        vc.onLogoutButtonClicked = {
-            self.authService.logout { (result) in
+        vc.onLogoutButtonClicked = { [weak self] in
+            vc.showActivityIndicator()
+            self?.profileService.logout { (result) in
+                vc.hideActivityIndicator()
                 switch result {
                 case .success: break
                 case .failure(let error):

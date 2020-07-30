@@ -30,7 +30,7 @@ protocol ProfileViewInput: class {
     func displayNotifySettings(_ notifySettings: NotifySettings)
 }
 
-class ProfileViewController: UIViewController {
+class ProfileViewController: BaseViewController {
     
     private let sectionHeaderHeight: CGFloat = 50
     
