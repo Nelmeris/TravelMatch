@@ -20,22 +20,28 @@ class TabCoordinator: BaseCoordinator {
     private let mockFakeDataService: OffersService
     private let profileService: ProfileService
     private let notifySettingsService: NotifySettingsService
+    private let authService: AuthLogout
 
     init(
         rootController: NavigationController,
         localsService: LocalsService,
         mockFakeDataService: OffersService,
         profileService: ProfileService,
-        notifySettingsService: NotifySettingsService
+        notifySettingsService: NotifySettingsService,
+        authService: AuthLogout
     ) {
         self.rootController = rootController
         self.localsService = localsService
         self.mockFakeDataService = mockFakeDataService
         self.profileService = profileService
         self.notifySettingsService = notifySettingsService
+        self.authService = authService
     }
     
     override func start() {
+        authService.subscribeOnLogout(observer: self,
+                                      selector: #selector(onLogout))
+        
         let tabBarController = buildTabBarController()
         rootController?.present(tabBarController, animated: false, completion: nil)
         startOffersCoordinator(with: tabBarController.viewControllers![1])
@@ -81,7 +87,8 @@ class TabCoordinator: BaseCoordinator {
         guard let controller = controller as? NavigationController else { fatalError() }
         let coordinator = ProfileCoordinator(rootController: controller,
                                              profileService: profileService,
-                                             notifySettingsService: notifySettingsService)
+                                             notifySettingsService: notifySettingsService,
+                                             authService: authService)
         addDependency(coordinator)
         coordinator.start()
     }
@@ -95,6 +102,11 @@ class TabCoordinator: BaseCoordinator {
             tag: tag
         )
         return navController
+    }
+    
+    @objc
+    private func onLogout() {
+        onFinishFlow?()
     }
 
 }

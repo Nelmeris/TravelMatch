@@ -23,6 +23,7 @@
 		57A3807A24D0841F006FAFEC /* NotifySettingsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A3807924D0841F006FAFEC /* NotifySettingsService.swift */; };
 		57A3807C24D08569006FAFEC /* NotifySettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A3807B24D08569006FAFEC /* NotifySettings.swift */; };
 		57A3808A24D0B60C006FAFEC /* TableSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A3808924D0B60C006FAFEC /* TableSectionHeaderView.swift */; };
+		57A3809124D2D10D006FAFEC /* AuthLogout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A3809024D2D10D006FAFEC /* AuthLogout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -57,6 +58,7 @@
 		57A3807924D0841F006FAFEC /* NotifySettingsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifySettingsService.swift; sourceTree = "<group>"; };
 		57A3807B24D08569006FAFEC /* NotifySettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifySettings.swift; sourceTree = "<group>"; };
 		57A3808924D0B60C006FAFEC /* TableSectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableSectionHeaderView.swift; sourceTree = "<group>"; };
+		57A3809024D2D10D006FAFEC /* AuthLogout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthLogout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +169,7 @@
 				57A3806324D04658006FAFEC /* ProfileService.swift */,
 				57A3807924D0841F006FAFEC /* NotifySettingsService.swift */,
 				57A3807B24D08569006FAFEC /* NotifySettings.swift */,
+				57A3809024D2D10D006FAFEC /* AuthLogout.swift */,
 			);
 			path = DataProtocols;
 			sourceTree = "<group>";
@@ -289,6 +292,7 @@
 				57A3804824D01FD1006FAFEC /* ProfileViewController.swift in Sources */,
 				57A3807024D0519E006FAFEC /* ProfileMenuSwitchCell.swift in Sources */,
 				57A3808A24D0B60C006FAFEC /* TableSectionHeaderView.swift in Sources */,
+				57A3809124D2D10D006FAFEC /* AuthLogout.swift in Sources */,
 				57A3807C24D08569006FAFEC /* NotifySettings.swift in Sources */,
 				57A3805924D04464006FAFEC /* ProfileData.swift in Sources */,
 				57A3806424D04658006FAFEC /* ProfileService.swift in Sources */,

@@ -122,8 +122,14 @@ final class AppCoordinator: BaseCoordinator {
             localsService: localsService,
             mockFakeDataService: mockFakeDataService,
             profileService: profileService,
-            notifySettingsService: notifySettingsService
+            notifySettingsService: notifySettingsService,
+            authService: authService
         )
+        
+        coordinator.onFinishFlow = { [weak self, weak coordinator] in
+            self?.removeDependency(coordinator)
+            self?.start()
+        }
         
         addDependency(coordinator)
         coordinator.start()

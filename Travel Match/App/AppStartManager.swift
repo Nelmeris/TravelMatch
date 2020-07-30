@@ -34,7 +34,8 @@ final class AppStartManager {
                 userDefaults: UserDefaults.standard
             ),
             authService: UserDefaultsAuthService(
-                userDefaults: UserDefaults.standard
+                userDefaults: UserDefaults.standard,
+                notificationCenter: NotificationCenter.default
             ),
             questionsService: TravelQuestionService(
                 userDefaults: UserDefaults.standard
