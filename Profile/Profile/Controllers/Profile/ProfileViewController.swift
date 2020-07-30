@@ -11,16 +11,16 @@ import UI
 
 struct ProfileMenuSection {
     let title: String
-    let items: [ProfileMenuItem]
+    let items: [Item]
 
-    struct ProfileMenuItem {
-        enum ProfileMenuItemType {
+    struct Item {
+        enum _Type {
             case link(onSelect: () -> ())
             case `switch`(isOn: Bool, onSwitch: (Bool) -> ())
         }
         
         let title: String
-        let type: ProfileMenuItemType
+        let type: _Type
     }
 }
 
@@ -47,111 +47,37 @@ class ProfileViewController: BaseViewController {
     
     private lazy var menuSections: [ProfileMenuSection] = { [weak self] in
         self?.presenter?.presentNotifySettings()
-        var sections: [ProfileMenuSection] = []
-        
-        var accountItems: [ProfileMenuSection.ProfileMenuItem] = [
-            .init(
-                title: "Личная информация",
-                type: .link {
-                    self?.coordinator?.toPersonalInfo()
-                }
-            ),
-            .init(
-                title: "Награды и достижения",
-                type: .link {
-                    self?.coordinator?.toAchievements()
-                }
-            ),
-            .init(
-                title: "Реквизиты",
-                type: .link {
-                    self?.coordinator?.toOffers()
-                }
-            ),
-            .init(
-                title: "Сообщения",
-                type: .link {
-                    self?.coordinator?.toMessages()
-                }
-            ),
-            .init(
-                title: "Избранное",
-                type: .link {
-                    self?.coordinator?.toFavourites()
-                }
-            )
+        var sections: [(String, [ProfileMenuSection.Item])] = [
+            ("Аккаунт", [
+                ("Личная информация", .link { self?.coordinator?.toPersonalInfo() }),
+                ("Награды и достижения", .link { self?.coordinator?.toAchievements() }),
+                ("Реквизиты", .link { self?.coordinator?.toOffers() }),
+                ("Сообщения", .link { self?.coordinator?.toMessages() }),
+                ("Избранное", .link { self?.coordinator?.toFavourites() })
+            ].map(ProfileMenuSection.Item.init)),
+            ("Активность", [
+                ("Мои бронирования", .link { self?.coordinator?.toBookings() }),
+                ("Мои предложения", .link { self?.coordinator?.toOffers() }),
+                ("Я местный", .link { self?.coordinator?.toLocal() }),
+                ("Заявки на бронирование", .link { self?.coordinator?.toBookingRequests() } )
+            ].map(ProfileMenuSection.Item.init)),
+            ("Уведомления", [
+                ("Push-уведомления", .switch(isOn: self?.notifySettings?.isPushOn ?? false) {
+                    self?.presenter?.setPushSetting(isOn: $0)
+                }),
+                ("Sms рассылка", .switch(isOn: self?.notifySettings?.isSmsOn ?? false) {
+                    self?.presenter?.setSmsSetting(isOn: $0)
+                }),
+                ("E-mail рассылка", .switch(isOn: self?.notifySettings?.isEmailOn ?? false) {
+                    self?.presenter?.setEmailSetting(isOn: $0)
+                })
+            ].map(ProfileMenuSection.Item.init)),
+            ("Поддержка", [
+                ("Чат с поддержкой", .link { self?.coordinator?.toSupportChat() } )
+            ].map(ProfileMenuSection.Item.init))
         ]
         
-        var activityItems: [ProfileMenuSection.ProfileMenuItem] = [
-            .init(
-                title: "Мои бронирования",
-                type: .link {
-                    self?.coordinator?.toBookings()
-                }
-            ),
-            .init(
-                title: "Мои предложения",
-                type: .link {
-                    self?.coordinator?.toOffers()
-                }
-            ),
-            .init(
-                title: "Я местный",
-                type: .link {
-                    self?.coordinator?.toLocal()
-                }
-            ),
-            .init(
-                title: "Заявки на бронирование",
-                type: .link {
-                    self?.coordinator?.toBookingRequests()
-                }
-            )
-        ]
-        
-        var notifyItems: [ProfileMenuSection.ProfileMenuItem] = [
-            .init(
-                title: "Push-уведомления",
-                type: .switch(isOn: self?.notifySettings?.isPushOn ?? false) { isOn in
-                    self?.presenter?.setPushSetting(isOn: isOn)
-                }
-            ),
-            .init(
-                title: "Sms рассылка",
-                type: .switch(isOn: self?.notifySettings?.isSmsOn ?? false) { isOn in
-                    self?.presenter?.setSmsSetting(isOn: isOn)
-                }
-            ),
-            .init(
-                title: "E-mail рассылка",
-                type: .switch(isOn: self?.notifySettings?.isEmailOn ?? false) { isOn in
-                    self?.presenter?.setEmailSetting(isOn: isOn)
-                }
-            )
-        ]
-        
-        var supportItems: [ProfileMenuSection.ProfileMenuItem] = [
-            .init(
-                title: "Чат с поддержкой",
-                type: .link {
-                    self?.coordinator?.toSupportChat()
-                }
-            )
-        ]
-        
-        sections.append(ProfileMenuSection(title: "Аккаунт",
-                                           items: accountItems))
-        
-        sections.append(ProfileMenuSection(title: "Активность",
-                                           items: activityItems))
-        
-        sections.append(ProfileMenuSection(title: "Уведомления",
-                                           items: notifyItems))
-        
-        sections.append(ProfileMenuSection(title: "Поддержка",
-                                           items: supportItems))
-        
-        return sections
+        return sections.map(ProfileMenuSection.init)
     }()
     
     private var notifySettings: NotifySettings? {
