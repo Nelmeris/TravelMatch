@@ -52,6 +52,8 @@ public final class ProfileCoordinator: BaseCoordinator {
         let vc = viewControllerFactory.makeController()
         vc.coordinator = self
         vc.presenter = self
+        vc.onLogoutButtonClicked = {
+        }
         controller = vc
         rootController?.viewControllers = [vc]
     }
