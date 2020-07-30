@@ -32,40 +32,18 @@ protocol ProfileViewInput: class {
 
 class ProfileViewController: BaseViewController {
     
-    private let sectionHeaderHeight: CGFloat = 50
+    // MARK: - Input
     
     var coordinator: ProfileRoutingLogic?
     var presenter: ProfileViewOutput?
     
-    private var notifySettings: NotifySettings? {
-        didSet {
-            guard let notifySettings = notifySettings else { return }
-            guard let pushCell = menuTableView.cellForRow(at: IndexPath(row: 0, section: 2)) as? ProfileMenuSwitchCell,
-                let smsCell = menuTableView.cellForRow(at: IndexPath(row: 1, section: 2)) as? ProfileMenuSwitchCell,
-                let emailCell = menuTableView.cellForRow(at: IndexPath(row: 2, section: 2)) as? ProfileMenuSwitchCell else { return }
-            pushCell.switch.setOn(notifySettings.isPushOn, animated: true)
-            smsCell.switch.setOn(notifySettings.isSmsOn, animated: true)
-            emailCell.switch.setOn(notifySettings.isEmailOn, animated: true)
-        }
-    }
-
-    @IBOutlet weak var profileImageView: UIImageView!
-    @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var phoneNumberLabel: UILabel!
-    @IBOutlet weak var menuTableView: UITableView! {
-        didSet {
-            menuTableView.dataSource = self
-            menuTableView.delegate = self
-            menuTableView.register(UINib(nibName: "ProfileMenuSwitchCell",
-                                         bundle: Bundle(for: Self.self)),
-                                   forCellReuseIdentifier: ProfileMenuSwitchCell.reuseIdentifier)
-            menuTableView.register(UINib(nibName: "ProfileMenuLinkCell",
-                                         bundle: Bundle(for: Self.self)),
-                                   forCellReuseIdentifier: ProfileMenuLinkCell.reuseIdentifier)
-        }
-    }
+    // MARK: - Output
     
-    @IBOutlet weak var menuTableViewHeight: NSLayoutConstraint!
+    public var onLogoutButtonClicked: (() -> ())?
+    
+    // MARK: - Properties
+    
+    private let sectionHeaderHeight: CGFloat = 50
     
     private lazy var menuSections: [ProfileMenuSection] = { [weak self] in
         self?.presenter?.presentNotifySettings()
@@ -176,6 +154,40 @@ class ProfileViewController: BaseViewController {
         return sections
     }()
     
+    private var notifySettings: NotifySettings? {
+        didSet {
+            guard let notifySettings = notifySettings else { return }
+            guard let pushCell = menuTableView.cellForRow(at: IndexPath(row: 0, section: 2)) as? ProfileMenuSwitchCell,
+                let smsCell = menuTableView.cellForRow(at: IndexPath(row: 1, section: 2)) as? ProfileMenuSwitchCell,
+                let emailCell = menuTableView.cellForRow(at: IndexPath(row: 2, section: 2)) as? ProfileMenuSwitchCell else { return }
+            pushCell.switch.setOn(notifySettings.isPushOn, animated: true)
+            smsCell.switch.setOn(notifySettings.isSmsOn, animated: true)
+            emailCell.switch.setOn(notifySettings.isEmailOn, animated: true)
+        }
+    }
+    
+    // MARK: - Outlets
+
+    @IBOutlet weak var profileImageView: UIImageView!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var phoneNumberLabel: UILabel!
+    @IBOutlet weak var menuTableView: UITableView! {
+        didSet {
+            menuTableView.dataSource = self
+            menuTableView.delegate = self
+            menuTableView.register(UINib(nibName: "ProfileMenuSwitchCell",
+                                         bundle: Bundle(for: Self.self)),
+                                   forCellReuseIdentifier: ProfileMenuSwitchCell.reuseIdentifier)
+            menuTableView.register(UINib(nibName: "ProfileMenuLinkCell",
+                                         bundle: Bundle(for: Self.self)),
+                                   forCellReuseIdentifier: ProfileMenuLinkCell.reuseIdentifier)
+        }
+    }
+    
+    @IBOutlet weak var menuTableViewHeight: NSLayoutConstraint!
+    
+    // MARK: - Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         hideLastSeparatorLine()
@@ -208,14 +220,14 @@ class ProfileViewController: BaseViewController {
         onLogoutButtonClicked?()
     }
     
-    public var onLogoutButtonClicked: (() -> ())?
-    
     private func hideLastSeparatorLine() {
         let frame = CGRect(x: 0, y: 0, width: menuTableView.frame.size.width, height: 1)
         menuTableView.tableFooterView = UIView(frame: frame)
     }
     
 }
+
+// MARK: - ProfileViewInput
 
 extension ProfileViewController: ProfileViewInput {
     
@@ -234,6 +246,8 @@ extension ProfileViewController: ProfileViewInput {
     }
     
 }
+
+// MARK: - UITableViewDataSource
 
 extension ProfileViewController: UITableViewDataSource {
     
@@ -274,6 +288,8 @@ extension ProfileViewController: UITableViewDataSource {
     }
     
 }
+
+// MARK: - UITableViewDelegate
 
 extension ProfileViewController: UITableViewDelegate {
     

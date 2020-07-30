@@ -616,7 +616,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Travel Match/Environment/Travel Match.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 927UD5JTBP;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "Travel Match/Environment/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -638,7 +638,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Travel Match/Environment/Travel Match.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 927UD5JTBP;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "Travel Match/Environment/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = (

@@ -69,6 +69,8 @@ public final class ProfileCoordinator: BaseCoordinator {
     
 }
 
+// MARK: - ProfileRoutingLogic
+
 extension ProfileCoordinator: ProfileRoutingLogic {
     
     func toPersonalInfo() {
@@ -112,6 +114,8 @@ extension ProfileCoordinator: ProfileRoutingLogic {
     }
     
 }
+
+// MARK: - ProfileViewOutput
 
 extension ProfileCoordinator: ProfileViewOutput {
     
