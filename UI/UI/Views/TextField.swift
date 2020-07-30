@@ -48,17 +48,14 @@ public class TextField: UITextField {
     
     public override init(frame: CGRect) {
         super.init(frame: frame)
+        setupView()
         setupDefaults()
     }
     
     public required init?(coder: NSCoder) {
         super.init(coder: coder)
-        setupDefaults()
-    }
-    
-    public override func layoutSubviews() {
-        super.layoutSubviews()
         setupView()
+        setupDefaults()
     }
     
     // MARK: - Overrides

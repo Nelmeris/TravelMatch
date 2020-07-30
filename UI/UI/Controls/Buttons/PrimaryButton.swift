@@ -17,11 +17,19 @@ public class PrimaryButton: Button {
         }
     }
     
-    override func setupView() {
-        super.setupView()
+    public override func prepareForInterfaceBuilder() {
+        super.prepareForInterfaceBuilder()
         
         setTitleColor(UIColor.Buttons.primaryTextColor, for: .normal)
         setTitleColor(UIColor.Buttons.disabledTextColor, for: .disabled)
+        setupBackgroundColor()
+    }
+    
+    override func setupView() {
+        super.setupView()
+        setTitleColor(UIColor.Buttons.primaryTextColor, for: .normal)
+        setTitleColor(UIColor.Buttons.disabledTextColor, for: .disabled)
+        setupBackgroundColor()
     }
     
     private func setupBackgroundColor() {

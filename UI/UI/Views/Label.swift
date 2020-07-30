@@ -13,23 +13,20 @@ public class Label: UILabel {
 
     @IBInspectable
     var lineHeight: CGFloat = 1.0 {
-        didSet {
-            setUpView()
-        }
+        didSet { setupView() }
     }
     
-    public override func awakeFromNib() {
-        super.awakeFromNib()
-        setUpView()
+    public override init(frame: CGRect) {
+        super.init(frame: frame)
+        setupView()
     }
     
-    public override func prepareForInterfaceBuilder() {
-        super.prepareForInterfaceBuilder()
-        setUpView()
-        setNeedsDisplay()
+    public required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        setupView()
     }
     
-    func setUpView() {
+    func setupView() {
         setLineHeight(lineHeight: lineHeight)
     }
     

@@ -13,29 +13,17 @@ public class RoundedView: UIView {
     
     public override init(frame: CGRect) {
         super.init(frame: frame)
-        setupDefaults()
+        setupView()
     }
     
     public required init?(coder: NSCoder) {
         super.init(coder: coder)
-        setupDefaults()
-    }
-    
-    public override func layoutSubviews() {
-        super.layoutSubviews()
         setupView()
     }
-
+    
     private func setupView() {
         clipsToBounds = true
+        cornerRadius = 10
     }
     
-    private func setupDefaults() {
-        cornerRadius = 10
-        if borderColor != nil {
-            borderWidth = 1
-        } else {
-            borderWidth = 0
-        }
-    }
 }
