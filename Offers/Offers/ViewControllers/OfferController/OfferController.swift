@@ -11,16 +11,15 @@ import Core
 import UI
 
 class OfferController: BaseViewController {
-    
+
     //MARK: - Constants
     
     public var offer: Offer!
     private let addToFavoriteButtton = OfferAddToFavoriteButtton()
     
     // MARK: - Output
-    
-    var onPicController: ((Offer) -> Void)?
-    var onReviews: ((Offer) -> Void)?
+    var onPicController: ((Int, Int) -> Void)?
+    var onReviewsController: ((Int) -> Void)?
     var onSocialButtonClicked: ((Offer) -> Void)?
     var onSendMessageButtonClicked: ((Offer) -> Void)?
     var onBookingDetail: ((Offer) -> Void)?
@@ -30,6 +29,11 @@ class OfferController: BaseViewController {
     @IBOutlet weak var tableView: UITableView!
     
     //MARK: - Controller Livecycle
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        navigationController?.setNavigationBarHidden(false, animated: true)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,8 +54,6 @@ class OfferController: BaseViewController {
     
     // MARK: NavigationBar configurate
     func configureNavigationBar() {
-        //show nav bar
-//        self.navigationController?.setNavigationBarHidden(false, animated: true)
         // hite title for back button
         self.navigationController?.navigationBar.topItem?.title = ""
         // add addInFavorite button
@@ -93,6 +95,7 @@ extension OfferController: UITableViewDelegate, UITableViewDataSource {
         case 1:
             let offerRatingInfoCell = tableView.dequeueReusableCell(withIdentifier: OfferRatingInfoCell.reuseID, for: indexPath) as! OfferRatingInfoCell
             offerRatingInfoCell.separatorInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
+            offerRatingInfoCell.delegate = self
             cell = offerRatingInfoCell
             cell.fillData(offer: offer)
         case 2:
@@ -100,6 +103,7 @@ extension OfferController: UITableViewDelegate, UITableViewDataSource {
             cell = offerSocialCell
         case 3:
             let offerReviewWatchAllCell = tableView.dequeueReusableCell(withIdentifier: OfferReviewWatchAllCell.reuseID, for: indexPath) as! OfferReviewWatchAllCell
+            offerReviewWatchAllCell.delegate = self
             cell = offerReviewWatchAllCell
         case 4:
             let offerLastThreeReviewsCell = tableView.dequeueReusableCell(withIdentifier: OfferLastThreeReviewsCell.reuseID, for: indexPath) as! OfferLastThreeReviewsCell
@@ -130,5 +134,18 @@ extension OfferController: UITableViewDelegate, UITableViewDataSource {
         if indexPath.row == 0 {
             navigationController?.setNavigationBarHidden(true, animated: true)
         }
+    }
+}
+
+extension OfferController: OfferRatingInfoCellCollectionDelegate {
+    func didSelectItem(index: Int) {
+        onPicController?(offer.id, index)
+    }
+}
+
+extension OfferController: OfferReviewWatchAllCellDelegate {
+    func didPressedShowAllReviewsButton() {
+        let offerID = offer.id
+        onReviewsController?(offerID)
     }
 }
