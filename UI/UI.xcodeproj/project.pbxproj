@@ -10,6 +10,7 @@
 		570B393D24CCB88100827B42 /* CellProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570B393A24CCB88100827B42 /* CellProtocols.swift */; };
 		570B393E24CCB88100827B42 /* UITableView+ReusableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570B393B24CCB88100827B42 /* UITableView+ReusableCell.swift */; };
 		570B393F24CCB88100827B42 /* TableViewAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570B393C24CCB88100827B42 /* TableViewAdapter.swift */; };
+		57A3808124D098D5006FAFEC /* Switch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A3808024D098D5006FAFEC /* Switch.swift */; };
 		CE2806AA24A931980066FE7A /* CVCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = CE2806A924A931980066FE7A /* CVCalendar */; };
 		CE90C7A324C4C2C500731135 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE90C7A224C4C2C500731135 /* Assets.xcassets */; };
 		E121510924A49B8400C691E4 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E121510724A49B8000C691E4 /* TextField.swift */; };
@@ -46,6 +47,7 @@
 		570B393A24CCB88100827B42 /* CellProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellProtocols.swift; sourceTree = "<group>"; };
 		570B393B24CCB88100827B42 /* UITableView+ReusableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+ReusableCell.swift"; sourceTree = "<group>"; };
 		570B393C24CCB88100827B42 /* TableViewAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewAdapter.swift; sourceTree = "<group>"; };
+		57A3808024D098D5006FAFEC /* Switch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Switch.swift; sourceTree = "<group>"; };
 		CE90C7A224C4C2C500731135 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E12150E524A49B6100C691E4 /* UI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E12150E924A49B6100C691E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 				E121510624A49B8000C691E4 /* Button.swift */,
 				E121510724A49B8000C691E4 /* TextField.swift */,
 				E17CAAD224B44C7E009C5318 /* BarButtonItem.swift */,
+				57A3808024D098D5006FAFEC /* Switch.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -385,6 +388,7 @@
 				E121510C24A49BB300C691E4 /* LinkButton.swift in Sources */,
 				E1E450A924AA846500BDDAFF /* UICollectionView+Helpers.swift in Sources */,
 				E14434C224CEB23F0037E254 /* CheckboxControl.swift in Sources */,
+				57A3808124D098D5006FAFEC /* Switch.swift in Sources */,
 				E121512324A49C6D00C691E4 /* BaseViewController.swift in Sources */,
 				E152E2BB24B2FE98002453D7 /* ImageView.swift in Sources */,
 				E1E450CC24AB11EB00BDDAFF /* RoundedView.swift in Sources */,

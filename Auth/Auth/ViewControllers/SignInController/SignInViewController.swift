@@ -34,7 +34,7 @@ class SignInViewController: BaseViewController {
     @IBOutlet private weak var scrollView: UIScrollView?
     @IBOutlet private weak var titleLabel: Label?
     @IBOutlet private weak var passwordField: TextField?
-    @IBOutlet private weak var rememberCheckbox: UISwitch?
+    @IBOutlet private weak var rememberCheckbox: Switch?
     @IBOutlet private weak var nextButton: Button?
 
     @IBOutlet private weak var buttonsBottomConstraint: NSLayoutConstraint?
