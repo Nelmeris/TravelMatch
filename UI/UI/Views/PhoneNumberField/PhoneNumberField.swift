@@ -11,7 +11,9 @@ import PhoneNumberKit
 
 @IBDesignable
 public class PhoneNumberField: PhoneNumberTextField {
-
+    
+    // MARK: - Properties
+    
     @IBInspectable
     var horizontalPadding: CGFloat = 10
     
@@ -21,40 +23,64 @@ public class PhoneNumberField: PhoneNumberTextField {
     @IBInspectable
     var cornerRadius: CGFloat = 10 {
         didSet {
-            self.layer.cornerRadius = self.cornerRadius
-        }
-    }
-    
-    @IBInspectable
-    var borderColor: UIColor = UIColor.TextFields.defaultBorderColor {
-        didSet {
-            updateColors()
+            setCornerRadius(cornerRadius)
         }
     }
     
     @IBInspectable
     var borderWidth: CGFloat = 1 {
         didSet {
-            self.layer.borderWidth = borderWidth
+            setBorderWidth(borderWidth)
         }
     }
     
     @IBInspectable
     public var isInvalid: Bool = false {
         didSet {
-            updateColors()
+            setIsInvalid(isInvalid)
         }
     }
     
-    public override func textRect(forBounds bounds: CGRect) -> CGRect {
-        let countryButtonSpace: CGFloat = withFlag ? 30.0 : 0.0
-        
-        return CGRect(
-            x: bounds.origin.x + horizontalPadding + countryButtonSpace,
-            y: bounds.origin.y + verticalPadding,
-            width: bounds.size.width - horizontalPadding * 2 - countryButtonSpace,
-            height: bounds.size.height - verticalPadding * 2
-        )
+    @IBInspectable
+    public var defaultTextColor: UIColor? = UIColor.TextFields.defaultTextColor {
+        didSet {
+            setIsInvalid(isInvalid)
+        }
+    }
+    
+    @IBInspectable
+    public var invalidTextColor: UIColor? = UIColor.TextFields.invalidTextColor {
+        didSet {
+            setIsInvalid(isInvalid)
+        }
+    }
+    
+    @IBInspectable
+    public var defaultBorderColor: UIColor = UIColor.TextFields.defaultBorderColor {
+        didSet {
+            setIsInvalid(isInvalid)
+        }
+    }
+    
+    @IBInspectable
+    public var invalidBorderColor: UIColor? = UIColor.TextFields.invalidBorderColor {
+        didSet {
+            setIsInvalid(isInvalid)
+        }
+    }
+    
+    // MARK: - Lifecycle
+    
+    public override func awakeFromNib() {
+        super.awakeFromNib()
+        setupView()
+        setupDefaults()
+    }
+    
+    public override func prepareForInterfaceBuilder() {
+        super.prepareForInterfaceBuilder()
+        setupView()
+        setupDefaults()
     }
     
     public override func layoutSubviews() {
@@ -66,23 +92,28 @@ public class PhoneNumberField: PhoneNumberTextField {
             height: flagButton.frame.height
         )
     }
+    
+    // MARK: - Overrides
+    
+    public override func textRect(forBounds bounds: CGRect) -> CGRect {
+        let countryButtonSpace: CGFloat = withFlag ? 30.0 : 0.0
+        
+        return CGRect(
+            x: bounds.origin.x + horizontalPadding + countryButtonSpace,
+            y: bounds.origin.y + verticalPadding,
+            width: bounds.size.width - horizontalPadding * 2 - countryButtonSpace,
+            height: bounds.size.height - verticalPadding * 2
+        )
+    }
 
     public override func editingRect(forBounds bounds: CGRect) -> CGRect {
-        return self.textRect(forBounds: bounds)
+        return textRect(forBounds: bounds)
     }
     
-    public override func awakeFromNib() {
-        super.awakeFromNib()
-        setUpView()
-    }
+    // MARK: - Setups
     
-    public override func prepareForInterfaceBuilder() {
-        super.prepareForInterfaceBuilder()
-        setUpView()
-    }
-    
-    func setUpView() {
-        self.clipsToBounds = true
+    private func setupView() {
+        clipsToBounds = true
         withFlag = true
         withPrefix = true
         withExamplePlaceholder = true
@@ -91,14 +122,31 @@ public class PhoneNumberField: PhoneNumberTextField {
         }
     }
     
-    private func updateColors() {
-        if isInvalid {
-            self.textColor = UIColor.TextFields.invalidTextColor
-            self.layer.borderColor = UIColor.TextFields.invalidBorderColor.cgColor
-        } else {
-            self.textColor = UIColor.TextFields.defaultTextColor
-            self.layer.borderColor = borderColor.cgColor
-        }
+    private func setupDefaults() {
+        setCornerRadius(cornerRadius)
+        setBorderWidth(borderWidth)
+        setIsInvalid(isInvalid)
+    }
+    
+    private func setCornerRadius(_ value: CGFloat) {
+        layer.cornerRadius = value
+    }
+    
+    private func setBorderWidth(_ value: CGFloat) {
+        layer.borderWidth = value
+    }
+    
+    private func setBorderColor(_ value: UIColor?) {
+        layer.borderColor = value?.cgColor
+    }
+    
+    private func setTextColor(_ value: UIColor?) {
+        textColor = value
+    }
+    
+    private func setIsInvalid(_ value: Bool) {
+        setTextColor(!value ? defaultTextColor : invalidTextColor)
+        setBorderColor(!value ? defaultBorderColor : invalidBorderColor)
     }
         
 }
