@@ -12,29 +12,10 @@ import UIKit
 public class ShadowView: UIView {
     
     @IBInspectable
-    var shadowColor: UIColor = .black {
-        didSet {
-            setupGradient()
-        }
-    }
-
-    @IBInspectable
-    var shadowOpacity: CGFloat = 0.7 {
-        didSet {
-            setupGradient()
-        }
-    }
-    
-    @IBInspectable
     var shadowSize: CGFloat = 0.6 {
         didSet {
             setupGradient()
         }
-    }
-    
-    public override func awakeFromNib() {
-        super.awakeFromNib()
-        setupView()
     }
     
     public override func layoutSubviews() {
@@ -58,7 +39,7 @@ public class ShadowView: UIView {
         )
         gradient.colors = [
             UIColor.clear.cgColor,
-            shadowColor.withAlphaComponent(shadowOpacity).cgColor
+            shadowColor?.withAlphaComponent(CGFloat(shadowOpacity)) as Any
         ]
         gradient.startPoint = CGPoint(x: 0, y: 0)
         gradient.endPoint = CGPoint(x: 0, y: 1)

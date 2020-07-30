@@ -27,13 +27,6 @@ public class DropdownControl: UIControl {
         }
     }
     
-    @IBInspectable
-    public var cornerRadius: CGFloat = 10.0 {
-        didSet {
-            setupView()
-        }
-    }
-    
     // MARK: - Private
     
     private lazy var placeholderLabel: Label = {
