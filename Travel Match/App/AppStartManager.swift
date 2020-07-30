@@ -29,18 +29,25 @@ final class AppStartManager {
     
     public func startCoorditator() {
         
+        let authService = UserDefaultsAuthService(
+            userDefaults: UserDefaults.standard,
+            notificationCenter: NotificationCenter.default
+        )
+        
         coordinator = AppCoordinator(
             onBoardingService: UserDefaultsOnBoardingService(
                 userDefaults: UserDefaults.standard
             ),
-            authService: UserDefaultsAuthService(
-                userDefaults: UserDefaults.standard
-            ),
+            authService: authService,
             questionsService: TravelQuestionService(
                 userDefaults: UserDefaults.standard
             ),
             localsService: FakeLocalsService(),
-            mockFakeDataService: OffersService.data
+            mockFakeDataService: OffersService.data,
+            profileService: ProfileService(authService: authService),
+            notifySettingsService: UserDefaultsSettingsService(
+                userDefaults: UserDefaults.standard
+            )
         )
         
         coordinator?.start()

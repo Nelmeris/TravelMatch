@@ -17,6 +17,9 @@
       location = "container:"
       name = "Modules">
       <FileRef
+         location = "group:Profile/Profile.xcodeproj">
+      </FileRef>
+      <FileRef
          location = "group:Auth/Auth.xcodeproj">
       </FileRef>
       <FileRef
