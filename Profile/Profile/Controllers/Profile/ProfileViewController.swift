@@ -44,6 +44,7 @@ class ProfileViewController: BaseViewController {
     // MARK: - Properties
     
     private let sectionHeaderHeight: CGFloat = 50
+    private let rowHeight: CGFloat = 52.0
     
     private lazy var menuSections: [ProfileMenuSection] = { [weak self] in
         self?.presenter?.presentNotifySettings()
@@ -181,10 +182,6 @@ extension ProfileViewController: UITableViewDataSource {
         return menuSections.count
     }
     
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return sectionHeaderHeight
-    }
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return menuSections[section].items.count
     }
@@ -227,6 +224,22 @@ extension ProfileViewController: UITableViewDelegate {
             menuTableView.cellForRow(at: indexPath)?.setSelected(false, animated: true)
         default: break
         }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return rowHeight
+    }
+    
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return rowHeight
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return sectionHeaderHeight
+    }
+    
+    func tableView(_ tableView: UITableView, estimatedHeightForHeaderInSection section: Int) -> CGFloat {
+        return sectionHeaderHeight
     }
     
 }

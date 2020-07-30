@@ -23,7 +23,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bwX-Q2-yfH">
-                        <rect key="frame" x="20" y="17.5" width="211" height="17.5"/>
+                        <rect key="frame" x="20" y="17" width="211" height="18"/>
                         <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="14"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -38,6 +38,7 @@
                     <constraint firstItem="TwK-MR-hpk" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="G39-59-rnt"/>
                     <constraint firstItem="bwX-Q2-yfH" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="cQ5-Fs-iWi"/>
                     <constraint firstItem="bwX-Q2-yfH" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="cnB-iN-K4Y"/>
+                    <constraint firstAttribute="bottom" secondItem="bwX-Q2-yfH" secondAttribute="bottom" constant="17" id="w2m-nM-x80"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
