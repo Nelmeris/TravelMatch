@@ -8,12 +8,20 @@
 
 import UIKit
 
+@IBDesignable
 public class SecondaryButton: Button {
     
     public override var isEnabled: Bool {
         didSet {
             setupBackgroundColor()
         }
+    }
+    
+    public override func prepareForInterfaceBuilder() {
+        super.prepareForInterfaceBuilder()
+        
+        setTitleColor(UIColor.Buttons.secondaryTextColor, for: .normal)
+        setTitleColor(UIColor.Buttons.disabledTextColor, for: .disabled)
     }
     
     override func setupView() {

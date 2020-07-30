@@ -10,20 +10,20 @@ import UIKit
 
 @IBDesignable
 public class BackBarButtonItem: UIBarButtonItem {
+    
+    public override init() {
+        super.init()
+        setupView()
+    }
 
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         setupView()
     }
     
-    public override func prepareForInterfaceBuilder() {
-        super.prepareForInterfaceBuilder()
-        setupView()
-    }
-    
     private func setupView() {
-        self.title = nil
-        self.image = UIImage(
+        title = nil
+        image = UIImage(
             named: "backButton",
             in: Bundle(for: BackBarButtonItem.self),
             compatibleWith: nil

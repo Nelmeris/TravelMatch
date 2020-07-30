@@ -49,22 +49,24 @@ public class PhoneNumberField: PhoneNumberTextField {
     
     public override init(frame: CGRect) {
         super.init(frame: frame)
+        setupView()
         setupDefaults()
     }
     
     public override init(frame: CGRect, phoneNumberKit: PhoneNumberKit) {
         super.init(frame: frame, phoneNumberKit: phoneNumberKit)
+        setupView()
         setupDefaults()
     }
     
     public required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+        setupView()
         setupDefaults()
     }
     
     public override func layoutSubviews() {
         super.layoutSubviews()
-        setupView()
         setupFlagButtonFrame()
     }
     
