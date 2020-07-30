@@ -9,8 +9,9 @@
 import Foundation
 import Core
 import Auth
+import Profile
 
-public protocol AuthService: AuthLogin & AuthReset & AuthSearch & AuthSignUp {
+public protocol AuthService: AuthLogin & AuthReset & AuthSearch & AuthSignUp & AuthLogout {
     var isAuthorized: Bool { get }
     var currentUser: Authentificatable? { get set }
 }
@@ -18,9 +19,14 @@ public protocol AuthService: AuthLogin & AuthReset & AuthSearch & AuthSignUp {
 public final class UserDefaultsAuthService: AuthService {
 
     private let userDefaults: UserDefaults
+    private let notificationCenter: NotificationCenter
     
-    public init(userDefaults: UserDefaults) {
+    private let logoutNotifyName = NSNotification.Name(rawValue: "logoutNotify")
+    
+    public init(userDefaults: UserDefaults,
+                notificationCenter: NotificationCenter) {
         self.userDefaults = userDefaults
+        self.notificationCenter = notificationCenter
     }
     
     // MARK: - AuthService
@@ -202,6 +208,21 @@ public final class UserDefaultsAuthService: AuthService {
         } catch {
             completion(.failure(error))
         }
+    }
+    
+    public func logout(completion: @escaping AuthLogoutCompletion) {
+        currentUser = nil
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            completion(.success(true))
+            self.notificationCenter.post(name: self.logoutNotifyName, object: nil)
+        }
+    }
+    
+    public func subscribeOnLogout(observer: Any, selector: Selector) {
+        notificationCenter.addObserver(observer,
+                                       selector: selector,
+                                       name: logoutNotifyName,
+                                       object: nil)
     }
 
 }

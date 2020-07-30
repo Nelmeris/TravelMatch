@@ -30,7 +30,7 @@ protocol ProfileViewInput: class {
     func displayNotifySettings(_ notifySettings: NotifySettings)
 }
 
-class ProfileViewController: UIViewController {
+class ProfileViewController: BaseViewController {
     
     private let sectionHeaderHeight: CGFloat = 50
     
@@ -179,6 +179,7 @@ class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         hideLastSeparatorLine()
+        configureLogoutBtn()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -191,6 +192,23 @@ class ProfileViewController: UIViewController {
         menuTableViewHeight.constant = menuTableView.contentSize.height
         super.updateViewConstraints()
     }
+    
+    // MARK: - Private
+    
+    private func configureLogoutBtn() {
+        let logoutImg = UIImage(named: "logout", in: Bundle(for: Self.self), compatibleWith: nil)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: logoutImg,
+                                                           style: .plain,
+                                                           target: self,
+                                                           action: #selector(onLogout))
+    }
+    
+    @objc
+    private func onLogout() {
+        onLogoutButtonClicked?()
+    }
+    
+    public var onLogoutButtonClicked: (() -> ())?
     
     private func hideLastSeparatorLine() {
         let frame = CGRect(x: 0, y: 0, width: menuTableView.frame.size.width, height: 1)

@@ -52,6 +52,17 @@ public final class ProfileCoordinator: BaseCoordinator {
         let vc = viewControllerFactory.makeController()
         vc.coordinator = self
         vc.presenter = self
+        vc.onLogoutButtonClicked = { [weak self] in
+            vc.showActivityIndicator()
+            self?.profileService.logout { (result) in
+                vc.hideActivityIndicator()
+                switch result {
+                case .success: break
+                case .failure(let error):
+                    print(error.localizedDescription)
+                }
+            }
+        }
         controller = vc
         rootController?.viewControllers = [vc]
     }

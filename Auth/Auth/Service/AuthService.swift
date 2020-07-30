@@ -63,3 +63,9 @@ public protocol AuthReset {
         completion: @escaping AuthResetPasswordCompletion
     )
 }
+
+public protocol AuthLogout {
+    typealias AuthLogoutCompletion = (Result<Bool, Error>) -> Void
+    func logout(completion: @escaping AuthLogoutCompletion)
+    func subscribeOnLogout(observer: Any, selector: Selector)
+}
