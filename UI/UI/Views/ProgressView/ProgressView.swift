@@ -11,50 +11,32 @@ import UIKit
 @IBDesignable
 public class ProgressView: UIView {
 
+    // MARK: - Properties
     
     @IBInspectable
     /// 0..100
     public var value: Int = 0 {
-        didSet {
-            setupView()
-        }
+        didSet { setupView() }
     }
     
     @IBInspectable
     public var firstColor: UIColor = .black {
-        didSet {
-            setupView()
-        }
+        didSet { setupView() }
     }
     
     @IBInspectable
     public var secondColor: UIColor = .darkGray {
-        didSet {
-            setupView()
-        }
+        didSet { setupView() }
     }
     
-    @IBInspectable
-    public var cornerRadius: CGFloat = 0 {
-        didSet {
-            setupView()
-        }
-    }
-    
-    public override func awakeFromNib() {
-        super.awakeFromNib()
-        setupView()
-    }
+    // MARK: - Lifecycle
     
     public override func layoutSubviews() {
         super.layoutSubviews()
         setupView()
     }
     
-    
-    
     private func setupView() {
-        
         layer.masksToBounds = true
         layer.cornerRadius = cornerRadius
 
@@ -83,7 +65,6 @@ public class ProgressView: UIView {
         } else {
             layer.insertSublayer(gradient, below: nil)
         }
-        
     }
 
 }

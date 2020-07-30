@@ -19,78 +19,53 @@ public class PhoneNumberField: PhoneNumberTextField {
     
     @IBInspectable
     var verticalPadding: CGFloat = 6
-
-    @IBInspectable
-    var cornerRadius: CGFloat = 10 {
-        didSet {
-            setCornerRadius(cornerRadius)
-        }
-    }
-    
-    @IBInspectable
-    var borderWidth: CGFloat = 1 {
-        didSet {
-            setBorderWidth(borderWidth)
-        }
-    }
     
     @IBInspectable
     public var isInvalid: Bool = false {
-        didSet {
-            setIsInvalid(isInvalid)
-        }
+        didSet { updateColors() }
     }
     
     @IBInspectable
     public var defaultTextColor: UIColor? = UIColor.TextFields.defaultTextColor {
-        didSet {
-            setIsInvalid(isInvalid)
-        }
+        didSet { updateColors() }
     }
     
     @IBInspectable
     public var invalidTextColor: UIColor? = UIColor.TextFields.invalidTextColor {
-        didSet {
-            setIsInvalid(isInvalid)
-        }
+        didSet { updateColors() }
     }
     
     @IBInspectable
-    public var defaultBorderColor: UIColor = UIColor.TextFields.defaultBorderColor {
-        didSet {
-            setIsInvalid(isInvalid)
-        }
+    public var defaultBorderColor: UIColor? = UIColor.TextFields.invalidBorderColor {
+        didSet { updateColors() }
     }
     
     @IBInspectable
     public var invalidBorderColor: UIColor? = UIColor.TextFields.invalidBorderColor {
-        didSet {
-            setIsInvalid(isInvalid)
-        }
+        didSet { updateColors() }
     }
     
     // MARK: - Lifecycle
     
-    public override func awakeFromNib() {
-        super.awakeFromNib()
-        setupView()
+    public override init(frame: CGRect) {
+        super.init(frame: frame)
         setupDefaults()
     }
     
-    public override func prepareForInterfaceBuilder() {
-        super.prepareForInterfaceBuilder()
-        setupView()
+    public override init(frame: CGRect, phoneNumberKit: PhoneNumberKit) {
+        super.init(frame: frame, phoneNumberKit: phoneNumberKit)
+        setupDefaults()
+    }
+    
+    public required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
         setupDefaults()
     }
     
     public override func layoutSubviews() {
         super.layoutSubviews()
-        flagButton.frame = CGRect(
-            x: horizontalPadding,
-            y: flagButton.frame.minY,
-            width: flagButton.frame.width,
-            height: flagButton.frame.height
-        )
+        setupView()
+        setupFlagButtonFrame()
     }
     
     // MARK: - Overrides
@@ -114,6 +89,7 @@ public class PhoneNumberField: PhoneNumberTextField {
     
     private func setupView() {
         clipsToBounds = true
+        borderStyle = .none
         withFlag = true
         withPrefix = true
         withExamplePlaceholder = true
@@ -123,30 +99,41 @@ public class PhoneNumberField: PhoneNumberTextField {
     }
     
     private func setupDefaults() {
-        setCornerRadius(cornerRadius)
-        setBorderWidth(borderWidth)
-        setIsInvalid(isInvalid)
+        cornerRadius = 10
+        borderWidth = 1
+        defaultTextColor = UIColor.TextFields.defaultTextColor
+        invalidTextColor = UIColor.TextFields.invalidTextColor
+        borderColor = UIColor.TextFields.defaultBorderColor
+        invalidBorderColor = UIColor.TextFields.invalidBorderColor
+        updateColors()
     }
     
-    private func setCornerRadius(_ value: CGFloat) {
-        layer.cornerRadius = value
+    private func updateColors() {
+        textColor = !isInvalid ?
+            defaultTextColor :
+            invalidTextColor
+        borderColor = !isInvalid ?
+            borderColor :
+            invalidBorderColor
+        setPlaceholderColor(!isInvalid ?
+            defaultTextColor?.withAlphaComponent(0.5) :
+            invalidTextColor?.withAlphaComponent(0.5)
+        )
     }
     
-    private func setBorderWidth(_ value: CGFloat) {
-        layer.borderWidth = value
+    private func setPlaceholderColor(_ color: UIColor?) {
+        let attributes = [NSAttributedString.Key.foregroundColor: color as Any]
+        attributedPlaceholder = NSAttributedString(string: placeholder ?? "",
+                                                   attributes: attributes)
     }
     
-    private func setBorderColor(_ value: UIColor?) {
-        layer.borderColor = value?.cgColor
-    }
-    
-    private func setTextColor(_ value: UIColor?) {
-        textColor = value
-    }
-    
-    private func setIsInvalid(_ value: Bool) {
-        setTextColor(!value ? defaultTextColor : invalidTextColor)
-        setBorderColor(!value ? defaultBorderColor : invalidBorderColor)
+    private func setupFlagButtonFrame() {
+        flagButton.frame = CGRect(
+            x: horizontalPadding,
+            y: flagButton.frame.minY,
+            width: flagButton.frame.width,
+            height: flagButton.frame.height
+        )
     }
         
 }

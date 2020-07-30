@@ -10,40 +10,32 @@ import UIKit
 
 @IBDesignable
 public class RoundedView: UIView {
-
-    @IBInspectable
-    var cornerRadius: CGFloat = 10.0 {
-        didSet {
-            layer.cornerRadius = cornerRadius
-        }
-    }
-
-    @IBInspectable
-    var borderColor: UIColor? {
-        didSet {
-            setupView()
-        }
-    }
-
-    public override func awakeFromNib() {
-        super.awakeFromNib()
-        setupView()
+    
+    public override init(frame: CGRect) {
+        super.init(frame: frame)
+        setupDefaults()
     }
     
-    public override func prepareForInterfaceBuilder() {
-        super.prepareForInterfaceBuilder()
+    public required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        setupDefaults()
+    }
+    
+    public override func layoutSubviews() {
+        super.layoutSubviews()
         setupView()
     }
 
     private func setupView() {
         clipsToBounds = true
-        layer.cornerRadius = cornerRadius
-
-        if let borderColor = borderColor {
-            layer.borderWidth = 1
-            layer.borderColor = borderColor.cgColor
+    }
+    
+    private func setupDefaults() {
+        cornerRadius = 10
+        if borderColor != nil {
+            borderWidth = 1
         } else {
-            layer.borderWidth = 0
+            borderWidth = 0
         }
     }
 }
