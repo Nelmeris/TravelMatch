@@ -14,23 +14,23 @@ public class ShadowView: UIView {
     // MARK: - Properties
     
     @IBInspectable
-    var shadowSize: CGFloat = 0.6 {
-        didSet { updateGradientFrame() }
+    public var gradientShadowColor: UIColor = .black {
+        didSet {
+            gradientLayer.colors?[1] = shadowGradientColor
+        }
     }
-    
-    public override var shadowColor: UIColor? {
-        get { return super.shadowColor }
-        set {
-            super.shadowColor = newValue
-            updateShadowColor()
+
+    @IBInspectable
+    public var gradientShadowOpacity: CGFloat = 0.7 {
+        didSet {
+            gradientLayer.colors?[1] = shadowGradientColor
         }
     }
     
-    public override var shadowOpacity: Float {
-        get { return super.shadowOpacity }
-        set {
-            super.shadowOpacity = newValue
-            updateShadowColor()
+    @IBInspectable
+    public var gradientShadowSize: CGFloat = 0.6 {
+        didSet {
+            gradientLayer.frame = gradientFrame
         }
     }
     
@@ -53,8 +53,10 @@ public class ShadowView: UIView {
         
         gradient.colors = [
             UIColor.clear.cgColor,
-            shadowColor?.withAlphaComponent(CGFloat(shadowOpacity)) as Any
+            shadowGradientColor
         ]
+        
+        gradient.frame = gradientFrame
         gradient.cornerRadius = cornerRadius
         
         layer.insertSublayer(gradient, below: nil)
@@ -75,30 +77,31 @@ public class ShadowView: UIView {
     
     public override func layoutSubviews() {
         super.layoutSubviews()
-        updateGradientFrame()
+        gradientLayer.frame = gradientFrame
     }
     
     // MARK: - Setups
     
     private func setupView() {
         backgroundColor = .clear
-        cornerRadius = 10
-        shadowOpacity = 0.7
-        shadowSize = 0.6
+        gradientShadowColor = .black
+        gradientShadowOpacity = 0.7
+        gradientShadowSize = 0.6
     }
     
-    private func updateGradientFrame() {
-        let shadowHeight: CGFloat = bounds.height * shadowSize
-        gradientLayer.frame = CGRect(
+    private var gradientFrame: CGRect {
+        let shadowHeight: CGFloat = bounds.height * gradientShadowSize
+        let frame = CGRect(
             x: 0,
             y: bounds.height - shadowHeight,
             width: bounds.width,
             height: shadowHeight
         )
+        return frame
     }
     
-    private func updateShadowColor() {
-        gradientLayer.colors?[1] = shadowColor?.withAlphaComponent(CGFloat(shadowOpacity)) as Any
+    private var shadowGradientColor: CGColor {
+        return gradientShadowColor.withAlphaComponent(CGFloat(gradientShadowOpacity)).cgColor
     }
     
 }
