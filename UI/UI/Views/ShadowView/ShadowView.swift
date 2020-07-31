@@ -52,7 +52,7 @@ public class ShadowView: UIView {
         gradient.endPoint = CGPoint(x: 0, y: 1)
         
         gradient.colors = [
-            UIColor.clear.cgColor,
+            UIColor.white.withAlphaComponent(0).cgColor,
             shadowGradientColor
         ]
         
