@@ -16,7 +16,7 @@ public enum Font: String {
     case MontserratBold = "Montserrat-Bold"
     case MontserratExtraBold = "Montserrat-ExtraBold"
     
-    public func of(size: CGFloat) -> UIFont {
-        return UIFont(name: self.rawValue, size: size)!
+    public func of(size: CGFloat) -> UIFont? {
+        return UIFont(name: self.rawValue, size: size)
     }
 }
