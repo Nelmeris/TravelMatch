@@ -40,6 +40,7 @@
                     <constraint firstItem="dpK-g4-ahg" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="JKD-iZ-EP1"/>
                     <constraint firstItem="asa-al-HSn" firstAttribute="leading" secondItem="dpK-g4-ahg" secondAttribute="trailing" constant="32" id="RcM-PH-tF0"/>
                     <constraint firstItem="dpK-g4-ahg" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Y3I-1B-GN7"/>
+                    <constraint firstAttribute="bottom" secondItem="dpK-g4-ahg" secondAttribute="bottom" constant="17" id="bah-Az-awc"/>
                     <constraint firstItem="asa-al-HSn" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="hpN-i8-B39"/>
                     <constraint firstAttribute="trailing" secondItem="asa-al-HSn" secondAttribute="trailing" constant="32" id="nsX-ji-Eyn"/>
                 </constraints>
@@ -52,6 +53,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="linkArrow" width="4" height="7"/>
+        <image name="linkArrow" width="8" height="13"/>
     </resources>
 </document>
