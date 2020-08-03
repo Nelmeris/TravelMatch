@@ -18,24 +18,24 @@ public class Switch: UISwitch {
         }
     }
     
+    // MARK: - Lifecycle
+    
     public override init(frame: CGRect) {
         super.init(frame: frame)
-        setupDefaultColors()
+        setupDefaults()
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        setupDefaultColors()
-    }
-    
-    public override func awakeFromNib() {
-        super.awakeFromNib()
-        setupDefaultColors()
+        setupDefaults()
     }
     
     public override func prepareForInterfaceBuilder() {
         super.prepareForInterfaceBuilder()
-        setupDefaultColors()
+        if onTintColor == nil {
+            onTintColor = UIColor.ThemeColors.brandBlueColor
+        }
+        setOffTintColor(offTintColor)
     }
     
     public override func layoutSubviews() {
@@ -43,15 +43,15 @@ public class Switch: UISwitch {
         setupLayout()
     }
     
-    private func setupLayout() {
-        layer.cornerRadius = frame.height / 2
+    // MARK: - Setups
+    
+    private func setupDefaults() {
+        onTintColor = UIColor.ThemeColors.brandBlueColor
+        offTintColor = UIColor.ThemeColors.blackColor.withAlphaComponent(0.6)
     }
     
-    private func setupDefaultColors() {
-        if onTintColor == nil {
-            onTintColor = UIColor.ThemeColors.brandBlueColor
-        }
-        setOffTintColor(offTintColor)
+    private func setupLayout() {
+        cornerRadius = frame.height / 2
     }
     
     private func setOffTintColor(_ color: UIColor?) {
