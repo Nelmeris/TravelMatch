@@ -13,6 +13,7 @@ class PersonalInfoViewController: UIViewController {
     
     var activeTextField: UITextField?
     let notificationCenter = NotificationCenter.default
+    let padding: CGFloat = 20
     
     // MARK: - Outlets
 
@@ -23,6 +24,8 @@ class PersonalInfoViewController: UIViewController {
     @IBOutlet weak var emailField: TextField!
     @IBOutlet weak var phoneNumberField: PhoneNumberField!
     @IBOutlet weak var passwordField: TextField!
+    @IBOutlet weak var buttonBottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var saveChangesButton: Button!
     
     // MARK: - Lifecycle
     
@@ -50,12 +53,29 @@ class PersonalInfoViewController: UIViewController {
     // MARK: - Private
     
     @objc func adjustForKeyboard(_ notification: Notification) {
-        scrollView.shiftContent(of: notification) // Сдвиг
-        guard let position = activeTextField?.frame.midY else { return }
-        scrollView.centering(on: position, animated: true) // Центрирование
+        guard let keyboardFrame = KeyboardHelper.parseFrame(from: notification),
+            keyboardFrame.height != 0 else { return }
+        shiftContent(with: notification,
+                     element: saveChangesButton,
+                     bottomConstraint: buttonBottomConstraint,
+                     padding: padding)
+        guard let textField = activeTextField else { return }
+        centeringOnTextField(textField, with: notification)
+    }
+    
+    private func centeringOnTextField(_ textField: UITextField,
+                                      with keyboardNotification: Notification) {
+        var yPosition = textField.frame.midY
+        // Не центрировать, если клавиатура скрыта
+        if keyboardNotification.name == hideKeyboardNotificationName {
+            yPosition = 0
+        }
+        scrollView.centering(on: yPosition, animated: true) // Центрирование
     }
     
 }
+
+// MARK: - ВРЕМЕННО ЗДЕСЬ
 
 extension PersonalInfoViewController: UITextFieldDelegate {
     
@@ -63,7 +83,14 @@ extension PersonalInfoViewController: UITextFieldDelegate {
         activeTextField = textField
     }
     
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        activeTextField = nil
+    }
+    
 }
+
+let hideKeyboardNotificationName = UIResponder.keyboardWillHideNotification
+let changeKeyboardFrameNotificationName = UIResponder.keyboardWillChangeFrameNotification
 
 extension UIViewController {
     
@@ -76,21 +103,44 @@ extension UIViewController {
                                           with selector: Selector) {
         notificationCenter.addObserver(self,
                                        selector: selector,
-                                       name: UIResponder.keyboardWillChangeFrameNotification,
+                                       name: changeKeyboardFrameNotificationName,
                                        object: nil)
         notificationCenter.addObserver(self,
                                        selector: selector,
-                                       name: UIResponder.keyboardWillHideNotification,
+                                       name: hideKeyboardNotificationName,
                                        object: nil)
     }
     
     func removeKeyboardNotifications(notificationCenter: NotificationCenter) {
         notificationCenter.removeObserver(self,
-                                          name: UIResponder.keyboardWillChangeFrameNotification,
+                                          name: changeKeyboardFrameNotificationName,
                                           object: nil)
         notificationCenter.removeObserver(self,
-                                          name: UIResponder.keyboardWillHideNotification,
+                                          name: hideKeyboardNotificationName,
                                           object: nil)
+    }
+    
+    
+    /// Поднимает передаваемый элемент при открытии клавиатуры через его нижний констрейнт
+    /// - Parameters:
+    ///   - keyboardNotification: Уведомление клавиатуры
+    ///   - element: Поднимаемый элемент
+    ///   - bottomConstraint: Нижний констрейнт
+    ///   - padding: Базовый отступ
+    func shiftContent(with keyboardNotification: Notification,
+                      element: UIView,
+                      bottomConstraint: NSLayoutConstraint,
+                      padding: CGFloat) {
+        switch keyboardNotification.name {
+        case UIResponder.keyboardWillHideNotification: // Сброс при скрытии клавиатуры
+            bottomConstraint.constant = padding
+        default:
+            guard let keyboardFrame = KeyboardHelper.parseFrame(from: keyboardNotification) else { return }
+            // Восстановление "чистой" Y позиции элемента
+            let originalBottomYPosition = element.frame.maxY + bottomConstraint.constant
+            bottomConstraint.constant = originalBottomYPosition - keyboardFrame.minY + padding
+        }
+        view.layoutIfNeeded()
     }
     
 }
@@ -98,14 +148,12 @@ extension UIViewController {
 extension UIScrollView {
     
     func shiftContent(of keyboardNotification: Notification) {
-        guard let keyboardValue = keyboardNotification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else { return }
-        let keyboardFrame = keyboardValue.cgRectValue
+        guard let keyboardFrame = KeyboardHelper.parseFrame(from: keyboardNotification) else { return }
         
         switch keyboardNotification.name {
-        case UIResponder.keyboardWillHideNotification:
+        case hideKeyboardNotificationName:
             // Сброс при скрытии клавиатуры
             contentInset = .zero
-            setContentOffset(.zero, animated: true)
         default:
             // Отступ от нижнего края
             let bottomInset = frame.maxY - keyboardFrame.minY
@@ -115,7 +163,7 @@ extension UIScrollView {
     }
     
     func centering(on yPosition: CGFloat, animated: Bool) {
-        let height = frame.height - contentInset.bottom - contentInset.top
+        let height = frame.height - contentInset.bottom - contentInset.top // Видимая высота с учетом инсетов
         
         var centeringPoint: CGPoint?
         if yPosition - height / 2 < 0 { // Если выходит за границу сверху
@@ -126,6 +174,7 @@ extension UIScrollView {
             centeringPoint = CGPoint(x: 0, y: yPosition - height / 2)
         }
         
+        guard contentOffset != centeringPoint else { return } // Защита от повторного центрирования
         if animated {
             UIView.animate(withDuration: 0.3) {
                 self.contentOffset = centeringPoint!
@@ -133,6 +182,17 @@ extension UIScrollView {
         } else {
             contentOffset = centeringPoint!
         }
+    }
+    
+}
+
+class KeyboardHelper {
+    
+    static func parseFrame(from notification: Notification) -> CGRect? {
+        guard let userInfo = notification.userInfo,
+            let keyboardValue = userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue
+            else { return nil }
+        return keyboardValue.cgRectValue
     }
     
 }

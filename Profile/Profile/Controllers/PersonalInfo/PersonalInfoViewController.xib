@@ -18,11 +18,13 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PersonalInfoViewController" customModule="Profile" customModuleProvider="target">
             <connections>
+                <outlet property="buttonBottomConstraint" destination="8AO-k7-3uY" id="179-Kw-vfS"/>
                 <outlet property="emailField" destination="lP8-d9-7VI" id="G41-iy-5U5"/>
                 <outlet property="genderSelector" destination="ozt-W5-9ta" id="WMK-Zq-55y"/>
                 <outlet property="nameField" destination="cA2-20-3FC" id="Hei-eB-OLe"/>
                 <outlet property="passwordField" destination="Wvp-nK-v7S" id="hRp-AB-dJT"/>
                 <outlet property="phoneNumberField" destination="hMY-6d-kLD" id="V6j-2s-tag"/>
+                <outlet property="saveChangesButton" destination="3Hl-pl-3Dm" id="OQU-QX-7DF"/>
                 <outlet property="scrollView" destination="sWx-IS-DvQ" id="Ksm-Ka-5id"/>
                 <outlet property="surnameField" destination="NHW-di-S7i" id="4Zt-By-9ma"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -34,10 +36,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sWx-IS-DvQ">
-                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <rect key="frame" x="0.0" y="44" width="414" height="730"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MyU-ua-87I">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="408"/>
                             <subviews>
                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Имя" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cA2-20-3FC" customClass="TextField" customModule="UI">
                                     <rect key="frame" x="20" y="20" width="374" height="48"/>
@@ -140,22 +142,6 @@
                                         </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
                                 </textField>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Hl-pl-3Dm" customClass="Button" customModule="UI">
-                                    <rect key="frame" x="20" y="750" width="374" height="48"/>
-                                    <color key="backgroundColor" red="0.18823529411764706" green="0.30588235294117649" blue="0.49411764705882355" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="48" id="iR1-uP-RV9"/>
-                                    </constraints>
-                                    <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="16"/>
-                                    <state key="normal" title="Сохранить изменения">
-                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </state>
-                                    <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                            <real key="value" value="10"/>
-                                        </userDefinedRuntimeAttribute>
-                                    </userDefinedRuntimeAttributes>
-                                </button>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ozt-W5-9ta" customClass="DropdownControl" customModule="UI">
                                     <rect key="frame" x="20" y="156" width="374" height="48"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -174,22 +160,19 @@
                                 <constraint firstAttribute="trailing" secondItem="cA2-20-3FC" secondAttribute="trailing" constant="20" id="2Ue-f9-jWu"/>
                                 <constraint firstItem="NHW-di-S7i" firstAttribute="top" secondItem="cA2-20-3FC" secondAttribute="bottom" constant="20" id="3aZ-6E-AAE"/>
                                 <constraint firstItem="cA2-20-3FC" firstAttribute="top" secondItem="MyU-ua-87I" secondAttribute="top" constant="20" id="7aE-4G-bKW"/>
-                                <constraint firstAttribute="bottom" secondItem="3Hl-pl-3Dm" secondAttribute="bottom" constant="20" id="7lC-ZT-UFd"/>
                                 <constraint firstItem="Wvp-nK-v7S" firstAttribute="top" secondItem="hMY-6d-kLD" secondAttribute="bottom" constant="20" id="A2L-a1-T4r"/>
                                 <constraint firstItem="ozt-W5-9ta" firstAttribute="leading" secondItem="MyU-ua-87I" secondAttribute="leading" constant="20" id="Aus-aN-4de"/>
                                 <constraint firstItem="lP8-d9-7VI" firstAttribute="leading" secondItem="MyU-ua-87I" secondAttribute="leading" constant="20" id="D9d-Y1-whC"/>
                                 <constraint firstAttribute="trailing" secondItem="Wvp-nK-v7S" secondAttribute="trailing" constant="20" id="Ev8-Fd-6YE"/>
                                 <constraint firstAttribute="trailing" secondItem="ozt-W5-9ta" secondAttribute="trailing" constant="20" id="GFg-Eu-jjj"/>
                                 <constraint firstAttribute="trailing" secondItem="hMY-6d-kLD" secondAttribute="trailing" constant="20" id="HA1-ph-g5I"/>
+                                <constraint firstAttribute="bottom" secondItem="Wvp-nK-v7S" secondAttribute="bottom" id="Hbn-Q5-3K8"/>
                                 <constraint firstItem="hMY-6d-kLD" firstAttribute="top" secondItem="lP8-d9-7VI" secondAttribute="bottom" constant="20" id="Rh5-A3-iN5"/>
                                 <constraint firstItem="NHW-di-S7i" firstAttribute="leading" secondItem="MyU-ua-87I" secondAttribute="leading" constant="20" id="T4f-4e-Bdi"/>
-                                <constraint firstItem="3Hl-pl-3Dm" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Wvp-nK-v7S" secondAttribute="bottom" constant="20" id="cEc-kx-jRF"/>
-                                <constraint firstItem="3Hl-pl-3Dm" firstAttribute="leading" secondItem="MyU-ua-87I" secondAttribute="leading" constant="20" id="ce3-o1-yHv"/>
                                 <constraint firstAttribute="trailing" secondItem="lP8-d9-7VI" secondAttribute="trailing" constant="20" id="g4c-4e-8vx"/>
                                 <constraint firstItem="Wvp-nK-v7S" firstAttribute="leading" secondItem="MyU-ua-87I" secondAttribute="leading" constant="20" id="hU5-YH-wOQ"/>
                                 <constraint firstItem="cA2-20-3FC" firstAttribute="leading" secondItem="MyU-ua-87I" secondAttribute="leading" constant="20" id="jJc-zy-xcU"/>
                                 <constraint firstItem="hMY-6d-kLD" firstAttribute="leading" secondItem="MyU-ua-87I" secondAttribute="leading" constant="20" id="r1B-6K-UDW"/>
-                                <constraint firstAttribute="trailing" secondItem="3Hl-pl-3Dm" secondAttribute="trailing" constant="20" id="r1g-9D-291"/>
                                 <constraint firstItem="ozt-W5-9ta" firstAttribute="top" secondItem="NHW-di-S7i" secondAttribute="bottom" constant="20" id="yd5-CL-3EH"/>
                             </constraints>
                         </view>
@@ -201,15 +184,34 @@
                         <constraint firstItem="MyU-ua-87I" firstAttribute="top" secondItem="sWx-IS-DvQ" secondAttribute="top" id="qcq-OH-1ky"/>
                     </constraints>
                 </scrollView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Hl-pl-3Dm" customClass="Button" customModule="UI">
+                    <rect key="frame" x="20" y="794" width="374" height="48"/>
+                    <color key="backgroundColor" red="0.18823529411764706" green="0.30588235294117649" blue="0.49411764705882355" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="48" id="iR1-uP-RV9"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="16"/>
+                    <state key="normal" title="Сохранить изменения">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="10"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </button>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="3Hl-pl-3Dm" secondAttribute="trailing" constant="20" id="2qR-hj-nxU"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="3Hl-pl-3Dm" secondAttribute="bottom" constant="20" id="8AO-k7-3uY"/>
+                <constraint firstItem="3Hl-pl-3Dm" firstAttribute="top" secondItem="sWx-IS-DvQ" secondAttribute="bottom" constant="20" id="CFS-tr-yUZ"/>
                 <constraint firstItem="MyU-ua-87I" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" id="KBH-qg-7gJ"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="sWx-IS-DvQ" secondAttribute="trailing" id="RK9-rq-h1E"/>
                 <constraint firstItem="sWx-IS-DvQ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="dm3-EB-zkZ"/>
                 <constraint firstItem="sWx-IS-DvQ" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="jWD-Lm-gK4"/>
-                <constraint firstItem="MyU-ua-87I" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" priority="250" id="lJ3-v2-0Cq"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="sWx-IS-DvQ" secondAttribute="bottom" id="uhM-QB-pq2"/>
+                <constraint firstItem="MyU-ua-87I" firstAttribute="height" secondItem="sWx-IS-DvQ" secondAttribute="height" priority="250" id="lJ3-v2-0Cq"/>
+                <constraint firstItem="3Hl-pl-3Dm" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="oWX-oG-o01"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="137.68115942028987" y="114.50892857142857"/>
