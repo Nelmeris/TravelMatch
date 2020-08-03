@@ -37,10 +37,10 @@
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="686"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vO5-qp-fgZ" userLabel="FormView">
-                                                <rect key="frame" x="20" y="222.5" width="374" height="241"/>
+                                                <rect key="frame" x="20" y="225" width="374" height="236.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Забыл пароль? Мы подскажем" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MFx-dE-DBQ" customClass="Label" customModule="UI">
-                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="68.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="57"/>
                                                         <fontDescription key="fontDescription" name="Montserrat-ExtraBold" family="Montserrat" pointSize="28"/>
                                                         <color key="textColor" red="0.18823529410000001" green="0.30588235289999999" blue="0.4941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -51,7 +51,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Введи e-mail. Мы отправим новый пароль" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="emY-pF-gKo" customClass="Label" customModule="UI">
-                                                        <rect key="frame" x="0.0" y="88.5" width="374" height="17.5"/>
+                                                        <rect key="frame" x="0.0" y="77" width="374" height="24.5"/>
                                                         <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="14"/>
                                                         <color key="textColor" red="0.16862745100000001" green="0.1647058824" blue="0.18039215689999999" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -62,7 +62,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cJ6-cx-ee1" customClass="TextField" customModule="UI">
-                                                        <rect key="frame" x="0.0" y="146" width="374" height="48"/>
+                                                        <rect key="frame" x="0.0" y="141.5" width="374" height="48"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="48" id="7zw-rn-QmX"/>
                                                         </constraints>
@@ -75,12 +75,6 @@
                                                             <userDefinedRuntimeAttribute type="number" keyPath="verticalPadding">
                                                                 <real key="value" value="14"/>
                                                             </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                <real key="value" value="10"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                                <real key="value" value="1"/>
-                                                            </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
                                                             <action selector="emailFieldDidEndOnExit:" destination="jA0-lT-vxY" eventType="editingDidEndOnExit" id="fLa-eH-RfS"/>
@@ -89,7 +83,7 @@
                                                         </connections>
                                                     </textField>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XyP-L7-Md8" customClass="LinkButton" customModule="UI">
-                                                        <rect key="frame" x="81" y="214" width="212" height="27"/>
+                                                        <rect key="frame" x="81" y="209.5" width="212" height="27"/>
                                                         <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="12"/>
                                                         <state key="normal" title="Продолжить по номеру телефона">
                                                             <color key="titleColor" red="0.16862745100000001" green="0.1647058824" blue="0.18039215689999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -150,14 +144,7 @@
                                                     <constraint firstAttribute="height" constant="48" id="kD6-a9-czj"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="16"/>
-                                                <state key="normal" title="Отправить">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                        <real key="value" value="10"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
+                                                <state key="normal" title="Отправить"/>
                                                 <connections>
                                                     <action selector="continueButtonClicked:" destination="jA0-lT-vxY" eventType="touchUpInside" id="WdI-8I-4CY"/>
                                                 </connections>
@@ -221,10 +208,10 @@
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="686"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Fb-oa-7s0" userLabel="FormView">
-                                                <rect key="frame" x="20" y="222.5" width="374" height="241"/>
+                                                <rect key="frame" x="20" y="225" width="374" height="236.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Забыл пароль? Мы подскажем" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="geK-2P-Qmq" customClass="Label" customModule="UI">
-                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="68.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="57"/>
                                                         <fontDescription key="fontDescription" name="Montserrat-ExtraBold" family="Montserrat" pointSize="28"/>
                                                         <color key="textColor" red="0.18823529410000001" green="0.30588235289999999" blue="0.4941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -235,7 +222,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Мы отправим сообщение с новым паролем" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dss-v1-GRN" customClass="Label" customModule="UI">
-                                                        <rect key="frame" x="0.0" y="88.5" width="374" height="17.5"/>
+                                                        <rect key="frame" x="0.0" y="77" width="374" height="24.5"/>
                                                         <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="14"/>
                                                         <color key="textColor" red="0.16862745100000001" green="0.1647058824" blue="0.18039215689999999" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -246,7 +233,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Номер телефона" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cTs-ex-G8r" customClass="PhoneNumberField" customModule="UI">
-                                                        <rect key="frame" x="0.0" y="146" width="374" height="48"/>
+                                                        <rect key="frame" x="0.0" y="141.5" width="374" height="48"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="48" id="Ttc-EZ-bEm"/>
                                                         </constraints>
@@ -259,12 +246,6 @@
                                                             <userDefinedRuntimeAttribute type="number" keyPath="verticalPadding">
                                                                 <real key="value" value="14"/>
                                                             </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                <real key="value" value="10"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                                <real key="value" value="1"/>
-                                                            </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
                                                             <action selector="emailFieldDidEndOnExit:" destination="O9k-q8-wkt" eventType="editingDidEndOnExit" id="fU7-iV-vU5"/>
@@ -273,7 +254,7 @@
                                                         </connections>
                                                     </textField>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zW2-xd-DSe" customClass="LinkButton" customModule="UI">
-                                                        <rect key="frame" x="117" y="214" width="140" height="27"/>
+                                                        <rect key="frame" x="117" y="209.5" width="140" height="27"/>
                                                         <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="12"/>
                                                         <state key="normal" title="Продолжить по e-mail">
                                                             <color key="titleColor" red="0.16862745100000001" green="0.1647058824" blue="0.18039215689999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -334,14 +315,7 @@
                                                     <constraint firstAttribute="height" constant="48" id="cM0-iQ-Xwp"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="16"/>
-                                                <state key="normal" title="Отправить">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                        <real key="value" value="10"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
+                                                <state key="normal" title="Отправить"/>
                                                 <connections>
                                                     <action selector="continueButtonClicked:" destination="O9k-q8-wkt" eventType="touchUpInside" id="Ra1-3m-BEE"/>
                                                 </connections>
@@ -405,10 +379,10 @@
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="686"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aGU-As-glR" userLabel="FormView">
-                                                <rect key="frame" x="20" y="223" width="374" height="240.5"/>
+                                                <rect key="frame" x="20" y="220.5" width="374" height="245"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Добро пожаловать, UserName!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="foa-yz-sQN" customClass="Label" customModule="UI">
-                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="57"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="68.5"/>
                                                         <fontDescription key="fontDescription" name="Montserrat-ExtraBold" family="Montserrat" pointSize="28"/>
                                                         <color key="textColor" red="0.18823529410000001" green="0.30588235289999999" blue="0.4941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -419,7 +393,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Введи пароль, чтобы войти в приложение" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8lD-Rs-ddd" customClass="Label" customModule="UI">
-                                                        <rect key="frame" x="0.0" y="77" width="374" height="24.5"/>
+                                                        <rect key="frame" x="0.0" y="88.5" width="374" height="17.5"/>
                                                         <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="14"/>
                                                         <color key="textColor" red="0.16862745100000001" green="0.1647058824" blue="0.18039215689999999" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -430,7 +404,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Пароль" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xbB-i2-VrT" customClass="TextField" customModule="UI">
-                                                        <rect key="frame" x="0.0" y="141.5" width="374" height="48"/>
+                                                        <rect key="frame" x="0.0" y="146" width="374" height="48"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="48" id="I04-sT-SVE"/>
                                                         </constraints>
@@ -445,9 +419,6 @@
                                                             <userDefinedRuntimeAttribute type="number" keyPath="verticalPadding">
                                                                 <real key="value" value="14"/>
                                                             </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                <real key="value" value="10"/>
-                                                            </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
                                                             <action selector="passwordFieldChanged:" destination="RUn-7Z-Dsg" eventType="editingChanged" id="xud-rP-eYs"/>
@@ -455,7 +426,7 @@
                                                         </connections>
                                                     </textField>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="aAh-cv-2WD">
-                                                        <rect key="frame" x="0.0" y="209.5" width="374" height="31"/>
+                                                        <rect key="frame" x="0.0" y="214" width="374" height="31"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8XQ-X7-cZw" customClass="LinkButton" customModule="UI">
                                                                 <rect key="frame" x="0.0" y="0.0" width="219.5" height="31"/>
@@ -603,10 +574,10 @@
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="618"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gjf-IW-80Z" userLabel="FormView">
-                                                <rect key="frame" x="20" y="178" width="374" height="262"/>
+                                                <rect key="frame" x="20" y="180.5" width="374" height="257.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Стань частью нашего сообщества" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7bf-4M-xju" customClass="Label" customModule="UI">
-                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="68.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="57"/>
                                                         <fontDescription key="fontDescription" name="Montserrat-ExtraBold" family="Montserrat" pointSize="28"/>
                                                         <color key="textColor" red="0.18823529410000001" green="0.30588235289999999" blue="0.4941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -617,7 +588,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Заполни, чтобы зарегистрироваться" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IPJ-qy-idJ" customClass="Label" customModule="UI">
-                                                        <rect key="frame" x="0.0" y="88.5" width="374" height="17.5"/>
+                                                        <rect key="frame" x="0.0" y="77" width="374" height="24.5"/>
                                                         <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="14"/>
                                                         <color key="textColor" red="0.16862745100000001" green="0.1647058824" blue="0.18039215689999999" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -628,7 +599,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Имя" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ivX-6a-oO1" customClass="TextField" customModule="UI">
-                                                        <rect key="frame" x="0.0" y="146" width="374" height="48"/>
+                                                        <rect key="frame" x="0.0" y="141.5" width="374" height="48"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="48" id="7d4-g8-SRm"/>
                                                         </constraints>
@@ -641,12 +612,6 @@
                                                             <userDefinedRuntimeAttribute type="number" keyPath="verticalPadding">
                                                                 <real key="value" value="14"/>
                                                             </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                <real key="value" value="10"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                                <real key="value" value="1"/>
-                                                            </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
                                                             <action selector="nameFieldChanged:" destination="d7T-9A-eNW" eventType="editingChanged" id="DJw-xR-bx0"/>
@@ -654,7 +619,7 @@
                                                         </connections>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Пароль" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aXD-4q-Whk" customClass="TextField" customModule="UI">
-                                                        <rect key="frame" x="0.0" y="214" width="374" height="48"/>
+                                                        <rect key="frame" x="0.0" y="209.5" width="374" height="48"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="48" id="wPO-PX-xcz"/>
                                                         </constraints>
@@ -668,9 +633,6 @@
                                                             </userDefinedRuntimeAttribute>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="verticalPadding">
                                                                 <real key="value" value="14"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                <real key="value" value="10"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
@@ -727,19 +689,11 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9CR-lf-Peg" customClass="SecondaryButton" customModule="UI">
                                                 <rect key="frame" x="0.0" y="0.0" width="374" height="48"/>
-                                                <color key="backgroundColor" red="0.84705882349999995" green="0.84705882349999995" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="48" id="WVf-f8-E9K"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="16"/>
-                                                <state key="normal" title="Войти через Facebook">
-                                                    <color key="titleColor" red="0.16862745100000001" green="0.1647058824" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </state>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                        <real key="value" value="10"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
+                                                <state key="normal" title="Войти через Facebook"/>
                                                 <connections>
                                                     <action selector="facebookButtonClicked:" destination="d7T-9A-eNW" eventType="touchUpInside" id="4Fy-bB-N6D"/>
                                                 </connections>
@@ -750,14 +704,7 @@
                                                     <constraint firstAttribute="height" constant="48" id="8Qb-Da-CIB"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="16"/>
-                                                <state key="normal" title="Зарегистрироваться">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                        <real key="value" value="10"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
+                                                <state key="normal" title="Зарегистрироваться"/>
                                                 <connections>
                                                     <action selector="continueButtonClicked:" destination="d7T-9A-eNW" eventType="touchUpInside" id="Oa5-U2-iwZ"/>
                                                 </connections>
@@ -823,10 +770,10 @@
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="550"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xfc-1B-fW3" userLabel="FormView">
-                                                <rect key="frame" x="20" y="154.5" width="374" height="241"/>
+                                                <rect key="frame" x="20" y="157" width="374" height="236.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Почувствуй себя местным" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rJg-cR-da8" customClass="Label" customModule="UI">
-                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="68.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="57"/>
                                                         <fontDescription key="fontDescription" name="Montserrat-ExtraBold" family="Montserrat" pointSize="28"/>
                                                         <color key="textColor" red="0.18823529410000001" green="0.30588235289999999" blue="0.4941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -837,7 +784,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Введи номер телефона, чтобы продолжить" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gWY-b7-lNm" customClass="Label" customModule="UI">
-                                                        <rect key="frame" x="0.0" y="88.5" width="374" height="17.5"/>
+                                                        <rect key="frame" x="0.0" y="77" width="374" height="24.5"/>
                                                         <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="14"/>
                                                         <color key="textColor" red="0.16862745100000001" green="0.1647058824" blue="0.18039215689999999" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -848,7 +795,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Номер телефона" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EYX-15-OhJ" customClass="PhoneNumberField" customModule="UI">
-                                                        <rect key="frame" x="0.0" y="146" width="374" height="48"/>
+                                                        <rect key="frame" x="0.0" y="141.5" width="374" height="48"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="48" id="7fj-Dn-ILq"/>
                                                         </constraints>
@@ -861,12 +808,6 @@
                                                             <userDefinedRuntimeAttribute type="number" keyPath="verticalPadding">
                                                                 <real key="value" value="14"/>
                                                             </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                <real key="value" value="10"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                                <real key="value" value="1"/>
-                                                            </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
                                                             <action selector="emailFieldDidEndOnExit:" destination="W90-jh-fhK" eventType="editingDidEndOnExit" id="K4u-hy-M4m"/>
@@ -875,7 +816,7 @@
                                                         </connections>
                                                     </textField>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DMp-RH-IAp" customClass="LinkButton" customModule="UI">
-                                                        <rect key="frame" x="117" y="214" width="140" height="27"/>
+                                                        <rect key="frame" x="117" y="209.5" width="140" height="27"/>
                                                         <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="12"/>
                                                         <state key="normal" title="Продолжить по e-mail">
                                                             <color key="titleColor" red="0.16862745100000001" green="0.1647058824" blue="0.18039215689999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -932,38 +873,22 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yeF-Q0-ihV" customClass="SecondaryButton" customModule="UI">
                                                 <rect key="frame" x="0.0" y="0.0" width="374" height="48"/>
-                                                <color key="backgroundColor" red="0.84705882349999995" green="0.84705882349999995" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="48" id="wYL-6y-Q8b"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="16"/>
-                                                <state key="normal" title="Продолжить как гость">
-                                                    <color key="titleColor" red="0.16862745100000001" green="0.1647058824" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </state>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                        <real key="value" value="10"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
+                                                <state key="normal" title="Продолжить как гость"/>
                                                 <connections>
                                                     <action selector="guestButtonClicked:" destination="W90-jh-fhK" eventType="touchUpInside" id="EfC-UV-gky"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bw8-GA-U4j" customClass="SecondaryButton" customModule="UI">
                                                 <rect key="frame" x="0.0" y="68" width="374" height="48"/>
-                                                <color key="backgroundColor" red="0.84705882349999995" green="0.84705882349999995" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="48" id="KSP-f0-pCN"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="16"/>
-                                                <state key="normal" title="Войти через Facebook">
-                                                    <color key="titleColor" red="0.16862745100000001" green="0.1647058824" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </state>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                        <real key="value" value="10"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
+                                                <state key="normal" title="Войти через Facebook"/>
                                                 <connections>
                                                     <action selector="facebookButtonClicked:" destination="W90-jh-fhK" eventType="touchUpInside" id="IVc-1I-sCT"/>
                                                 </connections>
@@ -974,14 +899,7 @@
                                                     <constraint firstAttribute="height" constant="48" id="6S4-vg-B2s"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="16"/>
-                                                <state key="normal" title="Продолжить">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                        <real key="value" value="10"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
+                                                <state key="normal" title="Продолжить"/>
                                                 <connections>
                                                     <action selector="continueButtonClicked:" destination="W90-jh-fhK" eventType="touchUpInside" id="jP2-Ld-uh4"/>
                                                 </connections>
@@ -1047,17 +965,12 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="16"/>
                                 <state key="normal" title="Войти"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="10"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="loginButtonClicked:" destination="65e-WL-Y8Y" eventType="touchUpInside" id="SHU-AK-Mci"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Мы отправили тебе новый пароль. Проверь почту koronov.konstantin@test.com" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WTt-Hk-9Ue" customClass="Label" customModule="UI">
-                                <rect key="frame" x="20" y="679.5" width="374" height="34.5"/>
+                                <rect key="frame" x="20" y="664.5" width="374" height="49.5"/>
                                 <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -1068,7 +981,7 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Пароль отправлен" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tyy-an-fYf" customClass="Label" customModule="UI">
-                                <rect key="frame" x="20" y="625" width="374" height="34.5"/>
+                                <rect key="frame" x="20" y="610" width="374" height="34.5"/>
                                 <fontDescription key="fontDescription" name="Montserrat-ExtraBold" family="Montserrat" pointSize="28"/>
                                 <color key="textColor" red="0.18823529410000001" green="0.30588235289999999" blue="0.4941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -1079,10 +992,10 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="25K-sv-L25" userLabel="ImageWrapView">
-                                <rect key="frame" x="20" y="64" width="374" height="541"/>
+                                <rect key="frame" x="20" y="64" width="374" height="526"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="success" translatesAutoresizingMaskIntoConstraints="NO" id="oNv-eg-8ls">
-                                        <rect key="frame" x="94.5" y="170.5" width="185" height="200"/>
+                                        <rect key="frame" x="94.5" y="163" width="185" height="200"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -1135,10 +1048,10 @@
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="550"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JUo-D7-Aw7" userLabel="FormView">
-                                                <rect key="frame" x="20" y="154.5" width="374" height="241"/>
+                                                <rect key="frame" x="20" y="157" width="374" height="236.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Почувствуй себя местным" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iT0-re-bIG" customClass="Label" customModule="UI">
-                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="68.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="57"/>
                                                         <fontDescription key="fontDescription" name="Montserrat-ExtraBold" family="Montserrat" pointSize="28"/>
                                                         <color key="textColor" red="0.18823529410000001" green="0.30588235289999999" blue="0.4941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -1149,7 +1062,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Введи e-mail, чтобы продолжить" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z71-CQ-fog" customClass="Label" customModule="UI">
-                                                        <rect key="frame" x="0.0" y="88.5" width="374" height="17.5"/>
+                                                        <rect key="frame" x="0.0" y="77" width="374" height="24.5"/>
                                                         <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="14"/>
                                                         <color key="textColor" red="0.16862745100000001" green="0.1647058824" blue="0.18039215689999999" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -1160,7 +1073,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yvD-o7-z5A" customClass="TextField" customModule="UI">
-                                                        <rect key="frame" x="0.0" y="146" width="374" height="48"/>
+                                                        <rect key="frame" x="0.0" y="141.5" width="374" height="48"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="48" id="ZAn-Wn-nn6"/>
                                                         </constraints>
@@ -1173,12 +1086,6 @@
                                                             <userDefinedRuntimeAttribute type="number" keyPath="verticalPadding">
                                                                 <real key="value" value="14"/>
                                                             </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                <real key="value" value="10"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                                <real key="value" value="1"/>
-                                                            </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
                                                             <action selector="emailFieldDidEndOnExit:" destination="JZx-sn-Uhg" eventType="editingDidEndOnExit" id="3VH-fV-cYL"/>
@@ -1187,7 +1094,7 @@
                                                         </connections>
                                                     </textField>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BVk-6A-uXy" customClass="LinkButton" customModule="UI">
-                                                        <rect key="frame" x="81" y="214" width="212" height="27"/>
+                                                        <rect key="frame" x="81" y="209.5" width="212" height="27"/>
                                                         <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="12"/>
                                                         <state key="normal" title="Продолжить по номеру телефона">
                                                             <color key="titleColor" red="0.16862745100000001" green="0.1647058824" blue="0.18039215689999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -1244,38 +1151,22 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QNo-Dm-TYR" customClass="SecondaryButton" customModule="UI">
                                                 <rect key="frame" x="0.0" y="0.0" width="374" height="48"/>
-                                                <color key="backgroundColor" red="0.84705882349999995" green="0.84705882349999995" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="48" id="EC9-bc-iAk"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="16"/>
-                                                <state key="normal" title="Продолжить как гость">
-                                                    <color key="titleColor" red="0.16862745100000001" green="0.1647058824" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </state>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                        <real key="value" value="10"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
+                                                <state key="normal" title="Продолжить как гость"/>
                                                 <connections>
                                                     <action selector="guestButtonClicked:" destination="JZx-sn-Uhg" eventType="touchUpInside" id="Ol4-Pj-Jn7"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="692-El-9Py" customClass="SecondaryButton" customModule="UI">
                                                 <rect key="frame" x="0.0" y="68" width="374" height="48"/>
-                                                <color key="backgroundColor" red="0.84705882349999995" green="0.84705882349999995" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="48" id="1pb-N6-NaG"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="16"/>
-                                                <state key="normal" title="Войти через Facebook">
-                                                    <color key="titleColor" red="0.16862745100000001" green="0.1647058824" blue="0.18039215689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </state>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                        <real key="value" value="10"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
+                                                <state key="normal" title="Войти через Facebook"/>
                                                 <connections>
                                                     <action selector="facebookButtonClicked:" destination="JZx-sn-Uhg" eventType="touchUpInside" id="ZTo-rx-84D"/>
                                                 </connections>
@@ -1286,14 +1177,7 @@
                                                     <constraint firstAttribute="height" constant="48" id="gJp-X3-hHn"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="16"/>
-                                                <state key="normal" title="Продолжить">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                        <real key="value" value="10"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
+                                                <state key="normal" title="Продолжить"/>
                                                 <connections>
                                                     <action selector="continueButtonClicked:" destination="JZx-sn-Uhg" eventType="touchUpInside" id="Ca4-53-MeR"/>
                                                 </connections>

@@ -13,9 +13,7 @@ public class CheckboxControl: UIControl {
 
     @IBInspectable
     public var isChecked: Bool = false {
-        didSet {
-            setupView()
-        }
+        didSet { updateOpacity() }
     }
 
     private lazy var checkMarkLayer: CALayer = {
@@ -48,13 +46,15 @@ public class CheckboxControl: UIControl {
         return layer
     }()
     
-    public override func awakeFromNib() {
-        super.awakeFromNib()
+    // MARK: - Lifecycle
+    
+    public override init(frame: CGRect) {
+        super.init(frame: frame)
         setupView()
     }
     
-    public override func prepareForInterfaceBuilder() {
-        super.prepareForInterfaceBuilder()
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
         setupView()
     }
     
@@ -63,11 +63,17 @@ public class CheckboxControl: UIControl {
         updateLayers()
     }
     
+    // MARK: - Private
+    
     private func setupView() {
+        borderWidth = 1.5
+        borderColor = UIColor.ThemeColors.blackColor
+        cornerRadius = 4
+        updateOpacity()
+    }
+    
+    private func updateOpacity() {
         checkMarkLayer.opacity = isChecked ? 1 : 0
-        layer.borderWidth = 1.5
-        layer.borderColor = UIColor.ThemeColors.blackColor.cgColor
-        layer.cornerRadius = 4
     }
     
     private func updateLayers() {

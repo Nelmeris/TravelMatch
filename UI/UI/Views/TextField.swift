@@ -11,39 +11,54 @@ import UIKit
 @IBDesignable
 public class TextField: UITextField {
     
+    // MARK: - Properties
+    
     @IBInspectable
     var horizontalPadding: CGFloat = 10
     
     @IBInspectable
     var verticalPadding: CGFloat = 6
-
-    @IBInspectable
-    var cornerRadius: CGFloat = 10 {
-        didSet {
-            self.layer.cornerRadius = self.cornerRadius
-        }
-    }
-    
-    @IBInspectable
-    var borderColor: UIColor = UIColor.TextFields.defaultBorderColor {
-        didSet {
-            setupColors()
-        }
-    }
-    
-    @IBInspectable
-    var borderWidth: CGFloat = 1 {
-        didSet {
-            self.layer.borderWidth = borderWidth
-        }
-    }
     
     @IBInspectable
     public var isInvalid: Bool = false {
-        didSet {
-            setupColors()
-        }
+        didSet { updateColors() }
     }
+    
+    @IBInspectable
+    public var defaultTextColor: UIColor? = UIColor.TextFields.defaultTextColor {
+        didSet { updateColors() }
+    }
+    
+    @IBInspectable
+    public var invalidTextColor: UIColor? = UIColor.TextFields.invalidTextColor {
+        didSet { updateColors() }
+    }
+    
+    @IBInspectable
+    public var defaultBorderColor: UIColor? = UIColor.TextFields.invalidBorderColor {
+        didSet { updateColors() }
+    }
+    
+    @IBInspectable
+    public var invalidBorderColor: UIColor? = UIColor.TextFields.invalidBorderColor {
+        didSet { updateColors() }
+    }
+    
+    // MARK: - Lifecycle
+    
+    public override init(frame: CGRect) {
+        super.init(frame: frame)
+        setupView()
+        setupDefaults()
+    }
+    
+    public required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        setupView()
+        setupDefaults()
+    }
+    
+    // MARK: - Overrides
     
     public override func textRect(forBounds bounds: CGRect) -> CGRect {
         return CGRect(
@@ -55,31 +70,43 @@ public class TextField: UITextField {
     }
 
     public override func editingRect(forBounds bounds: CGRect) -> CGRect {
-        return self.textRect(forBounds: bounds)
+        return textRect(forBounds: bounds)
     }
     
-    public override func awakeFromNib() {
-        super.awakeFromNib()
-        setupView()
-    }
-    
-    public override func prepareForInterfaceBuilder() {
-        super.prepareForInterfaceBuilder()
-        setupView()
-    }
+    // MARK: - Setups
     
     private func setupView() {
-        self.clipsToBounds = true
+        clipsToBounds = true
+        borderStyle = .none
     }
     
-    private func setupColors() {
-        if isInvalid {
-            self.textColor = UIColor.TextFields.invalidTextColor
-            self.layer.borderColor = UIColor.TextFields.invalidBorderColor.cgColor
-        } else {
-            self.textColor = UIColor.TextFields.defaultTextColor
-            self.layer.borderColor = borderColor.cgColor
-        }
+    private func setupDefaults() {
+        cornerRadius = 10
+        borderWidth = 1
+        defaultTextColor = UIColor.TextFields.defaultTextColor
+        invalidTextColor = UIColor.TextFields.invalidTextColor
+        borderColor = UIColor.TextFields.defaultBorderColor
+        invalidBorderColor = UIColor.TextFields.invalidBorderColor
+        updateColors()
+    }
+    
+    private func updateColors() {
+        textColor = !isInvalid ?
+            defaultTextColor :
+            invalidTextColor
+        borderColor = !isInvalid ?
+            borderColor :
+            invalidBorderColor
+        setPlaceholderColor(!isInvalid ?
+            defaultTextColor?.withAlphaComponent(0.5) :
+            invalidTextColor?.withAlphaComponent(0.5)
+        )
+    }
+    
+    private func setPlaceholderColor(_ color: UIColor?) {
+        let attributes = [NSAttributedString.Key.foregroundColor: color as Any]
+        attributedPlaceholder = NSAttributedString(string: placeholder ?? "",
+                                                   attributes: attributes)
     }
     
 }

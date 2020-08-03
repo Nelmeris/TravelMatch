@@ -11,6 +11,8 @@
 		570B393E24CCB88100827B42 /* UITableView+ReusableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570B393B24CCB88100827B42 /* UITableView+ReusableCell.swift */; };
 		570B393F24CCB88100827B42 /* TableViewAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570B393C24CCB88100827B42 /* TableViewAdapter.swift */; };
 		57A3808124D098D5006FAFEC /* Switch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A3808024D098D5006FAFEC /* Switch.swift */; };
+		57A3809824D31444006FAFEC /* UIView+IBInspectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A3809724D31444006FAFEC /* UIView+IBInspectable.swift */; };
+		57A3809A24D314CB006FAFEC /* CGColor+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A3809924D314CB006FAFEC /* CGColor+UIColor.swift */; };
 		CE2806AA24A931980066FE7A /* CVCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = CE2806A924A931980066FE7A /* CVCalendar */; };
 		CE90C7A324C4C2C500731135 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE90C7A224C4C2C500731135 /* Assets.xcassets */; };
 		E121510924A49B8400C691E4 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E121510724A49B8000C691E4 /* TextField.swift */; };
@@ -48,6 +50,8 @@
 		570B393B24CCB88100827B42 /* UITableView+ReusableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+ReusableCell.swift"; sourceTree = "<group>"; };
 		570B393C24CCB88100827B42 /* TableViewAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewAdapter.swift; sourceTree = "<group>"; };
 		57A3808024D098D5006FAFEC /* Switch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Switch.swift; sourceTree = "<group>"; };
+		57A3809724D31444006FAFEC /* UIView+IBInspectable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+IBInspectable.swift"; sourceTree = "<group>"; };
+		57A3809924D314CB006FAFEC /* CGColor+UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGColor+UIColor.swift"; sourceTree = "<group>"; };
 		CE90C7A224C4C2C500731135 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E12150E524A49B6100C691E4 /* UI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E12150E924A49B6100C691E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -181,6 +185,8 @@
 				E121511B24A49C2600C691E4 /* UIColor+hex.swift */,
 				E1E450A824AA846500BDDAFF /* UICollectionView+Helpers.swift */,
 				E1BD8E2C24BD7EB600783F2A /* UITableView+Helpers.swift */,
+				57A3809724D31444006FAFEC /* UIView+IBInspectable.swift */,
+				57A3809924D314CB006FAFEC /* CGColor+UIColor.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -376,6 +382,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E121510E24A49BC100C691E4 /* SecondaryButton.swift in Sources */,
+				57A3809824D31444006FAFEC /* UIView+IBInspectable.swift in Sources */,
 				E121511F24A49C2F00C691E4 /* UIColor+ThemeColors.swift in Sources */,
 				E17CAAD324B44C7E009C5318 /* BarButtonItem.swift in Sources */,
 				E1300FB224C721A700A75803 /* PriceRangeControl.swift in Sources */,
@@ -401,6 +408,7 @@
 				E121510B24A49BA900C691E4 /* Label.swift in Sources */,
 				E16383C724C6D45A0091BE38 /* DropdownControl.swift in Sources */,
 				E1300FAF24C70D8E00A75803 /* Font.swift in Sources */,
+				57A3809A24D314CB006FAFEC /* CGColor+UIColor.swift in Sources */,
 				570B393E24CCB88100827B42 /* UITableView+ReusableCell.swift in Sources */,
 				E121511E24A49C2D00C691E4 /* UILabel+setLineHeight.swift in Sources */,
 			);

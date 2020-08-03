@@ -11,25 +11,19 @@ import UIKit
 @IBDesignable
 public class Button: UIButton {
     
-    @IBInspectable
-    var cornerRadius: CGFloat = 0.0 {
-        didSet {
-            self.layer.cornerRadius = self.cornerRadius
-        }
-    }
-
-    public override func awakeFromNib() {
-        super.awakeFromNib()
+    public override init(frame: CGRect) {
+        super.init(frame: frame)
         setupView()
     }
     
-    public override func prepareForInterfaceBuilder() {
-        super.prepareForInterfaceBuilder()
+    public required init?(coder: NSCoder) {
+        super.init(coder: coder)
         setupView()
     }
     
     func setupView() {
-        self.clipsToBounds = true
+        clipsToBounds = true
+        cornerRadius = 10
     }
     
 }
