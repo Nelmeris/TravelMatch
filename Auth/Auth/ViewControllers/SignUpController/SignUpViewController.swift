@@ -133,22 +133,24 @@ class SignUpViewController: BaseScrollViewController {
     // MARK: - Keyboard
     
     override func adjustForKeyboard(_ notification: Notification) {
+        shiftContent(with: notification,
+                     element: buttonsWrapView,
+                     bottomConstraint: buttonsBottomConstraint,
+                     padding: 0)
+        updateButtons(with: notification)
+    }
+    
+    private func updateButtons(with notification: Notification) {
         switch notification.name {
         case UIResponder.keyboardWillHideNotification:
             facebookButton?.alpha = 1
             facebookButton?.isHidden = false
         case UIResponder.keyboardWillShowNotification:
+            guard facebookButton?.alpha != 0 else { return }
             facebookButton?.alpha = 0
             facebookButton?.isHidden = true
         default: break
         }
-        guard let keyboardFrame = KeyboardHelper.parseFrame(from: notification),
-            keyboardFrame.height != 0 else { return }
-        shiftContent(with: notification,
-                     element: buttonsWrapView,
-                     bottomConstraint: buttonsBottomConstraint,
-                     padding: 0)
-        updateViewConstraints()
     }
     
 }

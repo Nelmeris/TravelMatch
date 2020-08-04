@@ -99,8 +99,6 @@ class RecoverByPhoneViewController: BaseScrollViewController {
     // MARK: - Keyboard
     
     override func adjustForKeyboard(_ notification: Notification) {
-        guard let keyboardFrame = KeyboardHelper.parseFrame(from: notification),
-            keyboardFrame.height != 0 else { return }
         shiftContent(with: notification,
                      element: buttonsWrapView,
                      bottomConstraint: buttonsBottomConstraint,

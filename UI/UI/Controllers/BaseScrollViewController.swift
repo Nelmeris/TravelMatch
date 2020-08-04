@@ -24,11 +24,21 @@ open class BaseScrollViewController: BaseViewController {
     open override func viewDidLoad() {
         super.viewDidLoad()
         addTapGestureToHideKeyboard()
+    }
+    
+    open override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         registerForKeyboardNotifications(notificationCenter: notificationCenter,
                                          with: #selector(adjustForKeyboard))
     }
     
+    open override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        removeKeyboardNotifications(notificationCenter: notificationCenter)
+    }
+    
     deinit {
+        removeNotifications()
         removeKeyboardNotifications(notificationCenter: notificationCenter)
     }
     

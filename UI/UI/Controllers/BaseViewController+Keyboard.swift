@@ -24,15 +24,15 @@ public extension BaseViewController {
                                           with selector: Selector) {
         notificationCenter.addObserver(self,
                                        selector: selector,
-                                       name: changeKeyboardFrameNotificationName,
-                                       object: nil)
-        notificationCenter.addObserver(self,
-                                       selector: selector,
                                        name: hideKeyboardNotificationName,
                                        object: nil)
         notificationCenter.addObserver(self,
                                        selector: selector,
                                        name: showKeyboardNotificationName,
+                                       object: nil)
+        notificationCenter.addObserver(self,
+                                       selector: selector,
+                                       name: changeKeyboardFrameNotificationName,
                                        object: nil)
     }
     
@@ -58,15 +58,18 @@ public extension BaseViewController {
                       element: UIView,
                       bottomConstraint: NSLayoutConstraint,
                       padding: CGFloat) {
+        var updatedConstant: CGFloat!
         switch keyboardNotification.name {
         case hideKeyboardNotificationName: // Сброс при скрытии клавиатуры
-            bottomConstraint.constant = padding
+            updatedConstant = padding
         default:
             guard let keyboardFrame = KeyboardHelper.parseFrame(from: keyboardNotification) else { return }
             // Восстановление "чистой" Y позиции элемента
             let originalBottomYPosition = element.frame.maxY + bottomConstraint.constant
-            bottomConstraint.constant = originalBottomYPosition - keyboardFrame.minY + padding
+            updatedConstant = originalBottomYPosition - keyboardFrame.minY + padding
         }
+        guard updatedConstant != bottomConstraint.constant else { return }
+        bottomConstraint.constant = updatedConstant
         view.layoutIfNeeded()
     }
     
