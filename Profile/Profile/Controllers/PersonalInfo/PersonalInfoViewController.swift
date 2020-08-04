@@ -9,15 +9,12 @@
 import UIKit
 import UI
 
-class PersonalInfoViewController: UIViewController {
+class PersonalInfoViewController: BaseScrollViewController {
     
-    var activeTextField: UITextField?
-    let notificationCenter = NotificationCenter.default
     let padding: CGFloat = 20
     
     // MARK: - Outlets
 
-    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var nameField: TextField!
     @IBOutlet weak var surnameField: TextField!
     @IBOutlet weak var genderSelector: DropdownControl!
@@ -31,9 +28,6 @@ class PersonalInfoViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        addTapGestureToHideKeyboard()
-        registerForKeyboardNotifications(notificationCenter: notificationCenter,
-                                         with: #selector(adjustForKeyboard))
         nameField.delegate = self
         surnameField.delegate = self
         emailField.delegate = self
@@ -46,13 +40,7 @@ class PersonalInfoViewController: UIViewController {
         navigationController?.navigationBar.topItem?.title = ""
     }
     
-    deinit {
-        removeKeyboardNotifications(notificationCenter: notificationCenter)
-    }
-    
-    // MARK: - Private
-    
-    @objc func adjustForKeyboard(_ notification: Notification) {
+    override func adjustForKeyboard(_ notification: Notification) {
         guard let keyboardFrame = KeyboardHelper.parseFrame(from: notification),
             keyboardFrame.height != 0 else { return }
         shiftContent(with: notification,
@@ -63,19 +51,7 @@ class PersonalInfoViewController: UIViewController {
         centeringOnTextField(textField, with: notification)
     }
     
-    private func centeringOnTextField(_ textField: UITextField,
-                                      with keyboardNotification: Notification) {
-        var yPosition = textField.frame.midY
-        // Не центрировать, если клавиатура скрыта
-        if keyboardNotification.name == hideKeyboardNotificationName {
-            yPosition = 0
-        }
-        scrollView.centering(on: yPosition, animated: true) // Центрирование
-    }
-    
 }
-
-// MARK: - ВРЕМЕННО ЗДЕСЬ
 
 extension PersonalInfoViewController: UITextFieldDelegate {
     
@@ -89,10 +65,45 @@ extension PersonalInfoViewController: UITextFieldDelegate {
     
 }
 
+// MARK: - ВРЕМЕННО ЗДЕСЬ
+
+open class BaseScrollViewController: BaseViewController {
+    
+    var activeTextField: UITextField?
+    @IBOutlet weak var scrollView: ScrollView!
+    
+    open override func viewDidLoad() {
+        super.viewDidLoad()
+        addTapGestureToHideKeyboard()
+        registerForKeyboardNotifications(notificationCenter: notificationCenter,
+                                         with: #selector(adjustForKeyboard))
+    }
+    
+    deinit {
+        removeKeyboardNotifications(notificationCenter: notificationCenter)
+    }
+    
+    // MARK: - Private
+    
+    @objc
+    internal func adjustForKeyboard(_ notification: Notification) { }
+    
+    internal func centeringOnTextField(_ textField: UITextField,
+                                      with keyboardNotification: Notification) {
+        var yPosition = textField.frame.midY
+        // Не центрировать, если клавиатура скрыта
+        if keyboardNotification.name == hideKeyboardNotificationName {
+            yPosition = 0
+        }
+        scrollView.centering(on: yPosition, animated: true) // Центрирование
+    }
+    
+}
+
 let hideKeyboardNotificationName = UIResponder.keyboardWillHideNotification
 let changeKeyboardFrameNotificationName = UIResponder.keyboardWillChangeFrameNotification
 
-extension UIViewController {
+public extension BaseViewController {
     
     func addTapGestureToHideKeyboard() {
         let tapGesture = UITapGestureRecognizer(target: view, action: #selector(view.endEditing))
@@ -145,9 +156,9 @@ extension UIViewController {
     
 }
 
-extension UIScrollView {
+public class ScrollView: UIScrollView {
     
-    func shiftContent(of keyboardNotification: Notification) {
+    public func shiftContent(of keyboardNotification: Notification) {
         guard let keyboardFrame = KeyboardHelper.parseFrame(from: keyboardNotification) else { return }
         
         switch keyboardNotification.name {
@@ -162,7 +173,7 @@ extension UIScrollView {
         }
     }
     
-    func centering(on yPosition: CGFloat, animated: Bool) {
+    public func centering(on yPosition: CGFloat, animated: Bool) {
         let height = frame.height - contentInset.bottom - contentInset.top // Видимая высота с учетом инсетов
         
         var centeringPoint: CGPoint?
@@ -186,9 +197,9 @@ extension UIScrollView {
     
 }
 
-class KeyboardHelper {
+public class KeyboardHelper {
     
-    static func parseFrame(from notification: Notification) -> CGRect? {
+    public static func parseFrame(from notification: Notification) -> CGRect? {
         guard let userInfo = notification.userInfo,
             let keyboardValue = userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue
             else { return nil }
