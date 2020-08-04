@@ -10,6 +10,8 @@ import UIKit
 
 public class ScrollView: UIScrollView {
     
+    /// Сдвигает контент по высоте выдвигаемой клавиатуры
+    /// - Parameter keyboardNotification: Клавиатурное уведомление
     public func shiftContent(of keyboardNotification: Notification) {
         guard let keyboardFrame = KeyboardHelper.parseFrame(from: keyboardNotification) else { return }
         
@@ -25,7 +27,13 @@ public class ScrollView: UIScrollView {
         }
     }
     
-    public func centering(on yPosition: CGFloat, animated: Bool) {
+    
+    /// Фокусирование на указываемой позиции. Если по заданной позиции скролл не может прокрутить,
+    /// он прилипает к одному из краев
+    /// - Parameters:
+    ///   - yPosition: Позиция для фокусирования
+    ///   - animated: Анимирование процесса
+    public func focusing(on yPosition: CGFloat, animated: Bool) {
         let height = frame.height - contentInset.bottom - contentInset.top // Видимая высота с учетом инсетов
         
         var centeringPoint: CGPoint?

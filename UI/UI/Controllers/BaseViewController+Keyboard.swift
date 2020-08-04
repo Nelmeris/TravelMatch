@@ -14,6 +14,7 @@ fileprivate let changeKeyboardFrameNotificationName = UIResponder.keyboardWillCh
 
 public extension BaseViewController {
     
+    /// Включение скрытия клавиатуры по нажатию на фон
     func addTapGestureToHideKeyboard() {
         let tapGesture = UITapGestureRecognizer(target: view, action: #selector(view.endEditing))
         view.addGestureRecognizer(tapGesture)
@@ -46,7 +47,6 @@ public extension BaseViewController {
                                           name: showKeyboardNotificationName,
                                           object: nil)
     }
-    
     
     /// Поднимает передаваемый элемент при открытии клавиатуры через его нижний констрейнт
     /// - Parameters:
