@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		CE0DECBC24A921930066B2FB /* Offers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE0DECB224A921930066B2FB /* Offers.framework */; };
-		CE0DECC124A921930066B2FB /* OffersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0DECC024A921930066B2FB /* OffersTests.swift */; };
 		CE196A6924AA7A41001D7157 /* ListOfOffersFilterCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE196A6824AA7A41001D7157 /* ListOfOffersFilterCollectionCell.swift */; };
 		CE196A6D24AA8EEF001D7157 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE196A6C24AA8EEF001D7157 /* CalendarView.swift */; };
 		CE196A6F24AA9686001D7157 /* OffersCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE196A6E24AA9686001D7157 /* OffersCoordinator.swift */; };
@@ -76,8 +75,6 @@
 		CE0DECB224A921930066B2FB /* Offers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Offers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE0DECB624A921930066B2FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE0DECBB24A921930066B2FB /* OffersTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OffersTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		CE0DECC024A921930066B2FB /* OffersTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffersTests.swift; sourceTree = "<group>"; };
-		CE0DECC224A921930066B2FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE196A6824AA7A41001D7157 /* ListOfOffersFilterCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOfOffersFilterCollectionCell.swift; sourceTree = "<group>"; };
 		CE196A6C24AA8EEF001D7157 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		CE196A6E24AA9686001D7157 /* OffersCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffersCoordinator.swift; sourceTree = "<group>"; };
@@ -136,7 +133,6 @@
 			isa = PBXGroup;
 			children = (
 				CE0DECB424A921930066B2FB /* Offers */,
-				CE0DECBF24A921930066B2FB /* OffersTests */,
 				CE0DECB324A921930066B2FB /* Products */,
 				CE17F77924A9295C0097B224 /* Frameworks */,
 			);
@@ -163,15 +159,6 @@
 				CE0DECB624A921930066B2FB /* Info.plist */,
 			);
 			path = Offers;
-			sourceTree = "<group>";
-		};
-		CE0DECBF24A921930066B2FB /* OffersTests */ = {
-			isa = PBXGroup;
-			children = (
-				CE0DECC024A921930066B2FB /* OffersTests.swift */,
-				CE0DECC224A921930066B2FB /* Info.plist */,
-			);
-			path = OffersTests;
 			sourceTree = "<group>";
 		};
 		CE17F77924A9295C0097B224 /* Frameworks */ = {
@@ -432,7 +419,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE0DECC124A921930066B2FB /* OffersTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
