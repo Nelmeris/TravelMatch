@@ -8,14 +8,15 @@
 
 import UIKit
 
-enum Font: String {
+public enum Font: String {
     case LatoRegular = "Lato-Regular"
     case MontserratRegular = "Montserrat-Regular"
     case MontserratMedium = "Montserrat-Medium"
     case MontserratSemiBold = "Montserrat-SemiBold"
     case MontserratBold = "Montserrat-Bold"
     case MontserratExtraBold = "Montserrat-ExtraBold"
-    func of(size: CGFloat) -> UIFont {
-        return UIFont(name: self.rawValue, size: size)!
+    
+    public func of(size: CGFloat) -> UIFont? {
+        return UIFont(name: self.rawValue, size: size)
     }
 }

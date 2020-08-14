@@ -16,7 +16,7 @@ public class LinkButton: Button {
         guard
             let title = title(for: .normal),
             let font = titleLabel?.font
-            else {return}
+            else { return }
         
         let attrString = NSMutableAttributedString()
         

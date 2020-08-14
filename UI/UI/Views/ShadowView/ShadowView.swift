@@ -10,66 +10,98 @@ import UIKit
 
 @IBDesignable
 public class ShadowView: UIView {
+
+    // MARK: - Properties
     
     @IBInspectable
-    var shadowColor: UIColor = .black {
+    public var gradientShadowColor: UIColor = .black {
         didSet {
-            setupGradient()
+            gradientLayer.colors?[1] = shadowGradientColor
         }
     }
 
     @IBInspectable
-    var shadowOpacity: CGFloat = 0.7 {
+    public var gradientShadowOpacity: CGFloat = 0.7 {
         didSet {
-            setupGradient()
+            gradientLayer.colors?[1] = shadowGradientColor
         }
     }
     
     @IBInspectable
-    var shadowSize: CGFloat = 0.6 {
+    public var gradientShadowSize: CGFloat = 0.6 {
         didSet {
-            setupGradient()
+            gradientLayer.frame = gradientFrame
         }
     }
     
-    public override func awakeFromNib() {
-        super.awakeFromNib()
+    @IBInspectable
+    public override var cornerRadius: CGFloat {
+        get { return super.cornerRadius }
+        set {
+            super.cornerRadius = newValue
+            gradientLayer.cornerRadius = newValue
+        }
+    }
+    
+    // MARK: - Layers
+    
+    private lazy var gradientLayer: CAGradientLayer = {
+        let gradient = CAGradientLayer()
+        
+        gradient.startPoint = CGPoint(x: 0, y: 0)
+        gradient.endPoint = CGPoint(x: 0, y: 1)
+        
+        gradient.colors = [
+            UIColor.white.withAlphaComponent(0).cgColor,
+            shadowGradientColor
+        ]
+        
+        gradient.frame = gradientFrame
+        gradient.cornerRadius = cornerRadius
+        
+        layer.insertSublayer(gradient, below: nil)
+        return gradient
+    }()
+    
+    // MARK: - Lifecycle
+    
+    public override init(frame: CGRect) {
+        super.init(frame: frame)
+        setupView()
+    }
+    
+    public required init?(coder: NSCoder) {
+        super.init(coder: coder)
         setupView()
     }
     
     public override func layoutSubviews() {
         super.layoutSubviews()
-        setupView()
+        gradientLayer.frame = gradientFrame
     }
+    
+    // MARK: - Setups
     
     private func setupView() {
         backgroundColor = .clear
-        setupGradient()
+        gradientShadowColor = .black
+        gradientShadowOpacity = 0.7
+        gradientShadowSize = 0.6
     }
     
-    private func setupGradient() {
-        let gradient = CAGradientLayer()
-        let shadowHeight: CGFloat = bounds.height * shadowSize
-        gradient.frame = CGRect(
+    private var gradientFrame: CGRect {
+        let shadowHeight: CGFloat = bounds.height * gradientShadowSize
+        let frame = CGRect(
             x: 0,
             y: bounds.height - shadowHeight,
             width: bounds.width,
             height: shadowHeight
         )
-        gradient.colors = [
-            UIColor.clear.cgColor,
-            shadowColor.withAlphaComponent(shadowOpacity).cgColor
-        ]
-        gradient.startPoint = CGPoint(x: 0, y: 0)
-        gradient.endPoint = CGPoint(x: 0, y: 1)
-        gradient.cornerRadius = layer.cornerRadius
-        
-        // replace gradient as needed
-        if let oldGradient = layer.sublayers?[0] as? CAGradientLayer {
-            layer.replaceSublayer(oldGradient, with: gradient)
-        } else {
-            layer.insertSublayer(gradient, below: nil)
-        }
+        return frame
+    }
+    
+    private var shadowGradientColor: CGColor {
+        return gradientShadowColor.withAlphaComponent(CGFloat(gradientShadowOpacity)).cgColor
     }
     
 }

@@ -10,13 +10,13 @@ import UIKit
 
 public class BarButtonItem: UIBarButtonItem {
     
-    public override func awakeFromNib() {
-        super.awakeFromNib()
+    public override init() {
+        super.init()
         setupView()
     }
     
-    public override func prepareForInterfaceBuilder() {
-        super.prepareForInterfaceBuilder()
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
         setupView()
     }
     

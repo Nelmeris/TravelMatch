@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Montserrat-Bold.ttf">
+            <string>Montserrat-Bold</string>
+        </array>
+        <array key="Montserrat-Regular.ttf">
+            <string>Montserrat-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProfileViewController" customModule="Profile" customModuleProvider="target">
+            <connections>
+                <outlet property="menuTableView" destination="Sgs-Zq-CoY" id="2nE-Hn-HXE"/>
+                <outlet property="menuTableViewHeight" destination="ToS-Ol-KPH" id="Rij-c6-p1w"/>
+                <outlet property="nameLabel" destination="Eu3-G6-VBI" id="ymF-C8-9Sl"/>
+                <outlet property="phoneNumberLabel" destination="ujM-HC-RXu" id="htR-ft-IA8"/>
+                <outlet property="profileImageView" destination="dzr-I3-u5F" id="AC7-7Q-YxK"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ArR-oB-Fja">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kuq-IS-aBL">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="680"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profileImage.png" translatesAutoresizingMaskIntoConstraints="NO" id="dzr-I3-u5F">
+                                    <rect key="frame" x="20" y="20" width="120" height="120"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="120" id="1Bb-ZS-OZp"/>
+                                        <constraint firstAttribute="width" constant="120" id="sxf-CQ-1rl"/>
+                                    </constraints>
+                                </imageView>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="wbf-Cs-ceR">
+                                    <rect key="frame" x="160" y="61.5" width="234" height="37.5"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Константин Коронов" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eu3-G6-VBI">
+                                            <rect key="frame" x="0.0" y="0.0" width="159.5" height="17.5"/>
+                                            <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="14"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+7 922 328 93 34" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ujM-HC-RXu">
+                                            <rect key="frame" x="0.0" y="22.5" width="97.5" height="15"/>
+                                            <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </stackView>
+                                <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" bouncesZoom="NO" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Sgs-Zq-CoY">
+                                    <rect key="frame" x="0.0" y="160" width="414" height="500"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="500" id="ToS-Ol-KPH"/>
+                                    </constraints>
+                                    <inset key="separatorInset" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
+                                </tableView>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <constraints>
+                                <constraint firstItem="wbf-Cs-ceR" firstAttribute="centerY" secondItem="dzr-I3-u5F" secondAttribute="centerY" id="2Yh-tD-RjV"/>
+                                <constraint firstItem="Sgs-Zq-CoY" firstAttribute="leading" secondItem="kuq-IS-aBL" secondAttribute="leading" id="53c-HX-hce"/>
+                                <constraint firstItem="Sgs-Zq-CoY" firstAttribute="top" secondItem="dzr-I3-u5F" secondAttribute="bottom" constant="20" id="F40-Vy-FmA"/>
+                                <constraint firstAttribute="bottom" secondItem="Sgs-Zq-CoY" secondAttribute="bottom" constant="20" id="NlZ-J5-b5s"/>
+                                <constraint firstItem="dzr-I3-u5F" firstAttribute="top" secondItem="kuq-IS-aBL" secondAttribute="top" constant="20" id="PrO-X4-xou"/>
+                                <constraint firstAttribute="trailing" secondItem="Sgs-Zq-CoY" secondAttribute="trailing" id="RDL-fN-YYN"/>
+                                <constraint firstItem="Sgs-Zq-CoY" firstAttribute="top" secondItem="dzr-I3-u5F" secondAttribute="bottom" constant="20" id="WVe-rv-XLd"/>
+                                <constraint firstItem="wbf-Cs-ceR" firstAttribute="leading" secondItem="dzr-I3-u5F" secondAttribute="trailing" constant="20" id="b7f-Yo-WnD"/>
+                                <constraint firstItem="dzr-I3-u5F" firstAttribute="leading" secondItem="kuq-IS-aBL" secondAttribute="leading" constant="20" id="h7B-sN-v8L"/>
+                                <constraint firstAttribute="trailing" secondItem="wbf-Cs-ceR" secondAttribute="trailing" constant="20" id="vXW-zw-pvz"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="kuq-IS-aBL" firstAttribute="top" secondItem="ArR-oB-Fja" secondAttribute="top" id="6F0-re-XdK"/>
+                        <constraint firstAttribute="bottom" secondItem="kuq-IS-aBL" secondAttribute="bottom" id="PGL-gm-wbU"/>
+                        <constraint firstAttribute="trailing" secondItem="kuq-IS-aBL" secondAttribute="trailing" id="TUW-zY-K3C"/>
+                        <constraint firstItem="kuq-IS-aBL" firstAttribute="leading" secondItem="ArR-oB-Fja" secondAttribute="leading" id="hnG-ds-PXJ"/>
+                    </constraints>
+                </scrollView>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <constraints>
+                <constraint firstItem="ArR-oB-Fja" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="0jN-xx-uBX"/>
+                <constraint firstItem="kuq-IS-aBL" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" id="2zu-2h-0zn"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ArR-oB-Fja" secondAttribute="trailing" id="D0X-2Z-FWm"/>
+                <constraint firstItem="kuq-IS-aBL" firstAttribute="height" secondItem="fnl-2z-Ty3" secondAttribute="height" priority="250" id="LBo-hi-NR2"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="ArR-oB-Fja" secondAttribute="bottom" id="iQ7-bP-F1G"/>
+                <constraint firstItem="ArR-oB-Fja" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="lkl-FL-0cE"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="137.68115942028987" y="114.50892857142857"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="profileImage.png" width="120" height="120"/>
+    </resources>
+</document>

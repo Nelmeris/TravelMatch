@@ -10,6 +10,8 @@ import UIKit
 import Core
 import Locals
 import Offers
+import Profile
+import Auth
 
 class TabCoordinator: BaseCoordinator {
     
@@ -17,22 +19,35 @@ class TabCoordinator: BaseCoordinator {
 
     private let localsService: LocalsService
     private let mockFakeDataService: OffersService
+    private let profileService: ProfileService
+    private let notifySettingsService: NotifySettingsService
+    private let authService: AuthLogout
 
     init(
         rootController: NavigationController,
         localsService: LocalsService,
-        mockFakeDataService: OffersService
+        mockFakeDataService: OffersService,
+        profileService: ProfileService,
+        notifySettingsService: NotifySettingsService,
+        authService: AuthLogout
     ) {
         self.rootController = rootController
         self.localsService = localsService
         self.mockFakeDataService = mockFakeDataService
+        self.profileService = profileService
+        self.notifySettingsService = notifySettingsService
+        self.authService = authService
     }
     
     override func start() {
+        authService.subscribeOnLogout(observer: self,
+                                      selector: #selector(onLogout))
+        
         let tabBarController = buildTabBarController()
         rootController?.present(tabBarController, animated: false, completion: nil)
         startOffersCoordinator(with: tabBarController.viewControllers![1])
         startLocalsCoordinator(with: tabBarController.viewControllers![3])
+        startProfileCoordinator(with: tabBarController.viewControllers![4])
     }
 
     private func startOffersCoordinator(with controller: UIViewController) {
@@ -68,6 +83,15 @@ class TabCoordinator: BaseCoordinator {
         
         return tabController
     }
+    
+    private func startProfileCoordinator(with controller: UIViewController) {
+        guard let controller = controller as? NavigationController else { fatalError() }
+        let coordinator = ProfileCoordinator(rootController: controller,
+                                             profileService: profileService,
+                                             notifySettingsService: notifySettingsService)
+        addDependency(coordinator)
+        coordinator.start()
+    }
 
     private func createNavigationController(imageName: String,
                                             tag: Int) -> NavigationController {
@@ -78,6 +102,11 @@ class TabCoordinator: BaseCoordinator {
             tag: tag
         )
         return navController
+    }
+    
+    @objc
+    private func onLogout() {
+        onFinishFlow?()
     }
 
 }

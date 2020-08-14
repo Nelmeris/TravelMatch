@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		570B38E824CC591C00827B42 /* AppStartManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570B38E724CC591C00827B42 /* AppStartManager.swift */; };
+		57A3806724D0482C006FAFEC /* Profile.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 57A3806524D0482C006FAFEC /* Profile.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		57A3807524D064B7006FAFEC /* profileImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 57A3807424D064B6006FAFEC /* profileImage.png */; };
 		57AFF42024CC514E007B913E /* Services.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57AFF41F24CC514E007B913E /* Services.framework */; };
 		57AFF42124CC514E007B913E /* Services.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 57AFF41F24CC514E007B913E /* Services.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CE17F77524A9223D0097B224 /* Offers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE17F77424A9223D0097B224 /* Offers.framework */; };
@@ -92,6 +94,7 @@
 				E152D36924A79E370009972F /* UI.framework in Embed Frameworks */,
 				CE17F77624A9223D0097B224 /* Offers.framework in Embed Frameworks */,
 				E190E90B24A4A74500E95698 /* OnBoarding.framework in Embed Frameworks */,
+				57A3806724D0482C006FAFEC /* Profile.framework in Embed Frameworks */,
 				E152D37C24A7A0460009972F /* Questions.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -101,6 +104,8 @@
 
 /* Begin PBXFileReference section */
 		570B38E724CC591C00827B42 /* AppStartManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStartManager.swift; sourceTree = "<group>"; };
+		57A3806524D0482C006FAFEC /* Profile.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Profile.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		57A3807424D064B6006FAFEC /* profileImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profileImage.png; sourceTree = "<group>"; };
 		57AFF41F24CC514E007B913E /* Services.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Services.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE17F77424A9223D0097B224 /* Offers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Offers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE27404824C6485800BAD20B /* Pic.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pic.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -185,18 +190,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		CE64945224D21BEB00B79E74 /* Recovered References */ = {
+        CE64945224D21BEB00B79E74 /* Recovered References */ = {
+            isa = PBXGroup;
+            children = (
+                CE27404924C6485800BAD20B /* Reviews.framework */,
+                CE27404824C6485800BAD20B /* Pic.framework */,
+            );
+            name = "Recovered References";
+            sourceTree = "<group>";
+        };
+		57A3804C24D0283C006FAFEC /* Profile */ = {
 			isa = PBXGroup;
 			children = (
-				CE27404924C6485800BAD20B /* Reviews.framework */,
-				CE27404824C6485800BAD20B /* Pic.framework */,
+				57A3807424D064B6006FAFEC /* profileImage.png */,
 			);
-			name = "Recovered References";
+			path = Profile;
 			sourceTree = "<group>";
 		};
 		D94AE2D6B9F91AED3D8518BA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				57A3806524D0482C006FAFEC /* Profile.framework */,
 				E1EE7EB224AC845D00715B02 /* Locals.framework */,
 				57AFF41F24CC514E007B913E /* Services.framework */,
 				CE17F77424A9223D0097B224 /* Offers.framework */,
@@ -326,6 +340,7 @@
 				E17472F024B85913009974BD /* Interests */,
 				E16034D724B2F8D8000E8303 /* Locals */,
 				E1E450B224AA8BD200BDDAFF /* Questions */,
+				57A3804C24D0283C006FAFEC /* Profile */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -442,6 +457,7 @@
 				E1F22E4724C57F730089BB48 /* l1_orig.jpg in Resources */,
 				E1E450BD24AA8BE900BDDAFF /* q2.png in Resources */,
 				E16034E124B2F8E9000E8303 /* l2.png in Resources */,
+				57A3807524D064B7006FAFEC /* profileImage.png in Resources */,
 				E1E450C024AA8BE900BDDAFF /* q8.png in Resources */,
 				E1E450C424AA8BE900BDDAFF /* q3.png in Resources */,
 				E14659CF2494B0C300BBC9F5 /* Assets.xcassets in Resources */,
