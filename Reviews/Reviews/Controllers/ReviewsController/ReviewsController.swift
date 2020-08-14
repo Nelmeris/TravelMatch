@@ -28,7 +28,7 @@ class ReviewsController: BaseViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var reviewTextField: TextField!
     @IBOutlet weak var sendReviewButtonOutlet: Button!
-    @IBOutlet weak var sendReviewView: UIView!
+    @IBOutlet weak var sendReviewViewHeightConstraint: NSLayoutConstraint!
     
     //MARK: - Init
     ///init with Images for scrolling
@@ -50,6 +50,7 @@ class ReviewsController: BaseViewController {
     
     func configure() {
         addGesture()
+        addKeyboardObservers()
         configureTableView()
         configureSendReviewView()
     }
@@ -62,17 +63,17 @@ class ReviewsController: BaseViewController {
     
     func configureSendReviewView() {
         if isHiddenSendReviewView {
-            sendReviewView.translatesAutoresizingMaskIntoConstraints = false
-            sendReviewView.heightAnchor.constraint(equalToConstant: 0).isActive = true
+            sendReviewViewHeightConstraint.constant = 0
         }
     }
     
-    //MARK: - Gestures
+    //MARK: - Gestures and keyboard
     func addGesture() {
-        
         let tapGR = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
         view.addGestureRecognizer(tapGR)
-        
+    }
+    
+    func addKeyboardObservers() {
         //Keyboard
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardChange), name: UIResponder.keyboardWillHideNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardChange), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
