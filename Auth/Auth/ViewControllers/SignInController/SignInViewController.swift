@@ -8,6 +8,7 @@
 
 import UIKit
 import UI
+import Core
 
 enum SignInViewControllerState {
     case initial(userName: String)
@@ -38,13 +39,6 @@ class SignInViewController: BaseScrollViewController {
 
     @IBOutlet weak var buttonsWrapView: UIView!
     @IBOutlet private weak var buttonsBottomConstraint: NSLayoutConstraint!
-    
-    // MARK: - Validation
-    
-    private let passwordPredicate = NSPredicate(
-        format: "SELF MATCHES %@",
-        ".{6,}"
-    )
     
     // MARK: - Lifecycle
 
@@ -87,7 +81,7 @@ class SignInViewController: BaseScrollViewController {
     
     func isInputValid() -> Bool {
         guard let passwordValue = passwordField?.text,
-            passwordPredicate.evaluate(with: passwordValue)
+            Validator.isValid(value: passwordValue, type: .password)
             else {return false}
         
         return true
