@@ -36,7 +36,7 @@ public class PhoneNumberField: PhoneNumberTextField {
     }
     
     @IBInspectable
-    public var defaultBorderColor: UIColor? = UIColor.TextFields.invalidBorderColor {
+    public var defaultBorderColor: UIColor? = UIColor.TextFields.defaultBorderColor {
         didSet { updateColors() }
     }
     
@@ -105,7 +105,7 @@ public class PhoneNumberField: PhoneNumberTextField {
         borderWidth = 1
         defaultTextColor = UIColor.TextFields.defaultTextColor
         invalidTextColor = UIColor.TextFields.invalidTextColor
-        borderColor = UIColor.TextFields.defaultBorderColor
+        defaultBorderColor = UIColor.TextFields.defaultBorderColor
         invalidBorderColor = UIColor.TextFields.invalidBorderColor
         updateColors()
     }
@@ -115,7 +115,7 @@ public class PhoneNumberField: PhoneNumberTextField {
             defaultTextColor :
             invalidTextColor
         borderColor = !isInvalid ?
-            borderColor :
+            defaultBorderColor :
             invalidBorderColor
         setPlaceholderColor(!isInvalid ?
             defaultTextColor?.withAlphaComponent(0.5) :

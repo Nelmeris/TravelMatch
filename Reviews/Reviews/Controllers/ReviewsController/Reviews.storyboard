@@ -61,11 +61,11 @@
                                     </constraints>
                                 </view>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="ReviewsTableViewCell" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ReviewsTableViewCell" rowHeight="172" id="294-YJ-tbb" customClass="ReviewsTableViewCell" customModule="Reviews" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="72" width="414" height="172"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="ReviewsTableViewCell" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ReviewsTableViewCell" id="294-YJ-tbb" customClass="ReviewsTableViewCell" customModule="Reviews" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="72" width="414" height="197"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="294-YJ-tbb" id="LHV-d5-xPR">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="172"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="197"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="janko" translatesAutoresizingMaskIntoConstraints="NO" id="qbh-OG-BJk">
@@ -94,7 +94,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Koe-4b-yTx" customClass="Label" customModule="UI">
-                                                    <rect key="frame" x="20" y="90" width="374" height="72"/>
+                                                    <rect key="frame" x="20" y="90" width="374" height="97"/>
                                                     <string key="text">Очень хорошо продуманный тур. Зален профессионален, преподает венгерскую историю с очень большим количеством шуток, имея некоторые ссылки или связи с каждой историей, которую он рассказывает, что, безусловно, значительно облегчает понимание истории в целом. Настоятельно рекомендуется, никто не пожалеет!</string>
                                                     <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="11"/>
                                                     <nil key="textColor"/>
@@ -159,7 +159,7 @@
                                     <constraint firstItem="4kZ-IM-gqc" firstAttribute="leading" secondItem="GwL-cc-QNQ" secondAttribute="trailing" constant="20" id="Lg2-SF-rjW"/>
                                     <constraint firstAttribute="height" constant="102" id="TRl-Z9-mYV"/>
                                     <constraint firstItem="GwL-cc-QNQ" firstAttribute="top" secondItem="lm2-xs-CSg" secondAttribute="top" constant="10" id="Wqe-Yn-VL5"/>
-                                    <constraint firstAttribute="bottom" secondItem="GwL-cc-QNQ" secondAttribute="bottom" constant="44" id="aQj-GD-4yE"/>
+                                    <constraint firstAttribute="bottom" relation="lessThanOrEqual" secondItem="GwL-cc-QNQ" secondAttribute="bottom" constant="44" id="aQj-GD-4yE"/>
                                     <constraint firstItem="4kZ-IM-gqc" firstAttribute="centerY" secondItem="GwL-cc-QNQ" secondAttribute="centerY" id="o5e-RL-PH3"/>
                                     <constraint firstItem="GwL-cc-QNQ" firstAttribute="leading" secondItem="lm2-xs-CSg" secondAttribute="leading" constant="20" id="qkY-Tm-xuT"/>
                                 </constraints>
@@ -182,7 +182,7 @@
                         <outlet property="reviewSuperView" destination="CDC-Xg-UYG" id="u0d-Hl-q8s"/>
                         <outlet property="reviewTextField" destination="GwL-cc-QNQ" id="oNO-AC-ZPp"/>
                         <outlet property="sendReviewButtonOutlet" destination="4kZ-IM-gqc" id="fEB-nD-QEp"/>
-                        <outlet property="sendReviewView" destination="lm2-xs-CSg" id="GYr-Hb-ksg"/>
+                        <outlet property="sendReviewViewHeightConstraint" destination="TRl-Z9-mYV" id="hoR-em-SOV"/>
                         <outlet property="tableView" destination="PIZ-Oq-YVe" id="44i-Nj-gwI"/>
                     </connections>
                 </viewController>
