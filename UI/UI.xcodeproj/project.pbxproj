@@ -47,6 +47,7 @@
 		E1E450A924AA846500BDDAFF /* UICollectionView+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E450A824AA846500BDDAFF /* UICollectionView+Helpers.swift */; };
 		E1E450C924AA93DD00BDDAFF /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E450C824AA93DD00BDDAFF /* ShadowView.swift */; };
 		E1E450CC24AB11EB00BDDAFF /* RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E450CB24AB11EB00BDDAFF /* RoundedView.swift */; };
+		E1F774D724D07273006CE47C /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1F774D624D07273006CE47C /* Colors.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -90,6 +91,7 @@
 		E1E450A824AA846500BDDAFF /* UICollectionView+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Helpers.swift"; sourceTree = "<group>"; };
 		E1E450C824AA93DD00BDDAFF /* ShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
 		E1E450CB24AB11EB00BDDAFF /* RoundedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedView.swift; sourceTree = "<group>"; };
+		E1F774D624D07273006CE47C /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -300,6 +302,7 @@
 			children = (
 				E1B9B63124A785020031C0AD /* PhoneNumberMetadata.json */,
 				E150DE2024C4379E00804B9E /* Assets.xcassets */,
+				E1F774D624D07273006CE47C /* Colors.xcassets */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -389,6 +392,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E150DE2124C4379E00804B9E /* Assets.xcassets in Resources */,
+				E1F774D724D07273006CE47C /* Colors.xcassets in Resources */,
 				E1B9B63224A785020031C0AD /* PhoneNumberMetadata.json in Resources */,
 				CE90C7A324C4C2C500731135 /* Assets.xcassets in Resources */,
 			);

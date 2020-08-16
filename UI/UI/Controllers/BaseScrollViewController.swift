@@ -19,34 +19,6 @@ open class BaseScrollViewController: BaseViewController {
     
     @IBOutlet public weak var scrollView: ScrollView!
     
-    // MARK: - Lifecycle
-    
-    open override func viewDidLoad() {
-        super.viewDidLoad()
-        addTapGestureToHideKeyboard()
-    }
-    
-    open override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        registerForKeyboardNotifications(notificationCenter: notificationCenter,
-                                         with: #selector(adjustForKeyboard))
-    }
-    
-    open override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        removeKeyboardNotifications(notificationCenter: notificationCenter)
-    }
-    
-    deinit {
-        removeNotifications()
-        removeKeyboardNotifications(notificationCenter: notificationCenter)
-    }
-    
-    // MARK: - Overridable
-    
-    @objc
-    open func adjustForKeyboard(_ notification: Notification) { }
-    
     // MARK: - Public
     
     /// Фокусировка контентного скролла по указанному текстовому полю с учетом клавиатуры

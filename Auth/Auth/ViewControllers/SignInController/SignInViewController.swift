@@ -45,6 +45,7 @@ class SignInViewController: BaseScrollViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.topItem?.title = ""
+        shiftedContent = (buttonsWrapView, buttonsBottomConstraint, 0)
         nextButton?.isEnabled = isInputValid()
     }
     
@@ -107,15 +108,6 @@ class SignInViewController: BaseScrollViewController {
     @IBAction func passwordFieldDidEndOnExit(_ sender: Any) {
         guard isInputValid() else {return}
         continueButtonClicked(sender)
-    }
-    
-    // MARK: - Keyboard
-    
-    override func adjustForKeyboard(_ notification: Notification) {
-        shiftContent(with: notification,
-                     element: buttonsWrapView,
-                     bottomConstraint: buttonsBottomConstraint,
-                     padding: 0)
     }
     
 }

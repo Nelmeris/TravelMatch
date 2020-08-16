@@ -54,17 +54,19 @@ public extension BaseViewController {
     ///   - element: Поднимаемый элемент
     ///   - bottomConstraint: Нижний констрейнт
     ///   - padding: Базовый отступ
-    func shiftContent(with keyboardNotification: Notification,
+    func shiftContent(with keyboardState: KeyboardState,
                       element: UIView,
                       bottomConstraint: NSLayoutConstraint,
                       padding: CGFloat) {
         var updatedConstant: CGFloat!
-        switch keyboardNotification.name {
-        case hideKeyboardNotificationName: // Сброс при скрытии клавиатуры
+        var keyboardFrame: CGRect?
+        switch keyboardState {
+        case .willHide: // Сброс при скрытии клавиатуры
             updatedConstant = padding
-        default:
-            guard let keyboardFrame = KeyboardHelper.parseFrame(from: keyboardNotification) else { return }
-            // Восстановление "чистой" Y позиции элемента
+        case .willChangeFrame(let frame): keyboardFrame = frame
+        case .willShow(let frame): keyboardFrame = frame
+        }
+        if let keyboardFrame = keyboardFrame {
             let originalBottomYPosition = element.frame.maxY + bottomConstraint.constant
             updatedConstant = originalBottomYPosition - keyboardFrame.minY + padding
         }

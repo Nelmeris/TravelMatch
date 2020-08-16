@@ -46,6 +46,9 @@ class SignUpViewController: BaseScrollViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        shiftedContent = (element: buttonsWrapView,
+                          bottomConstraint: buttonsBottomConstraint,
+                          padding: 0)
         navigationController?.navigationBar.topItem?.title = ""
         nameField?.autocorrectionType = .no
         nextButton?.isEnabled = isInputValid()
@@ -121,20 +124,17 @@ class SignUpViewController: BaseScrollViewController {
     
     // MARK: - Keyboard
     
-    override func adjustForKeyboard(_ notification: Notification) {
-        shiftContent(with: notification,
-                     element: buttonsWrapView,
-                     bottomConstraint: buttonsBottomConstraint,
-                     padding: 0)
-        updateButtons(with: notification)
+    override func keyboardWillChangeState(_ state: KeyboardState) {
+        super.keyboardWillChangeState(state)
+        updateButtons(with: state)
     }
     
-    private func updateButtons(with notification: Notification) {
-        switch notification.name {
-        case UIResponder.keyboardWillHideNotification:
+    private func updateButtons(with keyboardState: KeyboardState) {
+        switch keyboardState {
+        case .willHide:
             facebookButton?.alpha = 1
             facebookButton?.isHidden = false
-        case UIResponder.keyboardWillShowNotification:
+        case .willShow:
             guard facebookButton?.alpha != 0 else { return }
             facebookButton?.alpha = 0
             facebookButton?.isHidden = true
