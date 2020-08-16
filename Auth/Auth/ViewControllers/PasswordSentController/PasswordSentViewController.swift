@@ -51,4 +51,5 @@ class PasswordSentViewController: BaseViewController {
         messageLabel?.text = message
         view.setNeedsLayout()
     }
+    
 }

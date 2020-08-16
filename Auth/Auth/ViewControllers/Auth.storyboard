@@ -179,6 +179,7 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="buttonsBottomConstraint" destination="0t0-qd-rcF" id="6Gk-Cf-VcS"/>
+                        <outlet property="buttonsWrapView" destination="UJt-va-2vd" id="eiZ-Fl-bOM"/>
                         <outlet property="emailField" destination="cJ6-cx-ee1" id="HVK-lF-2rQ"/>
                         <outlet property="nextButton" destination="HXv-3d-Ylt" id="A9W-MK-ukR"/>
                         <outlet property="scrollView" destination="KCN-eo-aVP" id="87R-9Z-ZFK"/>
@@ -201,7 +202,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JWF-0x-HEn">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JWF-0x-HEn" customClass="ScrollView" customModule="UI">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="774"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B6H-Ng-X8s" userLabel="ContentView">
@@ -299,9 +300,6 @@
                                     <constraint firstItem="B6H-Ng-X8s" firstAttribute="leading" secondItem="JWF-0x-HEn" secondAttribute="leading" id="se8-0R-b77"/>
                                     <constraint firstItem="B6H-Ng-X8s" firstAttribute="bottom" secondItem="JWF-0x-HEn" secondAttribute="bottom" id="xCy-Jo-hd7"/>
                                 </constraints>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="vLh-Ut-n0p" appends="YES" id="eLu-AH-QhM"/>
-                                </connections>
                             </scrollView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kAD-f3-Qi8" userLabel="ButtonsWrapView">
                                 <rect key="frame" x="0.0" y="774" width="414" height="88"/>
@@ -350,6 +348,7 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="buttonsBottomConstraint" destination="F4s-2h-zND" id="q1B-GR-cSt"/>
+                        <outlet property="buttonsWrapView" destination="kAD-f3-Qi8" id="Jq0-ZB-Srg"/>
                         <outlet property="nextButton" destination="LEN-96-OUP" id="Poo-Q4-D28"/>
                         <outlet property="phoneField" destination="cTs-ex-G8r" id="cbM-Rr-uaE"/>
                         <outlet property="scrollView" destination="JWF-0x-HEn" id="zNP-yq-ule"/>
@@ -372,17 +371,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y3y-VL-gLF">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y3y-VL-gLF" customClass="ScrollView" customModule="UI">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="774"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7l0-cD-TNb" userLabel="ContentView">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="686"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aGU-As-glR" userLabel="FormView">
-                                                <rect key="frame" x="20" y="220.5" width="374" height="245"/>
+                                                <rect key="frame" x="20" y="223" width="374" height="240.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Добро пожаловать, UserName!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="foa-yz-sQN" customClass="Label" customModule="UI">
-                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="68.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="57"/>
                                                         <fontDescription key="fontDescription" name="Montserrat-ExtraBold" family="Montserrat" pointSize="28"/>
                                                         <color key="textColor" red="0.18823529410000001" green="0.30588235289999999" blue="0.4941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -393,7 +392,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Введи пароль, чтобы войти в приложение" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8lD-Rs-ddd" customClass="Label" customModule="UI">
-                                                        <rect key="frame" x="0.0" y="88.5" width="374" height="17.5"/>
+                                                        <rect key="frame" x="0.0" y="77" width="374" height="24.5"/>
                                                         <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="14"/>
                                                         <color key="textColor" red="0.16862745100000001" green="0.1647058824" blue="0.18039215689999999" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -404,7 +403,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Пароль" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xbB-i2-VrT" customClass="TextField" customModule="UI">
-                                                        <rect key="frame" x="0.0" y="146" width="374" height="48"/>
+                                                        <rect key="frame" x="0.0" y="141.5" width="374" height="48"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="48" id="I04-sT-SVE"/>
                                                         </constraints>
@@ -426,7 +425,7 @@
                                                         </connections>
                                                     </textField>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="aAh-cv-2WD">
-                                                        <rect key="frame" x="0.0" y="214" width="374" height="31"/>
+                                                        <rect key="frame" x="0.0" y="209.5" width="374" height="31"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8XQ-X7-cZw" customClass="LinkButton" customModule="UI">
                                                                 <rect key="frame" x="0.0" y="0.0" width="219.5" height="31"/>
@@ -486,9 +485,6 @@
                                     <constraint firstItem="7l0-cD-TNb" firstAttribute="leading" secondItem="y3y-VL-gLF" secondAttribute="leading" id="fnH-Sc-SWr"/>
                                     <constraint firstItem="7l0-cD-TNb" firstAttribute="top" secondItem="y3y-VL-gLF" secondAttribute="top" id="s3n-Fc-ZUC"/>
                                 </constraints>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="iV9-d7-mHE" appends="YES" id="7un-2d-nrj"/>
-                                </connections>
                             </scrollView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OIh-Oe-0Kj" userLabel="ButtonsWrapView">
                                 <rect key="frame" x="0.0" y="774" width="414" height="88"/>
@@ -543,6 +539,7 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="buttonsBottomConstraint" destination="AAk-7F-ydN" id="6gn-xE-d7U"/>
+                        <outlet property="buttonsWrapView" destination="OIh-Oe-0Kj" id="mmV-Ut-1ii"/>
                         <outlet property="nextButton" destination="rgF-yN-2Jf" id="ffr-ta-yDl"/>
                         <outlet property="passwordField" destination="xbB-i2-VrT" id="J0n-a8-GYL"/>
                         <outlet property="rememberCheckbox" destination="yMH-kv-tbz" id="mMv-nH-B3v"/>
@@ -567,7 +564,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YFH-Lp-EcS">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YFH-Lp-EcS" customClass="ScrollView" customModule="UI">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="706"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XBf-pW-iiu" userLabel="ContentView">
@@ -677,9 +674,6 @@
                                     <constraint firstItem="XBf-pW-iiu" firstAttribute="leading" secondItem="YFH-Lp-EcS" secondAttribute="leading" id="s6s-3Z-X1H"/>
                                     <constraint firstItem="XBf-pW-iiu" firstAttribute="top" secondItem="YFH-Lp-EcS" secondAttribute="top" id="tkj-EK-Vau"/>
                                 </constraints>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="Dha-AY-MKn" appends="YES" id="fEt-LX-Yq1"/>
-                                </connections>
                             </scrollView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8YC-9E-Hpm" userLabel="ButtonsWrapView">
                                 <rect key="frame" x="0.0" y="706" width="414" height="156"/>
@@ -738,6 +732,7 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="buttonsBottomConstraint" destination="3pn-Lv-QtX" id="qNa-Xw-JOv"/>
+                        <outlet property="buttonsWrapView" destination="8YC-9E-Hpm" id="gBM-rM-Ql8"/>
                         <outlet property="facebookButton" destination="9CR-lf-Peg" id="12W-E7-oiN"/>
                         <outlet property="nameField" destination="ivX-6a-oO1" id="ao9-Xj-xzc"/>
                         <outlet property="nextButton" destination="4u0-BL-wIy" id="b42-4c-7wI"/>
@@ -763,7 +758,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h9c-wv-mcS">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h9c-wv-mcS" customClass="ScrollView" customModule="UI">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="638"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bT3-Wa-SOG" userLabel="ContentView">
@@ -861,9 +856,6 @@
                                     <constraint firstItem="bT3-Wa-SOG" firstAttribute="trailing" secondItem="h9c-wv-mcS" secondAttribute="trailing" id="cA6-Qp-3Z2"/>
                                     <constraint firstItem="bT3-Wa-SOG" firstAttribute="bottom" secondItem="h9c-wv-mcS" secondAttribute="bottom" id="leX-sV-PTs"/>
                                 </constraints>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="Du1-hw-aSw" appends="YES" id="UeN-uW-ufE"/>
-                                </connections>
                             </scrollView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RRU-EA-tSe" userLabel="ButtonsWrapView">
                                 <rect key="frame" x="0.0" y="638" width="414" height="224"/>
@@ -934,6 +926,7 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="buttonsBottomConstraint" destination="4bc-cP-AHm" id="erg-sy-QxY"/>
+                        <outlet property="buttonsWrapView" destination="RRU-EA-tSe" id="xgi-9S-lab"/>
                         <outlet property="facebookButton" destination="bw8-GA-U4j" id="WRW-wo-Z2G"/>
                         <outlet property="guestButton" destination="yeF-Q0-ihV" id="2ur-YC-SDD"/>
                         <outlet property="nextButton" destination="n5H-iZ-L57" id="uJB-Uc-Ge1"/>
@@ -1041,7 +1034,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LBQ-fL-aUe">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LBQ-fL-aUe" customClass="ScrollView" customModule="UI">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="638"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0yA-0L-tSD" userLabel="ContentView">
@@ -1212,6 +1205,7 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="buttonsBottomConstraint" destination="zxX-bW-v7x" id="xdh-lO-sXJ"/>
+                        <outlet property="buttonsWrapView" destination="TrR-Ln-utS" id="HPN-pH-bnu"/>
                         <outlet property="emailField" destination="yvD-o7-z5A" id="ngk-Yp-kAa"/>
                         <outlet property="facebookButton" destination="692-El-9Py" id="MqU-5k-tz2"/>
                         <outlet property="guestButton" destination="QNo-Dm-TYR" id="Tk7-2y-b8y"/>
