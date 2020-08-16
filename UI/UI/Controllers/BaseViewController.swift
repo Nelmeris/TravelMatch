@@ -11,11 +11,13 @@ import UIKit
 open class BaseViewController: UIViewController {
 
     public var notificationCenter = NotificationCenter.default
+    public var shiftedContent: (element: UIView, bottomConstraint: NSLayoutConstraint, padding: CGFloat)?
     
     // MARK: - Lifecycle
     
     open override func viewDidLoad() {
         super.viewDidLoad()
+        addTapGestureToHideKeyboard()
         navigationController?.navigationBar.tintColor = UIColor.ThemeColors.blackColor
     }
     
@@ -36,11 +38,11 @@ open class BaseViewController: UIViewController {
     // MARK: - Notifications
     
     open func addNotifications() {
-        
+        registerForKeyboardNotifications(notificationCenter: notificationCenter, with: #selector(adjustForKeyboard(_:)))
     }
     
     open func removeNotifications() {
-        
+        removeKeyboardNotifications(notificationCenter: notificationCenter)
     }
     
     // MARK: - Activity indicator
@@ -90,6 +92,22 @@ open class BaseViewController: UIViewController {
             style: UIAlertAction.Style.default,
             handler: nil))
         present(alert, animated: true, completion: nil)
+    }
+    
+    // MARK: - Keyboard
+    
+    @objc
+    private func adjustForKeyboard(_ notification: Notification) {
+        guard let keyboardState = KeyboardHelper.parse(from: notification) else { return }
+        keyboardWillChangeState(keyboardState)
+    }
+    
+    open func keyboardWillChangeState(_ state: KeyboardState) {
+        guard let shiftData = shiftedContent else { return }
+        shiftContent(with: state,
+                     element: shiftData.element,
+                     bottomConstraint: shiftData.bottomConstraint,
+                     padding: shiftData.padding)
     }
     
 }

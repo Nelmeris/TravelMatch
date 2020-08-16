@@ -16,7 +16,7 @@ enum RecoverByEmailViewControllerState {
     case error(String)
 }
 
-class RecoverByEmailViewController: BaseViewController {
+class RecoverByEmailViewController: BaseScrollViewController {
     
     // MARK: - Input
     
@@ -33,16 +33,19 @@ class RecoverByEmailViewController: BaseViewController {
     
     // MARK: - Outlets
     
-    @IBOutlet private weak var scrollView: UIScrollView?
     @IBOutlet private weak var emailField: TextField?
     @IBOutlet private weak var nextButton: Button?
     
-    @IBOutlet private weak var buttonsBottomConstraint: NSLayoutConstraint?
+    @IBOutlet weak var buttonsWrapView: UIView!
+    @IBOutlet private weak var buttonsBottomConstraint: NSLayoutConstraint!
     
     // MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        shiftedContent = (element: buttonsWrapView,
+                          bottomConstraint: buttonsBottomConstraint,
+                          padding: 0)
         navigationController?.navigationBar.topItem?.title = ""
     }
     
@@ -73,28 +76,6 @@ class RecoverByEmailViewController: BaseViewController {
         
     }
     
-    // MARK: - Notifications
-    
-    override func addNotifications() {
-        super.addNotifications()
-        notificationCenter.addObserver(self, selector:
-            #selector(self.keyboardWillShown), name:
-            UIResponder.keyboardWillShowNotification, object: nil)
-        
-        notificationCenter.addObserver(self, selector:
-            #selector(self.keyboardWillHide(notification:)), name:
-            UIResponder.keyboardWillHideNotification, object: nil)
-        
-    }
-    
-    override func removeNotifications() {
-        super.removeNotifications()
-        notificationCenter.removeObserver(self, name:
-            UIResponder.keyboardWillShowNotification, object: nil)
-        notificationCenter.removeObserver(self, name:
-            UIResponder.keyboardWillHideNotification, object: nil)
-    }
-    
     // MARK: - Validation
     
     func isInputValid() -> Bool {
@@ -106,10 +87,6 @@ class RecoverByEmailViewController: BaseViewController {
     }
     
     // MARK: - Actions
-    
-    @IBAction func scrollViewTapAction(_ sender: Any) {
-        scrollView?.endEditing(true)
-    }
     
     @IBAction func phoneModeClicked(_ sender: Any) {
         onPhoneModeClicked?()
@@ -128,26 +105,6 @@ class RecoverByEmailViewController: BaseViewController {
     
     @IBAction func emailFieldDidEndOnExit(_ sender: Any) {
         continueButtonClicked(sender)
-    }
-    
-    // MARK: - Keyboard
-    
-    @objc func keyboardWillShown(notification: Notification) {
-        let info = notification.userInfo! as NSDictionary
-        
-        guard
-            let kbSize = (
-                info.value(
-                    forKey: UIResponder.keyboardFrameEndUserInfoKey
-                    ) as? NSValue)?.cgRectValue.size,
-            kbSize.height > buttonsBottomConstraint?.constant ?? 0
-            else { return }
-        
-        buttonsBottomConstraint?.constant = kbSize.height
-    }
-    
-    @objc func keyboardWillHide(notification: Notification) {
-        buttonsBottomConstraint?.constant = 0
     }
     
 }

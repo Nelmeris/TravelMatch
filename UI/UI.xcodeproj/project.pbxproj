@@ -13,6 +13,10 @@
 		57A3808124D098D5006FAFEC /* Switch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A3808024D098D5006FAFEC /* Switch.swift */; };
 		57A3809824D31444006FAFEC /* UIView+IBInspectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A3809724D31444006FAFEC /* UIView+IBInspectable.swift */; };
 		57A3809A24D314CB006FAFEC /* CGColor+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A3809924D314CB006FAFEC /* CGColor+UIColor.swift */; };
+		57E979F624D97194008541A1 /* BaseScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E979F524D97194008541A1 /* BaseScrollViewController.swift */; };
+		57E979F924D971CD008541A1 /* BaseViewController+Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E979F824D971CD008541A1 /* BaseViewController+Keyboard.swift */; };
+		57E979FB24D9725A008541A1 /* KeyboardHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E979FA24D9725A008541A1 /* KeyboardHelper.swift */; };
+		57E979FD24D9728C008541A1 /* ScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E979FC24D9728C008541A1 /* ScrollView.swift */; };
 		CE2806AA24A931980066FE7A /* CVCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = CE2806A924A931980066FE7A /* CVCalendar */; };
 		CE90C7A324C4C2C500731135 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE90C7A224C4C2C500731135 /* Assets.xcassets */; };
 		E121510924A49B8400C691E4 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E121510724A49B8000C691E4 /* TextField.swift */; };
@@ -53,6 +57,10 @@
 		57A3808024D098D5006FAFEC /* Switch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Switch.swift; sourceTree = "<group>"; };
 		57A3809724D31444006FAFEC /* UIView+IBInspectable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+IBInspectable.swift"; sourceTree = "<group>"; };
 		57A3809924D314CB006FAFEC /* CGColor+UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGColor+UIColor.swift"; sourceTree = "<group>"; };
+		57E979F524D97194008541A1 /* BaseScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseScrollViewController.swift; sourceTree = "<group>"; };
+		57E979F824D971CD008541A1 /* BaseViewController+Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BaseViewController+Keyboard.swift"; sourceTree = "<group>"; };
+		57E979FA24D9725A008541A1 /* KeyboardHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardHelper.swift; sourceTree = "<group>"; };
+		57E979FC24D9728C008541A1 /* ScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollView.swift; sourceTree = "<group>"; };
 		CE90C7A224C4C2C500731135 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E12150E524A49B6100C691E4 /* UI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E12150E924A49B6100C691E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -110,6 +118,16 @@
 			path = TableViewAdapter;
 			sourceTree = "<group>";
 		};
+		57E979F724D971B8008541A1 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E121512124A49C6D00C691E4 /* BaseViewController.swift */,
+				57E979F824D971CD008541A1 /* BaseViewController+Keyboard.swift */,
+				57E979F524D97194008541A1 /* BaseScrollViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		E12150DB24A49B6100C691E4 = {
 			isa = PBXGroup;
 			children = (
@@ -137,8 +155,9 @@
 				E121510824A49B8000C691E4 /* Views */,
 				E16383C424C6D4340091BE38 /* Controls */,
 				E1B9B63024A784F10031C0AD /* Resources */,
-				E121512124A49C6D00C691E4 /* BaseViewController.swift */,
+				57E979F724D971B8008541A1 /* Controllers */,
 				E12150E924A49B6100C691E4 /* Info.plist */,
+				57E979FA24D9725A008541A1 /* KeyboardHelper.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -174,6 +193,7 @@
 				E121510724A49B8000C691E4 /* TextField.swift */,
 				E17CAAD224B44C7E009C5318 /* BarButtonItem.swift */,
 				57A3808024D098D5006FAFEC /* Switch.swift */,
+				57E979FC24D9728C008541A1 /* ScrollView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -394,6 +414,7 @@
 				E121510924A49B8400C691E4 /* TextField.swift in Sources */,
 				570B393F24CCB88100827B42 /* TableViewAdapter.swift in Sources */,
 				570B393D24CCB88100827B42 /* CellProtocols.swift in Sources */,
+				57E979F624D97194008541A1 /* BaseScrollViewController.swift in Sources */,
 				E121510F24A49BD100C691E4 /* PhoneNumberField.swift in Sources */,
 				E1E450C924AA93DD00BDDAFF /* ShadowView.swift in Sources */,
 				E121510C24A49BB300C691E4 /* LinkButton.swift in Sources */,
@@ -406,10 +427,13 @@
 				E121511D24A49C2A00C691E4 /* UIStoryboard+instantiateViewController.swift in Sources */,
 				E121510D24A49BBA00C691E4 /* PrimaryButton.swift in Sources */,
 				E1BD8E2D24BD7EB600783F2A /* UITableView+Helpers.swift in Sources */,
+				57E979F924D971CD008541A1 /* BaseViewController+Keyboard.swift in Sources */,
 				E121512024A49C3200C691E4 /* UIColor+hex.swift in Sources */,
 				E121510A24A49B8700C691E4 /* Button.swift in Sources */,
+				57E979FD24D9728C008541A1 /* ScrollView.swift in Sources */,
 				E150DE1824C424C900804B9E /* ProgressView.swift in Sources */,
 				E121510B24A49BA900C691E4 /* Label.swift in Sources */,
+				57E979FB24D9725A008541A1 /* KeyboardHelper.swift in Sources */,
 				E16383C724C6D45A0091BE38 /* DropdownControl.swift in Sources */,
 				E1300FAF24C70D8E00A75803 /* Font.swift in Sources */,
 				57A3809A24D314CB006FAFEC /* CGColor+UIColor.swift in Sources */,
