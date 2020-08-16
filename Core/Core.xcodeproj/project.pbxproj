@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		570C438E24E91FCF00C2B417 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570C438D24E91FCF00C2B417 /* Validator.swift */; };
 		57AFF41624CC5013007B913E /* UserDefaults+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57AFF41524CC5013007B913E /* UserDefaults+Codable.swift */; };
 		57AFF41824CC502B007B913E /* UserDefaults+Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57AFF41724CC502B007B913E /* UserDefaults+Keys.swift */; };
 		E12150D524A4962A00C691E4 /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12150D324A4962A00C691E4 /* BaseCoordinator.swift */; };
@@ -31,6 +32,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		570C438D24E91FCF00C2B417 /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
 		57AFF41524CC5013007B913E /* UserDefaults+Codable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Codable.swift"; sourceTree = "<group>"; };
 		57AFF41724CC502B007B913E /* UserDefaults+Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Keys.swift"; sourceTree = "<group>"; };
 		E12150B524A495EE00C691E4 /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -79,6 +81,7 @@
 				57AFF41724CC502B007B913E /* UserDefaults+Keys.swift */,
 				57AFF41524CC5013007B913E /* UserDefaults+Codable.swift */,
 				E12150B924A495EE00C691E4 /* Info.plist */,
+				570C438D24E91FCF00C2B417 /* Validator.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -175,6 +178,7 @@
 				57AFF41624CC5013007B913E /* UserDefaults+Codable.swift in Sources */,
 				57AFF41824CC502B007B913E /* UserDefaults+Keys.swift in Sources */,
 				E18E999824A8CA330072ADD4 /* NavigationController.swift in Sources */,
+				570C438E24E91FCF00C2B417 /* Validator.swift in Sources */,
 				E12150D524A4962A00C691E4 /* BaseCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -8,6 +8,7 @@
 
 import UIKit
 import UI
+import Core
 
 enum SignUpViewControllerState {
     case initial
@@ -40,18 +41,6 @@ class SignUpViewController: BaseViewController {
     @IBOutlet private weak var titleLabel: Label?
     
     @IBOutlet private weak var buttonsBottomConstraint: NSLayoutConstraint?
-    
-    // MARK: - Validation
-
-    private let namePredicate = NSPredicate(
-        format: "SELF MATCHES %@",
-        ".{2,}"
-    )
-
-    private let passwordPredicate = NSPredicate(
-        format: "SELF MATCHES %@",
-        ".{6,}"
-    )
 
     // MARK: - Lifecycle
 
@@ -113,9 +102,9 @@ class SignUpViewController: BaseViewController {
     
     func isInputValid() -> Bool {
         guard let nameValue = nameField?.text,
-            namePredicate.evaluate(with: nameValue),
+            Validator.isValid(value: nameValue, type: .name),
             let passwordValue = passwordField?.text,
-            passwordPredicate.evaluate(with: passwordValue)
+            Validator.isValid(value: passwordValue, type: .password)
             else {return false}
         
         return true
