@@ -94,8 +94,7 @@ class PersonalInfoViewController: BaseScrollViewController {
         return ![
             validateName(),
             validateSurname(),
-            validatePhoneNumber(),
-            validateEmail(),
+            validatePhoneNumberAndEmail(),
             validatePassword()
         ].contains(false)
     }
@@ -125,29 +124,35 @@ class PersonalInfoViewController: BaseScrollViewController {
         return true
     }
 
-    private func validatePhoneNumber() -> Bool {
+    private func validatePhoneNumberAndEmail() -> Bool {
         var flag = true
-        if let phone = phoneNumberField.text, phone.isEmpty,
-            let email = emailField.text, email.isEmpty {
-//            showCommonError("Должны быть указаны либо почта, либо телефон")
+        // EMAIL
+        if let email = emailField.text, !email.isEmpty, !Validator.isValid(value: email, type: .email) {
+//            showCommonError("Неверно указана почта")
             flag = false
+            emailField.isInvalid = true
+        } else {
+            emailField.isInvalid = false
         }
+        
+        // PHONE
         if let phone = phoneNumberField.text, !phone.isEmpty, !phoneNumberField.phoneNumberKit.isValidPhoneNumber(phone) {
 //            showCommonError("Неверно указан номер телефона")
             flag = false
+            phoneNumberField.isInvalid = true
+        } else {
+            phoneNumberField.isInvalid = false
         }
-        phoneNumberField.isInvalid = !flag
-        return flag
-    }
-    
-    private func validateEmail() -> Bool {
-        if let email = emailField.text, !email.isEmpty, !Validator.isValid(value: email, type: .email) {
-//            showCommonError("Неверно указана почта")
+        
+        // PAIR
+        if let phone = phoneNumberField.text, phone.isEmpty,
+            let email = emailField.text, email.isEmpty {
+//            showCommonError("Должны быть указаны либо почта, либо телефон")
             emailField.isInvalid = true
-            return false
+            phoneNumberField.isInvalid = true
+            flag = false
         }
-        emailField.isInvalid = false
-        return true
+        return flag
     }
     
     private func validatePassword() -> Bool {
