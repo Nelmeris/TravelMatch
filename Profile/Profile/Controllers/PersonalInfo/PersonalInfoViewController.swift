@@ -45,6 +45,7 @@ class PersonalInfoViewController: BaseScrollViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        shiftedContent = (element: saveChangesButton, bottomConstraint: buttonBottomConstraint, padding: padding)
         configureFields()
     }
     
@@ -54,15 +55,9 @@ class PersonalInfoViewController: BaseScrollViewController {
         presenter?.presentPersonalInfo()
     }
     
-    override func adjustForKeyboard(_ notification: Notification) {
-        guard let keyboardFrame = KeyboardHelper.parseFrame(from: notification),
-            keyboardFrame.height != 0 else { return }
-        shiftContent(with: notification,
-                     element: saveChangesButton,
-                     bottomConstraint: buttonBottomConstraint,
-                     padding: padding)
-        guard let textField = activeTextField, notification.name != UIResponder.keyboardWillHideNotification else { return }
-        scrollView.focusing(on: textField.frame.midY, animated: true)
+    override func keyboardWillChangeState(_ state: KeyboardState) {
+        super.keyboardWillChangeState(state)
+        focusingOnActiveTextField(with: state)
     }
     
     // MARK: - Actions
