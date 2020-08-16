@@ -49,6 +49,9 @@ class RecoverByEmailViewController: BaseScrollViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        shiftedContent = (element: buttonsWrapView,
+                          bottomConstraint: buttonsBottomConstraint,
+                          padding: 0)
         navigationController?.navigationBar.topItem?.title = ""
     }
     
@@ -108,15 +111,6 @@ class RecoverByEmailViewController: BaseScrollViewController {
     
     @IBAction func emailFieldDidEndOnExit(_ sender: Any) {
         continueButtonClicked(sender)
-    }
-    
-    // MARK: - Keyboard
-    
-    override func adjustForKeyboard(_ notification: Notification) {
-        shiftContent(with: notification,
-                     element: buttonsWrapView,
-                     bottomConstraint: buttonsBottomConstraint,
-                     padding: 0)
     }
     
 }

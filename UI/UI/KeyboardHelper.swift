@@ -8,6 +8,12 @@
 
 import UIKit
 
+public enum KeyboardState {
+    case show(frame: CGRect)
+    case change(frame: CGRect)
+    case hide
+}
+
 public class KeyboardHelper {
     
     public static func parseFrame(from notification: Notification) -> CGRect? {
@@ -15,6 +21,20 @@ public class KeyboardHelper {
             let keyboardValue = userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue
             else { return nil }
         return keyboardValue.cgRectValue
+    }
+    
+    public static func parse(from notification: Notification) -> KeyboardState? {
+        guard let keyboardFrame = parseFrame(from: notification) else { return nil }
+        switch notification.name {
+        case UIResponder.keyboardWillShowNotification:
+            return .show(frame: keyboardFrame)
+        case UIResponder.keyboardWillHideNotification:
+            return .hide
+        case UIResponder.keyboardWillChangeFrameNotification:
+            return .change(frame: keyboardFrame)
+        default:
+            return nil
+        }
     }
     
 }
