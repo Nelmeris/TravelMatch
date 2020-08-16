@@ -19,6 +19,13 @@ open class BaseScrollViewController: BaseViewController {
     
     @IBOutlet public weak var scrollView: ScrollView!
     
+    // MARK: - Lifecycle
+    
+    open override func viewDidLoad() {
+        super.viewDidLoad()
+        addTapGestureToHideKeyboard()
+    }
+    
     // MARK: - Public
     
     /// Фокусировка контентного скролла по указанному текстовому полю с учетом клавиатуры

@@ -17,7 +17,6 @@ open class BaseViewController: UIViewController {
     
     open override func viewDidLoad() {
         super.viewDidLoad()
-        addTapGestureToHideKeyboard()
         navigationController?.navigationBar.tintColor = UIColor.ThemeColors.blackColor
     }
     
