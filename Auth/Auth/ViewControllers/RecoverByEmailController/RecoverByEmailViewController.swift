@@ -8,6 +8,7 @@
 
 import UIKit
 import UI
+import Core
 
 enum RecoverByEmailViewControllerState {
     case initial(String?)
@@ -37,13 +38,6 @@ class RecoverByEmailViewController: BaseViewController {
     @IBOutlet private weak var nextButton: Button?
     
     @IBOutlet private weak var buttonsBottomConstraint: NSLayoutConstraint?
-    
-    // MARK: - Validation
-    
-    private let emailPredicate = NSPredicate(
-        format: "SELF MATCHES %@",
-        "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
-    )
     
     // MARK: - Lifecycle
     
@@ -105,7 +99,7 @@ class RecoverByEmailViewController: BaseViewController {
     
     func isInputValid() -> Bool {
         guard let emailValue = emailField?.text,
-            emailPredicate.evaluate(with: emailValue)
+            Validator.isValid(value: emailValue, type: .email)
             else { return false }
         
         return true
