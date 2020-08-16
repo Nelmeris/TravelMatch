@@ -159,8 +159,13 @@ class ProfileViewController: BaseViewController {
 extension ProfileViewController: ProfileViewInput {
     
     func displayProfileData(_ data: ProfileData) {
-        profileImageView.sd_setImage(with: data.imageUrl, completed: nil)
-        nameLabel.text = data.name
+        if let url = data.imageUrl {
+            profileImageView.sd_setImage(with: url, completed: nil)
+        } else {
+            let url = Bundle.main.url(forResource: "profileImage", withExtension: "png")
+            profileImageView.sd_setImage(with: url, completed: nil)
+        }
+        nameLabel.text = data.name + " " + data.surname
         phoneNumberLabel.text = data.phoneNumber
     }
     

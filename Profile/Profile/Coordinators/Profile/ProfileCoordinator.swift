@@ -30,6 +30,10 @@ protocol ProfileViewOutput {
     func setEmailSetting(isOn: Bool)
 }
 
+protocol PersonalInfoOutput {
+    func presentPersonalInfo()
+}
+
 public final class ProfileCoordinator: BaseCoordinator {
     
     private weak var rootController: NavigationController?
@@ -38,6 +42,7 @@ public final class ProfileCoordinator: BaseCoordinator {
     private var viewControllerFactory: ViewControllerFactory
     
     weak var controller: ProfileViewController?
+    weak var personalInfoController: PersonalInfoViewController?
     
     public init(rootController: NavigationController,
                 profileService: ProfileService,
@@ -59,7 +64,7 @@ public final class ProfileCoordinator: BaseCoordinator {
                 switch result {
                 case .success: break
                 case .failure(let error):
-                    print(error.localizedDescription)
+                    vc.showCommonError(error.localizedDescription)
                 }
             }
         }
@@ -76,6 +81,25 @@ extension ProfileCoordinator: ProfileRoutingLogic {
     func toPersonalInfo() {
         let vc = viewControllerFactory.makePersonalInfoController()
         vc.title = "Личная информация"
+        vc.presenter = self
+        vc.onSaving = { data in
+            vc.showActivityIndicator()
+            self.profileService.saveProfileData(name: data.name,
+                                                surname: data.surname,
+                                                gender: data.gender,
+                                                email: data.email,
+                                                phoneNumber: data.phoneNumber,
+                                                password: data.password) { (result) in
+                vc.hideActivityIndicator()
+                switch result {
+                case .success:
+                    self.rootController?.popViewController(animated: true)
+                case .failure(let error):
+                    vc.showCommonError(error.localizedDescription)
+                }
+            }
+        }
+        personalInfoController = vc
         rootController?.pushViewController(vc, animated: true)
     }
     
@@ -140,6 +164,15 @@ extension ProfileCoordinator: ProfileViewOutput {
     
     func presentNotifySettings() {
         controller?.displayNotifySettings(notifySettingsService.get())
+    }
+    
+}
+
+extension ProfileCoordinator: PersonalInfoOutput {
+    
+    func presentPersonalInfo() {
+        let data = profileService.getProfileData()
+        personalInfoController?.displayPersonalInfo(data)
     }
     
 }

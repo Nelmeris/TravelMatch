@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		570C438C24E90B6200C2B417 /* PersonalInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570C438B24E90B6200C2B417 /* PersonalInfo.swift */; };
 		57A3802B24CF49E3006FAFEC /* ProfileCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A3802A24CF49E3006FAFEC /* ProfileCoordinator.swift */; };
 		57A3802E24CF49EF006FAFEC /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57A3802D24CF49EF006FAFEC /* Core.framework */; };
 		57A3802F24CF49EF006FAFEC /* Core.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 57A3802D24CF49EF006FAFEC /* Core.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -42,6 +43,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		570C438B24E90B6200C2B417 /* PersonalInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalInfo.swift; sourceTree = "<group>"; };
 		57A37FDA24CF456D006FAFEC /* Profile.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Profile.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		57A3802A24CF49E3006FAFEC /* ProfileCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCoordinator.swift; sourceTree = "<group>"; };
 		57A3802D24CF49EF006FAFEC /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -169,6 +171,7 @@
 			isa = PBXGroup;
 			children = (
 				57A3805824D04463006FAFEC /* ProfileData.swift */,
+				570C438B24E90B6200C2B417 /* PersonalInfo.swift */,
 				57A3806324D04658006FAFEC /* ProfileService.swift */,
 				57A3807924D0841F006FAFEC /* NotifySettingsService.swift */,
 				57A3807B24D08569006FAFEC /* NotifySettings.swift */,
@@ -307,6 +310,7 @@
 				57A3808A24D0B60C006FAFEC /* TableSectionHeaderView.swift in Sources */,
 				57A3807C24D08569006FAFEC /* NotifySettings.swift in Sources */,
 				57A3805924D04464006FAFEC /* ProfileData.swift in Sources */,
+				570C438C24E90B6200C2B417 /* PersonalInfo.swift in Sources */,
 				57A3806424D04658006FAFEC /* ProfileService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

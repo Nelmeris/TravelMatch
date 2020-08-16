@@ -22,7 +22,6 @@
 		57A37FCD24CF42B8006FAFEC /* LocalInterest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A37FCC24CF42B8006FAFEC /* LocalInterest.swift */; };
 		57A37FCF24CF42C1006FAFEC /* LocalEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A37FCE24CF42C1006FAFEC /* LocalEntity.swift */; };
 		57A3805C24D045CB006FAFEC /* ProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A3805B24D045CB006FAFEC /* ProfileService.swift */; };
-		57A3805F24D045D7006FAFEC /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A3805E24D045D7006FAFEC /* ProfileModel.swift */; };
 		57A3806124D045DD006FAFEC /* Profile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57A3806024D045DD006FAFEC /* Profile.framework */; };
 		57A3806224D045DD006FAFEC /* Profile.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 57A3806024D045DD006FAFEC /* Profile.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		57A3807824D07174006FAFEC /* UserDefaultsSettingsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A3807724D07174006FAFEC /* UserDefaultsSettingsService.swift */; };
@@ -68,7 +67,6 @@
 		57A37FCC24CF42B8006FAFEC /* LocalInterest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalInterest.swift; sourceTree = "<group>"; };
 		57A37FCE24CF42C1006FAFEC /* LocalEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalEntity.swift; sourceTree = "<group>"; };
 		57A3805B24D045CB006FAFEC /* ProfileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileService.swift; sourceTree = "<group>"; };
-		57A3805E24D045D7006FAFEC /* ProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
 		57A3806024D045DD006FAFEC /* Profile.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Profile.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		57A3807724D07174006FAFEC /* UserDefaultsSettingsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsSettingsService.swift; sourceTree = "<group>"; };
 		57A3807E24D08D04006FAFEC /* NotifySettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifySettings.swift; sourceTree = "<group>"; };
@@ -210,17 +208,8 @@
 			isa = PBXGroup;
 			children = (
 				57A3805B24D045CB006FAFEC /* ProfileService.swift */,
-				57A3805D24D045CF006FAFEC /* Models */,
 			);
 			path = ProfileServices;
-			sourceTree = "<group>";
-		};
-		57A3805D24D045CF006FAFEC /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				57A3805E24D045D7006FAFEC /* ProfileModel.swift */,
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 		57A3807624D07150006FAFEC /* SettingsServices */ = {
@@ -361,7 +350,6 @@
 				57A37FCF24CF42C1006FAFEC /* LocalEntity.swift in Sources */,
 				57A37FCB24CF42AD006FAFEC /* LocalLanguage.swift in Sources */,
 				57A37FAB24CEFD4D006FAFEC /* TravelAnswer.swift in Sources */,
-				57A3805F24D045D7006FAFEC /* ProfileModel.swift in Sources */,
 				E166335C24CD8A0200CDDAC8 /* LocalsService.swift in Sources */,
 				57AFF41D24CC511B007B913E /* AuthService.swift in Sources */,
 				57A37FAE24CEFD4D006FAFEC /* UserDefaultsUser.swift in Sources */,

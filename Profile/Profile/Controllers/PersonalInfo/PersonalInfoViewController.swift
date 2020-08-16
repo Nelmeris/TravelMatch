@@ -8,10 +8,21 @@
 
 import UIKit
 import UI
+import PhoneNumberKit
+
+protocol PersonalInfoViewInput: class {
+    func displayPersonalInfo(_ info: PersonalInfo)
+}
 
 class PersonalInfoViewController: BaseScrollViewController {
+
+    typealias SaveData = (name: String, surname: String, gender: String, email: String, phoneNumber: String, password: String)
     
     let padding: CGFloat = 20
+    
+    // MARK: - Input
+    
+    var presenter: PersonalInfoOutput?
     
     // MARK: - Outlets
 
@@ -23,6 +34,10 @@ class PersonalInfoViewController: BaseScrollViewController {
     @IBOutlet weak var passwordField: TextField!
     @IBOutlet weak var buttonBottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var saveChangesButton: Button!
+    
+    // MARK: - Output
+    
+    public var onSaving: ((_ data: SaveData) -> ())?
     
     // MARK: - Lifecycle
     
@@ -38,6 +53,7 @@ class PersonalInfoViewController: BaseScrollViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.navigationBar.topItem?.title = ""
+        presenter?.presentPersonalInfo()
     }
     
     override func adjustForKeyboard(_ notification: Notification) {
@@ -51,6 +67,16 @@ class PersonalInfoViewController: BaseScrollViewController {
         scrollView.focusing(on: textField.frame.midY, animated: true)
     }
     
+    @IBAction func save(_ sender: Any) {
+        guard let name = nameField.text,
+            let surname = surnameField.text,
+            let gender = genderSelector.value,
+            let email = emailField.text,
+            let phoneNumber = phoneNumberField.text,
+            let password = passwordField.text else { return }
+        onSaving?((name, surname, gender, email, phoneNumber, password))
+    }
+    
 }
 
 extension PersonalInfoViewController: UITextFieldDelegate {
@@ -61,6 +87,20 @@ extension PersonalInfoViewController: UITextFieldDelegate {
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         activeTextField = nil
+    }
+    
+}
+
+extension PersonalInfoViewController: PersonalInfoViewInput {
+    
+    func displayPersonalInfo(_ info: PersonalInfo) {
+        nameField.text = info.name
+        surnameField.text = info.surname
+        genderSelector.value = info.gender
+        emailField.text = info.email
+        let phoneNumber = try? phoneNumberField.phoneNumberKit.parse(info.phoneNumber)
+        phoneNumberField.text = phoneNumber?.numberString
+        phoneNumberField.updateFlag()
     }
     
 }

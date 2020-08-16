@@ -8,6 +8,14 @@
 
 public protocol ProfileService {
     typealias ProfileLogoutCompletion = (Result<Bool, Error>) -> ()
+    typealias ProfileSaveDataCompletion = (Result<Bool, Error>) -> ()
     func logout(completion: @escaping ProfileLogoutCompletion)
-    func getProfileData() -> ProfileData
+    func getProfileData() -> ProfileData & PersonalInfo
+    func saveProfileData(name: String,
+                         surname: String,
+                         gender: String,
+                         email: String,
+                         phoneNumber: String,
+                         password: String,
+                         completion: @escaping ProfileLogoutCompletion) 
 }

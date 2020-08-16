@@ -44,7 +44,10 @@ final class AppStartManager {
             ),
             localsService: FakeLocalsService(),
             mockFakeDataService: OffersService.data,
-            profileService: ProfileService(authService: authService),
+            profileService: ProfileService(
+                authService: authService,
+                userDefaults: UserDefaults.standard
+            ),
             notifySettingsService: UserDefaultsSettingsService(
                 userDefaults: UserDefaults.standard
             )

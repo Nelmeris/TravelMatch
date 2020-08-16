@@ -13,7 +13,7 @@ import Profile
 
 public protocol AuthService: AuthLogin & AuthReset & AuthSearch & AuthSignUp & AuthLogout {
     var isAuthorized: Bool { get }
-    var currentUser: Authentificatable? { get set }
+    var currentUser: UserDefaultsUser? { get set }
 }
 
 public final class UserDefaultsAuthService: AuthService {
@@ -35,7 +35,7 @@ public final class UserDefaultsAuthService: AuthService {
         return currentUser != nil
     }
     
-    public var currentUser: Authentificatable? {
+    public var currentUser: UserDefaultsUser? {
         get {
             try? userDefaults.get(
                 objectType: UserDefaultsUser.self,
@@ -44,7 +44,7 @@ public final class UserDefaultsAuthService: AuthService {
         }
         set {
             try? userDefaults.set(
-                object: newValue as? UserDefaultsUser,
+                object: newValue,
                 forKey: "currentUser"
             )
         }
@@ -138,7 +138,8 @@ public final class UserDefaultsAuthService: AuthService {
         let user = UserDefaultsUser(
             id: email,
             name: name,
-            password: password
+            password: password,
+            email: email
         )
         try? userDefaults.set(object: user, forKey: user.id)
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
@@ -156,7 +157,8 @@ public final class UserDefaultsAuthService: AuthService {
         let user = UserDefaultsUser(
             id: phone,
             name: name,
-            password: password
+            password: password,
+            phoneNumber: phone
         )
         try? userDefaults.set(object: user, forKey: user.id)
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
@@ -164,15 +166,6 @@ public final class UserDefaultsAuthService: AuthService {
             completion(.success(user))
         }
     }
-    
-//    public func logout(
-//        completion: @escaping AuthLogoutCompletion
-//    ) {
-//        currentUser = nil
-//        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-//            completion(.success(true))
-//        }
-//    }
     
     public func resetPassword(phone: String, completion: @escaping AuthResetPasswordCompletion) {
         do {
