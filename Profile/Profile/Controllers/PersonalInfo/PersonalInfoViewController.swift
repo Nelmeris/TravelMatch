@@ -65,6 +65,8 @@ class PersonalInfoViewController: BaseScrollViewController {
         scrollView.focusing(on: textField.frame.midY, animated: true)
     }
     
+    // MARK: - Actions
+    
     @IBAction func save(_ sender: Any) {
         guard let name = nameField.text,
             let surname = surnameField.text,
@@ -89,6 +91,8 @@ class PersonalInfoViewController: BaseScrollViewController {
     private func textFieldDidChanged(_ textField: UITextField) {
         saveChangesButton.isEnabled = isFormValid()
     }
+    
+    // MARK: Validators
     
     private func isFormValid() -> Bool {
         return ![
