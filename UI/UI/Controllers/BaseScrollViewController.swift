@@ -19,6 +19,13 @@ open class BaseScrollViewController: BaseViewController {
     
     @IBOutlet public weak var scrollView: ScrollView!
     
+    // MARK: - Lifecycle
+    
+    open override func viewDidLoad() {
+        super.viewDidLoad()
+        addTapGestureToHideKeyboard()
+    }
+    
     // MARK: - Public
     
     /// Фокусировка контентного скролла по указанному текстовому полю с учетом клавиатуры
@@ -26,18 +33,18 @@ open class BaseScrollViewController: BaseViewController {
     ///   - textField: Текстовое поле для фокусирования
     ///   - keyboardNotification: Клавиатурное уведомление
     public func focusingOnTextField(_ textField: UITextField,
-                                    with keyboardNotification: Notification) {
+                                    with keyboardState: KeyboardState) {
         var yPosition = textField.frame.midY
         // Не центрировать, если клавиатура скрыта
-        if keyboardNotification.name == UIResponder.keyboardWillHideNotification {
+        if keyboardState == .willHide {
             yPosition = 0
         }
         scrollView.focusing(on: yPosition, animated: true) // Центрирование
     }
     
-    public func focusingOnActiveTextField(with keyboardNotification: Notification) {
+    public func focusingOnActiveTextField(with keyboardState: KeyboardState) {
         guard let textField = activeTextField else { return }
-        focusingOnTextField(textField, with: keyboardNotification)
+        focusingOnTextField(textField, with: keyboardState)
     }
     
 }
