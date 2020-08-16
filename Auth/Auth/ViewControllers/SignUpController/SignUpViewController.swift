@@ -142,10 +142,10 @@ class SignUpViewController: BaseScrollViewController {
     
     private func updateButtons(with keyboardState: KeyboardState) {
         switch keyboardState {
-        case .hide:
+        case .willHide:
             facebookButton?.alpha = 1
             facebookButton?.isHidden = false
-        case .show:
+        case .willShow:
             guard facebookButton?.alpha != 0 else { return }
             facebookButton?.alpha = 0
             facebookButton?.isHidden = true

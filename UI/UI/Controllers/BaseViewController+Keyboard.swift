@@ -61,10 +61,10 @@ public extension BaseViewController {
         var updatedConstant: CGFloat!
         var keyboardFrame: CGRect?
         switch keyboardState {
-        case .hide: // Сброс при скрытии клавиатуры
+        case .willHide: // Сброс при скрытии клавиатуры
             updatedConstant = padding
-        case .change(let frame): keyboardFrame = frame
-        case .show(let frame): keyboardFrame = frame
+        case .willChangeFrame(let frame): keyboardFrame = frame
+        case .willShow(let frame): keyboardFrame = frame
         }
         if let keyboardFrame = keyboardFrame {
             let originalBottomYPosition = element.frame.maxY + bottomConstraint.constant

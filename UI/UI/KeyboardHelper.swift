@@ -9,9 +9,9 @@
 import UIKit
 
 public enum KeyboardState {
-    case show(frame: CGRect)
-    case change(frame: CGRect)
-    case hide
+    case willShow(frame: CGRect)
+    case willChangeFrame(frame: CGRect)
+    case willHide
 }
 
 public class KeyboardHelper {
@@ -27,11 +27,11 @@ public class KeyboardHelper {
         guard let keyboardFrame = parseFrame(from: notification) else { return nil }
         switch notification.name {
         case UIResponder.keyboardWillShowNotification:
-            return .show(frame: keyboardFrame)
+            return .willShow(frame: keyboardFrame)
         case UIResponder.keyboardWillHideNotification:
-            return .hide
+            return .willHide
         case UIResponder.keyboardWillChangeFrameNotification:
-            return .change(frame: keyboardFrame)
+            return .willChangeFrame(frame: keyboardFrame)
         default:
             return nil
         }
