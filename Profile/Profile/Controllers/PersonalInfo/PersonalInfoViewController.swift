@@ -20,6 +20,7 @@ class PersonalInfoViewController: BaseScrollViewController {
     typealias SaveData = (name: String, surname: String, gender: String, email: String, phoneNumber: String, password: String)
     
     let padding: CGFloat = 20
+    var fields: [UITextField] = []
     
     // MARK: - Input
     
@@ -44,11 +45,7 @@ class PersonalInfoViewController: BaseScrollViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        nameField.delegate = self
-        surnameField.delegate = self
-        emailField.delegate = self
-        phoneNumberField.delegate = self
-        passwordField.delegate = self
+        configureFields()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -79,6 +76,19 @@ class PersonalInfoViewController: BaseScrollViewController {
     }
     
     // MARK: - Private
+    
+    private func configureFields() {
+        fields = [nameField, surnameField, emailField, phoneNumberField, passwordField]
+        fields.forEach {
+            $0.delegate = self
+            $0.addTarget(self, action: #selector(textFieldDidChanged(_:)), for: .editingChanged)
+        }
+    }
+    
+    @objc
+    private func textFieldDidChanged(_ textField: UITextField) {
+        saveChangesButton.isEnabled = isFormValid()
+    }
     
     private func isFormValid() -> Bool {
         return ![
@@ -131,7 +141,7 @@ class PersonalInfoViewController: BaseScrollViewController {
     }
     
     private func validateEmail() -> Bool {
-        if let email = emailField.text, !email.isEmpty, Validator.isValid(value: email, type: .email) {
+        if let email = emailField.text, !email.isEmpty, !Validator.isValid(value: email, type: .email) {
 //            showCommonError("Неверно указана почта")
             emailField.isInvalid = true
             return false
@@ -141,7 +151,7 @@ class PersonalInfoViewController: BaseScrollViewController {
     }
     
     private func validatePassword() -> Bool {
-        if let password = passwordField.text, !password.isEmpty, Validator.isValid(value: password, type: .password) {
+        if let password = passwordField.text, !password.isEmpty, !Validator.isValid(value: password, type: .password) {
             passwordField.isInvalid = true
             return false
         }
@@ -158,18 +168,11 @@ extension PersonalInfoViewController: UITextFieldDelegate {
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        switch textField {
-        case nameField:
-            surnameField.becomeFirstResponder()
-        case surnameField:
-            emailField.becomeFirstResponder()
-        case emailField:
-            phoneNumberField.becomeFirstResponder()
-        case phoneNumberField:
-            passwordField.becomeFirstResponder()
-        case passwordField:
+        if let index = fields.firstIndex(of: textField),
+            index != fields.count - 1 {
+            fields[index + 1].becomeFirstResponder()
+        } else {
             view.endEditing(true)
-        default: break
         }
         saveChangesButton.isEnabled = isFormValid()
         return true
