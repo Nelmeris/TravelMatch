@@ -8,7 +8,7 @@
 
 import UIKit
 
-public enum KeyboardState {
+public enum KeyboardState: Equatable {
     case willShow(frame: CGRect)
     case willChangeFrame(frame: CGRect)
     case willHide
