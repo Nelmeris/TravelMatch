@@ -114,7 +114,7 @@ class PersonalInfoViewController: BaseScrollViewController {
     }
     
     private func validateSurname() -> Bool {
-        if let surname = surnameField.text, !Validator.isValid(value: surname, type: .name) {
+        if let surname = surnameField.text, !surname.isEmpty, !Validator.isValid(value: surname, type: .name) {
 //            showCommonError("Фамилия некорректна")
             surnameField.isInvalid = true
             return false
@@ -183,7 +183,6 @@ extension PersonalInfoViewController: UITextFieldDelegate {
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        scrollView.focusing(on: 0, animated: true)
         saveChangesButton.isEnabled = isFormValid()
     }
     
